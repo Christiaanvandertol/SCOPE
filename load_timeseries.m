@@ -64,22 +64,17 @@ if  ~isempty(hc_file)
     hctable         = load([path_input,Dataset_dir,'/',hc_file]);
     V(23).Val       = interp1(hctable(:,1),hctable(:,2),t_); 
     canopy.hc = V(23).Val;
-    %[V(24).Val ,V(25).Val ]  = zo_and_d(V(22).Val,ts.V(23).Val);
     if options.calc_zo
         [V(24).Val ,V(25).Val ]  = zo_and_d(soil,canopy);
     else
         V(24).Val   = ones(size(t_))*V(24).Val;
         V(25).Val   = ones(size(t_))*V(25).Val;
     end
-%     if options.calc_zo
-%         [canopy.zo,canopy.d ]  = zo_and_d(soil,canopy);
-%         keyboard
-%     end
     
 else
     V(23).Val        = canopy.hc*ones(size(t_)); 
-    V(24).Val        = meteo.zo*ones(size(t_)); 
-    V(25).Val        = meteo.d*ones(size(t_));
+    V(24).Val        = canopy.zo*ones(size(t_)); 
+    V(25).Val        = canopy.d*ones(size(t_));
 end
 
 
@@ -96,7 +91,7 @@ V(36).Val       = Ca_;
 
 %% 6. Soil Moisture Content
 if ~isempty(SMC_file)
-    V(55).Val          = load([path_input,Dataset_dir,'/',SMC_file]);
+    V(54).Val          = load([path_input,Dataset_dir,'/',SMC_file]);
 end
 
 %% 7. Leaf biochemical parameters

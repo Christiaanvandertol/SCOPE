@@ -48,9 +48,9 @@ canopy.CD1  = V(41).Val(vi(41));
 canopy.Psicor  = V(42).Val(vi(42));
 canopy.rwc  = V(45).Val(vi(45));
 canopy.kV = V(12).Val(vi(12));
+canopy.zo  = V(24).Val(vi(24));
+canopy.d = V(25).Val(vi(25));
 
-meteo.zo  = V(24).Val(vi(24));
-meteo.d   = V(25).Val(vi(25));
 meteo.z  = V(29).Val(vi(29));
 meteo.Rin   = V(30).Val(vi(30));
 meteo.Ta = V(31).Val(vi(31));

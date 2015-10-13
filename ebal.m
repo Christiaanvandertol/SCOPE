@@ -197,8 +197,8 @@ while CONT                          % while energy balance does not close
     resist_in.rbs = soil.rbs;
     resist_in.rss = soil.rss;
     resist_in.rwc = canopy.rwc;
-    resist_in.zo  = meteo.zo;
-    resist_in.d   = meteo.d;
+    resist_in.zo  = canopy.zo;
+    resist_in.d   = canopy.d;
     resist_in.z   = meteo.z;
     resist_in.hc  = canopy.hc;
     resist_in.w   = canopy.leafwidth;
@@ -297,13 +297,11 @@ while CONT                          % while energy balance does not close
     Hstot       = Fs*Hs;
     Hctot       = LAI*(Fc*Hch + meanleaf(canopy,Hcu,'angles_and_layers',Ps));
     Htot        = Hstot + Hctot;
-    %G           = (t>0 && SoilHeatMethod<2)*(Rns-lEs-Hs) + (t==0 || SoilHeatMethod==2)*(0.35*Rns);
     if SoilHeatMethod==2;
        G = 0.35*Rns;
     else      
        G = GAM/sqrt(pi) * 2* sum(([Ts'; Tsold(1:end-1,:)] - Tsold)/Deltat .* (sqrt(x) - sqrt(x-Deltat)));
        G = G';
-       %if max(abs(G))> max(abs(Rns)), G = 0.35*Rns; end
     end
     % 2.5. Monin-Obukhov length L
     L           = -rhoa*cp*ustar.^3.*(Ta+273.15)./(kappa*g*Htot);           % [1]
