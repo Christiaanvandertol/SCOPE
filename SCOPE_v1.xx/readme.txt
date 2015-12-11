@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 MATLAB Compiler
 
 1. Prerequisites for Deployment 
@@ -52,3 +53,8 @@ Center.
 
 
 
+=======
+the Matlab code AND the executable (SCOPE.exe) are in the directory matlab_code.
+
+The spreadsheet input_data.xlsx is the main input file.
+>>>>>>> c0b2ccdc5c7ed2d21c486be24845c8021055d876
