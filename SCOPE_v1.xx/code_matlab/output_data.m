@@ -11,7 +11,7 @@
 %                10 Mar 2013: (CvdT) major revision: introduced structures
 %                22 Nov 2013: (CvdT) added additional outputs
 %% Standard output
-
+keyboard
 % fluxes
 %Output_dir='D:\Dropbox\ARTMOV3\models\3_Combined\2_SCOPE\SCOPE_v1.40_distr\output\';
 fidf                = fopen([Output_dir,'fluxes.dat'],'a');
@@ -163,9 +163,9 @@ if options.calc_fluor% && options.calc_ebal
     fprintf(fidflh,' \r');
 end
 
-% fidp                = fopen([Output_dir,'BOC_irradiance.dat'],'a');
-% fprintf(fidp,'%9.0f', rad.Emin_(61,:)+(rad.Esun_*gap.Ps(61)')');
-% fprintf(fidp,'\r');
+fidp                = fopen([Output_dir,'BOC_irradiance.dat'],'a');
+fprintf(fidp,'%9.0f', rad.Emin_(61,:)+(rad.Esun_*gap.Ps(61)')');
+fprintf(fidp,'\r');
 
 %%
 if options.calc_directional && options.calc_ebal

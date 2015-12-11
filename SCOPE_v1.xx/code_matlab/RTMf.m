@@ -268,7 +268,9 @@ rad.LoF_  = LoF_(:,1)  + LoF_(:,2);
 rad.LoF1_ = LoF_(:,1);
 rad.LoF2_ = LoF_(:,2);
 rad.Fhem_ = Fhem_(:,1) + Fhem_(:,2);
- 
+rad.Fmin  = sum(Fmin_,3);
+rad.Fplu  = sum(Fplu_,3);
+
 profiles.fluorescence   = Fiprofile(:,1) + Fiprofile(:,2);
  
 rad.Eoutf = 0.001 * Sint(sum(Fhem_,2),spectral.wlF); 
