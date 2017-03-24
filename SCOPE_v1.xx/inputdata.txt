@@ -23,13 +23,12 @@ kV	0.6396							extinction coefficient for Vcmax in the vertical (maximum at the
 Rdparam	0.015							Respiration = Rdparam*Vcmcax
 Tparam	0.2	0.3	281	308	328			See PFT.xls. These are five parameters specifying the temperature response.
 
-Leaf_Biochemical (magnani model)																																																																																																																													
-Tyear	15						ºC	mean annual temperature																																																																																																																					
-beta	0.507						[]	"fraction of photons partitioned to PSII (0.507 for C3, 0.4 for C4; Yin et al. 2006; Yin and Struik 2012)"																																																																																																																					
-kNPQs	0						[s-1]	rate constant of sustained thermal dissipation (Porcar-Castell 2011)																																																																																																																					
-qLs	1						[]	fraction of functional reaction centres (Porcar-Castell 2011)																																																																																																																					
-stressfactor	1							"optional input: stress factor to reduce Vcmax (for example soil moisture, leaf age). Default value = 1."																																											
-								
+Leaf_Biochemical (magnani model)																								
+Tyear	15						ºC	mean annual temperature														
+beta	0.507						[]	"fraction of photons partitioned to PSII (0.507 for C3, 0.4 for C4; Yin et al. 2006; Yin and Struik 2012)"						
+kNPQs	0						[s-1]	rate constant of sustained thermal dissipation (Porcar-Castell 2011)										
+qLs	1						[]	fraction of functional reaction centres (Porcar-Castell 2011)												
+stressfactor	1							"optional input: stress factor to reduce Vcmax (for example soil moisture, leaf age). Default value = 1."												
 Fluorescence								
 fqe	0.01							fluorescence quantum yield efficiency at photosystem level
 								
@@ -57,7 +56,7 @@ Rli	300						W m-2	broadband incoming longwave radiation (2.5-50 um)
 p	970						hPa	air pressure
 ea	15						hPa	atmospheric vapour pressure
 u	2						ms-1	wind speed at height z_
-Ca	380						ppm	atmospheric CO2 concentration
+Ca	400						ppm	atmospheric CO2 concentration
 Oa	209						per mille	atmospheric O2 concentration
 								
 Aerodynamic								

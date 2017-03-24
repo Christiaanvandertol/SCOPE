@@ -1,6 +1,6 @@
 N=[
 1;		%calc_ebal		calculate the complete energy balance
-0;		%calc_vert_profiles		calculate vertical profiles of fluxes and temperatures
+1;		%calc_vert_profiles		calculate vertical profiles of fluxes and temperatures
 1;		%calc_fluor		calculate chlorophyll fluorescence
 0;		%calc_planck		calculate spectrum of thermal radiation with spectral emissivity instead of broadband
 0;		%calc_directional		calculate BRDF and directional temperature for many angles specified in a file. Be patient, this takes some time

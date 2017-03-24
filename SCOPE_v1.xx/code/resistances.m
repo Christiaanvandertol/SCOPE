@@ -111,9 +111,10 @@ phs_h		= phstar(h ,zr,d,L,st,unst);
 
 ustar   	= max(.001,kappa*u./(log((z-d)/z0m) - pm_z));%          W&V Eq 30
 
-Kh                  = kappa*ustar*(zr-d);                  %                W&V Eq 35
-resist_out.Kh(unst)	= kappa*ustar(unst)*(zr-d).*(1-16*(h-d)./L(unst)).^.5;% W&V Eq 35
-resist_out.Kh(st)   = kappa*ustar(st)  *(zr-d).*(1+ 5*(h-d)./L(st)  ).^-1;% W&V Eq 35
+Kh              = kappa*ustar*(zr-d);                  %                W&V Eq 35
+Kh(unst)        = kappa*ustar(unst)*(zr-d).*(1-16*(h-d)./L(unst)).^.5;% W&V Eq 35
+Kh(st)          = kappa*ustar(st)  *(zr-d).*(1+ 5*(h-d)./L(st)  ).^-1;% W&V Eq 35
+resist_out.Kh   = Kh;
 
 %% wind speed at height h and z0m
 uh			= max(ustar/kappa .* (log((h-d)/z0m) - pm_h     ),.01);

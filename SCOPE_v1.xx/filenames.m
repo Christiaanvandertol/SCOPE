@@ -3,7 +3,7 @@
 X = {
 'Simulation_Name'	, 'verificationdata';
 'soil_file'		, 'soilnew.txt';
-'leaf_file'		, 'optipar_fluspect_2014.txt'; 
+'leaf_file'		, 'optipar_fluspect_2015.txt'; 
 'atmos_file' 		, 'FLEX-S3_std.atm';
 
 %The following are only for the time series option!
@@ -26,5 +26,6 @@ X = {
 'LAI_file'		, '';
 'hc_file'		, '';
 'SMC_file'		, '';
-'Vcmax_file'		, '';
-'Cab_file'		, ''};
+'Vcmax_file'	, '';
+'Cab_file'		, '';
+'LIDF_file'     , ''};
