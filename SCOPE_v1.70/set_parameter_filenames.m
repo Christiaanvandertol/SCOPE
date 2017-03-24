@@ -1,2 +1,2 @@
-parameter_file             = { 'setoptions_soy.m', 'filenames.m', 'inputdata_soy.txt'};
+parameter_file             = { 'setoptions.m', 'filenames.m', 'inputdata.txt'};
 %parameter_file            = {'input_data.xlsx'};
