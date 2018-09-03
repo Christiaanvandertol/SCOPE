@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rad &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="thermal" href="thermal.html" />
+    <link rel="prev" title="profiles" href="profiles.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../structs.html">Structs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../input/input_index.html">input structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constants/constants_index.html">constant structs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="output_index.html">output structs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="directional.html">directional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fluxes.html">fluxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gap.html">gap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leafopt.html">leafopt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profiles.html">profiles</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">rad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calculated">Calculated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-file">Output file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variations">Variations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thermal.html">thermal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../internal/internal_index.html">internal structs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../structs.html">Structs</a> &raquo;</li>
+        
+          <li><a href="output_index.html">output structs</a> &raquo;</li>
+        
+      <li>rad</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/structs/output/rad.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rad">
+<h1>rad<a class="headerlink" href="#rad" title="Permalink to this headline">¶</a></h1>
+<p>Radiation fluxes: both input (MODTRAN) and output</p>
+<p>A large number of radiative fluxes: spectrally distributed and integrated, and canopy radiative transfer coefficients.</p>
+<p>Fields are initialized by <a class="reference internal" href="../../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
+<div class="section" id="calculated">
+<h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+<p><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></p>
+<p><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></p>
+<p><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></p>
+<p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+</div>
+<div class="section" id="output-file">
+<h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../../outfiles/each.html#radiation-dat"><span class="std std-ref">radiation.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/each.html#spectrum-obsdir-optical-dat"><span class="std std-ref">spectrum_obsdir_optical.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/each.html#spectrum-hemis-optical-dat"><span class="std std-ref">spectrum_hemis_optical.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/each.html#irradiance-spectra-dat"><span class="std std-ref">irradiance_spectra.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/each.html#reflectance-dat"><span class="std std-ref">reflectance.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/each.html#boc-irradiance-dat"><span class="std std-ref">BOC_irradiance.dat</span></a></li>
+</ul>
+<p>if <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+<ul class="simple">
+<li><a class="reference internal" href="../../outfiles/planck.html#spectrum-obsdir-blackbody-dat"><span class="std std-ref">spectrum_obsdir_BlackBody.dat</span></a></li>
+</ul>
+<p>if <code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code></p>
+<ul class="simple">
+<li><a class="reference internal" href="../../outfiles/planck.html#spectrum-hemis-thermal-dat"><span class="std std-ref">spectrum_hemis_thermal.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/planck.html#spectrum-obsdir-thermal-dat"><span class="std std-ref">spectrum_obsdir_thermal.dat</span></a></li>
+</ul>
+<p>if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<ul class="simple">
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescence-dat"><span class="std std-ref">fluorescence.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescencepsi-dat"><span class="std std-ref">fluorescencePSI.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescencepsii-dat"><span class="std std-ref">fluorescencePSII.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescence-hemis-dat"><span class="std std-ref">fluorescence_hemis.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescence-emitted-by-all-leaves-dat"><span class="std std-ref">fluorescence_emitted_by_all_leaves.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescence-emitted-by-all-photosystems-dat"><span class="std std-ref">fluorescence_emitted_by_all_photosystems.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescence-sunlit-dat"><span class="std std-ref">fluorescence_sunlit.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescence-shaded-dat"><span class="std std-ref">fluorescence_shaded.dat</span></a></li>
+<li><a class="reference internal" href="../../outfiles/fluorescence.html#fluorescence-scattered-dat"><span class="std std-ref">fluorescence_scattered.dat</span></a></li>
+</ul>
+</div>
+<div class="section" id="variations">
+<h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
+<p>if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code> fluorescence (<code class="docutils literal notranslate"><span class="pre">LoF_</span></code>) is partitioned between photosystems <code class="docutils literal notranslate"><span class="pre">LoF1_,</span> <span class="pre">LoF2_</span></code></p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Lot</span> <span class="pre">LoF_</span></code></td>
+<td><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Rnuc,</span> <span class="pre">Rnhct,</span> <span class="pre">Rnuct,</span> <span class="pre">Rnhst,</span> <span class="pre">Rnust,</span> <span class="pre">Rnhc,</span> <span class="pre">Rnuc,</span> <span class="pre">Rnhs,</span> <span class="pre">Rnus</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Pnh_Cab,</span> <span class="pre">Pnu_Cab</span></code> -&gt; <a class="reference internal" href="../internal/biochem_in.html#biochem-in"><span class="std std-ref">biochem_in</span></a></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Pnh,</span> <span class="pre">Pnu,</span> <span class="pre">Pnh_PAR,</span> <span class="pre">Pnu_PAR</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Eoutte</span></code></div>
+</div>
+</td>
+<td><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">vb,</span> <span class="pre">vf,</span> <span class="pre">Esun_,</span> <span class="pre">Emin_,</span> <span class="pre">Eplu</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Pnh,</span> <span class="pre">Pnu,</span> <span class="pre">Pnh_Cab,</span> <span class="pre">Pnu_Cab,</span> <span class="pre">Rnh_PAR,</span> <span class="pre">Rnu_PAR</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields initialized in <a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>rsd</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>conical-hemispherical reflectance factor (specular in -&gt; diffuse out)</td>
+</tr>
+<tr class="row-odd"><td><strong>rdd</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>bihemispherical reflectance factor (diffuse in -&gt; diffuse out)</td>
+</tr>
+<tr class="row-even"><td><strong>rdo</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>hemispherical-conical reflectance factor (diffuse in -&gt; specular out)</td>
+</tr>
+<tr class="row-odd"><td><strong>rso</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>biconical reflectance factor (specular in -&gt; specular out)</td>
+</tr>
+<tr class="row-even"><td><strong>vb</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>directional back scattering coefficient for diffuse incidence</td>
+</tr>
+<tr class="row-odd"><td><strong>vf</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>directional forward scattering coefficient for diffuse incidence</td>
+</tr>
+<tr class="row-even"><td><strong>Esun_</strong></td>
+<td>mW m-2 um-1</td>
+<td>[2162 x 1] double</td>
+<td>incident solar spectrum</td>
+</tr>
+<tr class="row-odd"><td><strong>Esky_</strong></td>
+<td>mW m-2 um-1</td>
+<td>[2162 x 1] double</td>
+<td>incident sky spectrum</td>
+</tr>
+<tr class="row-even"><td><strong>PAR</strong></td>
+<td>mol m-2 s-1</td>
+<td>double</td>
+<td>incident spectrally integrated PAR</td>
+</tr>
+<tr class="row-odd"><td><strong>fEsuno</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>fraction of direct light (optical)</td>
+</tr>
+<tr class="row-even"><td><strong>fEskyo</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>fraction of diffuse light (optical)</td>
+</tr>
+<tr class="row-odd"><td><strong>fEsunt</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>fraction of direct light (thermal)</td>
+</tr>
+<tr class="row-even"><td><strong>fEskyt</strong></td>
+<td>-</td>
+<td>[2162 x 1] double</td>
+<td>fraction of diffuse light (thermal)</td>
+</tr>
+<tr class="row-odd"><td><strong>Eplu_</strong></td>
+<td>mW m-2 um-1</td>
+<td>[61 x 2162] double</td>
+<td>upward diffuse radiation in the canopy</td>
+</tr>
+<tr class="row-even"><td><strong>Emin_</strong></td>
+<td>mW m-2 um-1</td>
+<td>[61 x 2162] double</td>
+<td>downward diffuse radiation in the canopy</td>
+</tr>
+<tr class="row-odd"><td><strong>Lo_</strong></td>
+<td>mW m-2 um-1 sr-1</td>
+<td>[2162 x 1] double</td>
+<td>top of canopy (TOC) radiance in observation direction</td>
+</tr>
+<tr class="row-even"><td><strong>Eout_</strong></td>
+<td>mW m-2 um-1</td>
+<td>[2162 x 1] double</td>
+<td>top of canopy (TOC) upward radiation</td>
+</tr>
+<tr class="row-odd"><td><strong>Eouto</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>spectrally integrated upward optical radiation</td>
+</tr>
+<tr class="row-even"><td><strong>Eoutt</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>spectrally integrated upward thermal radiation</td>
+</tr>
+<tr class="row-odd"><td><strong>Rnhs</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>net radiation of shaded soil</td>
+</tr>
+<tr class="row-even"><td><strong>Rnus</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>net radiation of sunlit soil</td>
+</tr>
+<tr class="row-odd"><td><strong>Rnhc</strong></td>
+<td>W m-2</td>
+<td>[60 x 1] double</td>
+<td>net radiation of shaded leaves</td>
+</tr>
+<tr class="row-even"><td><strong>Rnuc</strong></td>
+<td>W m-2</td>
+<td>[13 x 36x 60] double</td>
+<td>net radiation of sunlit leaves</td>
+</tr>
+<tr class="row-odd"><td><strong>Pnh</strong></td>
+<td>mol n-2 s-1</td>
+<td>[60 x 1] double</td>
+<td>net PAR of shaded leaves</td>
+</tr>
+<tr class="row-even"><td><strong>Pnu</strong></td>
+<td>mol n-2 s-1</td>
+<td>[13 x 36x 60] double</td>
+<td>net PAR of sunlit leaves</td>
+</tr>
+<tr class="row-odd"><td><strong>Pnh_Cab</strong></td>
+<td>mol n-2 s-1</td>
+<td>[60 x 1] double</td>
+<td>net PAR absorbed by Cab of shaded leaves</td>
+</tr>
+<tr class="row-even"><td><strong>Pnu_Cab</strong></td>
+<td>mol n-2 s-1</td>
+<td>[13 x 36x 60] double</td>
+<td>net PAR absorbed by Cab of sunlit leaves</td>
+</tr>
+<tr class="row-odd"><td><strong>Pnh_PAR</strong></td>
+<td>W m-2</td>
+<td>[60 x 1] double</td>
+<td>net PAR of shaded leaves (W m-2)</td>
+</tr>
+<tr class="row-even"><td><strong>Pnu_PAR</strong></td>
+<td>W m-2</td>
+<td>[13 x 36x 60] double</td>
+<td>net PAR of sunlit leaves (W m-2)</td>
+</tr>
+<tr class="row-odd"><td><strong>Etoto</strong></td>
+<td>&#160;</td>
+<td>double</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Fields initialized in <a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Model simulated fluorescence at 3 levels:</p>
+<ul class="last simple">
+<li>level of photosystems individually (PSI, PSII) or together</li>
+<li>level of leaves</li>
+<li><dl class="first docutils">
+<dt>level of canopy</dt>
+<dd><ul class="first last">
+<li>in observation direction (reaching sensor) (typically starts with <strong>Lo</strong>)</li>
+<li>hemispherically integrated</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Fem_</strong></td>
+<td>W m-2 um-1</td>
+<td>[211 x 1] double</td>
+<td>total emitted fluorescence by all leaves, excluding within canopy scattering / re-absorption</td>
+</tr>
+<tr class="row-odd"><td><strong>Fhem_</strong></td>
+<td>W m-2 um-1</td>
+<td>[211 x 1] double</td>
+<td>TOC hemispherically integrated fluorescence</td>
+</tr>
+<tr class="row-even"><td><strong>LoF_</strong></td>
+<td>W m-2 um-1 sr-1</td>
+<td>[211 x 1] double</td>
+<td>fluorescence per wavelength</td>
+</tr>
+<tr class="row-odd"><td><strong>LoF1_</strong></td>
+<td>W m-2 um-1 sr-1</td>
+<td>[211 x 1] double</td>
+<td>fluorescence from photosystem I (PSI) per wavelength</td>
+</tr>
+<tr class="row-even"><td><strong>LoF2_</strong></td>
+<td>W m-2 um-1 sr-1</td>
+<td>[211 x 1] double</td>
+<td>fluorescence from photosystem II (PSII) per wavelength</td>
+</tr>
+<tr class="row-odd"><td><strong>Fhem_</strong></td>
+<td>W m-2 um-1</td>
+<td>[211 x 1] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Fmin_</strong></td>
+<td>W m-2 um-1</td>
+<td>[211 x 61] double</td>
+<td>downward fluorescence flux profile</td>
+</tr>
+<tr class="row-odd"><td><strong>Fplu_</strong></td>
+<td>W m-2 um-1</td>
+<td>[211 x 61] double</td>
+<td>upward fluorescence flux profile</td>
+</tr>
+<tr class="row-even"><td><strong>LoF_sunlit</strong></td>
+<td>W m-2 um-1 sr-1</td>
+<td>[211 x 2] double</td>
+<td>TOC fluorescence contribution from sunlit leaves in observer direction per wavelengths</td>
+</tr>
+<tr class="row-odd"><td><strong>LoF_shaded</strong></td>
+<td>W m-2 um-1 sr-1</td>
+<td>[211 x 2] double</td>
+<td>TOC fluorescence contribution from shaded leaves in observer direction per wavelengths</td>
+</tr>
+<tr class="row-even"><td><strong>LoF_scattered</strong></td>
+<td>W m-2 um-1 sr-1</td>
+<td>[211 x 2] double</td>
+<td>TOC fluorescence contribution after scattering from leaves</td>
+</tr>
+<tr class="row-odd"><td><strong>LoF_soil</strong></td>
+<td>W m-2 um-1 sr-1</td>
+<td>[211 x 2] double</td>
+<td>TOC fluorescence contribution after scattering from soil</td>
+</tr>
+<tr class="row-even"><td><strong>Eoutf</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>hemispherically and spectrally integrated TOC fluorescence</td>
+</tr>
+<tr class="row-odd"><td><strong>Eminf_</strong></td>
+<td>W m-2 sr-1</td>
+<td>[61 x 21] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Epluf_</strong></td>
+<td>W m-2 sr-1</td>
+<td>[61 x 21] double</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Fields initialized in <a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Lot_</strong></td>
+<td>&#160;</td>
+<td>double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Eoutte_</strong></td>
+<td>&#160;</td>
+<td>double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Eplut_</strong></td>
+<td>&#160;</td>
+<td>[61 x 1] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Emint_</strong></td>
+<td>&#160;</td>
+<td>[61 x 1] double</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Fields initialized in <a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Lot</strong></td>
+<td>&#160;</td>
+<td>double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Eoutte</strong></td>
+<td>&#160;</td>
+<td>double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Eplut</strong></td>
+<td>&#160;</td>
+<td>[61 x 1] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Emint</strong></td>
+<td>&#160;</td>
+<td>[61 x 1] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Rnuct</strong></td>
+<td>&#160;</td>
+<td>[13 x 36 x 60] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Rnhct</strong></td>
+<td>&#160;</td>
+<td>[60 x 1] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Rnust</strong></td>
+<td>&#160;</td>
+<td>double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Rnhst</strong></td>
+<td>&#160;</td>
+<td>double</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Fields added in <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>LotBB_</strong></td>
+<td>W m-2 sr-1</td>
+<td>[2162 x 1] double</td>
+<td>blackbody radiance</td>
+</tr>
+</tbody>
+</table>
+<p>Fields added in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Femtot</strong></td>
+<td>W m-2 um-1</td>
+<td>[211 x 1] double</td>
+<td>total emitted fluorescence by all photosystems per wavelengths (excluding leaf and canopy re-absorption and scattering)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="thermal.html" class="btn btn-neutral float-right" title="thermal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="profiles.html" class="btn btn-neutral" title="profiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

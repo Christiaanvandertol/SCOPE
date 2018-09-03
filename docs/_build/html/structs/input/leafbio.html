@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>leafbio &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="meteo" href="meteo.html" />
+    <link rel="prev" title="iter" href="iter.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../structs.html">Structs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="input_index.html">input structs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="F.html">F</a></li>
+<li class="toctree-l3"><a class="reference internal" href="angles.html">angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atmo.html">atmo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="canopy.html">canopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iter.html">iter</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">leafbio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initialized">Initialized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variations">Variations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="meteo.html">meteo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soil.html">soil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xyt.html">xyt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../constants/constants_index.html">constant structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../output/output_index.html">output structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal/internal_index.html">internal structs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../structs.html">Structs</a> &raquo;</li>
+        
+          <li><a href="input_index.html">input structs</a> &raquo;</li>
+        
+      <li>leafbio</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/structs/input/leafbio.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="leafbio">
+<h1>leafbio<a class="headerlink" href="#leafbio" title="Permalink to this headline">¶</a></h1>
+<p>Leaf biochemical parameters</p>
+<div class="section" id="initialized">
+<h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+</div>
+<div class="section" id="variations">
+<h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#leafbio-cca">leafbio.Cca</a> may be calculated as 25% of Cab: <code class="docutils literal notranslate"><span class="pre">options.Cca_function_of_Cab</span></code></p>
+<p><a class="reference internal" href="#leafbio-fqe">leafbio.fqe</a> may be double (PSII only) or [2 x 1] double (PSI = 0.2 * PSII, PSII) if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
+<p><a class="reference internal" href="#leafbio-v2z">leafbio.V2Z</a> can be set to 0 with <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Cab,</span> <span class="pre">Cca,</span> <span class="pre">V2Z,</span> <span class="pre">Cw,</span> <span class="pre">Cdm,</span> <span class="pre">Cs,</span> <span class="pre">Cant,</span> <span class="pre">N,</span> <span class="pre">fqe</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../../api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></div>
+<div class="line"><a class="reference internal" href="../../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Type,</span> <span class="pre">m,</span> <span class="pre">Rdparam,</span> <span class="pre">Tyear,</span> <span class="pre">beta,</span> <span class="pre">qLs,</span> <span class="pre">kNPQs,</span> <span class="pre">stressfactor,</span> <span class="pre">Tparam,</span> <span class="pre">Vcmo</span></code> -&gt; <a class="reference internal" href="../internal/biochem_in.html#biochem-in"><span class="std std-ref">biochem_in</span></a></td>
+<td><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Vcmo,</span> <span class="pre">Cab</span></code></td>
+<td><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">rho_thermal,</span> <span class="pre">tau_thermal,</span> <span class="pre">fqe</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="10%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>default</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Cab</strong></td>
+<td>ug cm-2</td>
+<td>double</td>
+<td>80.0</td>
+<td>Chlorophyll AB content</td>
+</tr>
+<tr class="row-odd"><td><p class="first last" id="leafbio-cca"><strong>Cca</strong></p>
+</td>
+<td>ug cm-2</td>
+<td>double</td>
+<td>20.0</td>
+<td>Carotenoid content. Usually 25% of Cab if <code class="docutils literal notranslate"><span class="pre">options.Cca_function_of_Cab</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Cdm</strong></td>
+<td>g cm-2</td>
+<td>double</td>
+<td>0.012</td>
+<td>Dry matter content</td>
+</tr>
+<tr class="row-odd"><td><strong>Cw</strong></td>
+<td>cm</td>
+<td>double</td>
+<td>0.009</td>
+<td>leaf water equivalent layer</td>
+</tr>
+<tr class="row-even"><td><strong>Cs</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.0</td>
+<td>senescent material fraction</td>
+</tr>
+<tr class="row-odd"><td><strong>Cant</strong></td>
+<td>ug cm-2</td>
+<td>double</td>
+<td>0.0</td>
+<td>Anthocyanins</td>
+</tr>
+<tr class="row-even"><td><strong>N</strong></td>
+<td>-</td>
+<td>double</td>
+<td>1.4</td>
+<td>leaf thickness parameters</td>
+</tr>
+<tr class="row-odd"><td><strong>Vcmo</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>60.0</td>
+<td>maximum carboxylation capacity (at optimum temperature)</td>
+</tr>
+<tr class="row-even"><td><strong>m</strong></td>
+<td>?</td>
+<td>double</td>
+<td>8.0</td>
+<td>Ball-Berry stomatal conductance parameter</td>
+</tr>
+<tr class="row-odd"><td><strong>Type</strong></td>
+<td>-</td>
+<td>int =&gt; char</td>
+<td>0 (‘C3’)</td>
+<td>Photochemical pathway: 0 =&gt; ‘C3’, 1 =&gt; ‘C4’</td>
+</tr>
+<tr class="row-even"><td><strong>Tparam</strong></td>
+<td>ºK</td>
+<td>[5 x 1] double</td>
+<td>[0.2, 0.3, 281, 308, 328]</td>
+<td>See <code class="docutils literal notranslate"><span class="pre">PFT.xls</span></code>. These are five parameters specifying the temperature response.</td>
+</tr>
+<tr class="row-odd"><td><p class="first last" id="leafbio-fqe"><strong>fqe</strong></p>
+</td>
+<td>-</td>
+<td>[1 x 1] | [2 x 1] double</td>
+<td>0.01</td>
+<td>fluorescence quantum yield efficiency at photosystem level</td>
+</tr>
+<tr class="row-even"><td><strong>Rdparam</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.015</td>
+<td><code class="docutils literal notranslate"><span class="pre">Respiration</span> <span class="pre">=</span> <span class="pre">Rdparam</span> <span class="pre">*</span> <span class="pre">Vcmcax</span></code></td>
+</tr>
+<tr class="row-odd"><td><strong>rho_thermal</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.01</td>
+<td>broadband thermal reflectance</td>
+</tr>
+<tr class="row-even"><td><strong>tau_thermal</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.01</td>
+<td>broadband thermal transmittance</td>
+</tr>
+<tr class="row-odd"><td><strong>Tyear</strong></td>
+<td>ºC</td>
+<td>double</td>
+<td>15.0</td>
+<td>mean annual temperature</td>
+</tr>
+<tr class="row-even"><td><strong>beta</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.507</td>
+<td>fraction of photons partitioned to PSII (<strong>0.507</strong> for C3, <strong>0.4</strong> for C4; Yin et al. 2006 <a class="reference internal" href="../../zreferences.html#yin2006" id="id1">[8]</a>; Yin and Struik 2012 <a class="reference internal" href="../../zreferences.html#yin2012" id="id2">[9]</a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>kNPQs</strong></td>
+<td>s-1</td>
+<td>double</td>
+<td>0.0</td>
+<td>rate constant of sustained thermal dissipation (Porcar-Castell 2011 <a class="reference internal" href="../../zreferences.html#porcar-castell2011" id="id3">[3]</a>)</td>
+</tr>
+<tr class="row-even"><td><strong>qLs</strong></td>
+<td>-</td>
+<td>double</td>
+<td>1.0</td>
+<td>fraction of functional reaction centres (Porcar-Castell 2011 <a class="reference internal" href="../../zreferences.html#porcar-castell2011" id="id4">[3]</a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>stressfactor</strong></td>
+<td>-</td>
+<td>double</td>
+<td>1.0</td>
+<td>optional input: stress factor to reduce <code class="docutils literal notranslate"><span class="pre">Vcmax</span></code> (for example soil moisture, leaf age)</td>
+</tr>
+</tbody>
+</table>
+<p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="10%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>default</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><p class="first last" id="leafbio-v2z"><strong>V2Z</strong></p>
+</td>
+<td>-</td>
+<td>double</td>
+<td>1.0</td>
+<td>violaxantine to zeaxantine ratio. 0 if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="meteo.html" class="btn btn-neutral float-right" title="meteo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iter.html" class="btn btn-neutral" title="iter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
