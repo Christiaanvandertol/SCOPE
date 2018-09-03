@@ -1,0 +1,5 @@
+Structs
+==========
+
+.. toctree::
+    structs/rad

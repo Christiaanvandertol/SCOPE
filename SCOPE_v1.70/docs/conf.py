@@ -12,10 +12,10 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 import os
-matlab_src_dir = os.path.abspath('../code')
+# import sys
+# sys.path.insert(0, os.path.abspath('..'))
+matlab_src_dir = os.path.abspath('..')
 
 
 # -- Project information -----------------------------------------------------
@@ -100,6 +100,10 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
+
+# If true, the current module name will be prepended to all description
+# unit titles (such as .. function::).
+add_module_names = False
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
