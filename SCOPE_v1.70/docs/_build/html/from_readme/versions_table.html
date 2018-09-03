@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview of modifications made to the SCOPE model. &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Model architecture" href="architecture.html" />
+    <link rel="prev" title="Summary of improvements since first release" href="improvements.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="improvements.html">Summary of improvements since first release</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview of modifications made to the SCOPE model.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Model architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories/output_files.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Overview of modifications made to the SCOPE model.</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/from_readme/versions_table.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview-of-modifications-made-to-the-scope-model">
+<span id="versions-table"></span><h1>Overview of modifications made to the SCOPE model.<a class="headerlink" href="#overview-of-modifications-made-to-the-scope-model" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Version 1.21 (2009):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">The SCOPE model as published in Biogeosciences (2009)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Version 1.32 (2012):</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">The leaf level optical model FLUSPECT was introduced, which produces leaf reflectance, transmittance  and fluorescence spectra. Rather than using given fixed fluorescence matrices as inputs, SCOPE now uses FLUSPECT to calculate the excitation to fluorescence conversion matrices.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Version 1.34 (2012):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Update of FLUSPECT with separate fluorescence spectra for PSI and PSII. Replacing the TVR09 model for fluorescence with an empirical model. Hemispherically integrated fluorescence is added as an output. The photosynthesis model is made consistent with Collatz et al (1991 and 1992), also used in CLM and SiB models, includes C3 and C4 vegetation, and empirically calibrated fluorescence model according to Lee et al. (2013). The possibility to create Look-Up Tables has been introduced, as well as more options for running only parts of the model.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Version 1.40 (2013):</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Major changes in the structure of the model. Coupling with MODTRAN-derived output files. The irradiance spectral input data are now calculated from MODTRAN atmospheric files. The input is specified in a spreadsheet. Variables are organized in structures which makes it easier to plug in new modules. This version has a bug in the unit of the CO2 concentration. Version 1.40 is no longer available.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Version 1.51 (2013):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Addition of an alternative leaf level photosynthesis and fluorescence model according to Von Caemmerer (2000) and Magnani et al (2013). Correction of the bug in version 1.40.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Version 1.52 (2013):</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Additional fluorescence output, change in the input data of <code class="docutils literal notranslate"><span class="pre">optipar</span></code>, and some modification of <code class="docutils literal notranslate"><span class="pre">biochemical_MD12.m</span></code>. Saves also the path of the code (including SCOPE version) to the output. Bug fixed in Fluspect (a scattering coefficient). Correction for PSI fluorescence moved from <code class="docutils literal notranslate"><span class="pre">RTMf.m</span></code> to <code class="docutils literal notranslate"><span class="pre">biochemical.m</span></code>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Version 1.53 (2014):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Correction of a bug in Fluspect, which caused the fluorescence spectra to be 2 × too low in version 1.52.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Version 1.54 (2014):</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Fluspect replaced by Fluspect_bcar, an updated version of Fluspect with the absorption by carotenoids included, similar to PROSPECT 5</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Version 1.60 (2015):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Major revision of <code class="docutils literal notranslate"><span class="pre">RTMf.m</span></code>:  computation speed improved (Ari Kornfeld), scattered fluorescence flux added to the directional flux (Christiaan van der Tol).</p>
+<p>Improved calculation speed of <code class="docutils literal notranslate"><span class="pre">RTMt_sb.m</span></code> (AK)
+Revision of Ball-Berry model in <code class="docutils literal notranslate"><span class="pre">biochemical.m</span></code>:  now iterative calculation of Ci and stomatal conductance (AK)</p>
+<p>Minor improvements in the energy balance (soil heat flux computation, suggested by Georg Wolfahrt).
+Input spreadsheet in ‘SCOPE’ has changed from “input_data.xls” to “input_data.xlsx”. Way of reading the sheets ‘filenames’ and ‘options’ has changed (AK and CvdT). ‘SCOPE’ should now also work for MAC and LINUX, but to be sure, SCOPE_mac_linux.m has been maintained.</p>
+<p>Default value of parameter ‘fqe’ in input spectrum has been tuned to FluoWat measurements</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Version 1.61(2015):</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Bug in the saving of total evaporation data corrected (bug in versions 1.40 to 1.60). Bug in the loading of time series of roughness length for momentum (zo) and zero plane displacement height (d) calculated from LAI and canopy height was corrected.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Version 1.62 (2016):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Photosynthesis is a function of aPAR absorbed by Chlorophyll (only) rather than total leaf aPAR as in earlier verions.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Version 1.70 (2017):</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">OPTIPAR of PROSPECT-D model used, complemented with Xanthophyll spectra for the Violaxanthin to Zeaxanthin conversion.</p>
+<p>The FLUSPECT model includes dynamic Xanthophyll reflectance due to the de-epoxydation state (the ‘PRI effect’) and Athocyanins</p>
+<p>A new radiative transfer model, RTMz, simulates the TOC reflectance as a function of the de-epoxydation state induced by light, water or temperature stress.</p>
+<p>The fluorescence emission spectra have been tuned to FluoWat leaf clip measurements. The option to use the fluorescence spectra of V1.62 and older remains.</p>
+<p>The biochemical routine has been updated, and now the internal CO2 concentration in the leaf is calculated iteratively (Ari Kornfeld)</p>
+<p>The BSM model for soil reflectance added as an option.</p>
+<p>SCOPE and SCOPE_mac_linux merged into a single script.</p>
+<p>The option to load the leaf inclination distribution from a file (besides the option to use the LIDFa and LIDFb parameters to simulate the distribution)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">New outputs:</th><td class="field-body"><p class="first">The total emitted fluorescence irradiance by all photosystems (i.e. before reabsorption within the leaf and canopy),</p>
+<p>the total emitted fluorescence irradiance by all leaves accumulated (i.e. before reabsorption by soil and canopy), and the</p>
+<p>fluorescence originating from sunlit and shaded leaves and the (multiple) scattered flux have been added as separate output files.</p>
+<p>The bottom of canopy irradiance flux (the flux on the soil) has been added to the output as a spectrum.</p>
+<p class="last">Several outputs have been added to the ‘fluxes’ and ‘radiation’ files, including the incident PAR and the incident radiation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="last">Two bugs in the <code class="docutils literal notranslate"><span class="pre">RTMt_planck.m</span></code> have been fixed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="architecture.html" class="btn btn-neutral float-right" title="Model architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="improvements.html" class="btn btn-neutral" title="Summary of improvements since first release" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.8',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

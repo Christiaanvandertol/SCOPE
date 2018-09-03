@@ -2,4 +2,6 @@ Structs
 ==========
 
 .. toctree::
-    structs/rad
+    :glob:
+
+    structs/*

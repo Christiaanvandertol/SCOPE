@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Summary of improvements since first release &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview of modifications made to the SCOPE model." href="versions_table.html" />
+    <link rel="prev" title="Software requirements" href="software.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Summary of improvements since first release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions_table.html">Overview of modifications made to the SCOPE model.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Model architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories/output_files.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Summary of improvements since first release</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/from_readme/improvements.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="summary-of-improvements-since-first-release">
+<h1>Summary of improvements since first release<a class="headerlink" href="#summary-of-improvements-since-first-release" title="Permalink to this headline">¶</a></h1>
+<p>Since the first publication of the model, a number of changes have been made to the model (<a class="reference internal" href="versions_table.html#versions-table"><span class="std std-ref">Overview of modifications made to the SCOPE model.</span></a>). The most significant of these were: the leaf optical model Fluspect replaced PROSPECT (in version 1.33), the leaf-level biochemical model for fluorescence was changed (version 1.34), the way of programming was changed by organizing variables in structures (version 1.40), and a new alternative physically based leaf fluorescence biochemical model was introduced by Federico Magnani (version 1.51). The changes are cumulative: they were made to the preceding version. Since version 1.60, the scattered fluorescence flux has been added, and the programming of the function RTMf was optimized to reduce computation time by a factor 9 (by Ari Kornfeld). SCOPE with fluorescence switched on is 4 × as fast as version 1.54 was. In version 1.61, small bugs have been corrected.</p>
+<p><strong>Version 1.70</strong> is a major update, and the following changes have been made:</p>
+<ul class="simple">
+<li>The FLUSPECT model is now consistent with the PROSPECT-D model (Feret et al., 2017 <a class="reference internal" href="../zreferences.html#feret2017" id="id1">[4]</a>).</li>
+<li>The FLUSPECT model includes dynamic Xanthophyll reflectance due to the de-epoxydation state (the ‘PRI effect’)</li>
+<li>A new radiative transfer model, RTMz, has been added which simulates the TOC reflectance changes as a result of the de-epoxydation state changes induced by light, water or temperature stress.</li>
+<li>The fluorescence emission spectra have been tuned to FluoWat leaf clip measurements. Important note: The optimized spectrum does not differentiate the two photosystems, but simulates the fluorescence spectrum as a whole. It was not possible to differentiate the two with FluoWat leaf clip measurements. However, it is still possible to use the original Franck et al. spectra and work with PSI and PSII fluorescence as in the earlier versions of SCOPE. This is done with the option <code class="docutils literal notranslate"><span class="pre">calc_PSI</span> <span class="pre">=</span> <span class="pre">1</span></code>.</li>
+<li>The biochemical routine has been updated, and now the internal CO2 concentration in the leaf is calculated iteratively (Ari Kornfeld)</li>
+<li>The soil spectrum can be provided in two ways: either by providing the spectrum directly as input (as in previous versions of SCOPE) by pointing to the file and a column in this file, or it can be simulated with the BSM model. In that case the user should enter parameter values of the BSM model in the input, these include: soil brightness and soil moisture, and two parameters (<code class="docutils literal notranslate"><span class="pre">lat</span></code> and <code class="docutils literal notranslate"><span class="pre">lon</span></code>) that determine the shape of the spectrum. Note that these parameters are not related to the geographical location! The parameters can also be retrieved from measured spectra with a separate retrieval code of RTMo+ RTMf + BSM.</li>
+<li>The option to load the leaf inclination distribution from a file (besides the option to use the LIDFa and LIDFb parameters to simulate the distribution)</li>
+<li>A separate SCOPE script for MAC/ Linux users does no longer exist. Instead, the user has the option to select the names of the input files in a file <code class="docutils literal notranslate"><span class="pre">set_parameter_filenames.m</span></code>. Either a spreadsheet or text files can be chosen as input. The code has also been tested on a Linux platform.</li>
+<li>The total emitted fluorescence irradiance by all photosystems (i.e. before reabsorption within the leaf and canopy), the total emitted fluorescence irradiance by all leaves accumulated (i.e. before reabsorption by soil and canopy), and the fluorescence originating from sunlit and shaded leaves and the (multiple) scattered flux have been added as separate output files.</li>
+<li>The bottom of canopy irradiance flux (the flux on the soil) has been added to the output as a spectrum.</li>
+<li>Several outputs have been added to the <code class="docutils literal notranslate"><span class="pre">fluxes</span></code> and <code class="docutils literal notranslate"><span class="pre">radiation</span></code> files, including the incident PAR and the incident radiation.</li>
+<li>Two bugs in the <code class="docutils literal notranslate"><span class="pre">RTMt_planck.m</span></code> have been fixed.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Some specific notes about the leaf level fluorescence and photosynthesis model in versions 1.51 and higher:</p>
+<p class="last">The model “Von Caemmerer-MD12” (<code class="docutils literal notranslate"><span class="pre">biochemical_MD12.m</span></code>) (in short: MD12 model) was implemented by Federico Magnani as an alternative to the <code class="docutils literal notranslate"><span class="pre">biochemical.m</span></code> model. The MD12 model is based on the Farquhar et al. (1980 <a class="reference internal" href="../zreferences.html#farquhar1980" id="id2">[3]</a>) and von Caemmerer (2000 <a class="reference internal" href="../zreferences.html#caemmerer2000" id="id3">[7]</a>) models. MD12 contains to parameters that are not in the empirical model: <code class="docutils literal notranslate"><span class="pre">qLs</span></code> for photodamage and <code class="docutils literal notranslate"><span class="pre">kNPQs</span></code> for sustained photoprotection. These parameters are specified in the input data spreadsheet. An un-stressed value of 1 and 0 is currently used, although more specific values could be derived from field measurements (as in SMEAR) and read from a LUT. Both the full and the simplified versions of the Von Caemmerer model for C4 species have been coded, but the simplified version is currently commented out in the code. The simplified version appears to be almost correct under most (but not all) circumstances, and could be used if the full model is too computationally demanding.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="versions_table.html" class="btn btn-neutral float-right" title="Overview of modifications made to the SCOPE model." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="software.html" class="btn btn-neutral" title="Software requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.8',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

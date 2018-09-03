@@ -41,7 +41,8 @@ release = '1.8'
 # ones.
 extensions = ['sphinx.ext.autodoc',
               'sphinxcontrib.matlab',
-              'sphinx.ext.autosectionlabel']
+              'sphinx.ext.autosectionlabel',
+              'sphinxcontrib.bibtex']
 
 primary_domain = 'mat'
 

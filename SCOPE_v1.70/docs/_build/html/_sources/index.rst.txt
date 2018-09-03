@@ -10,14 +10,25 @@ Welcome to SCOPE's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   from_readme/history
+   from_readme/acknowledgement
+   from_readme/software
+   from_readme/improvements
+   from_readme/versions_table
+   from_readme/architecture
+   from_readme/directories
+   from_readme/getting_started
+   directories/output_files
+   zreferences
+
+
+Programmer Reference
+
+.. toctree::
+
    structs
-   api_rtmo
+   api
 
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

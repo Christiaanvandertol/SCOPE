@@ -1,6 +1,7 @@
 rad
 ====
 
+Radiation fluxes: both input (MODTRAN) and output
 
 A large number of radiative fluxes: spectrally distributed and integrated, and canopy radiative transfer coefficients.
 

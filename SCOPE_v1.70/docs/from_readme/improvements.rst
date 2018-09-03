@@ -1,0 +1,24 @@
+Summary of improvements since first release
+==============================================
+
+Since the first publication of the model, a number of changes have been made to the model (:ref:`versions_table`). The most significant of these were: the leaf optical model Fluspect replaced PROSPECT (in version 1.33), the leaf-level biochemical model for fluorescence was changed (version 1.34), the way of programming was changed by organizing variables in structures (version 1.40), and a new alternative physically based leaf fluorescence biochemical model was introduced by Federico Magnani (version 1.51). The changes are cumulative: they were made to the preceding version. Since version 1.60, the scattered fluorescence flux has been added, and the programming of the function RTMf was optimized to reduce computation time by a factor 9 (by Ari Kornfeld). SCOPE with fluorescence switched on is 4 × as fast as version 1.54 was. In version 1.61, small bugs have been corrected.
+
+**Version 1.70** is a major update, and the following changes have been made:
+
+-	The FLUSPECT model is now consistent with the PROSPECT-D model (Feret et al., 2017 :cite:`Feret2017`).
+-	The FLUSPECT model includes dynamic Xanthophyll reflectance due to the de-epoxydation state (the ‘PRI effect’)
+-	A new radiative transfer model, RTMz, has been added which simulates the TOC reflectance changes as a result of the de-epoxydation state changes induced by light, water or temperature stress.
+-	The fluorescence emission spectra have been tuned to FluoWat leaf clip measurements. Important note: The optimized spectrum does not differentiate the two photosystems, but simulates the fluorescence spectrum as a whole. It was not possible to differentiate the two with FluoWat leaf clip measurements. However, it is still possible to use the original Franck et al. spectra and work with PSI and PSII fluorescence as in the earlier versions of SCOPE. This is done with the option ``calc_PSI = 1``.
+-	The biochemical routine has been updated, and now the internal CO2 concentration in the leaf is calculated iteratively (Ari Kornfeld)
+-	The soil spectrum can be provided in two ways: either by providing the spectrum directly as input (as in previous versions of SCOPE) by pointing to the file and a column in this file, or it can be simulated with the BSM model. In that case the user should enter parameter values of the BSM model in the input, these include: soil brightness and soil moisture, and two parameters (``lat`` and ``lon``) that determine the shape of the spectrum. Note that these parameters are not related to the geographical location! The parameters can also be retrieved from measured spectra with a separate retrieval code of RTMo+ RTMf + BSM.
+-	The option to load the leaf inclination distribution from a file (besides the option to use the LIDFa and LIDFb parameters to simulate the distribution)
+-	A separate SCOPE script for MAC/ Linux users does no longer exist. Instead, the user has the option to select the names of the input files in a file ``set_parameter_filenames.m``. Either a spreadsheet or text files can be chosen as input. The code has also been tested on a Linux platform.
+-	The total emitted fluorescence irradiance by all photosystems (i.e. before reabsorption within the leaf and canopy), the total emitted fluorescence irradiance by all leaves accumulated (i.e. before reabsorption by soil and canopy), and the fluorescence originating from sunlit and shaded leaves and the (multiple) scattered flux have been added as separate output files.
+-	The bottom of canopy irradiance flux (the flux on the soil) has been added to the output as a spectrum.
+-	Several outputs have been added to the ``fluxes`` and ``radiation`` files, including the incident PAR and the incident radiation.
+-	Two bugs in the ``RTMt_planck.m`` have been fixed.
+
+.. Note::
+    Some specific notes about the leaf level fluorescence and photosynthesis model in versions 1.51 and higher:
+
+    The model “Von Caemmerer-MD12” (``biochemical_MD12.m``) (in short: MD12 model) was implemented by Federico Magnani as an alternative to the ``biochemical.m`` model. The MD12 model is based on the Farquhar et al. (1980 :cite:`Farquhar1980`) and von Caemmerer (2000 :cite:`Caemmerer2000`) models. MD12 contains to parameters that are not in the empirical model: ``qLs`` for photodamage and ``kNPQs`` for sustained photoprotection. These parameters are specified in the input data spreadsheet. An un-stressed value of 1 and 0 is currently used, although more specific values could be derived from field measurements (as in SMEAR) and read from a LUT. Both the full and the simplified versions of the Von Caemmerer model for C4 species have been coded, but the simplified version is currently commented out in the code. The simplified version appears to be almost correct under most (but not all) circumstances, and could be used if the full model is too computationally demanding.
