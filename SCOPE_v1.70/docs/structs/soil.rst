@@ -8,8 +8,8 @@ Initialized
 
 ``SCOPE.m``
 
-Modified
-""""""""""
+Variations
+""""""""""""
 soil.Tsold_ may be changed by :func:`.ebal` if ``options.soil_heat_method < 2`` (default case)
 
 soil.rss_, soil.rbs_ may be changed by :func:`.calc_rssrbs` if ``options.calc_rss_rbs`` is selected

@@ -3,16 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="8461150e-c5af-4063-b848-dd285cc776b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_docs.bib" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_docs.bib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/leafbio.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/leafbio.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/soil.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/soil.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/zreferences.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/zreferences.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/leafbio.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/leafbio.rst.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/soil.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/soil.rst.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/objects.inv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/structs.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/leafbio.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/leafbio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/structs/soil.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/soil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/zreferences.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/zreferences.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/leafbio.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/leafbio.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs/soil.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/soil.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/+io/select_input.m" beforeDir="false" afterPath="$PROJECT_DIR$/../src/+io/select_input.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,28 +43,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="py" value="5" />
-          <entry key="rst" value="64" />
+          <entry key="rst" value="68" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Python" value="5" />
-          <entry key="ReST" value="64" />
+          <entry key="ReST" value="68" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="108" />
           <entry key="py" value="600" />
-          <entry key="rst" value="6283" />
-          <entry key="txt" value="61" />
+          <entry key="rst" value="7013" />
+          <entry key="txt" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="61" />
+          <entry key="PLAIN_TEXT" value="65" />
           <entry key="Python" value="708" />
-          <entry key="ReST" value="6283" />
+          <entry key="ReST" value="7013" />
         </counts>
       </usages-collector>
     </session>
@@ -67,8 +76,13 @@
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/structs/soil.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/structs/canopy.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
@@ -100,6 +114,7 @@
       <find>in_docs.+io.</find>
       <find>in_docs.not_used.</find>
       <find>soil.</find>
+      <find>nan</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,7 +147,6 @@
         <option value="$PROJECT_DIR$/structs/options.rst" />
         <option value="$PROJECT_DIR$/structs/meteo.rst" />
         <option value="$PROJECT_DIR$/structs/leafopt.rst" />
-        <option value="$PROJECT_DIR$/structs/leafbio.rst" />
         <option value="$PROJECT_DIR$/structs/iter.rst" />
         <option value="$PROJECT_DIR$/structs/fluxes.rst" />
         <option value="$PROJECT_DIR$/structs/constants.rst" />
@@ -154,14 +168,15 @@
         <option value="$PROJECT_DIR$/api/io.rst" />
         <option value="$PROJECT_DIR$/api/equations.rst" />
         <option value="$PROJECT_DIR$/directories/scope.rst" />
-        <option value="$PROJECT_DIR$/structs.rst" />
         <option value="$PROJECT_DIR$/get_input_structs/parse_input_data_xlsx.py" />
         <option value="$PROJECT_DIR$/structs/soil.rst" />
+        <option value="$PROJECT_DIR$/structs/leafbio.rst" />
+        <option value="$PROJECT_DIR$/structs.rst" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
   </component>
@@ -281,13 +296,21 @@
       <option name="project" value="LOCAL" />
       <updated>1536394623587</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="soil">
+      <created>1536414086707</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536414086707</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.50537634" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.504957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -298,7 +321,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32719547" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -314,7 +337,8 @@
     <MESSAGE value="docs" />
     <MESSAGE value="all from readme pdf" />
     <MESSAGE value="new directory structure in code with +" />
-    <option name="LAST_COMMIT_MESSAGE" value="new directory structure in code with +" />
+    <MESSAGE value="soil" />
+    <option name="LAST_COMMIT_MESSAGE" value="soil" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/api_rtmo.rst" />
@@ -379,9 +403,6 @@
     <entry file="file://$PROJECT_DIR$/structs/leafopt.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/leafbio.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/iter.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
@@ -391,13 +412,7 @@
     <entry file="file://$PROJECT_DIR$/structs/constants.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/canopy.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/biochem_out.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/biochem_in.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/structs/angles.rst">
@@ -457,15 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/rad.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/get_input_structs/parse_input_data_xlsx.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -476,7 +482,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/structs/biochem_in.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/rad.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/leafbio.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/structs/soil.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/canopy.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>

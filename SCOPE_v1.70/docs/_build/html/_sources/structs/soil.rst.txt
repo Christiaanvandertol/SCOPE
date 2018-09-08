@@ -8,8 +8,8 @@ Initialized
 
 ``SCOPE.m``
 
-Modified
-""""""""""
+Variations
+""""""""""""
 soil.Tsold_ may be changed by :func:`.ebal` if ``options.soil_heat_method < 2`` (default case)
 
 soil.rss_, soil.rbs_ may be changed by :func:`.calc_rssrbs` if ``options.calc_rss_rbs`` is selected
@@ -56,7 +56,7 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
 
 :spectrum: Spectrum number (column in the database soil_file)
 
-    :units: nan
+    :units: \-
     :type: double
     :default: 1.0
 
@@ -70,7 +70,7 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
 
 :rs_thermal: broadband soil reflectance in the thermal range (1-emissivity)
 
-    :units: nan
+    :units: \-
     :type: double
     :default: 0.06
 
@@ -90,7 +90,7 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
 
 :CSSOIL: Verhoef et al. (1997) Drag coefficient for soil *(from Aerodynamic)*
 
-    :units: nan
+    :units: ?
     :type: double
     :default: 0.01
 
@@ -111,25 +111,25 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
 
 :SMC: volumetric soil moisture content in the root zone
 
-    :units: nan
+    :units: ?
     :type: double
     :default: 0.25
 
 :BSMBrightness: BSM model parameter for soil brightness
 
-    :units: nan
+    :units: ?
     :type: double
     :default: 0.5
 
 :BSMlat: BSM model parameter 'lat'
 
-    :units: nan
+    :units: ?
     :type: double
     :default: 25.0
 
 :BSMlon: BSM model parameter  'long'
 
-    :units: nan
+    :units: ?
     :type: double
     :default: 45.0
 
