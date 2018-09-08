@@ -16,7 +16,7 @@ Welcome to SCOPE's documentation!
    from_readme/improvements
    from_readme/versions_table
    from_readme/architecture
-   from_readme/directories
+   directories
    from_readme/getting_started
    directories/output_files
    zreferences

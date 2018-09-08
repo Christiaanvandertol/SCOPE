@@ -1,0 +1,90 @@
+Input_for_SCOPE								
+								
+The order of the parameters is not relevant								
+Insert more columns if more parameter values are desired								
+								
+Variable	Values						Unit	Description
+								
+PROSPECT								
+Cab	80						ug cm-2	Chlorophyll AB content
+Cca     20 						ug cm-2	Carotenoid content, usually 25 percent of Chlorophyll
+Cdm	0.012						g cm-2	Dry matter content
+Cw	0.009						cm	leaf water equivalent layer
+Cs	0						fraction	scenecent material fraction
+Cant    0 						ug cm-2 Anthocyanins
+N	1.4						[]	leaf thickness parameters
+rho_thermal 	0.01							broadband thermal reflectance
+tau_thermal	0.01							broadband thermal transmittance
+								
+Leaf_Biochemical								
+Vcmo	60						umol m-2 s-1	maximum carboxylation capacity (at optimum temperature)
+m	8							Ball-Berry stomatal conductance parameter
+BallBerry0	0.01
+Type	0							Photochemical pathway: 0=C3, 1=C4
+kV	0.6396							extinction coefficient for Vcmax in the vertical (maximum at the top). 0 for uniform Vcmax
+Rdparam	0.015							Respiration = Rdparam*Vcmcax
+Tparam	0.2	0.3	281	308	328			See PFT.xls. These are five parameters specifying the temperature response.
+
+Leaf_Biochemical (magnani model)												
+Tyear	15						ºC	mean annual temperature		
+beta	0.507						[]	"fraction of photons partitioned to PSII (0.507 for C3, 0.4 for C4; Yin et al. 2006; Yin and Struik 2012)"		
+kNPQs	0						[s-1]	rate constant of sustained thermal dissipation (Porcar-Castell 2011)			
+qLs	1						[]	fraction of functional reaction centres (Porcar-Castell 2011)
+stressfactor	1							"optional input: stress factor to reduce Vcmax (for example soil moisture, leaf age). Default value = 1."		
+Fluorescence								
+fqe	0.01							fluorescence quantum yield efficiency at photosystem level
+								
+Soil								
+spectrum	1							Spectrum number (column in the database soil_file)
+rss	500						s m-1	soil resistance for evaporation from the pore space
+rs_thermal	0.06							broadband soil reflectance in the thermal range (1-emissivity)
+cs  	1.18E+03						J kg-1 K-1	specific heat capacity of the soil
+rhos  	1.80E+03						kg m-3	specific mass of the soil
+lambdas  	1.55						J m-1 K-1	heat conductivity of the soil
+SMC	0.25							volumetric soil moisture content in the root zone
+BSMBrightness	0.5						BSM model parameter for soil brightness
+BSMlat	25							BSM model parameter 'lat'
+BSMlon	45							BSM model parameter  'long'
+
+								
+Canopy								
+LAI	3						m2 m-2	Leaf area index
+hc	2						meter	vegetation height
+LIDFa	-0.35 							leaf inclination
+LIDFb	-0.15							variation in leaf inclination
+leafwidth	0.1						meter	leaf width
+								
+Meteo (values in data files, in the time series option, can overrule these values)								
+z	10						meter	measurement height of meteorological data
+Rin	600						W m-2	broadband incoming shortwave radiation (0.4-2.5 um)
+Ta	20						T	air temperature
+Rli	300						W m-2	broadband incoming longwave radiation (2.5-50 um)
+p	970						hPa	air pressure
+ea	15						hPa	atmospheric vapour pressure
+u	2						ms-1	wind speed at height z_
+Ca	380						ppm	atmospheric CO2 concentration
+Oa	209						per mille	atmospheric O2 concentration
+								
+Aerodynamic								
+zo	0.246						meter	roughness length for momentum of the canopy
+d	1.34						meter	displacement height
+Cd	0.3							leaf drag coefficient
+rb	10						s m-1	leaf boundary resistance
+CR	0.35							Verhoef et al. (1997)  Drag coefficient for isolated tree 
+CD1	20.6							Verhoef et al. (1997)  fitting parameter
+Psicor	0.2							Verhoef et al. (1997)  Roughness layer correction
+CSSOIL	0.01							Verhoef et al. (1997) Drag coefficient for soil
+rbs	10						s m-1	soil boundary layer resistance
+rwc	0						s m-1	within canopy layer resistance
+								
+timeseries (this option is only for time series)								
+startDOY	169.0							Julian day (decimal) of start of simulations
+endDOY	170							Julian day (decimal) of end of simulations
+LAT	52.25						decimal deg	Latitude
+LON	5.69						decimal deg	Longitude
+timezn 	1						hours	east of Greenwich
+								
+Angles								
+tts	30						deg	solar zenith angle
+tto	0						deg	observation zenith angle
+psi	90						deg	azimuthal difference between solar and observation angle

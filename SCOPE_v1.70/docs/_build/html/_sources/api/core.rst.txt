@@ -4,35 +4,33 @@ Core
 main script ``SCOPE.m``
 
 
-.. autofunction:: in_docs.RTMf
-
-.. autofunction:: in_docs.RTMo
-
-.. autofunction:: in_docs.RTMt_planck
-
-.. autofunction:: in_docs.RTMz
-
-.. autofunction:: in_docs.RTMt_sb
-
-.. autofunction:: in_docs.BSM
-
-.. autofunction:: in_docs.ebal
+.. module:: src
 
 
-.. error::
-    None of fluspects was imported
+.. autofunction:: biochemical
 
-.. .. autofunction:: in_docs.fluspect_B_CX
+.. autofunction:: biochemical_MD12
 
-.. .. autofunction:: in_docs.fluspect_B_CX_PSI_PSII_combined
+.. autofunction:: BSM
 
+.. autofunction:: calc_brdf
 
-.. autofunction:: in_docs.heatfluxes
+.. autofunction:: ebal
 
-.. autofunction:: in_docs.resistances
+.. autofunction:: fluspect_B_CX
 
-.. autofunction:: in_docs.biochemical
+.. autofunction:: fluspect_B_CX_PSI_PSII_combined
 
-.. autofunction:: in_docs.biochemical_MD12
+.. autofunction:: heatfluxes
 
-.. autofunction:: in_docs.calc_brdf
+.. autofunction:: resistances
+
+.. autofunction:: RTMf
+
+.. autofunction:: RTMo
+
+.. autofunction:: RTMt_planck
+
+.. autofunction:: RTMz
+
+.. autofunction:: RTMt_sb

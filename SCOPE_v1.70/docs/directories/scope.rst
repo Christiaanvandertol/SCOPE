@@ -12,7 +12,7 @@ This docs
 output
 -------
 
-The module ``output_data.m`` saves the output of SCOPE in an output directory.
+The function :func:`.output_data` saves the output of SCOPE in an output directory.
 
 In SCOPE, output_data is called after each calculation.
 
@@ -37,4 +37,11 @@ for files see :ref:`output_files`
 src
 ----
 
-.m files with code
+.m files with the code.
+
+* :ref:`+equations`
+* :ref:`+helpers`
+* :ref:`+io (input output)`
+* :ref:`+plot`
+* :ref:`not_used`
+

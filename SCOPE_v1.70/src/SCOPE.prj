@@ -1,0 +1,158 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="3659935665" file="Y:\tol\models\forward\SCOPE\SCOPE_v1.70\code\SCOPE.prj" location="Y:\tol\models\forward\SCOPE\SCOPE_v1.70\code" name="SCOPE" preferred-package-location="Y:\tol\models\forward\SCOPE\SCOPE_v1.70\code\SCOPE\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>SCOPE</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.70</param.version>
+    <param.authnamewatermark>Christiaan van der Tol</param.authnamewatermark>
+    <param.email>c.vandertol@utwente.nl</param.email>
+    <param.company>ITC University of Twente</param.company>
+    <param.summary>Soil Canopy Observation of Photosynthesis and Energy fluxes (SCOPE) model executable</param.summary>
+    <param.description>With SCOPE one can simulate top-of-canopy radiance spectra in the visible, shortwave infrared, near infrared and infrared region, as well as the fluxes of sensible, latent and ground heat flux and photosynthesis and chlorophyll fluorescence of vegetation.</param.description>
+    <param.screenshot />
+    <param.guid />
+    <param.installpath.string>\ITC University of Twente\SCOPE\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\SCOPE\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\SCOPE\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\SCOPE\for_redistribution</param.output>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.required.mcr.products>
+      <item>35000</item>
+      <item>35010</item>
+      <item>35001</item>
+    </param.required.mcr.products>
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.screenshot />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.target.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\SCOPE.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>Y:\tol\models\forward\SCOPE\SCOPE_v1.70\filenames.m</file>
+      <file>Y:\tol\models\forward\SCOPE\SCOPE_v1.70\set_parameter_filenames.m</file>
+      <file>Y:\tol\models\forward\SCOPE\SCOPE_v1.70\setoptions.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\aggreg.m</file>
+      <file>${PROJECT_ROOT}\assignvarnames.m</file>
+      <file>${PROJECT_ROOT}\biochemical.m</file>
+      <file>${PROJECT_ROOT}\biochemical_MD12.m</file>
+      <file>${PROJECT_ROOT}\BSM.m</file>
+      <file>${PROJECT_ROOT}\calc_brdf.m</file>
+      <file>${PROJECT_ROOT}\calc_rssrbs.m</file>
+      <file>${PROJECT_ROOT}\calczenithangle.m</file>
+      <file>${PROJECT_ROOT}\count.m</file>
+      <file>${PROJECT_ROOT}\create_output_files.m</file>
+      <file>${PROJECT_ROOT}\define_bands.m</file>
+      <file>${PROJECT_ROOT}\define_constants.m</file>
+      <file>${PROJECT_ROOT}\ebal.m</file>
+      <file>${PROJECT_ROOT}\fixedp_brent_ari.m</file>
+      <file>${PROJECT_ROOT}\fluspect_B_CX.m</file>
+      <file>${PROJECT_ROOT}\fluspect_B_CX_PSI_PSII_combined.m</file>
+      <file>${PROJECT_ROOT}\heatfluxes.m</file>
+      <file>${PROJECT_ROOT}\initialize_output_structures.m</file>
+      <file>${PROJECT_ROOT}\leafangles.m</file>
+      <file>${PROJECT_ROOT}\load_timeseries.m</file>
+      <file>${PROJECT_ROOT}\meanleaf.m</file>
+      <file>${PROJECT_ROOT}\output_data.m</file>
+      <file>${PROJECT_ROOT}\output_verification.m</file>
+      <file>${PROJECT_ROOT}\Planck.m</file>
+      <file>${PROJECT_ROOT}\plots.m</file>
+      <file>${PROJECT_ROOT}\readStructFromExcel.m</file>
+      <file>${PROJECT_ROOT}\resistances.m</file>
+      <file>${PROJECT_ROOT}\RTMf.m</file>
+      <file>${PROJECT_ROOT}\RTMo.m</file>
+      <file>${PROJECT_ROOT}\RTMt_planck.m</file>
+      <file>${PROJECT_ROOT}\RTMt_sb.m</file>
+      <file>${PROJECT_ROOT}\RTMz.m</file>
+      <file>${PROJECT_ROOT}\satvap.m</file>
+      <file>${PROJECT_ROOT}\select_input.m</file>
+      <file>${PROJECT_ROOT}\Sint.m</file>
+      <file>${PROJECT_ROOT}\Soil_Inertia0.m</file>
+      <file>${PROJECT_ROOT}\Soil_Inertia1.m</file>
+      <file>${PROJECT_ROOT}\soil_respiration.m</file>
+      <file>${PROJECT_ROOT}\tav.m</file>
+      <file>${PROJECT_ROOT}\zo_and_d.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\SCOPE\for_testing" name="splash.png" optional="false">Y:\tol\models\forward\SCOPE\SCOPE_v1.70\code\SCOPE\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\SCOPE\for_testing" name="SCOPE.exe" optional="false">Y:\tol\models\forward\SCOPE\SCOPE_v1.70\code\SCOPE\for_testing\SCOPE.exe</file>
+      <file location="${PROJECT_ROOT}\SCOPE\for_testing" name="readme.txt" optional="true">Y:\tol\models\forward\SCOPE\SCOPE_v1.70\code\SCOPE\for_testing\readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2015b</root>
+      <toolboxes>
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

@@ -2,200 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="940cd0fa-5586-42ae-b7a5-db0513ca6831" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/docs.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/environment.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/index.doctree" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/structs.doctree" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/structs/rad.doctree" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/.buildinfo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/index.rst.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/structs.rst.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/structs/rad.rst.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/ajax-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/basic.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/comment-bright.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/comment-close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/comment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/css/badge_only.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/css/theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/doctools.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/documentation_options.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/down-pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/file.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bolditalic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bolditalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bolditalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-bolditalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/Lato/lato-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/jquery-3.2.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/js/modernizr.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/js/theme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/minus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/pygments.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/searchtools.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/underscore-1.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/underscore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/up-pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_static/websupport.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/genindex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/objects.inv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/searchindex.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/structs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/structs/rad.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api_rtmo.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/structs.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/structs/rad.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/BSM.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/Brightness_T.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/GNU_General_Public_Licence.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/Planck.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/RTMf.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/RTMo.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/RTMt_planck.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/RTMt_sb.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/RTMz.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.exe" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.prj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/Sint.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/Soil_Inertia0.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/Soil_Inertia1.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.prj" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.prj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/aggreg.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/assignvarnames.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/biochemical.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/biochemical_MD12.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/bug_reports.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/calc_brdf.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/calc_rssrbs.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/calculate_vert_profiles.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/calczenithangle.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/count.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/create_output_files.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/define_bands.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/define_constants.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/e2phot.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/ebal.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/ephoton.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/fixedp_brent_ari.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/fluspect_B_CX.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/fluspect_B_CX_PSI_PSII_combined.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/heatfluxes.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/initialize_output_structures.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/leafangles.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/load_timeseries.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/meanleaf.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/output_data.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/output_verification.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/plot_directional_figure4_function.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/plots.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/progressbar.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/readStructFromExcel.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/resistances.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/resizefigure.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/satvap.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/select_input.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/soil_respiration.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/tav.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/vangenuchten.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/zo_and_d.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/ExcelInputOption.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/BSM.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/Brightness_T.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/GNU_General_Public_Licence.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/Planck.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/RTMf.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/RTMo.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/RTMt_planck.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/RTMt_sb.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/RTMz.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/SCOPE.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/SCOPE.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/Sint.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/Soil_Inertia0.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/Soil_Inertia1.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/aggreg.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/assignvarnames.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/biochemical.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/biochemical_MD12.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/bug_reports.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/calc_brdf.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/calc_rssrbs.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/calculate_vert_profiles.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/calczenithangle.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/count.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/create_output_files.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/define_bands.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/define_constants.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/e2phot.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/ebal.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/ephoton.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/fixedp_brent_ari.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/fluspect_B_CX.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/fluspect_B_CX_PSI_PSII_combined.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/heatfluxes.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/initialize_output_structures.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/leafangles.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/load_timeseries.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/meanleaf.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/output_data.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/output_verification.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/plot_directional_figure4_function.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/plots.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/progressbar.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/readStructFromExcel.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/resistances.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/resizefigure.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/satvap.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/select_input.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/soil_respiration.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/tav.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/vangenuchten.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/code/zo_and_d.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/directional_file.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/filenames.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/input_data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/inputdata.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/set_parameter_filenames.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.xx/setoptions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/core.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/core.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/equations.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/equations.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/supporting.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/supporting.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/visualization.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/core.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/core.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/equations.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/equations.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/supporting.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/supporting.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/visualization.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/core.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/core.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/equations.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/equations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/supporting.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/supporting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/visualization.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/core.rst" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/core.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/visualization.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/in_docs/Brightness_T.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/input_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/input_data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/BOC_irradiance.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/SCOPEversion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/filenames.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/inputdata.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/setoptions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/aerodyn.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_emitted_by_all_leaves.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_emitted_by_all_photosystems.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_hemis.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_scattered.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_shaded.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_sunlit.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluxes.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/irradiance_spectra.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/pars_and_input.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/pars_and_input_short.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/radiation.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/reflectance.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/spectrum_hemis_optical.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/spectrum_obsdir_BlackBody.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/spectrum_obsdir_optical.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/surftemp.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/wl.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/readme/~$OPE_v170 User manual.docx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,35 +84,41 @@
     <session id="994385286">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
+          <entry key="io" value="1" />
+          <entry key="plotting" value="1" />
           <entry key="py" value="3" />
-          <entry key="rst" value="7" />
+          <entry key="rst" value="11" />
+          <entry key="rts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
           <entry key="Python" value="3" />
-          <entry key="ReST" value="7" />
+          <entry key="ReST" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="plotting" value="35" />
           <entry key="py" value="14" />
-          <entry key="rst" value="94" />
+          <entry key="rst" value="295" />
+          <entry key="rts" value="148" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Python" value="14" />
-          <entry key="ReST" value="94" />
+          <entry key="ReST" value="478" />
         </counts>
       </usages-collector>
     </session>
@@ -243,14 +126,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/structs.rst">
+        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
+            <state relative-caret-position="1785">
               <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
             </state>
           </provider>
@@ -268,11 +171,6 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../read_the_docs/matlab/docs/api_rtmo.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api_rtmo.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
@@ -295,13 +193,20 @@
         <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/index.rst" />
         <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py" />
         <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api_rtmo.rst" />
+        <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api/plotting" />
+        <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst" />
+        <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst" />
+        <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst" />
+        <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst" />
+        <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api/visualization.rst" />
+        <option value="$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -328,6 +233,13 @@
               <item name="SCOPE" type="462c0819:PsiDirectoryNode" />
               <item name="SCOPE_v1.70" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SCOPE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SCOPE" type="462c0819:PsiDirectoryNode" />
+              <item name="SCOPE_v1.70" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -364,10 +276,19 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19828156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -376,9 +297,9 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32981783" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22237961" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -394,12 +315,13 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/api_rtmo.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api_rtmo.rst" />
     <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/structs.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
+        <state relative-caret-position="1785">
           <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
         </state>
       </provider>
@@ -413,7 +335,25 @@
     <entry file="file://$PROJECT_DIR$/../read_the_docs/matlab/docs/api_rtmo.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api_rtmo.rst">
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/visualization.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>

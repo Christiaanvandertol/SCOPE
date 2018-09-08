@@ -1,26 +1,34 @@
-Equations
-==========
++equations
+==============
 The following modules contain physical or empirical equations used in the model
 
 
-.. autofunction:: in_docs.brightness_T
+.. module:: src.+equations
 
-.. autofunction:: in_docs.calc_rssrbs
 
-.. autofunction:: in_docs.calczenithangle
+.. autofunction:: calc_rssrbs
 
-.. autofunction:: in_docs.define_constants
+.. autofunction:: calczenithangle
 
-.. autofunction:: in_docs.Planck
+.. autofunction:: fixedp_brent_ari
 
-.. autofunction:: in_docs.satvap
+.. autofunction:: leafangles
 
-.. autofunction:: in_docs.Soil_Inertia0
+.. autofunction:: meanleaf
 
-.. autofunction:: in_docs.Soil_Inertia1
+.. autofunction:: Planck
 
-.. autofunction:: in_docs.soil_respiration
+.. autofunction:: satvap
 
-.. autofunction:: in_docs.vangenuchten
+.. autofunction:: Soil_Inertia0
 
-.. autofunction:: in_docs.zo_and_d
+.. autofunction:: Soil_Inertia1
+
+.. autofunction:: soil_respiration
+
+.. warning::
+    function soil_respiration always returns 0 no matter what the input is
+
+.. autofunction:: tav
+
+.. autofunction:: zo_and_d
