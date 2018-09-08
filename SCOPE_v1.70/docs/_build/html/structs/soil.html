@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Soil &mdash; SCOPE 1.8 documentation</title>
+  <title>soil &mdash; SCOPE 1.8 documentation</title>
   
 
   
@@ -109,7 +109,13 @@
 <li class="toctree-l2"><a class="reference internal" href="rad.html">rad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_in.html">Resist_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_out.html">Resist_out</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Soil</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">soil</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialized">Initialized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modified">Modified</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="spectral.html">Spectral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="temps.html">Temps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v.html">V</a></li>
@@ -164,7 +170,7 @@
         
           <li><a href="../structs.html">Structs</a> &raquo;</li>
         
-      <li>Soil</li>
+      <li>soil</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,8 +190,318 @@
            <div itemprop="articleBody">
             
   <div class="section" id="soil">
-<h1>Soil<a class="headerlink" href="#soil" title="Permalink to this headline">¶</a></h1>
+<h1>soil<a class="headerlink" href="#soil" title="Permalink to this headline">¶</a></h1>
 <p>Soil properties (such as soil moisture, emissivity and the reflectance spectrum)</p>
+<div class="section" id="initialized">
+<h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+</div>
+<div class="section" id="modified">
+<h2>Modified<a class="headerlink" href="#modified" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#soil-tsold">soil.Tsold</a> may be changed by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> (default case)</p>
+<p><a class="reference internal" href="#soil-rss">soil.rss</a>, <a class="reference internal" href="#soil-rbs">soil.rbs</a> may be changed by <a class="reference internal" href="../api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_rss_rbs</span></code> is selected</p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<p>Most of the values are used by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>, <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a>, <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a></p>
+<p><a class="reference internal" href="#soil-rs">soil.rs</a> value is used by <a class="reference internal" href="../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></p>
+<p><a class="reference internal" href="#soil-cssoil">soil.CSSOIL</a> is used by <a class="reference internal" href="../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+<table class="docutils field-list" frame="void" id="soil-tsold" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Tsold:</th><td class="field-body"><p class="first">only if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code></p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">[12 x 2] double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">20.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" id="soil-rs" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">refl:</th><td class="field-body"><p class="first">soil reflectance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">[nwl x 1] double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">[2162 x 1] double</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Ts:</th><td class="field-body"><p class="first">initial soil surface temperature</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">[2 x 1] double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">~15</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Fields initialized in <a class="reference internal" href="../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">spectrum:</th><td class="field-body"><p class="first">Spectrum number (column in the database soil_file)</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">nan</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" id="soil-rss" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">rss:</th><td class="field-body"><p class="first">soil resistance for evaporation from the pore space</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">s m-1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">500.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rs_thermal:</th><td class="field-body"><p class="first">broadband soil reflectance in the thermal range (1-emissivity)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">nan</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.06</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">cs:</th><td class="field-body"><p class="first">specific heat capacity of the soil</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">J kg-1 K-1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1180.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rhos:</th><td class="field-body"><p class="first">specific mass of the soil</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">kg m-3</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1800.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" id="soil-cssoil" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">CSSOIL:</th><td class="field-body"><p class="first">Verhoef et al. (1997) Drag coefficient for soil <em>(from Aerodynamic)</em></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">nan</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.01</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">lambdas:</th><td class="field-body"><p class="first">heat conductivity of the soil</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">J m-1 K-1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1.55</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" id="soil-rbs" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">rbs:</th><td class="field-body"><p class="first">soil boundary layer resistance <em>(from Aerodynamic)</em></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">s m-1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">10.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">SMC:</th><td class="field-body"><p class="first">volumetric soil moisture content in the root zone</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">nan</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.25</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">BSMBrightness:</th><td class="field-body"><p class="first">BSM model parameter for soil brightness</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">nan</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.5</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">BSMlat:</th><td class="field-body"><p class="first">BSM model parameter ‘lat’</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">nan</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">25.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">BSMlon:</th><td class="field-body"><p class="first">BSM model parameter  ‘long’</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">nan</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">45.0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Derived variables</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">GAM:</th><td class="field-body"><p class="first">produced by <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> or <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span></code></p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">~1814. <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 

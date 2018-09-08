@@ -1,17 +1,17 @@
 function [soil,leafbio,canopy,meteo,angles,xyt] = select_input(V,vi,canopy,options,xyt,soil)
 
-soil.spectrum= V(16).Val(vi(16));
-soil.rss = V(17).Val(vi(17));
-soil.rs_thermal = V(18).Val(vi(18));
-soil.cs = V(19).Val(vi(19));
-soil.rhos = V(20).Val(vi(20));
-soil.CSSOIL  = V(43).Val(vi(43));
-soil.lambdas = V(21).Val(vi(21));
-soil.rbs  = V(44).Val(vi(44));
-soil.SMC  = V(54).Val(vi(54));
-soil.BSMBrightness	= V(61).Val(vi(61));
-soil.BSMlat	= V(62).Val(vi(62));
-soil.BSMlon	= V(63).Val(vi(63));
+soil.spectrum      = V(16).Val(vi(16));
+soil.rss           = V(17).Val(vi(17));
+soil.rs_thermal    = V(18).Val(vi(18));
+soil.cs            = V(19).Val(vi(19));
+soil.rhos          = V(20).Val(vi(20));
+soil.CSSOIL        = V(43).Val(vi(43));
+soil.lambdas       = V(21).Val(vi(21));
+soil.rbs           = V(44).Val(vi(44));
+soil.SMC           = V(54).Val(vi(54));
+soil.BSMBrightness = V(61).Val(vi(61));
+soil.BSMlat	       = V(62).Val(vi(62));
+soil.BSMlon	       = V(63).Val(vi(63));
 
 leafbio.Cab = V(1).Val(vi(1));
 leafbio.Cca = V(2).Val(vi(2));
