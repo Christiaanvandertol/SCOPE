@@ -13,30 +13,30 @@ soil.BSMBrightness = V(61).Val(vi(61));
 soil.BSMlat	       = V(62).Val(vi(62));
 soil.BSMlon	       = V(63).Val(vi(63));
 
-leafbio.Cab = V(1).Val(vi(1));
-leafbio.Cca = V(2).Val(vi(2));
+leafbio.Cab     = V(1).Val(vi(1));
+leafbio.Cca     = V(2).Val(vi(2));
 if options.Cca_function_of_Cab
     leafbio.Cca = 0.25*V(1).Val(vi(1));
 end
-leafbio.Cdm  = V(3).Val(vi(3));
-leafbio.Cw = V(4).Val(vi(4));
-leafbio.Cs   = V(5).Val(vi(5));
-leafbio.Cant   = V(60).Val(vi(60));
-leafbio.N = V(6).Val(vi(6));
-leafbio.Vcmo  = V(9).Val(vi(9));
-leafbio.m  = V(10).Val(vi(10));
-leafbio.Type = V(11).Val(vi(11));
+leafbio.Cdm     = V(3).Val(vi(3));
+leafbio.Cw      = V(4).Val(vi(4));
+leafbio.Cs      = V(5).Val(vi(5));
+leafbio.Cant    = V(60).Val(vi(60));
+leafbio.N       = V(6).Val(vi(6));
+leafbio.Vcmo    = V(9).Val(vi(9));
+leafbio.m       = V(10).Val(vi(10));
+leafbio.Type    = V(11).Val(vi(11));
 leafbio.Tparam  = V(14).Val(:); % this is correct (: instead of 14)
-fqe   = V(15).Val(vi(15));
-leafbio.Rdparam  = V(13).Val(vi(13));
+fqe             = V(15).Val(vi(15));
+leafbio.Rdparam = V(13).Val(vi(13));
 
-leafbio.rho_thermal   = V(7).Val(vi(7));
-leafbio.tau_thermal  = V(8).Val(vi(8));
+leafbio.rho_thermal = V(7).Val(vi(7));
+leafbio.tau_thermal = V(8).Val(vi(8));
 
-leafbio.Tyear = V(55).Val(vi(55));
-leafbio.beta   = V(56).Val(vi(56));
-leafbio.kNPQs   = V(57).Val(vi(57));
-leafbio.qLs  = V(58).Val(vi(58));
+leafbio.Tyear         = V(55).Val(vi(55));
+leafbio.beta          = V(56).Val(vi(56));
+leafbio.kNPQs         = V(57).Val(vi(57));
+leafbio.qLs           = V(58).Val(vi(58));
 leafbio.stressfactor  = V(59).Val(vi(59));
 
 canopy.LAI  = V(22).Val(vi(22));
@@ -69,6 +69,7 @@ xyt.endDOY = V(47).Val(vi(47));
 xyt.LAT = V(48).Val(vi(48));
 xyt.LON = V(49).Val(vi(49));
 xyt.timezn = V(50).Val(vi(50));
+
 angles.tts = V(51).Val(vi(51));
 angles.tto = V(52).Val(vi(52));
 angles.psi = V(53).Val(vi(53));

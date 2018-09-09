@@ -12,16 +12,28 @@ Variations
 """"""""""""
 soil.Tsold_ may be changed by :func:`.ebal` if ``options.soil_heat_method < 2`` (default case)
 
-soil.rss_, soil.rbs_ may be changed by :func:`.calc_rssrbs` if ``options.calc_rss_rbs`` is selected
+soil.rss_, soil.rbs_ may be calculated by :func:`.calc_rssrbs` if ``options.calc_rss_rbs`` is selected
 
 Used
 """""
 
-Most of the values are used by :func:`.ebal`, :func:`.Soil_Inertia0`, :func:`.Soil_Inertia1`
+.. list-table::
 
-soil.rs_ value is used by :func:`.RTMf`, :func:`.RTMo`, :func:`.RTMt_planck`, :func:`.RTMt_sb`, :func:`.RTMz`
+    * - ``spectrum, rs_thermal``
+      - ``SCOPE.m``
 
-soil.CSSOIL_ is used by :func:`.zo_and_d`
+    * - ``cs, rhos, lambdas``
+      - :func:`.Soil_Inertia0`
+
+Most of the values are used by :func:`.ebal`,
+
+``cs, rhos, lambdas``:func:`.Soil_Inertia0`, :func:`.Soil_Inertia1`
+
+``refl`` value is used by :func:`.RTMf`, :func:`.RTMo`, :func:`.RTMt_planck`, :func:`.RTMt_sb`, :func:`.RTMz`
+
+``CSSOIL`` is used by :func:`.zo_and_d`
+
+``spectrum, rs_thermal`` are used in ``SCOPE.m``
 
 Fields
 """""""
@@ -35,8 +47,6 @@ Fields initialized in ``SCOPE.m``
     :units: ?
     :type: [12 x 2] double
     :default: 20.0
-
-.. _soil.rs:
 
 :refl: soil reflectance
 
@@ -85,8 +95,6 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
     :units: kg m-3
     :type: double
     :default: 1800.0
-
-.. _soil.CSSOIL:
 
 :CSSOIL: Verhoef et al. (1997) Drag coefficient for soil *(from Aerodynamic)*
 

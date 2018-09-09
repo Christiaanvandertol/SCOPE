@@ -100,7 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="constants.html">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fluxes.html">Fluxes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iter.html">iter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="leafbio.html">Leafbio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leafbio.html">leafbio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="leafopt.html">Leafopt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="meteo.html">Meteo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
@@ -200,13 +200,29 @@
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="#soil-tsold">soil.Tsold</a> may be changed by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> (default case)</p>
-<p><a class="reference internal" href="#soil-rss">soil.rss</a>, <a class="reference internal" href="#soil-rbs">soil.rbs</a> may be changed by <a class="reference internal" href="../api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_rss_rbs</span></code> is selected</p>
+<p><a class="reference internal" href="#soil-rss">soil.rss</a>, <a class="reference internal" href="#soil-rbs">soil.rbs</a> may be calculated by <a class="reference internal" href="../api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_rss_rbs</span></code> is selected</p>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<p>Most of the values are used by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>, <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a>, <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a></p>
-<p><a class="reference internal" href="#soil-rs">soil.rs</a> value is used by <a class="reference internal" href="../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></p>
-<p><a class="reference internal" href="#soil-cssoil">soil.CSSOIL</a> is used by <a class="reference internal" href="../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">spectrum,</span> <span class="pre">rs_thermal</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">cs,</span> <span class="pre">rhos,</span> <span class="pre">lambdas</span></code></td>
+<td><a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<p>Most of the values are used by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>,</p>
+<p><code class="docutils literal notranslate"><span class="pre">cs,</span> <span class="pre">rhos,</span> <span class="pre">lambdas</span></code><a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a>, <a class="reference internal" href="../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">refl</span></code> value is used by <a class="reference internal" href="../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a>, <a class="reference internal" href="../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">CSSOIL</span></code> is used by <a class="reference internal" href="../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">spectrum,</span> <span class="pre">rs_thermal</span></code> are used in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
@@ -216,7 +232,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Tsold:</th><td class="field-body"><p class="first">only if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code></p>
-<table class="last docutils field-list" frame="void" rules="none">
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -230,13 +246,7 @@
 </table>
 </td>
 </tr>
-</tbody>
-</table>
-<table class="docutils field-list" frame="void" id="soil-rs" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">refl:</th><td class="field-body"><p class="first">soil reflectance</p>
+<tr class="field-even field"><th class="field-name">refl:</th><td class="field-body"><p class="first">soil reflectance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -343,7 +353,7 @@
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">rhos:</th><td class="field-body"><p class="first">specific mass of the soil</p>
-<table class="last docutils field-list" frame="void" rules="none">
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -357,13 +367,7 @@
 </table>
 </td>
 </tr>
-</tbody>
-</table>
-<table class="docutils field-list" frame="void" id="soil-cssoil" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">CSSOIL:</th><td class="field-body"><p class="first">Verhoef et al. (1997) Drag coefficient for soil <em>(from Aerodynamic)</em></p>
+<tr class="field-even field"><th class="field-name">CSSOIL:</th><td class="field-body"><p class="first">Verhoef et al. (1997) Drag coefficient for soil <em>(from Aerodynamic)</em></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

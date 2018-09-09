@@ -62,7 +62,7 @@ In this directory, absorption spectra of different leaf components are provided,
 leafangles
 """""""""""
 
-In this folder, example leaf inclination distribution data are provided. It is possible to use these distributions instead of the leafinclination model of Verhoef (1998) with the two parameters LIDFa and LIDFb. In that case, provide a filename in the ``input_data.xlsx`` tab **filenames** or the file ``filenames.m``.
+In this folder, example leaf inclination distribution data are provided. It is possible to use these distributions instead of the leafinclination model of Verhoef (1998 :cite:`Verhoef1998`) with the two parameters LIDFa and LIDFb. In that case, provide a filename in the ``input_data.xlsx`` tab **filenames** or the file ``filenames.m``.
 
 radiationdata
 """"""""""""""
