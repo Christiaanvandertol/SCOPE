@@ -1,4 +1,4 @@
-Canopy
+canopy
 =======
 Canopy parameters, such as leaf area index and leaf inclination distribution function
 
@@ -20,34 +20,42 @@ canopy.zo_, canopy.d_ may be calculated by :func:`.zo_and_d` if ``options.calc_z
 
 canopy.hc_ may be set in :func:`.load_timeseries`
 
+.. warning::
+    never change the angles in canopy.litab_ unless :func:`.leafangles` ('ladgen') is also adapted
+
 Used
 """""
-
 .. list-table::
-    :header-rows: 0
+    :widths: 75 25
 
-    * - ``nlayers, kV, xl, LAI`` ``LAI, rwc, zo, d, hc, leafwidth, Cd``
+    * - variable
+      - user
+
+
+    * - ``nlayers, nlincl, nlazi, lidf``
+      - :func:`.meanleaf`
+    * - ``CR, CD1, Psicor, LAI, hc``
+      - :func:`.zo_and_d`
+    * - ``LAI, hc, zo, d``
+      - :func:`.load_timeseries`
+    * - ``LIDFa, LIDFb``
+      - :func:`.leafangles`
+    * - | ``nlayers, kV, xl, LAI``
+        | ``LAI, rwc, zo, d, hc, leafwidth, Cd`` -> :ref:`Resist_in`
       - :func:`.ebal`
-
-    * - ``nlayers, LAI, litab, lazitab, lidf``
-      - | :func:`.RTMf` :func:`.RTMt_planck` :func:`.RTMt_sb` :func:`.RTMz`
-        | ``nlayers, LAI, litab, lazitab, lidf`` values is used by :func:`.RTMf`, :func:`.RTMo` (also ``x, hot, nlincl, nlazi``), :func:`.RTMt_planck`,
-        | :func:`.RTMt_sb`, :func:`.RTMz`
-
-``nlayers, nlincl, nlazi and lidf`` are used by :func:`.meanleaf`
-
-Most of the values are used by :func:`.ebal` for calculations (``nlayers, kV, xl, LAI``) and to initialize the :ref:`Resist_in` structure (``LAI, rwc, zo, d, hc, leafwidth, Cd``)
-
-``nlayers, LAI, litab, lazitab, lidf`` values is used by :func:`.RTMf`, :func:`.RTMo` (also ``x, hot, nlincl, nlazi``), :func:`.RTMt_planck`, :func:`.RTMt_sb`, :func:`.RTMz`
-
-``nlayers, nlincl, nlazi and lidf`` are used by :func:`.meanleaf`
-
-``LIDFa, LIDFb`` are used by :func:`.leafangles`
+    * - ``nlayers, lidf, litab, lazitab, LAI``
+      - | :func:`.RTMf`
+        | :func:`.RTMo`
+        | :func:`.RTMt_planck`
+        | :func:`.RTMt_sb`
+        | :func:`.RTMz`
+    * - ``nlincl, nlazi, x, hot``
+      - :func:`.RTMo`
+    * - ``x, nlayers, LAI``
+      - ``SCOPE.m``
 
 
-``CR, CD1, Psicor, LAI, hc`` are used by :func:`.zo_and_d`
 
-``LAI, hc, zo, do`` are used by :func:`.load_timeseries`
 
 
 Fields
@@ -55,154 +63,157 @@ Fields
 
 Fields initialized in ``SCOPE.m``
 
-:nlayers: the number of layers in a canopy
+.. list-table::
+    :widths: 10 10 20 10 50
 
-    :units: \-
-    :type: int
-    :default: 60
+    * - variable
+      - units
+      - type
+      - default
+      - description
+    * - **nlayers**
+      - \-
+      - int
+      - 60
+      - the number of layers in a canopy
+    * - **x**
+      - \-
+      - [60 x 1] double
+      - | (0 : -1]
+        | equally spaced vector
+      - | levels in canopy except for the top:
+        | ``bottom = -1``,
+        | ``top = -1/canopy.nlayers``
+        | in fact length == canopy.nlayers + 1
+    * - **xl**
+      - \-
+      - [61 x 1] double
+      - | [0 : -1]
+        | equally spaced vector
+      - | levels in canopy and the top
+        | [0, canopy.x]
+        | in fact length == canopy.nlayers + 1
+    * - **nlincl**
+      - \-
+      - int
+      - 13
+      - number of leaf inclinations
+    * - **nlazi**
+      - \-
+      - int
+      - 36
+      - number of leaf azimuth angles
+    * - .. _canopy.litab:
 
-:x: levels in canopy except for the top: *bottom = -1, top = -1/canopy.nlayers*
+        **litab**
+      - deg
+      - [13 x 1] double
+      - | [5 : 89]
+        | *non-equally* spaced vector
+      - SAIL leaf inclination angles
+    * - **lazitab**
+      - \-
+      - [1 x 36] double
+      - | [5 : 355]
+        | equally spaced vector
+      - leaf azimuth angles relative to the sun
+    * - .. _canopy.lidf:
 
-    :units: \-
-    :type: [canopy.nlayers x 1] double
-    :default: [60 x 1] equally spaced vector (0, -1]
+        **lidf**
+      - ?
+      - [13 x 1] double
+      - :func:`.leafangles`
+      - leaf inclination distribution function
 
-:xl: levels in canopy (canopy.x) and the top = 0
-
-    :units: \-
-    :type: [(canopy.nlayers + 1) x 1] double
-    :default: [61 x 1] equally spaced vector [0, -1]
-
-:nlincl: number of leaf inclinations
-
-    :units: \-
-    :type: int
-    :default: 13
-
-:nlazi: number of leaf azimuth angles
-
-    :units: \-
-    :type: int
-    :default: 36
-
-:litab: SAIL leaf inclination angles
-
-    :units: deg
-    :type: [13 x 1] double
-    :default: non-equally spaced vector [5, 89]
-
- .. warning::
-
-    never change the angles in canopy.litab unless :func:`.leafangles` ('ladgen') is also adapted
-
-:lazitab: leaf azimuth angles relative to the sun
-
-    :units: deg
-    :type: [1 x 36] double
-    :default: equally spaced vector [5, 355]
-
-.. _canopy.lidf:
-
-:lidf: leaf inclination distribution function
-
-    :units: ?
-    :type: [13 x 1] double
-    :default: calculated by :func:`.leafangles`
 
 Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
 
-:LAI: Leaf area index
+.. list-table::
+    :widths: 10 10 20 10 50
 
-    :units: m2 m-2
-    :type: double
-    :default: 3.0
+    * - variable
+      - units
+      - type
+      - default
+      - description
+    * - **LAI**
+      - m2 m-2
+      - double
+      - 3.0
+      - Leaf area index
+    * - .. _canopy.hc:
 
-.. _canopy.hc:
+        **hc**
+      - m
+      - double
+      - 2.0
+      - vegetation height
+    * - **LIDFa**
+      - \-
+      - double
+      - -0.35
+      - leaf inclination
+    * - **LIDFb**
+      - \-
+      - double
+      - -0.15
+      - variation in leaf inclination
+    * - **leafwidth**
+      - m
+      - double
+      - 0.1
+      - leaf width
+    * - **rb**
+      - s m-1
+      - double
+      - 10.0
+      - leaf boundary resistance
+    * - **Cd**
+      - ?
+      - double
+      - 0.3
+      - leaf drag coefficient
+    * - **CR**
+      - ?
+      - double
+      - 0.35
+      - Verhoef et al. (1997)  Drag coefficient for isolated tree
+    * - **CD1**
+      - ?
+      - double
+      - 20.6
+      - Verhoef et al. (1997)  fitting parameter
+    * - **Psicor**
+      - ?
+      - double
+      - 0.2
+      - Verhoef et al. (1997)  Roughness layer correction
+    * - **rwc**
+      - s m-1
+      - double
+      - 0.0
+      - within canopy layer resistance
+    * - **kV**
+      - ?
+      - double
+      - 0.6396
+      - extinction coefficient for ``Vcmax`` in the vertical (maximum at the top). 0 for uniform ``Vcmax``
+    * - .. _canopy.zo:
 
-:hc: vegetation height
+        **zo**
+      - m
+      - double
+      - 0.246
+      - roughness length for momentum of the canopy
+    * - .. _canopy.d:
 
-    :units: m
-    :type: double
-    :default: 2.0
-
-:LIDFa: leaf inclination
-
-    :units: \-
-    :type: double
-    :default: -0.35
-
-:LIDFb: variation in leaf inclination
-
-    :units: \-
-    :type: double
-    :default: -0.15
-
-:leafwidth: leaf width
-
-    :units: m
-    :type: double
-    :default: 0.1
-
-:rb: leaf boundary resistance
-
-    :units: s m-1
-    :type: double
-    :default: 10.0
-
-:Cd: leaf drag coefficient
-
-    :units: nan
-    :type: double
-    :default: 0.3
-
-:CR: Verhoef et al. (1997)  Drag coefficient for isolated tree: Andrieu1997?
-
-    :units: ?
-    :type: double
-    :default: 0.35
-
-:CD1: Verhoef et al. (1997)  fitting parameter
-
-    :units: ?
-    :type: double
-    :default: 20.6
-
-:Psicor: Verhoef et al. (1997)  Roughness layer correction
-
-    :units: ?
-    :type: double
-    :default: 0.2
-
-:rwc: within canopy layer resistance
-
-    :units: s m-1
-    :type: double
-    :default: 0.0
-
-:kV: extinction coefficient for ``Vcmax`` in the vertical (maximum at the top). 0 for uniform ``Vcmax``
-
-    :units: nan
-    :type: double
-    :default: 0.6396
-
-.. _canopy.zo:
-
-:zo: roughness length for momentum of the canopy
-
-    :units: m
-    :type: double
-    :default: 0.246
-
-.. _canopy.d:
-
-:d: displacement height
-
-    :units: m
-    :type: double
-    :default: 1.34
-
-:hot: hotspot parameter ``canopy.leafwidth / canopy.hc``
-
-    :units: \-
-    :type: double
-    :default: 0.05
+        **d**
+      - m
+      - double
+      - 1.34
+      - displacement height
+    * - **hot**
+      - ?
+      - double
+      - 0.05
+      - hotspot parameter ``canopy.leafwidth / canopy.hc``

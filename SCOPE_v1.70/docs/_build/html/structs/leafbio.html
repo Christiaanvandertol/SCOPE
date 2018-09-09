@@ -201,354 +201,203 @@
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="#leafbio-cca">leafbio.Cca</a> may be calculated as 25% of Cab: <code class="docutils literal notranslate"><span class="pre">options.Cca_function_of_Cab</span></code></p>
 <p><a class="reference internal" href="#leafbio-fqe">leafbio.fqe</a> may be double (PSII only) or [2 x 1] double (PSI = 0.2 * PSII, PSII) if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
+<p><a class="reference internal" href="#leafbio-v2z">leafbio.V2Z</a> can be set to 0 with <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<p>Most of the values are used by <a class="reference internal" href="../api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a> (if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code>) OR <a class="reference internal" href="../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a>,</p>
-<p>By <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> to initialize <a class="reference internal" href="biochem_in.html#biochem-in"><span class="std std-ref">Biochem_in</span></a> structure</p>
-<p><a class="reference internal" href="../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Cab,</span> <span class="pre">Cca,</span> <span class="pre">V2Z,</span> <span class="pre">Cw,</span> <span class="pre">Cdm,</span> <span class="pre">Cs,</span> <span class="pre">Cant,</span> <span class="pre">N,</span> <span class="pre">fqe</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></div>
+<div class="line"><a class="reference internal" href="../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Type,</span> <span class="pre">m,</span> <span class="pre">Rdparam,</span> <span class="pre">Tyear,</span> <span class="pre">beta,</span> <span class="pre">qLs,</span> <span class="pre">kNPQs,</span> <span class="pre">stressfactor,</span> <span class="pre">Tparam,</span> <span class="pre">Vcmo</span></code> -&gt; <a class="reference internal" href="biochem_in.html#biochem-in"><span class="std std-ref">Biochem_in</span></a></td>
+<td><a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Vcmo,</span> <span class="pre">Cab</span></code></td>
+<td><a class="reference internal" href="../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">rho_thermal,</span> <span class="pre">tau_thermal,</span> <span class="pre">fqe</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></td>
+</tr>
+</tbody>
+</table>
 </div>
 <hr class="docutils" />
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">V2Z:</th><td class="field-body"><p class="first">violaxantine to zeaxantine ratio. 0 if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
-<table class="last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
 <p>Fields initialized in <a class="reference internal" href="../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="10%" />
+<col width="50%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Cab:</th><td class="field-body"><p class="first">Chlorophyll AB content</p>
-<table class="last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">ug cm-2</td>
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>default</td>
+<td>description</td>
 </tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+<tr class="row-even"><td><strong>Cab</strong></td>
+<td>ug cm-2</td>
+<td>double</td>
+<td>80.0</td>
+<td>Chlorophyll AB content</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">80.0</td>
-</tr>
-</tbody>
-</table>
+<tr class="row-odd"><td><p class="first last" id="leafbio-cca"><strong>Cca</strong></p>
 </td>
+<td>ug cm-2</td>
+<td>double</td>
+<td>20.0</td>
+<td>Carotenoid content. Usually 25% of Cab if <code class="docutils literal notranslate"><span class="pre">options.Cca_function_of_Cab</span></code></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils field-list" frame="void" id="leafbio-cca" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Cca:</th><td class="field-body"><p class="first">Carotenoid content. Usually 25% of Cab if <code class="docutils literal notranslate"><span class="pre">options.Cca_function_of_Cab</span></code></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">ug cm-2</td>
+<tr class="row-even"><td><strong>Cdm</strong></td>
+<td>g cm-2</td>
+<td>double</td>
+<td>0.012</td>
+<td>Dry matter content</td>
 </tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+<tr class="row-odd"><td><strong>Cw</strong></td>
+<td>cm</td>
+<td>double</td>
+<td>0.009</td>
+<td>leaf water equivalent layer</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">20.0</td>
+<tr class="row-even"><td><strong>Cs</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.0</td>
+<td>senescent material fraction</td>
 </tr>
-</tbody>
-</table>
+<tr class="row-odd"><td><strong>Cant</strong></td>
+<td>ug cm-2</td>
+<td>double</td>
+<td>0.0</td>
+<td>Anthocyanins</td>
+</tr>
+<tr class="row-even"><td><strong>N</strong></td>
+<td>-</td>
+<td>double</td>
+<td>1.4</td>
+<td>leaf thickness parameters</td>
+</tr>
+<tr class="row-odd"><td><strong>Vcmo</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>60.0</td>
+<td>maximum carboxylation capacity (at optimum temperature)</td>
+</tr>
+<tr class="row-even"><td><strong>m</strong></td>
+<td>?</td>
+<td>double</td>
+<td>8.0</td>
+<td>Ball-Berry stomatal conductance parameter</td>
+</tr>
+<tr class="row-odd"><td><strong>Type</strong></td>
+<td>-</td>
+<td>int =&gt; char</td>
+<td>0 (‘C3’)</td>
+<td>Photochemical pathway: 0 =&gt; ‘C3’, 1 =&gt; ‘C4’</td>
+</tr>
+<tr class="row-even"><td><strong>Tparam</strong></td>
+<td>ºK</td>
+<td>[5 x 1] double</td>
+<td>[0.2, 0.3, 281, 308, 328]</td>
+<td>See <code class="docutils literal notranslate"><span class="pre">PFT.xls</span></code>. These are five parameters specifying the temperature response.</td>
+</tr>
+<tr class="row-odd"><td><p class="first last" id="leafbio-fqe"><strong>fqe</strong></p>
 </td>
+<td>-</td>
+<td>[1 x 1] | [2 x 1] double</td>
+<td>0.01</td>
+<td>fluorescence quantum yield efficiency at photosystem level</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Cdm:</th><td class="field-body"><p class="first">Dry matter content</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">g cm-2</td>
+<tr class="row-even"><td><strong>Rdparam</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.015</td>
+<td><code class="docutils literal notranslate"><span class="pre">Respiration</span> <span class="pre">=</span> <span class="pre">Rdparam</span> <span class="pre">*</span> <span class="pre">Vcmcax</span></code></td>
 </tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
+<tr class="row-odd"><td><strong>rho_thermal</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.01</td>
+<td>broadband thermal reflectance</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.012</td>
+<tr class="row-even"><td><strong>tau_thermal</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.01</td>
+<td>broadband thermal transmittance</td>
+</tr>
+<tr class="row-odd"><td><strong>Tyear</strong></td>
+<td>ºC</td>
+<td>double</td>
+<td>15.0</td>
+<td>mean annual temperature</td>
+</tr>
+<tr class="row-even"><td><strong>beta</strong></td>
+<td>-</td>
+<td>double</td>
+<td>0.507</td>
+<td>fraction of photons partitioned to PSII (<strong>0.507</strong> for C3, <strong>0.4</strong> for C4; Yin et al. 2006 <a class="reference internal" href="../zreferences.html#yin2006" id="id1">[10]</a>; Yin and Struik 2012 <a class="reference internal" href="../zreferences.html#yin2012" id="id2">[11]</a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>kNPQs</strong></td>
+<td>s-1</td>
+<td>double</td>
+<td>0.0</td>
+<td>rate constant of sustained thermal dissipation (Porcar-Castell 2011 <a class="reference internal" href="../zreferences.html#porcar-castell2011" id="id3">[5]</a>)</td>
+</tr>
+<tr class="row-even"><td><strong>qLs</strong></td>
+<td>-</td>
+<td>double</td>
+<td>1.0</td>
+<td>fraction of functional reaction centres (Porcar-Castell 2011 <a class="reference internal" href="../zreferences.html#porcar-castell2011" id="id4">[5]</a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>stressfactor</strong></td>
+<td>-</td>
+<td>double</td>
+<td>1.0</td>
+<td>optional input: stress factor to reduce <code class="docutils literal notranslate"><span class="pre">Vcmax</span></code> (for example soil moisture, leaf age)</td>
 </tr>
 </tbody>
 </table>
+<p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="10%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>default</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><p class="first last" id="leafbio-v2z"><strong>V2Z</strong></p>
 </td>
-</tr>
-<tr class="field-even field"><th class="field-name">Cw:</th><td class="field-body"><p class="first">leaf water equivalent layer</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">cm</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.009</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Cs:</th><td class="field-body"><p class="first">scenecent material fraction</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.0</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Cant:</th><td class="field-body"><p class="first">Anthocyanins</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">ug cm-2</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.0</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">N:</th><td class="field-body"><p class="first">leaf thickness parameters</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1.4</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Vcmo:</th><td class="field-body"><p class="first">maximum carboxylation capacity (at optimum temperature)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">umol m-2 s-1</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">60.0</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">m:</th><td class="field-body"><p class="first">Ball-Berry stomatal conductance parameter</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">?</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">8.0</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body"><p class="first">Photochemical pathway: 0 =&gt; ‘C3’, 1 =&gt; ‘C4’</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">int =&gt; char</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0 (‘C3’)</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Tparam:</th><td class="field-body"><p class="first">See <code class="docutils literal notranslate"><span class="pre">PFT.xls</span></code>. These are five parameters specifying the temperature response.</p>
-<table class="last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">ºK</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">[5 x 1] double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">[0.2, 0.3, 281, 308, 328]</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<table class="docutils field-list" frame="void" id="leafbio-fqe" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">fqe:</th><td class="field-body"><p class="first">fluorescence quantum yield efficiency at photosystem level</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double | [2 x 1] double if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.01</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Rdparam:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">Respiration</span> <span class="pre">=</span> <span class="pre">Rdparam</span> <span class="pre">*</span> <span class="pre">Vcmcax</span></code></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.015</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rho_thermal:</th><td class="field-body"><p class="first">broadband thermal reflectance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.01</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">tau_thermal:</th><td class="field-body"><p class="first">broadband thermal transmittance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.01</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Tyear:</th><td class="field-body"><p class="first">mean annual temperature</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">ºC</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">15.0</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">beta:</th><td class="field-body"><p class="first">fraction of photons partitioned to PSII (<strong>0.507</strong> for C3, <strong>0.4</strong> for C4; Yin et al. 2006 <a class="reference internal" href="../zreferences.html#yin2006" id="id1">[9]</a>; Yin and Struik 2012 <a class="reference internal" href="../zreferences.html#yin2012" id="id2">[10]</a>)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.507</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">kNPQs:</th><td class="field-body"><p class="first">rate constant of sustained thermal dissipation (Porcar-Castell 2011 <a class="reference internal" href="../zreferences.html#porcar-castell2011" id="id3">[5]</a>)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">s-1</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">0.0</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">qLs:</th><td class="field-body"><p class="first">fraction of functional reaction centres (Porcar-Castell 2011 <a class="reference internal" href="../zreferences.html#porcar-castell2011" id="id4">[5]</a>)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1.0</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">stressfactor:</th><td class="field-body"><p class="first">optional input: stress factor to reduce <code class="docutils literal notranslate"><span class="pre">Vcmax</span></code> (for example soil moisture, leaf age).</p>
-<table class="last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">units:</th><td class="field-body">-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">type:</th><td class="field-body">double</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">default:</th><td class="field-body">1.0</td>
-</tr>
-</tbody>
-</table>
-</td>
+<td>-</td>
+<td>double</td>
+<td>1.0</td>
+<td>violaxantine to zeaxantine ratio. 0 if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></td>
 </tr>
 </tbody>
 </table>

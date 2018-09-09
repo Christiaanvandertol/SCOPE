@@ -3,26 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="8461150e-c5af-4063-b848-dd285cc776b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_docs.bib" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_docs.bib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/directories/data.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/directories/data.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/api/equations.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/api/equations.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/canopy.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/canopy.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/leafbio.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/leafbio.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/soil.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/soil.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/zreferences.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/zreferences.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_sources/directories/data.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/directories/data.rst.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/canopy.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/canopy.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/leafbio.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/leafbio.rst.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/soil.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/soil.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/directories/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/directories/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/api/equations.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/equations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/objects.inv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/structs/canopy.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/canopy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/leafbio.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/leafbio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/structs/soil.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/soil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/zreferences.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/zreferences.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/directories/data.rst" beforeDir="false" afterPath="$PROJECT_DIR$/directories/data.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs/canopy.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/canopy.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/leafbio.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/leafbio.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs/soil.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/soil.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/+io/select_input.m" beforeDir="false" afterPath="$PROJECT_DIR$/../src/+io/select_input.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/+equations/Soil_Inertia0.m" beforeDir="false" afterPath="$PROJECT_DIR$/../src/+equations/Soil_Inertia0.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,29 +41,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="5" />
-          <entry key="rst" value="69" />
+          <entry key="py" value="8" />
+          <entry key="rst" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="5" />
-          <entry key="ReST" value="69" />
+          <entry key="Python" value="8" />
+          <entry key="ReST" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="108" />
-          <entry key="py" value="600" />
-          <entry key="rst" value="8951" />
-          <entry key="txt" value="72" />
+          <entry key="py" value="814" />
+          <entry key="rst" value="10202" />
+          <entry key="txt" value="94" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="72" />
-          <entry key="Python" value="708" />
-          <entry key="ReST" value="8951" />
+          <entry key="PLAIN_TEXT" value="94" />
+          <entry key="Python" value="922" />
+          <entry key="ReST" value="10202" />
         </counts>
       </usages-collector>
     </session>
@@ -74,6 +72,11 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/structs.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/structs/leafbio.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
@@ -116,6 +119,7 @@
       <find>in_docs.not_used.</find>
       <find>soil.</find>
       <find>nan</find>
+      <find>soil.Tsold</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,16 +171,16 @@
         <option value="$PROJECT_DIR$/api/io.rst" />
         <option value="$PROJECT_DIR$/api/equations.rst" />
         <option value="$PROJECT_DIR$/directories/scope.rst" />
-        <option value="$PROJECT_DIR$/get_input_structs/parse_input_data_xlsx.py" />
-        <option value="$PROJECT_DIR$/structs/leafbio.rst" />
         <option value="$PROJECT_DIR$/structs.rst" />
         <option value="$PROJECT_DIR$/directories/data.rst" />
+        <option value="$PROJECT_DIR$/get_input_structs/parse_input_data_xlsx.py" />
+        <option value="$PROJECT_DIR$/structs/leafbio.rst" />
         <option value="$PROJECT_DIR$/structs/soil.rst" />
         <option value="$PROJECT_DIR$/structs/canopy.rst" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -311,25 +315,31 @@
       <option name="project" value="LOCAL" />
       <updated>1536449051140</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="canopy old style">
+      <created>1536493227247</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1536493227247</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24731183" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.12095175" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32719547" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32719547" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3295129" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -347,7 +357,47 @@
     <MESSAGE value="new directory structure in code with +" />
     <MESSAGE value="soil" />
     <MESSAGE value="leafbio" />
-    <option name="LAST_COMMIT_MESSAGE" value="leafbio" />
+    <MESSAGE value="canopy old style" />
+    <option name="LAST_COMMIT_MESSAGE" value="canopy old style" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>np.isn</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.isnan(row['Variable'])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.isnan(row['Values'])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row['Variable'] is np.nan</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row['Variable']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row['Values'] is np.nan</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row['Values']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/api_rtmo.rst" />
@@ -478,23 +528,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_input_structs/parse_input_data_xlsx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/biochem_in.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/structs/rad.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/leafbio.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/index.rst">
@@ -503,7 +540,20 @@
     <entry file="file://$PROJECT_DIR$/directories/data.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/get_input_structs/parse_input_data_xlsx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/structs.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/leafbio.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/structs/soil.rst">
