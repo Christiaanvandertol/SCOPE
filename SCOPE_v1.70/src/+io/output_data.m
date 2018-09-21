@@ -1,6 +1,6 @@
 function output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax)
 %% OUTPUT DATA
-% author C. Van der tol
+% author C. Van der Tol
 % modified:      31 Jun 2008: (CvdT) included Pntot in output fluxes.dat
 % last modified: 04 Aug 2008: (JT)   included variable output directories
 %                31 Jul 2008: (CvdT) added layer_pn.dat

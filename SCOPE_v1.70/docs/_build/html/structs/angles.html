@@ -93,27 +93,32 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../structs.html">Structs</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">angles</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">angles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialized">Initialized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="biochem_in.html">Biochem_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biochem_out.html">Biochem_out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="canopy.html">Canopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="canopy.html">canopy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constants.html">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fluxes.html">Fluxes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iter.html">iter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="leafbio.html">Leafbio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leafbio.html">leafbio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="leafopt.html">Leafopt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="meteo.html">Meteo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo.html">meteo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="optipar.html">Optipar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles.html">Profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rad.html">rad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_in.html">Resist_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_out.html">Resist_out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="soil.html">Soil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soil.html">soil</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spectral.html">Spectral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="temps.html">Temps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v.html">V</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xyt.html">Xyt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xyt.html">xyt</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
@@ -186,6 +191,92 @@
   <div class="section" id="angles">
 <h1>angles<a class="headerlink" href="#angles" title="Permalink to this headline">¶</a></h1>
 <p>Solar and observation zenith and azimuth angles</p>
+<div class="section" id="initialized">
+<h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">tts</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">tto,</span> <span class="pre">psi</span></code> -&gt; directional_angles</div>
+</div>
+</td>
+<td><a class="reference internal" href="../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tto,</span> <span class="pre">psi</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">tts,</span> <span class="pre">tto,</span> <span class="pre">psi</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tts</span></code></td>
+<td><a class="reference internal" href="../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields initialized in <a class="reference internal" href="../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="10%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>default</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>tts</strong></td>
+<td>deg</td>
+<td>double</td>
+<td>30.0</td>
+<td>solar zenith angle</td>
+</tr>
+<tr class="row-odd"><td><strong>tto</strong></td>
+<td>deg</td>
+<td>double</td>
+<td>0.0</td>
+<td>observer zenith angle</td>
+</tr>
+<tr class="row-even"><td><strong>psi</strong></td>
+<td>deg</td>
+<td>double</td>
+<td>90.0</td>
+<td><div class="first last line-block">
+<div class="line">azimuthal difference between solar and observation angle</div>
+<div class="line">relative azimuth angle</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 

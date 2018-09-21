@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Meteo &mdash; SCOPE 1.8 documentation</title>
+  <title>meteo &mdash; SCOPE 1.8 documentation</title>
   
 
   
@@ -96,20 +96,26 @@
 <li class="toctree-l2"><a class="reference internal" href="angles.html">angles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biochem_in.html">Biochem_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biochem_out.html">Biochem_out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="canopy.html">Canopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="canopy.html">canopy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constants.html">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fluxes.html">Fluxes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iter.html">iter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="leafbio.html">Leafbio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leafbio.html">leafbio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="leafopt.html">Leafopt</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Meteo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">meteo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialized">Initialized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variations">Variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="optipar.html">Optipar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles.html">Profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rad.html">rad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_in.html">Resist_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_out.html">Resist_out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="soil.html">Soil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soil.html">soil</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spectral.html">Spectral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="temps.html">Temps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v.html">V</a></li>
@@ -164,7 +170,7 @@
         
           <li><a href="../structs.html">Structs</a> &raquo;</li>
         
-      <li>Meteo</li>
+      <li>meteo</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,8 +190,122 @@
            <div itemprop="articleBody">
             
   <div class="section" id="meteo">
-<h1>Meteo<a class="headerlink" href="#meteo" title="Permalink to this headline">¶</a></h1>
+<h1>meteo<a class="headerlink" href="#meteo" title="Permalink to this headline">¶</a></h1>
 <p>Meteorological variables</p>
+<div class="section" id="initialized">
+<h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+</div>
+<div class="section" id="variations">
+<h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> uses <code class="docutils literal notranslate"><span class="pre">max(meteo.u,</span> <span class="pre">0.2)</span></code></p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">z</span></code></td>
+<td><a class="reference internal" href="../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Ta,</span> <span class="pre">ea,</span> <span class="pre">Ca,</span> <span class="pre">p</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">u,</span> <span class="pre">z</span></code> -&gt; <a class="reference internal" href="resist_in.html#resist-in"><span class="std std-ref">Resist_in</span></a></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Oa</span></code> -&gt; <a class="reference internal" href="biochem_in.html#biochem-in"><span class="std std-ref">Biochem_in</span></a></div>
+</div>
+</td>
+<td><a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Rin,</span> <span class="pre">Rli</span></code></td>
+<td><a class="reference internal" href="../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Rin,</span> <span class="pre">Rli</span></code></td>
+<td><a class="reference internal" href="../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields initialized in <a class="reference internal" href="../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="10%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>default</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>z</strong></td>
+<td>m</td>
+<td>double</td>
+<td>10.0</td>
+<td>measurement height of meteorological data</td>
+</tr>
+<tr class="row-odd"><td><strong>Rin</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>600.0</td>
+<td>broadband incoming shortwave radiation (0.4-2.5 um)</td>
+</tr>
+<tr class="row-even"><td><strong>Ta</strong></td>
+<td>ºC</td>
+<td>double</td>
+<td>20.0</td>
+<td>air temperature</td>
+</tr>
+<tr class="row-odd"><td><strong>Rli</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>300.0</td>
+<td>broadband incoming longwave radiation (2.5-50 um)</td>
+</tr>
+<tr class="row-even"><td><strong>p</strong></td>
+<td>hPa</td>
+<td>double</td>
+<td>970.0</td>
+<td>air pressure</td>
+</tr>
+<tr class="row-odd"><td><strong>ea</strong></td>
+<td>hPa</td>
+<td>double</td>
+<td>15.0</td>
+<td>atmospheric vapour pressure</td>
+</tr>
+<tr class="row-even"><td><strong>u</strong></td>
+<td>m s-1</td>
+<td>double</td>
+<td>2.0</td>
+<td>wind speed at height z</td>
+</tr>
+<tr class="row-odd"><td><strong>Ca</strong></td>
+<td>ppm</td>
+<td>double</td>
+<td>380.0</td>
+<td>atmospheric CO2 concentration</td>
+</tr>
+<tr class="row-even"><td><strong>Oa</strong></td>
+<td>per mille</td>
+<td>double</td>
+<td>209.0</td>
+<td>atmospheric O2 concentration</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 

@@ -3,24 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="8461150e-c5af-4063-b848-dd285cc776b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/api/equations.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/api/equations.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/api/io.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/api/io.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/canopy.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/canopy.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/leafbio.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/leafbio.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/soil.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/soil.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/canopy.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/canopy.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/leafbio.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/leafbio.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/soil.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/soil.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/api/equations.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/equations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/meteo.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/meteo.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/xyt.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/xyt.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/meteo.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/meteo.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/xyt.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs/xyt.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/api.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/api/io.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/io.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/objects.inv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/structs/canopy.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/canopy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/structs/leafbio.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/leafbio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/structs/soil.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/soil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/canopy.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/canopy.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/leafbio.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/leafbio.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/soil.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/soil.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/+equations/Soil_Inertia0.m" beforeDir="false" afterPath="$PROJECT_DIR$/../src/+equations/Soil_Inertia0.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/meteo.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/meteo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/xyt.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/xyt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/angles.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/angles.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/meteo.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/meteo.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/xyt.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/xyt.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../input_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../input_data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/+io/output_data.m" beforeDir="false" afterPath="$PROJECT_DIR$/../src/+io/output_data.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,38 +33,44 @@
     <session id="1869775144">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="8" />
-          <entry key="rst" value="72" />
+          <entry key="html" value="1" />
+          <entry key="py" value="9" />
+          <entry key="rst" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="HTML" value="1" />
           <entry key="Python" value="8" />
-          <entry key="ReST" value="72" />
+          <entry key="ReST" value="75" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="108" />
-          <entry key="py" value="814" />
-          <entry key="rst" value="10202" />
-          <entry key="txt" value="94" />
+          <entry key="py" value="1627" />
+          <entry key="rst" value="10712" />
+          <entry key="txt" value="142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="94" />
+          <entry key="PLAIN_TEXT" value="142" />
           <entry key="Python" value="922" />
-          <entry key="ReST" value="10202" />
+          <entry key="ReST" value="10712" />
+          <entry key="Scratch" value="813" />
         </counts>
       </usages-collector>
     </session>
@@ -76,22 +83,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/leafbio.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/soil.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/structs/canopy.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/rad.rst">
+        <entry file="file://$PROJECT_DIR$/structs/xyt.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/structs/angles.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
@@ -103,13 +105,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="782">
               <caret line="46" selection-start-line="46" selection-end-line="46" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -140,7 +149,6 @@
         <option value="$PROJECT_DIR$/directories/outputs.rst" />
         <option value="$PROJECT_DIR$/directories/output_files.rst" />
         <option value="$PROJECT_DIR$/structs/rad.rst" />
-        <option value="$PROJECT_DIR$/structs/xyt.rst" />
         <option value="$PROJECT_DIR$/structs/v.rst" />
         <option value="$PROJECT_DIR$/structs/temps.rst" />
         <option value="$PROJECT_DIR$/structs/spectral.rst" />
@@ -149,14 +157,12 @@
         <option value="$PROJECT_DIR$/structs/profiles.rst" />
         <option value="$PROJECT_DIR$/structs/optipar.rst" />
         <option value="$PROJECT_DIR$/structs/options.rst" />
-        <option value="$PROJECT_DIR$/structs/meteo.rst" />
         <option value="$PROJECT_DIR$/structs/leafopt.rst" />
         <option value="$PROJECT_DIR$/structs/iter.rst" />
         <option value="$PROJECT_DIR$/structs/fluxes.rst" />
         <option value="$PROJECT_DIR$/structs/constants.rst" />
         <option value="$PROJECT_DIR$/structs/biochem_out.rst" />
         <option value="$PROJECT_DIR$/structs/biochem_in.rst" />
-        <option value="$PROJECT_DIR$/structs/angles.rst" />
         <option value="$PROJECT_DIR$/api.rst" />
         <option value="$PROJECT_DIR$/conf.py" />
         <option value="$PROJECT_DIR$/api/visualization.rst" />
@@ -177,11 +183,15 @@
         <option value="$PROJECT_DIR$/structs/leafbio.rst" />
         <option value="$PROJECT_DIR$/structs/soil.rst" />
         <option value="$PROJECT_DIR$/structs/canopy.rst" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/decorator.py" />
+        <option value="$PROJECT_DIR$/structs/meteo.rst" />
+        <option value="$PROJECT_DIR$/structs/xyt.rst" />
+        <option value="$PROJECT_DIR$/structs/angles.rst" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="952" />
+    <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
   </component>
@@ -191,7 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,10 +229,20 @@
               <item name="docs" type="462c0819:PsiDirectoryNode" />
               <item name="structs" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,7 +260,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.decorator">
+    <configuration name="decorator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="docs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/decorator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="parse_input_data_xlsx" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="docs" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -263,8 +303,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.parse_input_data_xlsx" />
+      <item itemvalue="Python.decorator" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.decorator" />
         <item itemvalue="Python.parse_input_data_xlsx" />
       </list>
     </recent_temporary>
@@ -322,18 +367,25 @@
       <option name="project" value="LOCAL" />
       <updated>1536493227247</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fields and usage as .. list-table:">
+      <created>1536504995048</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1536504995048</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="781" height="830" extended-state="0" />
+    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12095175" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.5846774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32719547" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32294616" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -358,7 +410,8 @@
     <MESSAGE value="soil" />
     <MESSAGE value="leafbio" />
     <MESSAGE value="canopy old style" />
-    <option name="LAST_COMMIT_MESSAGE" value="canopy old style" />
+    <MESSAGE value="fields and usage as .. list-table:" />
+    <option name="LAST_COMMIT_MESSAGE" value="fields and usage as .. list-table:" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -400,10 +453,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api_rtmo.rst" />
-    <entry file="file://$PROJECT_DIR$/../../../read_the_docs/tutorial/pycon-sphinx-tutorial/crawler/src/docs/index.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/zreferences.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
@@ -424,9 +473,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/directories/outputs.rst" />
     <entry file="file://$PROJECT_DIR$/directories/output_files.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/xyt.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/structs/v.rst">
@@ -453,9 +499,6 @@
     <entry file="file://$PROJECT_DIR$/structs/options.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/meteo.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/leafopt.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
@@ -471,9 +514,6 @@
     <entry file="file://$PROJECT_DIR$/structs/biochem_out.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/angles.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://C:/Python36/Lib/site-packages/sphinxcontrib/mat_types.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -481,16 +521,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/from_readme/directories.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/from_readme/directories.rst" />
     <entry file="file://$PROJECT_DIR$/from_readme/architecture.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/api/visualization.rst" />
-    <entry file="file://$PROJECT_DIR$/api/supporting.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api/supporting.rst" />
     <entry file="file://$PROJECT_DIR$/from_readme/getting_started.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
@@ -521,20 +557,7 @@
     <entry file="file://$PROJECT_DIR$/directories/scope.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="46" selection-start-line="46" selection-end-line="46" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/biochem_in.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/rad.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/directories/data.rst">
@@ -544,14 +567,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/structs/leafbio.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
@@ -559,7 +576,42 @@
     <entry file="file://$PROJECT_DIR$/structs/soil.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/structs/rad.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/decorator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" selection-start-line="46" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/html/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/meteo.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/xyt.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/structs/canopy.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/angles.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>
