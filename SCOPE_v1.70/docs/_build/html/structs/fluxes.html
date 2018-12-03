@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="iter" href="iter.html" />
-    <link rel="prev" title="Constants" href="constants.html" /> 
+    <link rel="prev" title="constants" href="constants.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -83,8 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/acknowledgement.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/software.html">Software requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../from_readme/improvements.html">Summary of improvements since first release</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../from_readme/versions_table.html">Overview of modifications made to the SCOPE model.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/architecture.html">Model architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/getting_started.html">Getting started</a></li>
@@ -94,9 +92,18 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../structs.html">Structs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="input/toc_input.html">input structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biochem_in.html">Biochem_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biochem_out.html">Biochem_out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="constants.html">Constants</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Fluxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants.html">constants</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fluxes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialized">Initialized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculated">Calculated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-file">Output file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variations">Variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="iter.html">iter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="leafopt.html">Leafopt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
@@ -105,7 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="rad.html">rad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_in.html">Resist_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_out.html">Resist_out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spectral.html">Spectral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectral.html">spectral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="temps.html">Temps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v.html">V</a></li>
 </ul>
@@ -180,6 +187,176 @@
   <div class="section" id="fluxes">
 <h1>Fluxes<a class="headerlink" href="#fluxes" title="Permalink to this headline">¶</a></h1>
 <p>Fluxes calculated by the model (turbulent heat exchange, radiation, CO2)</p>
+<div class="section" id="initialized">
+<h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
+</div>
+<div class="section" id="calculated">
+<h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+</div>
+<div class="section" id="output-file">
+<h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">fluxes.dat</span></code></p>
+</div>
+<div class="section" id="variations">
+<h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
+<p>Absorbed photosynthetically active radiation (aPAR) can be calculated by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>
+(if <code class="docutils literal notranslate"><span class="pre">options.clc_ebal</span></code>) or by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <a class="reference internal" href="../api/equations.html#src.+equations.meanleaf" title="src.+equations.meanleaf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">meanleaf()</span></code></a></p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">aPAR_Cab_eta</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">rad.Femtot</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">SCOPE</span></code> if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">aPAR_Wm2</span></code> -&gt; fPAR</td>
+<td><a class="reference internal" href="../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
+</tr>
+<tr class="row-even"><td>all except <code class="docutils literal notranslate"><span class="pre">Au</span></code> and <code class="docutils literal notranslate"><span class="pre">Ah</span></code></td>
+<td><a class="reference internal" href="../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields initialized in <a class="reference internal" href="../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Rntot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>total net radiation</td>
+</tr>
+<tr class="row-odd"><td><strong>lEtot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>total latent heat flux</td>
+</tr>
+<tr class="row-even"><td><strong>Htot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>total sensible heat</td>
+</tr>
+<tr class="row-odd"><td><strong>Atot</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>total net CO2 uptake (canopy + soil)</td>
+</tr>
+<tr class="row-even"><td><strong>Rnctot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>net radiation of canopy</td>
+</tr>
+<tr class="row-odd"><td><strong>lEctot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>latent heat flux of canopy</td>
+</tr>
+<tr class="row-even"><td><strong>Hctot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>sensible heat of canopy</td>
+</tr>
+<tr class="row-odd"><td><strong>Actot</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>net photosynthesis of canopy</td>
+</tr>
+<tr class="row-even"><td><strong>Rnstot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>net radiation of soil</td>
+</tr>
+<tr class="row-odd"><td><strong>lEstot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>latent heat flux of soil</td>
+</tr>
+<tr class="row-even"><td><strong>Hstot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>sensible heat of soil</td>
+</tr>
+<tr class="row-odd"><td><strong>Gtot</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>soil heat flux</td>
+</tr>
+<tr class="row-even"><td><strong>Resp</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>soil respiration rate</td>
+</tr>
+</tbody>
+</table>
+<p>Fields initialized in <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> or in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> if <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span> <span class="pre">!=</span> <span class="pre">1</span></code></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>aPAR</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>absorbed PAR by leaves</td>
+</tr>
+<tr class="row-odd"><td><strong>aPAR_Cab</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>absorbed PAR by chlorophylls a, b</td>
+</tr>
+<tr class="row-even"><td><strong>aPAR_Wm2</strong></td>
+<td>W m-2</td>
+<td>double</td>
+<td>absorbed PAR</td>
+</tr>
+<tr class="row-odd"><td><strong>aPAR_Cab_eta</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>green ePAR * relative fluorescence emission efficiency</td>
+</tr>
+<tr class="row-even"><td><strong>Au</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>sunlit leaves net CO2 assimilation</td>
+</tr>
+<tr class="row-odd"><td><strong>Ah</strong></td>
+<td>umol m-2 s-1</td>
+<td>double</td>
+<td>shaded leaves net CO2 assimilation</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -193,7 +370,7 @@
         <a href="iter.html" class="btn btn-neutral float-right" title="iter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="constants.html" class="btn btn-neutral" title="Constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="constants.html" class="btn btn-neutral" title="constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -202,7 +379,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Egor.
+        &copy; Copyright 2018, Egor
 
     </p>
   </div>
@@ -221,20 +398,13 @@
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.8',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
 
   
 

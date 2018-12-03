@@ -1,3 +1,139 @@
 Fluxes
 ========
 Fluxes calculated by the model (turbulent heat exchange, radiation, CO2)
+
+Initialized
+""""""""""""
+
+:func:`.initialize_output_structures`
+
+
+Calculated
+""""""""""""
+
+:func:`.ebal`
+
+Output file
+""""""""""""
+
+``fluxes.dat``
+
+Variations
+""""""""""""
+
+Absorbed photosynthetically active radiation (aPAR) can be calculated by :func:`.ebal`
+(if ``options.clc_ebal``) or by ``SCOPE.m`` and :func:`.meanleaf`
+
+Used
+"""""
+.. list-table::
+    :widths: 75 25
+
+    * - variable
+      - user
+    * - ``aPAR_Cab_eta`` -> ``rad.Femtot``
+      - ``SCOPE`` if ``options.calc_fluor``
+    * - ``aPAR_Wm2`` -> fPAR
+      - :func:`.output_data`
+    * - all except ``Au`` and ``Ah``
+      - :func:`.output_data`
+
+
+Fields
+"""""""
+
+Fields initialized in :func:`.initialize_output_structures`
+
+.. list-table::
+    :widths: 10 10 20 60
+
+    * - variable
+      - units
+      - type
+      - description
+    * - **Rntot**
+      - W m-2
+      - double
+      - total net radiation
+    * - **lEtot**
+      - W m-2
+      - double
+      - total latent heat flux
+    * - **Htot**
+      - W m-2
+      - double
+      - total sensible heat
+    * - **Atot**
+      - umol m-2 s-1
+      - double
+      - total net CO2 uptake (canopy + soil)
+    * - **Rnctot**
+      - W m-2
+      - double
+      - net radiation of canopy
+    * - **lEctot**
+      - W m-2
+      - double
+      - latent heat flux of canopy
+    * - **Hctot**
+      - W m-2
+      - double
+      - sensible heat of canopy
+    * - **Actot**
+      - umol m-2 s-1
+      - double
+      - net photosynthesis of canopy
+    * - **Rnstot**
+      - W m-2
+      - double
+      - net radiation of soil
+    * - **lEstot**
+      - W m-2
+      - double
+      - latent heat flux of soil
+    * - **Hstot**
+      - W m-2
+      - double
+      - sensible heat of soil
+    * - **Gtot**
+      - W m-2
+      - double
+      - soil heat flux
+    * - **Resp**
+      - umol m-2 s-1
+      - double
+      - soil respiration rate
+
+Fields initialized in :func:`.ebal` or in ``SCOPE.m`` if ``options.calc_ebal != 1``
+
+.. list-table::
+    :widths: 10 10 20 60
+
+    * - variable
+      - units
+      - type
+      - description
+    * - **aPAR**
+      - umol m-2 s-1
+      - double
+      - absorbed PAR by leaves
+    * - **aPAR_Cab**
+      - umol m-2 s-1
+      - double
+      - absorbed PAR by chlorophylls a, b
+    * - **aPAR_Wm2**
+      - W m-2
+      - double
+      - absorbed PAR
+    * - **aPAR_Cab_eta**
+      - umol m-2 s-1
+      - double
+      - green ePAR * relative fluorescence emission efficiency
+    * - **Au**
+      - umol m-2 s-1
+      - double
+      - sunlit leaves net CO2 assimilation
+    * - **Ah**
+      - umol m-2 s-1
+      - double
+      - shaded leaves net CO2 assimilation
