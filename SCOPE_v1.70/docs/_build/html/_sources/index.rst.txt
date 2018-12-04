@@ -11,14 +11,14 @@ Welcome to SCOPE's documentation!
    :caption: Contents:
 
    from_readme/history
-   from_readme/acknowledgement
+   from_readme/acknowledgements
    from_readme/software
    from_readme/improvements
    from_readme/versions_table
    from_readme/architecture
    directories
    from_readme/getting_started
-   directories/output_files
+   output_files
    zreferences
 
 

@@ -26,16 +26,12 @@ Used
     * - ``Cab, Cca, V2Z, Cw, Cdm, Cs, Cant, N, fqe``
       - | :func:`.fluspect_B_CX` if ``options.calc_PSI``
         | :func:`.fluspect_B_CX_PSI_PSII_combined`
-    * - ``Type, m, Rdparam, Tyear, beta, qLs, kNPQs, stressfactor, Tparam, Vcmo`` -> :ref:`Biochem_in`
+    * - ``Type, m, Rdparam, Tyear, beta, qLs, kNPQs, stressfactor, Tparam, Vcmo`` -> :ref:`structs/biochem_in:Biochem_in`
       - :func:`.ebal`
     * - ``Vcmo, Cab``
       - :func:`.load_timeseries`
     * - ``rho_thermal, tau_thermal, fqe``
       - ``SCOPE.m``
-
-
-
-==================================================================
 
 Fields
 """""""

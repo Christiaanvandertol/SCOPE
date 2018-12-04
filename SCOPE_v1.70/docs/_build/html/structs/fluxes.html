@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fluxes &mdash; SCOPE 1.8 documentation</title>
+  <title>fluxes &mdash; SCOPE 1.8 documentation</title>
   
 
   
@@ -81,12 +81,14 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/history.html">Brief history of the model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../from_readme/acknowledgement.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../from_readme/acknowledgements.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/software.html">Software requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../from_readme/improvements.html">improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../from_readme/versions_table.html">versions_table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/architecture.html">Model architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/getting_started.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../directories/output_files.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output_files.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 </ul>
 <ul class="current">
@@ -95,7 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="biochem_in.html">Biochem_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biochem_out.html">Biochem_out</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constants.html">constants</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Fluxes</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fluxes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#initialized">Initialized</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calculated">Calculated</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#output-file">Output file</a></li>
@@ -113,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="resist_in.html">Resist_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_out.html">Resist_out</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spectral.html">spectral</a></li>
-<li class="toctree-l2"><a class="reference internal" href="temps.html">Temps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermal.html">thermal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v.html">V</a></li>
 </ul>
 </li>
@@ -165,7 +167,7 @@
         
           <li><a href="../structs.html">Structs</a> &raquo;</li>
         
-      <li>Fluxes</li>
+      <li>fluxes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -185,7 +187,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fluxes">
-<h1>Fluxes<a class="headerlink" href="#fluxes" title="Permalink to this headline">¶</a></h1>
+<h1>fluxes<a class="headerlink" href="#fluxes" title="Permalink to this headline">¶</a></h1>
 <p>Fluxes calculated by the model (turbulent heat exchange, radiation, CO2)</p>
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
@@ -197,7 +199,7 @@
 </div>
 <div class="section" id="output-file">
 <h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">fluxes.dat</span></code></p>
+<p><a class="reference internal" href="../outfiles/fluxes.html#fluxes-dat"><span class="std std-ref">fluxes.dat</span></a></p>
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
@@ -216,12 +218,9 @@
 <td>user</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">aPAR_Cab_eta</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">rad.Femtot</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">SCOPE</span></code> if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">SCOPE</span></code> (if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code>)</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">aPAR_Wm2</span></code> -&gt; fPAR</td>
-<td><a class="reference internal" href="../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
-</tr>
-<tr class="row-even"><td>all except <code class="docutils literal notranslate"><span class="pre">Au</span></code> and <code class="docutils literal notranslate"><span class="pre">Ah</span></code></td>
 <td><a class="reference internal" href="../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
 </tr>
 </tbody>
@@ -346,12 +345,12 @@
 </tr>
 <tr class="row-even"><td><strong>Au</strong></td>
 <td>umol m-2 s-1</td>
-<td>double</td>
+<td>[13 x 36 x 60] double</td>
 <td>sunlit leaves net CO2 assimilation</td>
 </tr>
 <tr class="row-odd"><td><strong>Ah</strong></td>
 <td>umol m-2 s-1</td>
-<td>double</td>
+<td>[60 x 1] double</td>
 <td>shaded leaves net CO2 assimilation</td>
 </tr>
 </tbody>

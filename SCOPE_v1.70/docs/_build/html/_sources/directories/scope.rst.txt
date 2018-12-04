@@ -32,16 +32,16 @@ The data are stored in the following directory:
 
     of the time when the simulation was started.
 
-for files see :ref:`output_files`
+for files see :ref:`output_files:Output files`
 
 src
 ----
 
 .m files with the code.
 
-* :ref:`+equations`
-* :ref:`+helpers`
-* :ref:`+io (input output)`
-* :ref:`+plot`
-* :ref:`not_used`
+* :ref:`api/equations:+equations`
+* :ref:`api/helpers:+helpers`
+* :ref:`api/io:+io (input output)`
+* :ref:`api/plot:+plot`
+* :ref:`api/not_used:not_used`
 

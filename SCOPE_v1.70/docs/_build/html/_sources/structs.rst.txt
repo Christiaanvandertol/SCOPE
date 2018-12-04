@@ -20,5 +20,5 @@ Structs
     structs/resist_in
     structs/resist_out
     structs/spectral
-    structs/temps
+    structs/thermal
     structs/v

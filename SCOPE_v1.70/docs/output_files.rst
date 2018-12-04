@@ -1,7 +1,15 @@
-.. _output_files:
-
 Output files
 ==============
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Output files
+   :numbered:
+
+   outfiles/fluxes
+   outfiles/surftemp
+   outfiles/aerodyn
+
 
 in each simulation
 -------------------

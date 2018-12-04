@@ -46,6 +46,8 @@ extensions = ['sphinx.ext.autodoc',
 
 primary_domain = 'mat'
 
+autosectionlabel_prefix_document = True  # ref:`fluxes:usage` instead of ref:`usage`
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 

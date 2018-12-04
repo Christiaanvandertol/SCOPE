@@ -1,4 +1,4 @@
-Fluxes
+fluxes
 ========
 Fluxes calculated by the model (turbulent heat exchange, radiation, CO2)
 
@@ -16,7 +16,7 @@ Calculated
 Output file
 """"""""""""
 
-``fluxes.dat``
+:ref:`outfiles/fluxes:fluxes.dat`
 
 Variations
 """"""""""""
@@ -32,12 +32,9 @@ Used
     * - variable
       - user
     * - ``aPAR_Cab_eta`` -> ``rad.Femtot``
-      - ``SCOPE`` if ``options.calc_fluor``
+      - ``SCOPE`` (if ``options.calc_fluor``)
     * - ``aPAR_Wm2`` -> fPAR
       - :func:`.output_data`
-    * - all except ``Au`` and ``Ah``
-      - :func:`.output_data`
-
 
 Fields
 """""""
@@ -131,9 +128,9 @@ Fields initialized in :func:`.ebal` or in ``SCOPE.m`` if ``options.calc_ebal != 
       - green ePAR * relative fluorescence emission efficiency
     * - **Au**
       - umol m-2 s-1
-      - double
+      - [13 x 36 x 60] double
       - sunlit leaves net CO2 assimilation
     * - **Ah**
       - umol m-2 s-1
-      - double
+      - [60 x 1] double
       - shaded leaves net CO2 assimilation
