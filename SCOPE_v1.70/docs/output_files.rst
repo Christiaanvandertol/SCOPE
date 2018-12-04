@@ -9,6 +9,18 @@ Output files
    outfiles/fluxes
    outfiles/surftemp
    outfiles/aerodyn
+   outfiles/radiation
+   outfiles/spectrum_hemis_optical
+   outfiles/spectrum_obsdir_optical
+   outfiles/irradiance_spectra
+   outfiles/reflectance
+   outfiles/wl
+
+
+   outfiles/spectrum_obsdir_BlackBody
+   outfiles/spectrum_hemis_thermal
+   outfiles/spectrum_obsdir_thermal
+   outfiles/gap
 
 
 in each simulation

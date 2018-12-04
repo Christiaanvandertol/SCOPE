@@ -1,6 +1,10 @@
 fluxes.dat
 ===========
 
+rows - time (simulation number)
+
+columns - variables
+
 .. list-table::
     :widths: 20 20 60
 

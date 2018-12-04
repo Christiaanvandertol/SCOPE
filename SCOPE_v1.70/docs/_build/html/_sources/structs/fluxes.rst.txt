@@ -5,7 +5,7 @@ Fluxes calculated by the model (turbulent heat exchange, radiation, CO2)
 Initialized
 """"""""""""
 
-:func:`.initialize_output_structures`
+:func:`.initialize_output_structures` and :func:`.ebal`
 
 
 Calculated
@@ -21,8 +21,8 @@ Output file
 Variations
 """"""""""""
 
-Absorbed photosynthetically active radiation (aPAR) can be calculated by :func:`.ebal`
-(if ``options.clc_ebal``) or by ``SCOPE.m`` and :func:`.meanleaf`
+Various absorbed photosynthetically active radiations (aPAR) can be calculated by :func:`.ebal`
+(if ``options.clc_ebal``) or by ``SCOPE.m``
 
 Used
 """""
@@ -39,7 +39,7 @@ Used
 Fields
 """""""
 
-Fields initialized in :func:`.initialize_output_structures`
+Fields calculated in :func:`.ebal`
 
 .. list-table::
     :widths: 10 10 20 60
@@ -100,8 +100,16 @@ Fields initialized in :func:`.initialize_output_structures`
       - umol m-2 s-1
       - double
       - soil respiration rate
+    * - **Au**
+      - umol m-2 s-1
+      - [13 x 36 x 60] double
+      - sunlit leaves net CO2 assimilation
+    * - **Ah**
+      - umol m-2 s-1
+      - [60 x 1] double
+      - shaded leaves net CO2 assimilation
 
-Fields initialized in :func:`.ebal` or in ``SCOPE.m`` if ``options.calc_ebal != 1``
+Fields added by :func:`.ebal`  (if ``options.calc_ebal == 1``) or by ``SCOPE.m``
 
 .. list-table::
     :widths: 10 10 20 60
@@ -126,11 +134,3 @@ Fields initialized in :func:`.ebal` or in ``SCOPE.m`` if ``options.calc_ebal != 
       - umol m-2 s-1
       - double
       - green ePAR * relative fluorescence emission efficiency
-    * - **Au**
-      - umol m-2 s-1
-      - [13 x 36 x 60] double
-      - sunlit leaves net CO2 assimilation
-    * - **Ah**
-      - umol m-2 s-1
-      - [60 x 1] double
-      - shaded leaves net CO2 assimilation

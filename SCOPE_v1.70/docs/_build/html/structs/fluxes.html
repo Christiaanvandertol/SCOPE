@@ -191,7 +191,7 @@
 <p>Fluxes calculated by the model (turbulent heat exchange, radiation, CO2)</p>
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
+<p><a class="reference internal" href="../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a> and <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 </div>
 <div class="section" id="calculated">
 <h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
@@ -203,8 +203,8 @@
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
-<p>Absorbed photosynthetically active radiation (aPAR) can be calculated by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>
-(if <code class="docutils literal notranslate"><span class="pre">options.clc_ebal</span></code>) or by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <a class="reference internal" href="../api/equations.html#src.+equations.meanleaf" title="src.+equations.meanleaf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">meanleaf()</span></code></a></p>
+<p>Various absorbed photosynthetically active radiations (aPAR) can be calculated by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>
+(if <code class="docutils literal notranslate"><span class="pre">options.clc_ebal</span></code>) or by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
@@ -228,7 +228,7 @@
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <a class="reference internal" href="../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
+<p>Fields calculated in <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="10%" />
@@ -307,9 +307,19 @@
 <td>double</td>
 <td>soil respiration rate</td>
 </tr>
+<tr class="row-odd"><td><strong>Au</strong></td>
+<td>umol m-2 s-1</td>
+<td>[13 x 36 x 60] double</td>
+<td>sunlit leaves net CO2 assimilation</td>
+</tr>
+<tr class="row-even"><td><strong>Ah</strong></td>
+<td>umol m-2 s-1</td>
+<td>[60 x 1] double</td>
+<td>shaded leaves net CO2 assimilation</td>
+</tr>
 </tbody>
 </table>
-<p>Fields initialized in <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> or in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> if <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span> <span class="pre">!=</span> <span class="pre">1</span></code></p>
+<p>Fields added by <a class="reference internal" href="../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>  (if <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code>) or by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="10%" />
@@ -342,16 +352,6 @@
 <td>umol m-2 s-1</td>
 <td>double</td>
 <td>green ePAR * relative fluorescence emission efficiency</td>
-</tr>
-<tr class="row-even"><td><strong>Au</strong></td>
-<td>umol m-2 s-1</td>
-<td>[13 x 36 x 60] double</td>
-<td>sunlit leaves net CO2 assimilation</td>
-</tr>
-<tr class="row-odd"><td><strong>Ah</strong></td>
-<td>umol m-2 s-1</td>
-<td>[60 x 1] double</td>
-<td>shaded leaves net CO2 assimilation</td>
 </tr>
 </tbody>
 </table>

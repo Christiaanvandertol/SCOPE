@@ -37,7 +37,7 @@ Used
 Fields
 """""""
 
-Fields initialized in :func:`.initialize_output_structures`
+Fields added in :func:`.ebal`
 
 .. list-table::
     :widths: 10 10 20 60
@@ -78,16 +78,6 @@ Fields initialized in :func:`.initialize_output_structures`
       - ºC
       - double
       - air temperature as in input
-
-Fields initialized in :func:`.ebal`
-
-.. list-table::
-    :widths: 10 10 20 60
-
-    * - variable
-      - units
-      - type
-      - description
     * - **Tcu**
       - ºC
       - [13 x 36 x 60] double
