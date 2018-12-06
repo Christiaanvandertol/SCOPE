@@ -40,6 +40,23 @@ if ``options.calc_planck``
 - :ref:`outfiles/spectrum_hemis_thermal:spectrum_hemis_thermal.dat`
 - :ref:`outfiles/spectrum_obsdir_thermal:spectrum_obsdir_thermal.dat`
 
+if ``options.calc_fluor``
+
+- :ref:`outfiles/fluorescence:fluorescence.dat`
+- :ref:`outfiles/fluorescencePSI:fluorescencePSI.dat`
+- :ref:`outfiles/fluorescencePSII:fluorescencePSII.dat`
+- :ref:`outfiles/fluorescence_hemis:fluorescence_hemis.dat`
+- :ref:`outfiles/fluorescence_emitted_by_all_leaves:fluorescence_emitted_by_all_leaves.dat`
+- :ref:`outfiles/fluorescence_emitted_by_all_photosystems:fluorescence_emitted_by_all_photosystems.dat`
+- :ref:`outfiles/fluorescence_sunlit:fluorescence_sunlit.dat`
+- :ref:`outfiles/fluorescence_shaded:fluorescence_shaded.dat`
+- :ref:`outfiles/fluorescence_scattered:fluorescence_scattered.dat`
+
+Variations
+""""""""""""
+
+if ``options.calc_PSI`` fluorescence (``LoF_``) is partitioned between photosystems ``LoF1_, LoF2_``
+
 
 Used
 """""
@@ -205,27 +222,27 @@ Fields initialized in :func:`.RTMf`
       - type
       - description
     * - **Fem_**
-      - [211 x 1] W m-2 sr-1
-      - double
+      - W m-2 um-1
+      - [211 x 1] double
       -
     * - **Fhem_**
-      - W m-2 sr-1
+      - W m-2 um-1
       - [211 x 1] double
       -
     * - **LoF_**
-      - W m-2 sr-1
+      - W m-2 um-1 sr-1
       - [211 x 1] double
-      -
+      - fluorescence per wavelength
     * - **LoF1_**
-      - W m-2 sr-1
+      - W m-2 um-1 sr-1
       - [211 x 1] double
-      -
+      - fluorescence from photosystem I (PSI) per wavelength
     * - **LoF2_**
-      - W m-2 sr-1
+      - W m-2 um-1 sr-1
       - [211 x 1] double
-      -
+      - fluorescence from photosystem II (PSII) per wavelength
     * - **Fhem_**
-      - W m-2 sr-1
+      - W m-2 um-1
       - [211 x 1] double
       -
     * - **Fmin_**
@@ -237,21 +254,21 @@ Fields initialized in :func:`.RTMf`
       - [211 x 61] double
       -
     * - **LoF_sunlit**
-      - W m-2 sr-1
+      - W m-2 um-1 sr-1
       - [211 x 2] double
-      -
+      - TOC fluorescence contribution from sunlit leaves in observer direction per wavelengths
     * - **LoF_shaded**
-      - W m-2 sr-1
+      - W m-2 um-1 sr-1
       - [211 x 2] double
-      -
+      - TOC fluorescence contribution from shaded leaves in observer direction per wavelengths
     * - **LoF_scattered**
-      - W m-2 sr-1
+      - W m-2 um-1 sr-1
       - [211 x 2] double
-      -
+      - TOC fluorescence contribution from leaves after scattering
     * - **LoF_soil**
-      - W m-2 sr-1
+      - W m-2 um-1 sr-1
       - [211 x 2] double
-      -
+      - TOC fluorescence contribution from soil after scattering
     * - **Eoutf**
       - W m-2 sr-1
       - double
@@ -359,4 +376,4 @@ Fields added in ``SCOPE.m``
     * - **Femtot**
       -
       - [211 x 1] double
-      -
+      - total emitted fluorescence by all photosystems

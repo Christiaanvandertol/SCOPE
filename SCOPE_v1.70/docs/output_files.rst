@@ -35,6 +35,15 @@ Output files
    outfiles/layer_rn
    outfiles/layer_fluorescence
 
+   outfiles/fluorescence
+   outfiles/fluorescencePSI
+   outfiles/fluorescencePSII
+   outfiles/fluorescence_hemis
+   outfiles/fluorescence_emitted_by_all_leaves
+   outfiles/fluorescence_emitted_by_all_photosystems
+   outfiles/fluorescence_sunlit
+   outfiles/fluorescence_shaded
+   outfiles/fluorescence_scattered
 
 
 

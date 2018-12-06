@@ -1,12 +1,9 @@
-Thermal
+thermal
 ========
 Leaf, soil and air temperatures
 
-Initialized
-""""""""""""
 
-:func:`.initialize_output_structures`
-
+Fields are initialized by :func:`.initialize_output_structures`
 
 Calculated
 """"""""""""
