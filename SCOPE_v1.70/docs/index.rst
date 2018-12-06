@@ -23,6 +23,7 @@ Welcome to SCOPE's documentation!
 
 
 Programmer Reference
+=====================
 
 .. toctree::
 

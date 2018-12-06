@@ -1,4 +1,4 @@
-thermal
+Thermal
 ========
 Leaf, soil and air temperatures
 
@@ -16,9 +16,8 @@ Calculated
 Output file
 """"""""""""
 
-:ref:`outfiles/surftemp:surftemp.dat`
-
-:ref:`outfiles/aerodyn:aerodyn.dat`
+- :ref:`outfiles/surftemp:surftemp.dat`
+- :ref:`outfiles/aerodyn:aerodyn.dat`
 
 Used
 """""

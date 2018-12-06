@@ -15,12 +15,27 @@ Output files
    outfiles/irradiance_spectra
    outfiles/reflectance
    outfiles/wl
+   outfiles/BOC_irradiance
+   outfiles/pars_and_input
+   outfiles/pars_and_input_short
 
 
    outfiles/spectrum_obsdir_BlackBody
    outfiles/spectrum_hemis_thermal
    outfiles/spectrum_obsdir_thermal
    outfiles/gap
+
+   outfiles/layer_aPAR
+   outfiles/layer_aPAR_Cab
+   outfiles/leaftemp
+   outfiles/layer_H
+   outfiles/layer_lE
+   outfiles/layer_A
+   outfiles/layer_NPQ
+   outfiles/layer_rn
+   outfiles/layer_fluorescence
+
+
 
 
 in each simulation

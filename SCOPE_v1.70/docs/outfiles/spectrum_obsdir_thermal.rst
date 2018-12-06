@@ -1,7 +1,7 @@
 spectrum_obsdir_thermal.dat
 ==============================
 
-.. Note:: ``options.calc_ebal`` && ``options.calc_planck``
+.. Note:: ``options.calc_ebal`` & ``options.calc_planck``
 
 rows - time (simulation number)
 

@@ -5,37 +5,40 @@ Radiation fluxes: both input (MODTRAN) and output
 
 A large number of radiative fluxes: spectrally distributed and integrated, and canopy radiative transfer coefficients.
 
-Initialized
-""""""""""""
-
-:func:`.initialize_output_structures`
-
+Fields are initialized by :func:`.initialize_output_structures`
 
 Calculated
 """"""""""""
+:func:`.RTMo`
+
+:func:`.RTMf`
+
+:func:`.RTMt_planck`
+
+:func:`.RTMt_sb`
 
 :func:`.ebal`
+
+``SCOPE.m``
 
 Output file
 """"""""""""
 
-:ref:`outfiles/radiation:radiation.dat`
+- :ref:`outfiles/radiation:radiation.dat`
+- :ref:`outfiles/spectrum_obsdir_optical:spectrum_obsdir_optical.dat`
+- :ref:`outfiles/spectrum_hemis_optical:spectrum_hemis_optical.dat`
+- :ref:`outfiles/irradiance_spectra:irradiance_spectra.dat`
+- :ref:`outfiles/reflectance:reflectance.dat`
+- :ref:`outfiles/BOC_irradiance:BOC_irradiance.dat`
 
-:ref:`outfiles/spectrum_obsdir_optical:spectrum_obsdir_optical.dat`
+if ``options.calc_ebal``
 
-:ref:`outfiles/spectrum_hemis_optical:spectrum_hemis_optical.dat`
+- :ref:`outfiles/spectrum_obsdir_BlackBody:spectrum_obsdir_BlackBody.dat`
 
-:ref:`outfiles/irradiance_spectra:irradiance_spectra.dat`
+if ``options.calc_planck``
 
-:ref:`outfiles/reflectance:reflectance.dat`
-
-optional
-----------
-
-:ref:`outfiles/spectrum_obsdir_BlackBody:spectrum_obsdir_BlackBody.dat`
-
-
-
+- :ref:`outfiles/spectrum_hemis_thermal:spectrum_hemis_thermal.dat`
+- :ref:`outfiles/spectrum_obsdir_thermal:spectrum_obsdir_thermal.dat`
 
 
 Used
