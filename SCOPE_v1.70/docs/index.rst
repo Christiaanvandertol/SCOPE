@@ -10,6 +10,7 @@ Welcome to SCOPE's documentation!
    :maxdepth: 1
    :caption: Contents
 
+   options
    from_readme/history
    from_readme/acknowledgements
    from_readme/software

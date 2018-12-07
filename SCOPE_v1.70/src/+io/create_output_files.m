@@ -148,8 +148,6 @@ if options.save_headers
     fprintf(fidfoo, 'radiance spectrum in observation direction \r');
     fprintf(fidfoo, 'W m-2 sr-1 um-1 \r');
     
-
-    
     if options.calc_ebal
         fprintf(fidto, 'thermal BlackBody emission spectrum in observation direction \r');
         fprintf(fidto, 'W m-2 sr-1 um-1 \r');

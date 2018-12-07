@@ -7,15 +7,15 @@ Structs
     structs/input/input_index
     structs/constants/constants_index
     structs/output/output_index
+    structs/internal/internal_index
 
 
 .. toctree::
     :maxdepth: 1
 
-    structs/biochem_in
-    structs/biochem_out
+    structs/atmo
+    structs/F
     structs/iter
     structs/leafopt
-    structs/resist_in
-    structs/resist_out
-    structs/v
+    structs/leafoptZ
+    structs/V
