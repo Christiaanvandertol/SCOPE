@@ -78,7 +78,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../from_readme/acknowledgements.html">Acknowledgements</a></li>
@@ -91,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../output_files.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../structs.html">Structs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="input/input_index.html">input structs</a></li>
@@ -100,7 +101,13 @@
 <li class="toctree-l2"><a class="reference internal" href="iter.html">iter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="leafopt.html">Leafopt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Optipar</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Optipar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialized">Initialized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variations">Variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="resist_in.html">Resist_in</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resist_out.html">Resist_out</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v.html">V</a></li>
@@ -175,7 +182,151 @@
             
   <div class="section" id="optipar">
 <h1>Optipar<a class="headerlink" href="#optipar" title="Permalink to this headline">¶</a></h1>
-<p>Leaf optical parameters</p>
+<p>Leaf optical parameters: specific absorption coefficients (SAC) of leaf chemical components</p>
+<p>Concentration * SAC</p>
+<div class="section" id="initialized">
+<h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>: read from <a class="reference internal" href="../directories/data.html#fluspect-parameters"><span class="std std-ref">fluspect_parameters</span></a></p>
+</div>
+<div class="section" id="variations">
+<h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
+<p>Different files (corresponding to PROSPECT versions) from <a class="reference internal" href="../directories/data.html#fluspect-parameters"><span class="std std-ref">fluspect_parameters</span></a> can be selected on <code class="docutils literal notranslate"><span class="pre">filenames</span></code> sheet, <code class="docutils literal notranslate"><span class="pre">leaf_files</span></code> cell in <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code> or uncomment lines directly in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> (~ 170)</p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">nr,</span> <span class="pre">Kdm,</span> <span class="pre">Kab,</span> <span class="pre">Kw,</span> <span class="pre">Ks,</span> <span class="pre">Kant</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Kca</span> <span class="pre">(or</span> <span class="pre">KcaV,</span> <span class="pre">KcaZ)</span></code></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">phiI,</span> <span class="pre">phiII</span></code>  (if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code>)</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">phi</span></code></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> <a class="reference internal" href="../api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> <a class="reference internal" href="../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields loaded in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="20%" />
+<col width="20%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>wl</strong></td>
+<td>nm</td>
+<td>[2001 x 1] double</td>
+<td>SAC wavelength range 400-2400</td>
+</tr>
+<tr class="row-odd"><td><strong>nr</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>refractive index</td>
+</tr>
+<tr class="row-even"><td><strong>Kab</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of chlorophylls a + b</td>
+</tr>
+<tr class="row-odd"><td><strong>Kca</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of carotenoids (violaxanthin + zeaxanthin)</td>
+</tr>
+<tr class="row-even"><td><strong>Ks</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of senescent material</td>
+</tr>
+<tr class="row-odd"><td><strong>Kw</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of water</td>
+</tr>
+<tr class="row-even"><td><strong>Kdm</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of dry matter</td>
+</tr>
+<tr class="row-odd"><td><strong>phiI</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of PSI</td>
+</tr>
+<tr class="row-even"><td><strong>phiII</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of PSI</td>
+</tr>
+<tr class="row-odd"><td><strong>phi</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of PSI + PSII</td>
+</tr>
+<tr class="row-even"><td><strong>KcaV</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of violaxanthin</td>
+</tr>
+<tr class="row-odd"><td><strong>KcaZ</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of zeaxanthin</td>
+</tr>
+<tr class="row-even"><td><strong>Kant</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>SAC of anthocyanins</td>
+</tr>
+<tr class="row-odd"><td><strong>KcaV2</strong></td>
+<td>nm-1</td>
+<td>[2001 x 1] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>GSV</strong></td>
+<td>nm-1</td>
+<td>[2001 x 3] double</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>nw</strong></td>
+<td>nm-1</td>
+<td>[2001 x 3] double</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 

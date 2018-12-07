@@ -1,4 +1,4 @@
-Profiles
+profiles
 =========
 
 Vertical profiles of temperatures and fluxes
@@ -99,11 +99,11 @@ Fields added in :func:`.ebal` if ``options.clc_ebal``
       - type
       - description
     * - **etah**
-      -
+      - \-
       - [60 x 1] double
       - Fs / Fo ratio for shaded leaves
     * - **etau**
-      -
+      - \-
       - [13 x 36 x 60] double
       - Fs / Fo ratio for sunlit leaves
     * - **Tchave**

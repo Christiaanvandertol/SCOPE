@@ -7,8 +7,8 @@ Welcome to SCOPE's documentation!
 =================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Contents
 
    from_readme/history
    from_readme/acknowledgements
@@ -22,10 +22,9 @@ Welcome to SCOPE's documentation!
    zreferences
 
 
-Programmer Reference
-=====================
-
 .. toctree::
+   :caption: Programmer Reference
+   :maxdepth: 2
 
    structs
    api

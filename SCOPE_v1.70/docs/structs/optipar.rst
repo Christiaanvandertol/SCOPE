@@ -1,3 +1,0 @@
-Optipar
-========
-Leaf optical parameters

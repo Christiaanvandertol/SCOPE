@@ -1,4 +1,4 @@
-Optipar
+optipar
 ========
 
 Leaf optical parameters: specific absorption coefficients (SAC) of leaf chemical components
@@ -98,7 +98,7 @@ Fields loaded in ``SCOPE.m``
     * - **KcaV2**
       - nm-1
       - [2001 x 1] double
-      -
+      - former SAC of violaxanthin
     * - **GSV**
       - nm-1
       - [2001 x 3] double

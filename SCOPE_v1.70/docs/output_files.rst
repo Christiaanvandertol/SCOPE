@@ -3,8 +3,7 @@ Output files
 
 .. toctree::
    :maxdepth: 2
-   :caption: Output files
-   :numbered:
+   :caption: In each simulation
 
    outfiles/fluxes
    outfiles/surftemp
@@ -19,12 +18,19 @@ Output files
    outfiles/pars_and_input
    outfiles/pars_and_input_short
 
+.. toctree::
+   :maxdepth: 2
+   :caption: ``options.calc_ebal`` & ``options.calc_planck``
 
    outfiles/spectrum_obsdir_BlackBody
    outfiles/spectrum_hemis_thermal
    outfiles/spectrum_obsdir_thermal
-   outfiles/gap
 
+.. toctree::
+   :maxdepth: 2
+   :caption: ``options.calc_vert_profiles``
+
+   outfiles/gap
    outfiles/layer_aPAR
    outfiles/layer_aPAR_Cab
    outfiles/leaftemp
@@ -34,6 +40,10 @@ Output files
    outfiles/layer_NPQ
    outfiles/layer_rn
    outfiles/layer_fluorescence
+
+.. toctree::
+   :maxdepth: 2
+   :caption: ``options.calc_fluo``
 
    outfiles/fluorescence
    outfiles/fluorescencePSI
@@ -45,49 +55,8 @@ Output files
    outfiles/fluorescence_shaded
    outfiles/fluorescence_scattered
 
+.. toctree::
+   :maxdepth: 2
+   :caption: ``options.calc_directional``
 
-
-in each simulation
--------------------
-#. fluxes.dat
-#. surftemp.dat
-#. aerodyn.dat
-#. radiation.dat
-#. gap.dat
-#. spectrum_hemis_optical.dat
-#. spectrum_obsdir_optical.dat
-#. spectrum_obsdir_BlackBody.dat
-#. irradiance_spectra.dat
-#. reflectance.dat
-#. wl.dat
-
-
-optional
-----------
-for vertical profiles
-""""""""""""""""""""""
-#. leaftemp.dat
-#. layer_h.dat
-#. layer_le.dat
-#. layer_a.dat
-#. layer_pn.dat
-#. Layer_NPQ.dat
-#. layer_rn.dat
-
-other
-""""""""""""""""""""""
-#. fluorescence.dat
-#. fluorescencePSI.dat
-#. FluorescencePSII.dat
-#. Fluorescence_hemis.dat
-#. Fluorescence_sunlit.dat
-#. Fluorescence_shaded.dat
-#. Fluorescence_scattered.dat
-#. Fluorescence_emitted_by_all_leaves.dat
-#. Fluorescence_emitted_by_all_photosystems.dat
-#. spectrum_hemis_thermal.dat
-#. spectrum_obsdir_thermal.dat
-#. layer_fluorecence.dat
-#. layer_fluorescenceEm.dat
-#. BOC_irradiance.dat
-
+   outfiles/Directional

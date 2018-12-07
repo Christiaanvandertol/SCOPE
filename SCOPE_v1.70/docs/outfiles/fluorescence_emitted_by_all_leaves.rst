@@ -5,7 +5,9 @@ fluorescence_emitted_by_all_leaves.dat
 
 rows - time (simulation number)
 
-columns - total emitted fluorescence by all leaves
+columns - total emitted fluorescence by all leaves.
+Within canopy scattering / re-absorption is omitted.
+Within leaf scattering / re-absorption is taken into account.
 
 .. list-table::
     :widths: 20 20 60

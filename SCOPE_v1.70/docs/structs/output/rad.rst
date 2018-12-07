@@ -110,11 +110,11 @@ Fields initialized in :func:`.RTMo`
     * - **vb**
       - \-
       - [2162 x 1] double
-      -
+      - directional back scattering coefficient for diffuse incidence
     * - **vf**
       - \-
       - [2162 x 1] double
-      -
+      - directional forward scattering coefficient for diffuse incidence
     * - **Esun_**
       - mW m-2 um-1
       - [2162 x 1] double
@@ -214,6 +214,14 @@ Fields initialized in :func:`.RTMo`
 
 Fields initialized in :func:`.RTMf`
 
+.. Note:: Model simulated fluorescence at 3 levels:
+
+    - level of photosystems individually (PSI, PSII) or together
+    - level of leaves
+    - level of canopy
+        - in observation direction (reaching sensor) (typically starts with **Lo**)
+        - hemispherically integrated
+
 .. list-table::
     :widths: 10 10 20 60
 
@@ -224,11 +232,11 @@ Fields initialized in :func:`.RTMf`
     * - **Fem_**
       - W m-2 um-1
       - [211 x 1] double
-      -
+      - total emitted fluorescence by all leaves, excluding within canopy scattering / re-absorption
     * - **Fhem_**
       - W m-2 um-1
       - [211 x 1] double
-      -
+      - TOC hemispherically integrated fluorescence
     * - **LoF_**
       - W m-2 um-1 sr-1
       - [211 x 1] double
@@ -246,13 +254,13 @@ Fields initialized in :func:`.RTMf`
       - [211 x 1] double
       -
     * - **Fmin_**
-      - W m-2 sr-1
+      - W m-2 um-1
       - [211 x 61] double
-      -
+      - downward fluorescence flux profile
     * - **Fplu_**
-      - W m-2 sr-1
+      - W m-2 um-1
       - [211 x 61] double
-      -
+      - upward fluorescence flux profile
     * - **LoF_sunlit**
       - W m-2 um-1 sr-1
       - [211 x 2] double
@@ -264,15 +272,15 @@ Fields initialized in :func:`.RTMf`
     * - **LoF_scattered**
       - W m-2 um-1 sr-1
       - [211 x 2] double
-      - TOC fluorescence contribution from leaves after scattering
+      - TOC fluorescence contribution after scattering from leaves
     * - **LoF_soil**
       - W m-2 um-1 sr-1
       - [211 x 2] double
-      - TOC fluorescence contribution from soil after scattering
+      - TOC fluorescence contribution after scattering from soil
     * - **Eoutf**
-      - W m-2 sr-1
+      - W m-2
       - double
-      -
+      - hemispherically and spectrally integrated TOC fluorescence
     * - **Eminf_**
       - W m-2 sr-1
       - [61 x 21] double
@@ -374,6 +382,6 @@ Fields added in ``SCOPE.m``
       - type
       - description
     * - **Femtot**
-      -
+      - W m-2 um-1
       - [211 x 1] double
-      - total emitted fluorescence by all photosystems
+      - total emitted fluorescence by all photosystems per wavelengths (excluding leaf and canopy re-absorption and scattering)

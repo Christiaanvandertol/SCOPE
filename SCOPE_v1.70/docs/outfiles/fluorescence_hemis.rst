@@ -5,7 +5,7 @@ fluorescence_hemis.dat
 
 rows - time (simulation number)
 
-columns - hemispherically integrated fluorescence from both photosystems
+columns - top of canopy (TOC) hemispherically integrated fluorescence
 
 .. list-table::
     :widths: 20 20 60
@@ -15,4 +15,4 @@ columns - hemispherically integrated fluorescence from both photosystems
       - description
     * - **Fhem_**
       - W m-2 um-1
-      - hemispherically integrated fluorescence
+      - TOC hemispherically integrated fluorescence
