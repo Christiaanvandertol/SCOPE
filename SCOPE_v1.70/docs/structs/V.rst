@@ -1,3 +1,0 @@
-V
-=====
-All input variables

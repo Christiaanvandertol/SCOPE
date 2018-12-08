@@ -39,7 +39,7 @@ Used
         | :func:`.RTMt_sb`
         | :func:`.RTMz`
     * - | ``Ts, Tsold, GAM, rss``
-        | ``rbs, rss`` -> :ref:`structs/resist_in:Resist_in`
+        | ``rbs, rss`` -> :ref:`structs/internal/resist_in:Resist_in`
       - :func:`.ebal`
 
 

@@ -8,14 +8,3 @@ Structs
     structs/constants/constants_index
     structs/output/output_index
     structs/internal/internal_index
-
-
-.. toctree::
-    :maxdepth: 1
-
-    structs/atmo
-    structs/F
-    structs/iter
-    structs/leafopt
-    structs/leafoptZ
-    structs/V

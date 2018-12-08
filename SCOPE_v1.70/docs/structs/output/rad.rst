@@ -68,7 +68,7 @@ Used
     * - ``Lot LoF_``
       - :func:`.calc_brdf`
     * - | ``Rnuc, Rnhct, Rnuct, Rnhst, Rnust, Rnhc, Rnuc, Rnhs, Rnus``
-        | ``Pnh_Cab, Pnu_Cab`` -> :ref:`structs/biochem_in:Biochem_in`
+        | ``Pnh_Cab, Pnu_Cab`` -> :ref:`structs/internal/biochem_in:Biochem_in`
         | ``Pnh, Pnu, Pnh_PAR, Pnu_PAR``
         | ``Eoutte``
       - :func:`.ebal`

@@ -41,7 +41,7 @@ Used
     * - ``LIDFa, LIDFb``
       - :func:`.leafangles`
     * - | ``nlayers, kV, xl, LAI``
-        | ``LAI, rwc, zo, d, hc, leafwidth, Cd`` -> :ref:`structs/resist_in:Resist_in`
+        | ``LAI, rwc, zo, d, hc, leafwidth, Cd`` -> :ref:`structs/internal/resist_in:Resist_in`
       - :func:`.ebal`
     * - ``nlayers, lidf, litab, lazitab, LAI``
       - | :func:`.RTMf`

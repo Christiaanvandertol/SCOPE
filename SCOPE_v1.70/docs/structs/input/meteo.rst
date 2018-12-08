@@ -22,8 +22,8 @@ Used
     * - ``z``
       - :func:`.load_timeseries`
     * - | ``Ta, ea, Ca, p``
-        | ``u, z`` -> :ref:`structs/resist_in:Resist_in`
-        | ``Oa`` -> :ref:`structs/biochem_in:Biochem_in`
+        | ``u, z`` -> :ref:`structs/internal/resist_in:Resist_in`
+        | ``Oa`` -> :ref:`structs/internal/biochem_in:Biochem_in`
       - :func:`.ebal`
     * - ``Rin, Rli``
       - :func:`.RTMo`

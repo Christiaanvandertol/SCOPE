@@ -2,41 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8461150e-c5af-4063-b848-dd285cc776b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/structs/F.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/atmo.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/internal/internal_index.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/leafoptZ.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/input/F.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/input/atmo.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/input/iter.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/internal/V.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/output/leafopt.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/doctrees/structs.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/v.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/structs/v.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/biochem_in.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/biochem_out.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/iter.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/leafopt.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/options.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/optipar.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/resist_in.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/resist_out.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/structs/v.doctree" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/structs.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/biochem_in.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/biochem_out.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/iter.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/leafopt.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/options.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/optipar.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/resist_in.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/resist_out.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/structs/v.rst.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/api.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/api/core.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/core.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/api/equations.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/equations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/api/helpers.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/helpers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/api/io.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/io.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/api/not_used.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/not_used.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/api/plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/api/plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/directories.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/directories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/directories/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/directories/data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/directories/scope.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/directories/scope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/from_readme/architecture.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/from_readme/architecture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/from_readme/getting_started.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/from_readme/getting_started.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/from_readme/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/from_readme/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/from_readme/improvements.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/from_readme/improvements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/from_readme/software.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/from_readme/software.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/from_readme/versions_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/from_readme/versions_table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/mat-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/mat-modindex.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_build/html/structs.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/structs/v.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/structs/v.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/biochem_in.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/biochem_out.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/iter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/leafopt.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/options.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/optipar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/resist_in.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/resist_out.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/structs/v.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/zreferences.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/zreferences.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/biochem_in.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/internal/biochem_in.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/biochem_out.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/internal/biochem_out.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/input/options.rst" beforeDir="false" afterPath="$PROJECT_DIR$/options.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/resist_in.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/internal/resist_in.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/resist_out.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/internal/resist_out.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/v.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/V.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/+io/create_output_files.m" beforeDir="false" afterPath="$PROJECT_DIR$/../src/+io/create_output_files.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/F.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/V.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/atmo.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/input/canopy.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/input/canopy.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/input/leafbio.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/input/leafbio.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/input/meteo.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/input/meteo.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/input/soil.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/input/soil.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/internal/internal_index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/internal/internal_index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/iter.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/leafopt.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/leafoptZ.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/output/rad.rst" beforeDir="false" afterPath="$PROJECT_DIR$/structs/output/rad.rst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,58 +74,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/structs.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/internal/internal_index.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/output/output_index.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/F.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/internal/biochem_in.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/internal/biochem_out.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/internal/resist_in.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/internal/resist_out.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structs/leafoptZ.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -128,15 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/structs/output/output_index.rst" />
-        <option value="$PROJECT_DIR$/outfiles/layer_aPAR.rst" />
-        <option value="$PROJECT_DIR$/outfiles/layer_aPAR_Cab.rst" />
-        <option value="$PROJECT_DIR$/outfiles/spectrum_hemis_thermal.rst" />
-        <option value="$PROJECT_DIR$/outfiles/spectrum_obsdir_thermal.rst" />
-        <option value="$PROJECT_DIR$/outfiles/layer_fluorescence.rst" />
-        <option value="$PROJECT_DIR$/outfiles/leaftemp.rst" />
-        <option value="$PROJECT_DIR$/outfiles/layer_le.rst" />
-        <option value="$PROJECT_DIR$/outfiles/layer_h.rst" />
         <option value="$PROJECT_DIR$/outfiles/layer_NPQ.rst" />
         <option value="$PROJECT_DIR$/outfiles/layer_A.rst" />
         <option value="$PROJECT_DIR$/outfiles/layer_rn.rst" />
@@ -157,7 +126,6 @@
         <option value="$PROJECT_DIR$/outfiles/fluorescence_emitted_by_all_leaves.rst" />
         <option value="$PROJECT_DIR$/outfiles/fluorescence_emitted_by_all_photosystems.rst" />
         <option value="$PROJECT_DIR$/outfiles/fluorescence_hemis.rst" />
-        <option value="$PROJECT_DIR$/structs/output/rad.rst" />
         <option value="$PROJECT_DIR$/structs/directional.rst" />
         <option value="$PROJECT_DIR$/outfiles/Directional/Fluorescence.rst" />
         <option value="$PROJECT_DIR$/outfiles/Directional/BRDF.rst" />
@@ -173,16 +141,26 @@
         <option value="$PROJECT_DIR$/structs/options.rst" />
         <option value="$PROJECT_DIR$/structs/input/options.rst" />
         <option value="$PROJECT_DIR$/index.rst" />
-        <option value="$PROJECT_DIR$/structs/atmo.rst" />
         <option value="$PROJECT_DIR$/structs/leafoptZ.rst" />
         <option value="$PROJECT_DIR$/options.rst" />
+        <option value="$PROJECT_DIR$/structs/atmo.rst" />
+        <option value="$PROJECT_DIR$/structs/input/atmo.rst" />
         <option value="$PROJECT_DIR$/structs/F.rst" />
+        <option value="$PROJECT_DIR$/structs/V.rst" />
         <option value="$PROJECT_DIR$/structs/internal/internal_index.rst" />
+        <option value="$PROJECT_DIR$/structs/internal/V.rst" />
+        <option value="$PROJECT_DIR$/structs/leafopt.rst" />
+        <option value="$PROJECT_DIR$/structs/iter.rst" />
         <option value="$PROJECT_DIR$/structs.rst" />
+        <option value="$PROJECT_DIR$/structs/input/canopy.rst" />
+        <option value="$PROJECT_DIR$/structs/input/leafbio.rst" />
+        <option value="$PROJECT_DIR$/structs/input/meteo.rst" />
+        <option value="$PROJECT_DIR$/structs/input/soil.rst" />
+        <option value="$PROJECT_DIR$/structs/output/rad.rst" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -216,33 +194,6 @@
             </path>
             <path>
               <item name="docs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="directories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="outfiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="structs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="structs" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="structs" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
@@ -262,11 +213,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects Python\SCOPE\SCOPE_v1.70\docs\structs\input" />
+      <recent name="D:\projects Python\SCOPE\SCOPE_v1.70\docs\structs\output" />
       <recent name="D:\projects Python\SCOPE\SCOPE_v1.70\docs\structs\internal" />
       <recent name="D:\projects Python\SCOPE\SCOPE_v1.70\docs" />
-      <recent name="D:\projects Python\SCOPE\SCOPE_v1.70\docs\structs\input" />
       <recent name="D:\projects Python\SCOPE\SCOPE_v1.70\docs\structs\constants" />
-      <recent name="D:\projects Python\SCOPE\SCOPE_v1.70\docs\structs\output" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -350,7 +301,7 @@
       <workItem from="1543430111144" duration="624000" />
       <workItem from="1543856269403" duration="4269000" />
       <workItem from="1543918747246" duration="47286000" />
-      <workItem from="1544188849527" duration="22124000" />
+      <workItem from="1544188849527" duration="29460000" />
     </task>
     <task id="LOCAL-00001" summary="docs">
       <created>1535988665917</created>
@@ -464,17 +415,23 @@
       <option name="project" value="LOCAL" />
       <updated>1544205702726</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="options done">
+      <created>1544218007586</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1544218007586</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74303000" />
+    <option name="totallyTimeSpent" value="81639000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30929264" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -485,7 +442,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.5028653" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.49716714" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -518,7 +475,8 @@
     <MESSAGE value="gap&#10;profiles&#10;output files" />
     <MESSAGE value="all output files" />
     <MESSAGE value="all output files (with directional)&#10;&#10;options" />
-    <option name="LAST_COMMIT_MESSAGE" value="all output files (with directional)&#10;&#10;options" />
+    <MESSAGE value="options done" />
+    <option name="LAST_COMMIT_MESSAGE" value="options done" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -560,31 +518,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/outfiles/layer_NPQ.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outfiles/layer_rn.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outfiles/layer_lE.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outfiles/layer_A.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_build/html/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outfiles/radiation.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outfiles/gap.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/outfiles/fluorescencePSII.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
@@ -621,9 +554,6 @@
     <entry file="file://$PROJECT_DIR$/structs/output/gap.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/output/rad.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/outfiles/Directional/BRDF.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
@@ -645,25 +575,13 @@
     <entry file="file://$PROJECT_DIR$/outfiles/layer_H.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/input/leafbio.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/constants/constants_index.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/structs/constants/spectral.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/output/directional.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/constants/constants.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/input/input_index.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/constants/optipar.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/output_files.rst">
@@ -689,16 +607,7 @@
     <entry file="file://$PROJECT_DIR$/api.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/structs/atmo.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/structs/leafoptZ.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structs/F.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/structs/internal/biochem_in.rst">
@@ -716,10 +625,55 @@
     <entry file="file://$PROJECT_DIR$/structs/output/output_index.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/atmo.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/structs/internal/internal_index.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/F.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/input_index.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/internal/V.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/output/directional.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/constants/optipar.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/output/leafopt.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/angles.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/structs.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/canopy.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/leafbio.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/meteo.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/soil.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/output/rad.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structs/input/iter.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>

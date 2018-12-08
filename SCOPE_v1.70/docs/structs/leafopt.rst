@@ -1,3 +1,0 @@
-Leafopt
-========
-Leaf optical properties
