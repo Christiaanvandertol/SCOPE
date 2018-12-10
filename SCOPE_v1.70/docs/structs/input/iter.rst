@@ -10,7 +10,10 @@ Initialized
 Variations
 """"""""""""
 
-``counter`` is reset in :func:`.ebal`
+``counter`` is incremented in :func:`.ebal`
+
+``Wc`` is set to 0.2 if ``counter`` > 50 in :func:`.ebal`
+
 
 Used
 """""
@@ -48,7 +51,7 @@ Fields initialized in ``SCOPE.m``
       - double
       - 1.0
       - maximum accepted error in energy balance
-    * - **maxEBer**
+    * - **Wc**
       - \-
       - double
       - 1.0

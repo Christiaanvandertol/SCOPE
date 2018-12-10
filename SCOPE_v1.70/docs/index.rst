@@ -11,6 +11,11 @@ Welcome to SCOPE's documentation!
    :caption: Contents
 
    options
+   my_proposal/options_choice
+   my_proposal/energy_balance
+   my_proposal/fluorescence
+   my_proposal/spectra
+
    from_readme/history
    from_readme/acknowledgements
    from_readme/software

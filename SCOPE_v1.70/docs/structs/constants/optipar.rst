@@ -102,8 +102,8 @@ Fields loaded in ``SCOPE.m``
     * - **GSV**
       - nm-1
       - [2001 x 3] double
-      -
+      - Global Soil Vectors spectra
     * - **nw**
       - nm-1
-      - [2001 x 3] double
-      -
+      - [2001 x 1] double
+      - water refraction index spectrum

@@ -462,7 +462,7 @@ rad.Esun_   = Esun_;        % [2162x1 double]   incident solar spectrum (mW m-2 
 rad.Esky_   = Esky_;        % [2162x1 double]   incident sky spectrum (mW m-2 um-1)
 rad.PAR     = P;            % [1 double]        incident spectrally integrated PAR (moles m-2 s-1)
 
-rad.fEsuno  = F;       % [2162x1 double]   normalized spectrum of direct light (optical)
+rad.fEsuno  = fEsuno;       % [2162x1 double]   normalized spectrum of direct light (optical)
 rad.fEskyo  = fEskyo;       % [2162x1 double]   normalized spectrum of diffuse light (optical)
 rad.fEsunt  = fEsunt;       % [2162x1 double]   normalized spectrum of direct light (thermal)
 rad.fEskyt  = fEskyt;       % [2162x1 double]   normalized spectrum of diffuse light (thermal)
