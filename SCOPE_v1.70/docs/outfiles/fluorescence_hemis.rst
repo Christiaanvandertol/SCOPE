@@ -5,7 +5,7 @@ fluorescence_hemis.dat
 
 rows - time (simulation number)
 
-columns - top of canopy (TOC) hemispherically integrated fluorescence
+columns - top of canopy (TOC) hemispherical fluorescence
 
 .. list-table::
     :widths: 20 20 60
@@ -15,4 +15,4 @@ columns - top of canopy (TOC) hemispherically integrated fluorescence
       - description
     * - **Fhem_**
       - W m-2 um-1
-      - TOC hemispherically integrated fluorescence
+      - TOC hemispherical fluorescence

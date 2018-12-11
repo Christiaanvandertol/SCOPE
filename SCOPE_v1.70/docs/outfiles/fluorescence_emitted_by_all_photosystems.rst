@@ -19,4 +19,4 @@ Within leaf scattering / re-absorption is omitted.
       - description
     * - **Femtot**
       - W m-2 um-1
-      - total emitted fluorescence by all photosystems per wavelengths (excluding leaf and canopy re-absorption and scattering)
+      - total hemispherical emitted fluorescence by all photosystems per wavelengths (excluding leaf and canopy re-absorption and scattering)

@@ -15,4 +15,4 @@ columns - wl number (2162)
       - description
     * - **Eoutte_**
       - W m-2 um-1
-      - hemispherically integrated outgoing thermal radiation
+      - hemispherical outgoing thermal radiation

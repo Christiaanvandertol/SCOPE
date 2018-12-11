@@ -409,7 +409,7 @@ for k = 1:telmax
                 rad.Femtot = 1E3*leafbio.fqe* optipar.phi(spectral.IwlF) * fluxes.aPAR_Cab_eta;
             end
         end    
-        io.output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax)
+        io.output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles)
     end
     if options.simulation==2 && telmax>1, vi  = helpers.count(nvars,vi,vmax,1); end
 end

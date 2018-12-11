@@ -1,6 +1,8 @@
 Energy balance
 ================
 
+``options.calc_ebal``
+
 Definition
 '''''''''''''
 
@@ -12,7 +14,7 @@ Net radiation (Rn):
     | SW - shortwave radiation (400-2400 nm)
     | LW - longwave (thermal) radiation
 
-Net radiation consists of 3 (4) heat fluxes:
+Net radiation can be partitioned into 3 (4) heat fluxes:
 
 >>> Rn = H + lE + G
 
@@ -38,3 +40,66 @@ Leaf temperatures are calculated by :func:`.biochemical` or :func:`.biochemical_
 Initial values of soil and leaf temperatures are equal to ambient temperature (``Ta``).
 
 Monin-Obukhov length influences on aerodynamic resistances values.
+
+The results of energy balance calculations are the following:
+
+.. list-table::
+    :widths: 20 20 20 20 20
+    :header-rows: 1
+    :stub-columns: 1
+
+    * - variable
+      - units
+      - canopy
+      - soil
+      - total
+    * - H
+      - W m-2
+      - 115.5
+      - 19.5
+      - 135.0
+    * - lE
+      - W m-2
+      - 146.2
+      - 44.9
+      - 191.1
+    * - G
+      - W m-2
+      - \-
+      - 35.0
+      - 35.0
+    * - Rn
+      - W m-2
+      - **261.7**
+      - **100.1**
+      - **361.8**
+
+Also SCOPE calculates photosynthesis of canopy which in this case was 18.7 umol m-2 s-1
+
+Radiation budget is also calculated by SCOPE:
+
+.. list-table::
+    :widths: 20 20 20 20 20
+    :header-rows: 1
+    :stub-columns: 1
+
+    * - variable
+      - units
+      - in
+      - out
+      - net
+    * - SW
+      - W m-2
+      - 600
+      - 104.4
+      - 495.6
+    * - LW
+      - W m-2
+      - 300
+      - 434.0
+      - -134.0
+    * - Rn
+      - W m-2
+      - \-
+      - \-
+      - **361.8**

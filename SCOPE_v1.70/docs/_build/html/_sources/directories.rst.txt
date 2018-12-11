@@ -15,6 +15,11 @@ Directories
     ├── SCOPE_v1.70
     │   ├── docs
     │   ├── output
+    │   │   ├── example_directional_run
+    │   │   │    ├── Directional
+    │   │   │    └── Parameters
+    │   │   └── verificationdata
+    │   │        └── Parameters
     │   └── src
     │       ├── +equations
     │       ├── +helpers
@@ -26,17 +31,6 @@ Directories
         │   ├── dataset for_verification
         │   ├── directional
         │   ├── fluspect_parameters
-        │   ├── input
-        │   │   ├── 30mindataset for_MZ
-        │   │   ├── dataset for_EN
-        │   │   ├── dataset for_MZ
-        │   │   ├── dataset for_SE
-        │   │   ├── dataset for_verification
-        │   │   ├── directional
-        │   │   ├── fluspect_parameters
-        │   │   ├── PFT
-        │   │   ├── radiationdata
-        │   │   └── soil_spectrum
         │   ├── leafangles
         │   ├── PFT
         │   ├── radiationdata

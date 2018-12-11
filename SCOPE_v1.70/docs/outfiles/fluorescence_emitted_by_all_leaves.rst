@@ -17,4 +17,4 @@ Within leaf scattering / re-absorption is taken into account.
       - description
     * - **Fem_**
       - W m-2 um-1
-      - total emitted fluorescence by all leaves
+      - total hemispherical emitted fluorescence by all leaves

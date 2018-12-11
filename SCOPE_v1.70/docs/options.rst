@@ -110,8 +110,6 @@ Method of ground heat flux (G) calculation
 
 Switch in ``SCOPE.m``, :func:`.select_input`, :func:`.ebal`
 
-.. Error:: In ebal it is either 1 or 2, 0 is redirected to 2. Depends of ``options.simulation``
-
 **0**
 
     | standard calculation of thermal inertia from soil characteristic
@@ -303,8 +301,6 @@ Switch in ``SCOPE.m``, :func:`.select_input`
 -----------------------
 
 Fluorescence model
-
-.. Error:: 0 == 2. Maybe, not fluorescence but biochemical model?
 
 Switch in :func:`.ebal`
 

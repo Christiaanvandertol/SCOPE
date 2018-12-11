@@ -10,23 +10,17 @@ Welcome to SCOPE's documentation!
    :maxdepth: 1
    :caption: Contents
 
+   model_capabilities
+   getting_started
    options
-   my_proposal/options_choice
-   my_proposal/energy_balance
-   my_proposal/fluorescence
-   my_proposal/spectra
-
-   from_readme/history
-   from_readme/acknowledgements
-   from_readme/software
-   from_readme/improvements
-   from_readme/versions_table
-   from_readme/architecture
    directories
-   from_readme/getting_started
    output_files
-   zreferences
 
+   history
+   acknowledgements
+
+   zreferences
+   support
 
 .. toctree::
    :caption: Programmer Reference

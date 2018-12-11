@@ -1,6 +1,8 @@
 Fluorescence
 ==============
 
+``options.calc_fluor``
+
 Definition
 ''''''''''''
 
@@ -28,13 +30,18 @@ SCOPE model simulates 3 hemispherical fluorescence quantiles:
  #. fluorescence emitted by all leaves without any scattering / re-absorption within canopy or from soil
  #. fluorescence emitted by canopy (all leaf layers) accounting for all scattering / re-absorption events
 
+.. figure:: ../images/fluorescence.png
+
+.. Note:: Notice the difference in ranges and units between directional and hemispherical fluorescence.
+
 SCOPE model simulates directional fluorescence (the one that actually reaches a sensor) and its components coming from:
 
  #. sunlit leaves
  #. shaded leaves
  #. scattered by leaves and soil
 
+It is also possible to partition directional fruorescence between photosystem I and II (PSI, PSII) with ``options.calc_PSI``, not recommended though.
 
-.. figure:: ../images/fluorescence.png
+.. figure:: ../images/fluorescence_contributors.png
 
-.. Note:: Notice the difference in ranges and units between directional and hemispherical fluorescence.
+.. Note:: There are much more outputs of :func:`.biochemical` related to Pulse-Amplitude-Modulation (PAM) Fluorometry quantiles that are stored in internal structure ``biochem_out``.

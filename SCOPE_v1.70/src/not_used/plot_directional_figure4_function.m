@@ -3,6 +3,8 @@ function plot_directional_figure4_function(directory)
 % bidirectional temperature polar plots from a SCOPE output directory
 % (string 'directory') of directional data.
 
+% directory = 'D:\projects Python\SCOPE\SCOPE_v1.70\output\example_directional_run\Directional\';
+
 files = dir(directory);
 
 spfig3 = zeros(4,1);
@@ -26,7 +28,7 @@ ValuesBRDFfile      = files(4).name;
 ValuesFluorfile     = files(5).name;
 
 Angles = load([directory Anglesfile]);
-ValuesT = load([directory ValuesTfile]);
+% ValuesT = load([directory ValuesTfile]);
 ValuesBRDF = load([directory ValuesBRDFfile]);
 ValuesFluor = load([directory ValuesFluorfile]);
 

@@ -13,4 +13,4 @@ columns - wl number (2162)
       - description
     * - **Eout_**
       - W m-2 um-1
-      - hemispherically integrated radiation spectrum
+      - hemispherical outgoing radiation spectrum
