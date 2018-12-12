@@ -1,4 +1,4 @@
-function output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles)
+function output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles, directional, angles)
 %% OUTPUT DATA
 % author C. Van der Tol
 % modified:      31 Jun 2008: (CvdT) included Pntot in output fluxes.dat

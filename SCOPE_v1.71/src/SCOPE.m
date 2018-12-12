@@ -28,7 +28,7 @@ global constants
 %% 2. simulation options
 path_of_code                = cd;
 run ../set_parameter_filenames; 
-% parameter_file = {'input_data.xlsx'};  % for .exe
+% parameter_file = {'input_data.xlsx'};  % for Compiler .exe
 
 if length(parameter_file)>1, useXLSX = 0; else useXLSX = 1; end
 
@@ -410,7 +410,7 @@ for k = 1:telmax
                 rad.Femtot = 1E3*leafbio.fqe* optipar.phi(spectral.IwlF) * fluxes.aPAR_Cab_eta;
             end
         end    
-        io.output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles)
+        io.output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles, directional, angles)
     end
     if options.simulation==2 && telmax>1, vi  = helpers.count(nvars,vi,vmax,1); end
 end
