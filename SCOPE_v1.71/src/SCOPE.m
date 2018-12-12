@@ -16,6 +16,7 @@
 %     You should have received a copy of the GNU General Public License
 %     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %%
+% try  % for Compiler .exe
 clc
 %clear all
 
@@ -189,6 +190,7 @@ rsfile      = load([path_input,'soil_spectrum/',char(F(2).FileName)]);        % 
 % optipar.KcaZ   = opticoef(:,15);
 
 %% 8. Load directional data from a file
+directional = struct;
 if options.calc_directional
     anglesfile          = load([path_input,'directional/brdf_angles2.dat']); %     Multiple observation angles in case of BRDF calculation
     directional.tto     = anglesfile(:,1);              % [deg]             Observation zenith Angles for calcbrdf
