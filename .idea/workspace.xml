@@ -2,77 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="940cd0fa-5586-42ae-b7a5-db0513ca6831" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GNU_General_Public_Licence.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bug_reports.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.prj" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/code/SCOPE.prj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/aggreg.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/calculate_vert_profiles.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/create_output_files.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/e2phot.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/ephoton.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/fixedp_brent_ari.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/fluspect_B_CX.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/fluspect_B_CX_PSI_PSII_combined.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/output_data.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/output_verification.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/plots.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/progressbar.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/readStructFromExcel.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/code/tav.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/core.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/core.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/equations.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/equations.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/supporting.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/supporting.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/api/visualization.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/core.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/core.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/equations.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/equations.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/supporting.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/supporting.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/_sources/api/visualization.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/core.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/core.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/equations.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/equations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/supporting.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/supporting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/api/visualization.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/core.rst" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/core.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/docs/api/visualization.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/in_docs/Brightness_T.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/input_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SCOPE_v1.70/input_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/BOC_irradiance.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/SCOPEversion.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/filenames.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/inputdata.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/Parameters/setoptions.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/aerodyn.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_emitted_by_all_leaves.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_emitted_by_all_photosystems.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_hemis.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_scattered.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_shaded.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluorescence_sunlit.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/fluxes.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/irradiance_spectra.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/pars_and_input.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/pars_and_input_short.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/radiation.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/reflectance.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/spectrum_hemis_optical.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/spectrum_obsdir_BlackBody.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/spectrum_obsdir_optical.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/surftemp.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/output/verification_run_2018-09-03-1626/wl.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/readme/~$OPE_v170 User manual.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/GNU_General_Public_Licence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/Profiler - My SCOPE.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/Profiler - Original SCOPE.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOPE_v1.70/bug_reports.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,93 +18,23 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="994385286">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.opened" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="io" value="1" />
-          <entry key="plotting" value="1" />
-          <entry key="py" value="3" />
-          <entry key="rst" value="11" />
-          <entry key="rts" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="Python" value="3" />
-          <entry key="ReST" value="14" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="plotting" value="35" />
-          <entry key="py" value="14" />
-          <entry key="rst" value="295" />
-          <entry key="rts" value="148" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Python" value="14" />
-          <entry key="ReST" value="478" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
+        <entry file="file://$PROJECT_DIR$/../read_the_docs/matlab/docs/conf.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="68">
+                <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/index.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../read_the_docs/matlab/docs/conf.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -228,19 +96,6 @@
               <item name="SCOPE" type="462c0819:PsiDirectoryNode" />
               <item name="SCOPE_v1.70" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SCOPE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SCOPE" type="462c0819:PsiDirectoryNode" />
-              <item name="SCOPE_v1.70" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SCOPE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SCOPE" type="462c0819:PsiDirectoryNode" />
-              <item name="SCOPE_v1.70" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -249,6 +104,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -273,8 +129,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535984524608</updated>
+      <workItem from="1544607174704" duration="71000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="71000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,11 +146,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="934" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19828156" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20134228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -299,62 +162,48 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22237961" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22194514" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="SciView" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/_build/html/index.html" />
     <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/api_rtmo.rst" />
     <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api_rtmo.rst" />
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/structs.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/index.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/structs.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/conf.py" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/index.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/visualization.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts" />
+    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst" />
     <entry file="file://$PROJECT_DIR$/../read_the_docs/matlab/docs/conf.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../read_the_docs/matlab/docs/api_rtmo.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/supporting.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/equations.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/visualization.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/plot.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/not_used.rts">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCOPE_v1.70/docs/api/io.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="68">
+            <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
