@@ -1,0 +1,986 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Core &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="+equations" href="equations.html" />
+    <link rel="prev" title="API" href="../api.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output_files.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equations.html">+equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">+helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">+io (input output)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="not_used.html">not_used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">+plot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">API</a> &raquo;</li>
+        
+      <li>Core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/core.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="core">
+<h1>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h1>
+<p>main script <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+<span class="target" id="module-src"></span><dl class="function">
+<dt id="src.biochemical">
+<code class="descname">biochemical</code><span class="sig-paren">(</span><em>biochem_in</em>, <em>Ci_input</em><span class="sig-paren">)</span><a class="headerlink" href="#src.biochemical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Date:  21 Sep 2012
+Update:   20 Feb 2013
+Update:      Aug 2013: correction of L171: Ci = Ci*1e6 ./ p .* 1E3;
+Update:   2016-10 - (JAK) major rewrite to accomodate an iterative solution to the Ball-Berry equation</p>
+<blockquote>
+<div><ul class="simple">
+<li>also allows for g_m to be specified for C3 plants, but only if Ci_input is provided.</li>
+</ul>
+</div></blockquote>
+<p>Authors:       Joe Berry and Christiaan van der Tol, Ari Kornfeld, contributions of others.
+Sources:</p>
+<blockquote>
+<div>Farquhar et al. 1980, Collatz et al (1991, 1992).</div></blockquote>
+<dl class="docutils">
+<dt>This function calculates:</dt>
+<dd><ul class="first last simple">
+<li>stomatal resistance of a leaf or needle (s m-1)</li>
+<li>photosynthesis of a leaf or needle (umol m-2 s-1)</li>
+<li>fluorescence of a leaf or needle (fraction of fluor. in the dark)</li>
+</ul>
+</dd>
+</dl>
+<p>Usage:
+biochem_out = biochemical(biochem_in)
+the function was tested for Matlab R2013b</p>
+<p>Calculates net assimilation rate A, fluorescence F using biochemical model</p>
+<p>Input (units are important):
+structure ‘biochem_in’ with the following elements:
+Knparams   % [], [], []           parameters for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha);</p>
+<blockquote>
+<div><blockquote>
+<div>[Kno, Kn_alpha, Kn_beta]</div></blockquote>
+<dl class="docutils">
+<dt>or, better, as individual fields:</dt>
+<dd>Kno                                     Kno - the maximum Kn value (“high light”)
+Kn_alpha, Kn_beta                      alpha, beta: curvature parameters</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Cs        % [ppmV or umol mol]    initial estimate of conc. of CO2 in the</dt>
+<dd>…bounary layer of the leaf</dd>
+</dl>
+<p>Q         % [umol photons m-2 s-1]net radiation, PAR
+fPAR     % [0-1]                 fraction of incident light that is absorbed by the leaf (default = 1, for compatibility)
+T         % [oC or K]             leaf temperature
+eb        % [hPa = mbar]          intial estimate of the vapour pressure in leaf boundary layer
+O         % [mmol/mol]            concentration of O2 (in the boundary</p>
+<blockquote>
+<div>…layer, but no problem to use ambient)</div></blockquote>
+<p>p         % [hPa]                 air pressure
+Vcmax25 (Vcmo)  % [umol/m2/s]     maximum carboxylation capacity &#64; 25 degC
+BallBerrySlope (m) % []           Ball-Berry coefficient ‘m’ for stomatal regulation
+BallBerry0 % []              (OPTIONAL) Ball-Berry intercept term ‘b’ (if present, an iterative solution is used)</p>
+<blockquote>
+<div>setting this to zeo disables iteration. Default = 0.01</div></blockquote>
+<dl class="docutils">
+<dt>Type      % [‘C3’, ‘C4’]          text parameter, either ‘C3’ for C3 or any</dt>
+<dd>…other text for C4</dd>
+<dt>tempcor   % [0, 1]               boolean (0 or 1) whether or not</dt>
+<dd>…temperature correction to Vcmax has to be applied.</dd>
+<dt>Tparams  % [],[],[K],[K],[K]     vector of 5 temperature correction parameters, look in spreadsheet of PFTs.</dt>
+<dd>Only if tempcor=1, otherwise use dummy values</dd>
+</dl>
+<p>…Or replace w/ individual values:
+slti        []              slope of cold temperature decline (C4 only)
+shti        []              slope of high temperature decline in photosynthesis
+Thl         [K]             T below which C4 photosynthesis is &lt;= half that predicted by Q10
+Thh         [K]             T above which photosynthesis is &lt;= half that predicted by Q10
+Trdm        [K]             T at which respiration is &lt;= half that predicted by Q10</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.biochemical_MD12">
+<code class="descname">biochemical_MD12</code><span class="sig-paren">(</span><em>biochem_in</em><span class="sig-paren">)</span><a class="headerlink" href="#src.biochemical_MD12" title="Permalink to this definition">¶</a></dt>
+<dd><p>[A,Ci,eta] = biochemical_VCM(Cs,Q,T,eb,O,p,Vcmo,m,Type,Rdparam,stress,Tyear,beta,qLs,NPQs)
+Date:     21 Sep 2012
+Update:   28 Jun 2013 Adaptation for use of Farquhar model of C3 photosynthesis (Farquhar et al 1980)</p>
+<blockquote>
+<div>18 Jul 2013 Inclusion of von Caemmerer model of C4 photosynthesis (von Caemmerer 2000, 2013)
+15 Aug 2013 Modified computation of CO2-limited electron transport in C4 species for consistency with light-limited value
+22 Oct 2013 Included effect of qLs on Jmax and electron transport; value of kNPQs re-scaled in input as NPQs</div></blockquote>
+<p>Authors:  Federico Magnani, with contributions from Christiaan van der Tol</p>
+<dl class="docutils">
+<dt>This function calculates:</dt>
+<dd><ul class="first last simple">
+<li>CO2 concentration in intercellular spaces (umol/mol == ppmv)</li>
+<li>leaf net photosynthesis (umol/m2/s) of C3 or C4 species</li>
+<li>fluorescence yield of a leaf (fraction of reference fluorescence yield in dark-adapted and un-stressed leaf)</li>
+</ul>
+</dd>
+</dl>
+<p>Usage:
+function [A,Cs,eb,f,rcw] = biochemical(C,Cs,Q,T,ea,eb,O,p,Vcmo,gcparam,Type,tempcor,ra,Tparams,Rdparam,stressfactor,Tyear,beta,qLs,NPQs)
+the function was tested for Matlab 7.2.0.232 (R2006a)</p>
+<p>Input (units are important; when not otherwise specified, mol refers to mol C):
+Cs        % [umol/mol]            CO2 concentration at leaf surface
+Q         % [uE/m2/s]             photochemically active radiation absorbed by the leaf
+T         % [oC or K]             leaf temperature
+eb        % [hPa]                 vapour pressure in leaf boundary layer
+O         % [mmol/mol]            ambient O2 concentration
+p         % [Pa]                  air pressure
+Vcmo      % [umol/m2/s]           maximum carboxylation capacity
+m         % [mol/mol]             Ball-Berry coefficient ‘m’ for stomatal regulation
+Type      % []                    text parameter, either ‘C3’ for C3 or any other text for C4
+Rdparam   % [mol/mol]             respiration at reference temperature as fraction of Vcmax
+stress    % []                    optional input: stress factor to reduce Vcmax (for example soil moisture, leaf age). Default value = 1 (no stress).
+Tyear     % [oC]                  mean annual temperature
+beta      % []                    fraction of photons partitioned to PSII (0.507 for C3, 0.4 for C4; Yin et al. 2006; Yin and Struik 2012)
+qLs       % []                    fraction of functional reaction centres (Porcar-Castell 2011)
+NPQs      % [s-1]                 rate constant of sustained thermal dissipation, normalized to (kf+kD) (=kNPQs’; Porcar-Castell 2011)</p>
+<p>Note: always use the prescribed units. Temperature can be either oC or K
+Note: input can be single numbers, vectors, or n-dimensional matrices
+Note: For consistency reasons, in C4 photosynthesis electron transport rates under CO2-limited conditions are computed by inverting the equation</p>
+<blockquote>
+<div>applied for light-limited conditions(Ubierna et al 2013). A discontinuity would result when computing J from ATP requirements of Vp and Vco, as a 
+fixed electron transport partitioning is assumed for light-limited conditions</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.BSM">
+<code class="descname">BSM</code><span class="sig-paren">(</span><em>soilpar</em>, <em>spec</em>, <em>emp</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BSM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spectral parameters</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.calc_brdf">
+<code class="descname">calc_brdf</code><span class="sig-paren">(</span><em>options</em>, <em>directional</em>, <em>spectral</em>, <em>angles</em>, <em>rad</em>, <em>atmo</em>, <em>soil</em>, <em>leafopt</em>, <em>canopy</em>, <em>meteo</em>, <em>profiles</em>, <em>thermal</em><span class="sig-paren">)</span><a class="headerlink" href="#src.calc_brdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="src.ebal">
+<code class="descname">ebal</code><span class="sig-paren">(</span><em>iter</em>, <em>options</em>, <em>spectral</em>, <em>rad</em>, <em>gap</em>, <em>leafopt</em>, <em>angles</em>, <em>meteo</em>, <em>soil</em>, <em>canopy</em>, <em>leafbio</em>, <em>xyt</em>, <em>k</em>, <em>profiles</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ebal" title="Permalink to this definition">¶</a></dt>
+<dd><p>function ebal.m calculates the energy balance of a vegetated surface</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>authors:      Christiaan van der Tol (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>)</dt>
+<dd>Joris Timmermans (<a class="reference external" href="mailto:j_timmermans&#37;&#52;&#48;itc&#46;nl">j_timmermans<span>&#64;</span>itc<span>&#46;</span>nl</a>)</dd>
+</dl>
+<p>date          26 Nov 2007 (CvdT)
+updates       29 Jan 2008 (JT &amp; CvdT)     converted into a function</p>
+<blockquote>
+<div><p>11 Feb 2008 (JT &amp; CvdT)     improved soil heat flux and temperature calculation
+14 Feb 2008 (JT)            changed h in to hc (as h=Avogadro`s constant)
+31 Jul 2008 (CvdT)          Included Pntot in output
+19 Sep 2008 (CvdT)          Converted F0 and F1 from units per aPAR into units per iPAR
+07 Nov 2008 (CvdT)          Changed layout
+18 Sep 2012 (CvdT)          Changed Oc, Cc, ec</p>
+<blockquote>
+<div>Feb 2012 (WV)            introduced structures for variables
+Sep 2013 (JV, CvT)       introduced additional biochemical model</div></blockquote>
+</div></blockquote>
+<p>parent: master.m (script)
+uses:</p>
+<blockquote>
+<div>RTMt_sb.m, RTMt_planck.m (optional), RTMf.m (optional)
+resistances.m
+heatfluxes.m
+biochemical.m
+soil_respiration.m</div></blockquote>
+<p>Table of contents of the function</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Initialisations for the iteration loop</dt>
+<dd>intial values are attributed to variables</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Energy balance iteration loop</dt>
+<dd>iteration between thermal RTM and surface fluxes</dd>
+</dl>
+</li>
+<li>Write warnings whenever the energy balance did not close</li>
+<li>Calculate vertical profiles (optional)</li>
+<li>Calculate spectrally integrated energy, water and CO2 fluxes</li>
+</ol>
+</div></blockquote>
+<p>The energy balance iteration loop works as follows:</p>
+<dl class="docutils">
+<dt>RTMo              More or less the classic SAIL model for Radiative </dt>
+<dd>Transfer of sun and sky light (no emission by the vegetation)</dd>
+<dt>While continue Here an iteration loop starts to close the energy </dt>
+<dd><blockquote class="first">
+<div>balance, i.e. to match the micro-meteorological model 
+and the radiative transfer model</div></blockquote>
+<dl class="last docutils">
+<dt>RTMt_sb         A numerical Radiative Transfer Model for thermal </dt>
+<dd>radiation emitted by the vegetation</dd>
+<dt>resistances     Calculates aerodynamic and boundary layer resistances </dt>
+<dd>of vegetation and soil (the micro-meteorological model)</dd>
+<dt>biochemical     Calculates photosynthesis, fluorescence and stomatal </dt>
+<dd>resistance of leaves (or biochemical_MD12: alternative)</dd>
+<dt>heatfluxes      Calculates sensible and latent heat flux of soil and </dt>
+<dd>vegetation
+Next soil heat flux is calculated, the energy balance 
+is evaluated, and soil and leaf temperatures adjusted 
+to force energy balance closure</dd>
+</dl>
+</dd>
+</dl>
+<p>end {while continue}</p>
+<dl class="docutils">
+<dt>meanleaf          Integrates the fluxes over all leaf inclinations </dt>
+<dd>azimuth angles and layers, integrates over the spectrum</dd>
+</dl>
+<p>usage:</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>[iter,fluxes,rad,profiles,thermal]             …  </dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>= ebal(iter,options,spectral,rad,gap,leafopt,  …</dt>
+<dd>angles,meteo,soil,canopy,leafbio)</dd>
+</dl>
+</div></blockquote>
+<p>The input and output are structures. These structures are further
+specified in a readme file.</p>
+<p>Input:</p>
+<blockquote>
+<div>iter        numerical parameters used in the iteration for energy balance closure
+options     calculation options
+spectral    spectral resolutions and wavelengths
+rad         incident radiation
+gap         probabilities of direct light penetration and viewing
+leafopt     leaf optical properties
+angles      viewing and observation angles
+soil        soil properties
+canopy      canopy properties
+leafbio     leaf biochemical parameters</div></blockquote>
+<p>Output:</p>
+<blockquote class="last">
+<div>iter        numerical parameters used in the iteration for energy balance closure
+fluxes      energy balance, turbulent, and CO2 fluxes
+rad         radiation spectra
+profiles    vertical profiles of fluxes
+thermal     temperatures, aerodynamic resistances and friction velocity</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.fluspect_B_CX">
+<code class="descname">fluspect_B_CX</code><span class="sig-paren">(</span><em>spectral</em>, <em>leafbio</em>, <em>optipar</em><span class="sig-paren">)</span><a class="headerlink" href="#src.fluspect_B_CX" title="Permalink to this definition">¶</a></dt>
+<dd><p>function [leafopt] = fluspect(spectral,leafbio,optipar)
+calculates reflectance and transmittance spectra of a leaf using FLUSPECT, 
+plus four excitation-fluorescence matrices</p>
+<p>Authors: Wout Verhoef, Christiaan van der Tol (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>), Joris Timmermans, 
+Date: 2007
+Update from PROSPECT to FLUSPECT: January 2011 (CvdT)</p>
+<blockquote>
+<div><blockquote>
+<div>Nov 2012 (CvdT) Output EF-matrices separately for PSI and PSII</div></blockquote>
+<p>31 Jan 2013 (WV)   Adapt to SCOPE v_1.40, using structures for I/O
+30 May 2013 (WV)   Repair bug in s for non-conservative scattering
+24 Nov 2013 (WV)   Simplified doubling routine
+25 Nov 2013 (WV)   Restored piece of code that takes final refl and</p>
+<blockquote>
+<div>tran outputs as a basis for the doubling routine</div></blockquote>
+<dl class="docutils">
+<dt>03 Dec 2013 (WV)   Major upgrade. Border interfaces are removed before </dt>
+<dd>the fluorescence calculation and later added again</dd>
+<dt>23 Dec 2013 (WV)   Correct a problem with N = 1 when calculating k </dt>
+<dd>and s; a test on a = Inf was included</dd>
+</dl>
+<p>01 Apr 2014 (WV)   Add carotenoid concentration (Cca and Kca)
+19 Jan 2015 (WV)   First beta version for simulation of PRI effect
+17 Mar 2017 (CT)   Added Anthocyanins (following Prospect-D)</p>
+</div></blockquote>
+<p>usage:
+[leafopt] = fluspect_b(spectral,leafbio,optipar)</p>
+<p>inputs:
+Cab         = leafbio.Cab;
+Cca         = leafbio.Cca;
+V2Z         = leafbio.V2Z;  % Violaxanthin - Zeaxanthin transition status</p>
+<blockquote>
+<div>[0-1]</div></blockquote>
+<p>Cw          = leafbio.Cw;
+Cdm         = leafbio.Cdm;
+Cs          = leafbio.Cs;
+Cant         = leafbio.Cant;
+N           = leafbio.N; 
+fqe         = leafbio.fqe;</p>
+<p>nr          = optipar.nr;
+Kdm         = optipar.Kdm;
+Kab         = optipar.Kab;
+Kca         = optipar.Kca;
+KcaV        = optipar.KcaV;
+KcaZ        = optipar.KcaZ;
+Kw          = optipar.Kw;
+Ks          = optipar.Ks;
+phiI        = optipar.phiI;
+phiII       = optipar.phiII;</p>
+<p>outputs:
+refl          reflectance
+tran          transmittance
+Mb            backward scattering fluorescence matrix, I for PSI and II for PSII
+Mf            forward scattering fluorescence matrix,  I for PSI and II for PSII</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.fluspect_B_CX_PSI_PSII_combined">
+<code class="descname">fluspect_B_CX_PSI_PSII_combined</code><span class="sig-paren">(</span><em>spectral</em>, <em>leafbio</em>, <em>optipar</em><span class="sig-paren">)</span><a class="headerlink" href="#src.fluspect_B_CX_PSI_PSII_combined" title="Permalink to this definition">¶</a></dt>
+<dd><p>function [leafopt] = fluspect(spectral,leafbio,optipar)
+calculates reflectance and transmittance spectra of a leaf using FLUSPECT, 
+plus four excitation-fluorescence matrices</p>
+<p>Authors: Wout Verhoef, Christiaan van der Tol (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>), Joris Timmermans, 
+Date: 2007
+Update from PROSPECT to FLUSPECT: January 2011 (CvdT)</p>
+<blockquote>
+<div><blockquote>
+<div>Nov 2012 (CvdT) Output EF-matrices separately for PSI and PSII</div></blockquote>
+<p>31 Jan 2013 (WV)   Adapt to SCOPE v_1.40, using structures for I/O
+30 May 2013 (WV)   Repair bug in s for non-conservative scattering
+24 Nov 2013 (WV)   Simplified doubling routine
+25 Nov 2013 (WV)   Restored piece of code that takes final refl and</p>
+<blockquote>
+<div>tran outputs as a basis for the doubling routine</div></blockquote>
+<dl class="docutils">
+<dt>03 Dec 2013 (WV)   Major upgrade. Border interfaces are removed before </dt>
+<dd>the fluorescence calculation and later added again</dd>
+<dt>23 Dec 2013 (WV)   Correct a problem with N = 1 when calculating k </dt>
+<dd>and s; a test on a = Inf was included</dd>
+</dl>
+<p>01 Apr 2014 (WV)   Add carotenoid concentration (Cca and Kca)
+19 Jan 2015 (WV)   First beta version for simulation of PRI effect
+17 Mar 2017 (CT)   Added Anthocyanins according to Prospect-D</p>
+</div></blockquote>
+<p>usage:
+[leafopt] = fluspect_b(spectral,leafbio,optipar)</p>
+<p>inputs:
+Cab         = leafbio.Cab;
+Cca         = leafbio.Cca;
+V2Z         = leafbio.V2Z;  % Violaxanthin - Zeaxanthin transition status</p>
+<blockquote>
+<div>[0-1]</div></blockquote>
+<p>Cw          = leafbio.Cw;
+Cdm         = leafbio.Cdm;
+Cs          = leafbio.Cs;
+Cant         = leafbio.Cant;
+N           = leafbio.N; 
+fqe         = leafbio.fqe;</p>
+<p>nr          = optipar.nr;
+Kdm         = optipar.Kdm;
+Kab         = optipar.Kab;
+Kca         = optipar.Kca;
+KcaV        = optipar.KcaV;
+KcaZ        = optipar.KcaZ;
+Kw          = optipar.Kw;
+Ks          = optipar.Ks;
+phi         = optipar.phi;
+outputs:
+refl          reflectance
+tran          transmittance
+Mb            backward scattering fluorescence matrix, I for PSI and II for PSII
+Mf            forward scattering fluorescence matrix,  I for PSI and II for PSII</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.heatfluxes">
+<code class="descname">heatfluxes</code><span class="sig-paren">(</span><em>ra</em>, <em>rs</em>, <em>Tc</em>, <em>ea</em>, <em>Ta</em>, <em>e_to_q</em>, <em>PSI</em>, <em>Ca</em>, <em>Ci</em><span class="sig-paren">)</span><a class="headerlink" href="#src.heatfluxes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="src.resistances">
+<code class="descname">resistances</code><span class="sig-paren">(</span><em>resist_in</em><span class="sig-paren">)</span><a class="headerlink" href="#src.resistances" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>function resistances calculates aerodynamic and boundary resistances
+for soil and vegetation</p>
+<p>Date:       01 Feb 2008
+Authors:    Anne Verhoef            (<a class="reference external" href="mailto:a&#46;verhoef&#37;&#52;&#48;reading&#46;ac&#46;uk">a<span>&#46;</span>verhoef<span>&#64;</span>reading<span>&#46;</span>ac<span>&#46;</span>uk</a>)</p>
+<blockquote>
+<div>Christiaan van der Tol  (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>)
+Joris Timmermans        (<a class="reference external" href="mailto:j_timmermans&#37;&#52;&#48;itc&#46;nl">j_timmermans<span>&#64;</span>itc<span>&#46;</span>nl</a>)</div></blockquote>
+<dl class="docutils">
+<dt>Source:     Wallace and Verhoef (2000) ‘Modelling interactions in</dt>
+<dd><p class="first">mixed-plant communities: light, water and carbon dioxide’, in: Bruce
+Marshall, Jeremy A. Roberts (ed), ‘Leaf Development and Canopy Growth’,
+Sheffield Academic Press, UK. ISBN 0849397693</p>
+<p class="last">ustar:  Tennekes, H. (1973) ‘The logaritmic wind profile’, J.
+Atmospheric Science, 30, 234-238
+Psih:   Paulson, C.A. (1970), The mathematical
+representation of wind speed and temperature in the
+unstable atmospheric surface layer. J. Applied Meteorol. 9,
+857-861</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Note: Equation numbers refer to equation numbers in Wallace and Verhoef (2000)</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>[resist_out] = resistances(resist_in)</dd>
+</dl>
+<p>The input and output are structures. These structures are further
+specified in a readme file.</p>
+<dl class="docutils">
+<dt>Input: </dt>
+<dd>resist_in   aerodynamic resistance parameters and wind speed</dd>
+</dl>
+<p>The strucutre resist_in contains the following elements:
+u         =   windspeed
+L         =   stability
+LAI       =   Leaf Area Index</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.RTMf">
+<code class="descname">RTMf</code><span class="sig-paren">(</span><em>spectral</em>, <em>rad</em>, <em>soil</em>, <em>leafopt</em>, <em>canopy</em>, <em>gap</em>, <em>angles</em>, <em>profiles</em><span class="sig-paren">)</span><a class="headerlink" href="#src.RTMf" title="Permalink to this definition">¶</a></dt>
+<dd><p>function ‘RTMf’ calculates the spectrum of fluorescent radiance in the
+observer’s direction in addition to the total TOC spectral hemispherical upward Fs flux</p>
+<p>Authors:  Wout Verhoef and Christiaan van der Tol (<a class="reference external" href="mailto:c&#46;vandertol&#37;&#52;&#48;utwente&#46;nl">c<span>&#46;</span>vandertol<span>&#64;</span>utwente<span>&#46;</span>nl</a>)
+Date:     12 Dec 2007
+Update:   26 Aug 2008 CvdT        Small correction to matrices</p>
+<blockquote>
+<div>07 Nov 2008 CvdT        Changed layout</div></blockquote>
+<dl class="docutils">
+<dt>Update:   19 Mar 2009 CvdT        Major corrections: lines 95-96,</dt>
+<dd>101-107, and 119-120.</dd>
+<dt>Update:    7 Apr 2009 WV &amp; CvdT   Major correction: lines 89-90, azimuth</dt>
+<dd>dependence was not there in previous verions (implicit assumption of
+azimuth(solar-viewing) = 0). This has been corrected</dd>
+<dt>Update:   May-June 2012 WV &amp; CvdT Add calculation of hemispherical Fs</dt>
+<dd>fluxes</dd>
+<dt>Update:   Jan-Feb 2013 WV         Inputs and outputs via structures for</dt>
+<dd>SCOPE Version 1.40</dd>
+</dl>
+<p>Update:   Jan 2015  CvdT          Added two contributions to SIF radiance cuased by rescattering of hemispherical SIF fluxes
+Update:   Jan 2015  JAK           (from SCOPE 1.53): Improved speed by factor of 9+! (by vectorizing the summation over the 60 layers)
+Update:   Jan 2015  WV            Rearranged some arrays to smoothen the vectorizations; adjusted some internal names</p>
+<p>The inputs and outputs are structures. These structures are further
+specified in a readme file.</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><p class="first">spectral    information about wavelengths and resolutions
+rad         a large number of radiative fluxes: spectrally distributed</p>
+<blockquote>
+<div>and integrated, and canopy radiative transfer coefficients.</div></blockquote>
+<p class="last">soil        soil properties
+leafopt     leaf optical properties
+canopy      canopy properties (such as LAI and height)
+gap         probabilities of direct light penetration and viewing
+angles      viewing and observation angles
+profiles    vertical profiles of fluxes</p>
+</dd>
+<dt>Output:</dt>
+<dd><dl class="first last docutils">
+<dt>rad         a large number of radiative fluxes: spectrally distributed </dt>
+<dd>and integrated, and canopy radiative transfer coefficients.
+Here, fluorescence fluxes are added</dd>
+</dl>
+</dd>
+</dl>
+<p>0.0 globals</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.RTMo">
+<code class="descname">RTMo</code><span class="sig-paren">(</span><em>spectral</em>, <em>atmo</em>, <em>soil</em>, <em>leafopt</em>, <em>canopy</em>, <em>angles</em>, <em>meteo</em>, <em>rad</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#src.RTMo" title="Permalink to this definition">¶</a></dt>
+<dd><p>function RTMo</p>
+<blockquote>
+<div><p>calculates the spectra of hemisperical and directional observed visible 
+and thermal radiation (fluxes E and radiances L), as well as the single 
+and bi-directional gap probabilities</p>
+<p>the function does not require any non-standard Matlab functions. No
+changes to the code have to be made to operate the function for a
+particular canopy. All necessary parameters and variables are input or
+global and need to be specified elsewhere.</p>
+<dl class="docutils">
+<dt>Authors:      Wout Verhoef            (<a class="reference external" href="mailto:verhoef&#37;&#52;&#48;nlr&#46;nl">verhoef<span>&#64;</span>nlr<span>&#46;</span>nl</a>) </dt>
+<dd>Christiaan van der Tol  (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>)
+Joris Timmermans        (<a class="reference external" href="mailto:j_timmermans&#37;&#52;&#48;itc&#46;nl">j_timmermans<span>&#64;</span>itc<span>&#46;</span>nl</a>)</dd>
+<dt>updates:      10 Sep 2007 (CvdT)      - calculation of Rn</dt>
+<dd><blockquote class="first">
+<div>5 Nov 2007             - included observation direction</div></blockquote>
+<dl class="docutils">
+<dt>12 Nov 2007             - included abs. PAR spectrum output</dt>
+<dd><ul class="first last simple">
+<li>improved calculation efficiency</li>
+</ul>
+</dd>
+</dl>
+<p>13 Nov 2007             - written readme lines
+11 Feb 2008 (WV&amp;JT)     - changed Volscat</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>(JT)        - small change in calculation Po,Ps,Pso</dt>
+<dd><blockquote class="first">
+<div><ul class="simple">
+<li>introduced parameter ‘lazitab’</li>
+</ul>
+</div></blockquote>
+<ul class="last simple">
+<li>changed nomenclature</li>
+<li>Appendix IV: cosine rule</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>04 Aug 2008 (JT)        - Corrections for Hotspot effect in the probabilities
+05 Nov 2008 (CvdT)      - Changed layout
+04 Jan 2011 (JT &amp; CvdT) - Included Pso function (Appendix IV)</p>
+<blockquote>
+<div><ul class="simple">
+<li>removed the analytical function (for checking)</li>
+</ul>
+</div></blockquote>
+<p>02 Oct 2012 (CvdT)      - included incident PAR in output</p>
+<dl class="last docutils">
+<dt>Jan/Feb 2013 (WV)       - Major revision towards SCOPE version 1.40:</dt>
+<dd><ul class="first last simple">
+<li>Parameters passed using structures</li>
+<li>Improved interface with MODTRAN atmospheric data</li>
+<li>Now also calculates 4-stream
+reflectances rso, rdo, rsd and rdd
+analytically</li>
+</ul>
+</dd>
+<dt>Apri 2013 (CvT)         - improvements in variable names</dt>
+<dd>and descriptions</dd>
+</dl>
+</dd>
+</dl>
+<p>Table of contents of the function</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>Preparations</li>
+</ol>
+<blockquote>
+<div>0.1     parameters
+0.2     initialisations</div></blockquote>
+<ol class="arabic simple">
+<li>Geometric quantities</li>
+</ol>
+<blockquote>
+<div>1.1     general geometric quantities
+1.2     geometric factors associated with extinction and scattering
+1.3     geometric factors to be used later with rho and tau
+1.4     solar irradiance factor for all leaf orientations
+1.5     probabilities Ps, Po, Pso</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Calculation of upward and downward fluxes</li>
+<li>Outgoing fluxes, hemispherical and in viewing direction, spectrum</li>
+</ol>
+<p>4.      Net fluxes, spectral and total, and incoming fluxes
+A1      functions J1 and J2 (introduced for stable solutions)
+A2      function volscat
+A3      function e2phot
+A4      function Pso</p>
+</div></blockquote>
+<p>references:</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>{1} Verhoef (1998), ‘Theory of radiative transfer models applied in</dt>
+<dd>optical remote sensing of vegetation canopies’. PhD Thesis Univ. Wageninegn</dd>
+<dt>{2} Verhoef, W., Jia, L., Xiao, Q. and Su, Z. (2007) Unified optical -</dt>
+<dd>thermal four - stream radiative transfer theory for homogeneous 
+vegetation canopies. IEEE Transactions on geoscience and remote 
+sensing, 45,6.</dd>
+<dt>{3} Verhoef (1985), ‘Earth Observation Modeling based on Layer Scattering</dt>
+<dd><blockquote class="first">
+<div>Matrices’, Remote sensing of Environment, 17:167-175</div></blockquote>
+<p>Usage:
+function [rad,gap,profiles] = RTMo(spectral,atmo,soil,leafopt,canopy,angles,meteo,rad,options)</p>
+<p>The input and output are structures. These structures are further
+specified in a readme file.</p>
+<dl class="last docutils">
+<dt>Input:</dt>
+<dd><p class="first">spectral    information about wavelengths and resolutions
+atmo        MODTRAN atmospheric parameters
+soil        soil properties
+leafopt     leaf optical properties
+canopy      canopy properties (such as LAI and height)
+angles      viewing and observation angles
+meteo       has the meteorological variables. Is only used to correct</p>
+<blockquote>
+<div>the total irradiance if a specific value is provided
+instead of the usual Modtran output.</div></blockquote>
+<p>rad         initialization of the structure of the output ‘rad’
+options     simulation options. Here, the option</p>
+<blockquote class="last">
+<div>‘calc_vert_profiles’ is used, a boolean that tells whether 
+or not to output data of 60 layers separately.</div></blockquote>
+</dd>
+<dt>Output:</dt>
+<dd><p class="first">gap         probabilities of direct light penetration and viewing
+rad         a large number of radiative fluxes: spectrally distributed</p>
+<blockquote>
+<div>and integrated, and canopy radiative transfer coefficients.</div></blockquote>
+<dl class="last docutils">
+<dt>profiles    vertical profiles of radiation variables such as absorbed</dt>
+<dd>PAR.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.RTMt_planck">
+<code class="descname">RTMt_planck</code><span class="sig-paren">(</span><em>spectral</em>, <em>rad</em>, <em>soil</em>, <em>leafopt</em>, <em>canopy</em>, <em>gap</em>, <em>angles</em>, <em>Tcu</em>, <em>Tch</em>, <em>Tsu</em>, <em>Tsh</em>, <em>obsdir</em><span class="sig-paren">)</span><a class="headerlink" href="#src.RTMt_planck" title="Permalink to this definition">¶</a></dt>
+<dd><p>function ‘RTMt_planck’ calculates the spectrum of outgoing thermal
+radiation in hemispherical and viewing direction</p>
+<p>Authors: Wout Verhoef and Christiaan van der Tol (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>)
+Date: 5 November 2007
+Update:   14 Nov 2007</p>
+<blockquote>
+<div>16 Nov 2007 CvdT    improved calculation of net radiation
+17 Dec 2007 JT      simplified, removed net radiation
+07 Nov 2008 CvdT    changed layout
+16 Mar 2009 CvdT    removed calculation of Tbright
+12 Apr 2013 CvdT    introduced structures</div></blockquote>
+<dl class="docutils">
+<dt>Table of contents of the function:</dt>
+<dd><ol class="first arabic simple" start="0">
+<li>preparations</li>
+</ol>
+<blockquote>
+<div>0.0     globals
+0.1     initialisations
+0.2     parameters
+0.3     geometric factors of Observer
+0.4     geometric factors associated with extinction and scattering
+0.5     geometric factors to be used later with rho and tau
+0.6     fo for all leaf angle/azumith classes</div></blockquote>
+<p class="last">1       calculation of upward and downward fluxes
+2       outgoing fluxes, hemispherical and in viewing direction
+A1      function planck (external function is now used)</p>
+</dd>
+<dt>Usage:</dt>
+<dd>function rad = RTMt_planck(spectral,rad,soil,leafopt,canopy,gap,angles,Tcu,Tch,Tsu,Tsh,obsdir)</dd>
+<dt>Input:</dt>
+<dd>Symbol      Description                 Unit            Dimension
+——      ———–                 —-            ———
+Tcu         temperature sunlit leaves   C               [13,36,nl]
+Tch         temperature shaded leaves   C               [nl]
+Tsu         temperature sunlit soil     C               [1]
+Tsu         temperature shaded soil     C               [1]
+rad         a structure containing 
+soil        a structure containing soil reflectance
+canopy      a structure containing LAI and leaf inclination</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.RTMz">
+<code class="descname">RTMz</code><span class="sig-paren">(</span><em>spectral</em>, <em>rad</em>, <em>soil</em>, <em>leafopt</em>, <em>canopy</em>, <em>gap</em>, <em>angles</em>, <em>profiles</em><span class="sig-paren">)</span><a class="headerlink" href="#src.RTMz" title="Permalink to this definition">¶</a></dt>
+<dd><p>function ‘RTMz’ calculates the small modification of TOC outgoing
+radiance due to the conversion of Violaxanthin into Zeaxanthin in leaves</p>
+<p>Author:  Christiaan van der Tol (<a class="reference external" href="mailto:c&#46;vandertol&#37;&#52;&#48;utwente&#46;nl">c<span>&#46;</span>vandertol<span>&#64;</span>utwente<span>&#46;</span>nl</a>)
+Date:     08 Dec 2016</p>
+<p>The inputs and outputs are structures. These structures are further
+specified in a readme file.</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><p class="first">spectral    information about wavelengths and resolutions
+rad         a large number of radiative fluxes: spectrally distributed</p>
+<blockquote>
+<div>and integrated, and canopy radiative transfer coefficients.</div></blockquote>
+<p class="last">soil        soil properties
+leafopt     leaf optical properties
+canopy      canopy properties (such as LAI and height)
+gap         probabilities of direct light penetration and viewing
+angles      viewing and observation angles
+profiles    vertical profiles of fluxes</p>
+</dd>
+<dt>Output:</dt>
+<dd><dl class="first last docutils">
+<dt>rad         a large number of radiative fluxes: spectrally distributed</dt>
+<dd>and integrated, and canopy radiative transfer coefficients.
+Here, fluorescence fluxes are added</dd>
+</dl>
+</dd>
+</dl>
+<p>0.0 globals</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.RTMt_sb">
+<code class="descname">RTMt_sb</code><span class="sig-paren">(</span><em>spectral</em>, <em>rad</em>, <em>soil</em>, <em>leafopt</em>, <em>canopy</em>, <em>gap</em>, <em>angles</em>, <em>Tcu</em>, <em>Tch</em>, <em>Tsu</em>, <em>Tsh</em>, <em>obsdir</em><span class="sig-paren">)</span><a class="headerlink" href="#src.RTMt_sb" title="Permalink to this definition">¶</a></dt>
+<dd><p>function ‘RTMt_sb’ calculates total outgoing radiation in hemispherical
+direction and total absorbed radiation per leaf and soil component.
+Radiation is integrated over the whole thermal spectrum with
+Stefan-Boltzman’s equation. This function is a simplified version of
+‘RTMt_planck’, and is less time consuming since it does not do the
+calculation for each wavelength separately.</p>
+<p>Authors: Wout Verhoef and Christiaan van der Tol (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>)
+date:     5  Nov 2007
+update:   13 Nov 2007</p>
+<blockquote>
+<div><p>16 Nov 2007 CvdT    improved calculation of net radiation
+27 Mar 2008 JT      added directional calculation of radiation
+24 Apr 2008 JT      Introduced dx as thickness of layer (see parameters)
+31 Oct 2008 JT      introduced optional directional calculation
+31 Oct 2008 JT      changed initialisation of F1 and F2 -&gt; zeros
+07 Nov 2008 CvdT    changed layout
+16 Mar 2009 CvdT    removed Tbright calculation</p>
+<blockquote>
+<div>Feb 2013 WV      introduces structures for version 1.40</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Table of contents of the function</dt>
+<dd><dl class="first docutils">
+<dt>0       preparations</dt>
+<dd>0.0     globals
+0.1     initialisations
+0.2     parameters       
+0.3     geometric factors of Observer
+0.4     geometric factors associated with extinction and scattering
+0.5     geometric factors to be used later with rho and tau
+0.6     fo for all leaf angle/azumith classes</dd>
+</dl>
+<p class="last">1       calculation of upward and downward fluxes          
+2       total net fluxes
+Appendix A. Stefan-Boltzmann</p>
+</dd>
+</dl>
+<p>usage:
+[rad] = RTMt_sb(options,spectral,rad,soil,leafopt,canopy,gap,angles,Tcu,Tch,Tsu,Tsh)</p>
+<p>Most input and output are structures. These structures are further
+specified in a readme file. The temperatures Tcu, Tch, Tsu and Tsh are
+variables.</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><p class="first">options       calculation options
+spectral    information about wavelengths and resolutions
+rad         a large number of radiative fluxes: spectrally distributed</p>
+<blockquote>
+<div>and integrated, and canopy radiative transfer coefficients</div></blockquote>
+<p class="last">soil        soil properties
+leafopt     leaf optical properties
+canopy      canopy properties (such as LAI and height)
+gap         probabilities of direct light penetration and viewing
+angles      viewing and observation angles
+Tcu         Temperature of sunlit leaves    (oC), [13x36x60]
+Tch         Temperature of shaded leaves    (oC), [13x36x60]
+Tsu         Temperature of sunlit soil      (oC), [1]
+Tsh         Temperature of shaded soil      (oC), [1]</p>
+</dd>
+<dt>Output:</dt>
+<dd><dl class="first last docutils">
+<dt>rad         a large number of radiative fluxes: spectrally distributed </dt>
+<dd>and integrated, and canopy radiative transfer coefficients.
+Here, thermal fluxes are added</dd>
+</dl>
+</dd>
+</dl>
+<p>0.0 globals</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="equations.html" class="btn btn-neutral float-right" title="+equations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api.html" class="btn btn-neutral" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

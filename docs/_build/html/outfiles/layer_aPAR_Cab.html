@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>layer_aPAR_Cab.dat &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="leaftemp.dat" href="leaftemp.html" />
+    <link rel="prev" title="layer_aPAR.dat" href="layer_aPAR.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../output_files.html">Output files</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fluxes.html">fluxes.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surftemp.html">surftemp.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aerodyn.html">aerodyn.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radiation.html">radiation.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectrum_hemis_optical.html">spectrum_hemis_optical.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectrum_obsdir_optical.html">spectrum_obsdir_optical.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="irradiance_spectra.html">irradiance_spectra.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reflectance.html">reflectance.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wl.html">wl.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOC_irradiance.html">BOC_irradiance.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pars_and_input.html">pars_and_input.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pars_and_input_short.html">pars_and_input_short.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectrum_obsdir_BlackBody.html">spectrum_obsdir_BlackBody.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectrum_hemis_thermal.html">spectrum_hemis_thermal.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectrum_obsdir_thermal.html">spectrum_obsdir_thermal.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html">gap.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layer_aPAR.html">layer_aPAR.dat</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">layer_aPAR_Cab.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leaftemp.html">leaftemp.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layer_H.html">layer_h.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layer_lE.html">layer_le.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layer_A.html">layer_a.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layer_NPQ.html">layer_NPQ.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layer_rn.html">layer_rn.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layer_fluorescence.html">layer_fluorescence.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescence.html">fluorescence.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescencePSI.html">fluorescencePSI.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescencePSII.html">fluorescencePSII.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescence_hemis.html">fluorescence_hemis.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescence_emitted_by_all_leaves.html">fluorescence_emitted_by_all_leaves.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescence_emitted_by_all_photosystems.html">fluorescence_emitted_by_all_photosystems.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescence_sunlit.html">fluorescence_sunlit.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescence_shaded.html">fluorescence_shaded.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluorescence_scattered.html">fluorescence_scattered.dat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Directional.html">Directional</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../output_files.html">Output files</a> &raquo;</li>
+        
+      <li>layer_aPAR_Cab.dat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/outfiles/layer_aPAR_Cab.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="layer-apar-cab-dat">
+<h1>layer_aPAR_Cab.dat<a class="headerlink" href="#layer-apar-cab-dat" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - absorbed photosynthetically active radiation (aPAR) by chlorophylls (Cab) per leaf layer</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Pn1d_Cab</strong></td>
+<td>umol m-2 s-1</td>
+<td>aPAR by Cab per leaf layer</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="leaftemp.html" class="btn btn-neutral float-right" title="leaftemp.dat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="layer_aPAR.html" class="btn btn-neutral" title="layer_aPAR.dat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

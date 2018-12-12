@@ -1,0 +1,196 @@
+
+:PROSPECT: nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+
+
+
+
+:Leaf_Biochemical: nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+
+
+:BallBerry0: nan
+    
+    :units: nan
+    :type: double
+    :default: 0.01
+
+
+
+
+
+
+
+
+
+:Leaf_Biochemical (magnani model): nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+
+
+:Fluorescence: nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+
+
+:Soil: nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+
+
+
+
+:Canopy: nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+
+
+:Meteo (values in data files, in the time series option, can overrule these values): nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+:z: measurement height of meteorological data
+    
+    :units: m
+    :type: double
+    :default: 10.0
+
+:Rin: broadband incoming shortwave radiation (0.4-2.5 um)
+    
+    :units: W m-2
+    :type: double
+    :default: 600.0
+
+:Ta: air temperature
+    
+    :units: T
+    :type: double
+    :default: 20.0
+
+:Rli: broadband incoming longwave radiation (2.5-50 um)
+    
+    :units: W m-2
+    :type: double
+    :default: 300.0
+
+:p: air pressure
+    
+    :units: hPa
+    :type: double
+    :default: 970.0
+
+:ea: atmospheric vapour pressure
+    
+    :units: hPa
+    :type: double
+    :default: 15.0
+
+:u: wind speed at height z
+    
+    :units: m s-1
+    :type: double
+    :default: 2.0
+
+:Ca: atmospheric CO2 concentration
+    
+    :units: ppm
+    :type: double
+    :default: 380.0
+
+:Oa: atmospheric O2 concentration
+    
+    :units: per mille
+    :type: double
+    :default: 209.0
+
+:Aerodynamic: nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+
+
+
+
+:timeseries (this option is only for time series): nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+:startDOY: Julian day (decimal) of start of simulations
+    
+    :units: nan
+    :type: double
+    :default: 169.0
+
+:endDOY: Julian day (decimal) of end of simulations
+    
+    :units: nan
+    :type: double
+    :default: 170.0
+
+:LAT: Latitude
+    
+    :units: decimal deg
+    :type: double
+    :default: 52.25
+
+:LON: Longitude
+    
+    :units: decimal deg
+    :type: double
+    :default: 5.69
+
+:timezn : east of Greenwich
+    
+    :units: hours
+    :type: double
+    :default: 1.0
+
+:Angles: nan
+    
+    :units: nan
+    :type: double
+    :default: nan
+
+:tts: solar zenith angle
+    
+    :units: deg
+    :type: double
+    :default: 30.0
+
+:tto: observation zenith angle
+    
+    :units: deg
+    :type: double
+    :default: 0.0
+
+:psi: azimuthal difference between solar and observation angle
+    
+    :units: deg
+    :type: double
+    :default: 90.0

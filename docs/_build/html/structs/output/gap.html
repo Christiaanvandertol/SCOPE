@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>gap &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="leafopt" href="leafopt.html" />
+    <link rel="prev" title="fluxes" href="fluxes.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output_files.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../structs.html">Structs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../input/input_index.html">input structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constants/constants_index.html">constant structs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="output_index.html">output structs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="directional.html">directional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fluxes.html">fluxes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">gap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calculated">Calculated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-file">Output file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#used">Used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="leafopt.html">leafopt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profiles.html">profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rad.html">rad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal.html">thermal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../internal/internal_index.html">internal structs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../structs.html">Structs</a> &raquo;</li>
+        
+          <li><a href="output_index.html">output structs</a> &raquo;</li>
+        
+      <li>gap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/structs/output/gap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gap">
+<h1>gap<a class="headerlink" href="#gap" title="Permalink to this headline">¶</a></h1>
+<p>Probabilities of levels being observed, illuminated per layer</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is an optional struct that requires <code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> to be output, however it will be calculated anyway</p>
+</div>
+<div class="section" id="calculated">
+<h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+</div>
+<div class="section" id="output-file">
+<h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
+<p>if <code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+<p><a class="reference internal" href="../../outfiles/gap.html#gap-dat"><span class="std std-ref">gap.dat</span></a></p>
+</div>
+<div class="section" id="used">
+<h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>user</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Ps</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Pso</span></code></td>
+<td><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Ps,</span> <span class="pre">Po,</span> <span class="pre">Pso</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">K</span></code></td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Fields initialized in <a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="20%" />
+<col width="20%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>variable</td>
+<td>units</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr class="row-even"><td><strong>Ps</strong></td>
+<td>-</td>
+<td>[61 x 1] double</td>
+<td>fraction of sunlit leaves per layer</td>
+</tr>
+<tr class="row-odd"><td><strong>Po</strong></td>
+<td>-</td>
+<td>[61 x 1] double</td>
+<td>fraction of observed leaves per layer</td>
+</tr>
+<tr class="row-even"><td><strong>Pso</strong></td>
+<td>-</td>
+<td>[61 x 1] double</td>
+<td>fraction of sunlit and (at the same time) observed per layer</td>
+</tr>
+<tr class="row-odd"><td><strong>K</strong></td>
+<td>-</td>
+<td>double</td>
+<td>extinction coefficient in direction of observer integrated over leaf angles</td>
+</tr>
+<tr class="row-even"><td><strong>k</strong></td>
+<td>-</td>
+<td>double</td>
+<td>extinction coefficient in direction of sun integrated over leaf angles</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="leafopt.html" class="btn btn-neutral float-right" title="leafopt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fluxes.html" class="btn btn-neutral" title="fluxes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
