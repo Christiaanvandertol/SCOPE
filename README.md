@@ -1,4 +1,5 @@
 # SCOPE
-SCOPE is a simulation model for radiative transfer, photosynthesis and energy fluxes in vegetation and soil.
+Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at al. 2009) radiative transfer model.
 
-Read-the-docs will be available soon
+
+Manual is available at ReadTheDocs or if you are offline just open **./docs/_build/html/index.html** in your browser.
