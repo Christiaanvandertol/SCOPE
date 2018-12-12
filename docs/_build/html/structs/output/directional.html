@@ -84,9 +84,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../directories.html">Directories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../output_files.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
@@ -204,7 +205,7 @@ to be output and calculated</p>
 <div class="section" id="output-file">
 <h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../../outfiles/Directional.html#directional"><span class="std std-ref">Directional</span></a></li>
+<li><a class="reference internal" href="../../outfiles/directional.html#directional-angles-sunangle-x-xx-degrees-dat"><span class="std std-ref">Directional/Angles (SunAngle x.xx degrees).dat</span></a></li>
 </ul>
 </div>
 <div class="section" id="used">
@@ -299,7 +300,7 @@ to be output and calculated</p>
 <tr class="row-odd"><td><strong>BrightnessT</strong></td>
 <td>K</td>
 <td>[1 x 364] double</td>
-<td>&#160;</td>
+<td>brightness temperature</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code></td>
 <td>&#160;</td>
@@ -307,9 +308,9 @@ to be output and calculated</p>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td><strong>Lot_</strong></td>
-<td>&#160;</td>
+<td>W m-2 um-1 sr-1</td>
 <td>[161 x 364] double</td>
-<td>&#160;</td>
+<td>outgoing thermal radiation in observation direction</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></td>
 <td>&#160;</td>
@@ -319,7 +320,7 @@ to be output and calculated</p>
 <tr class="row-odd"><td><strong>LoF_</strong></td>
 <td>W m-2 um-1 sr-1</td>
 <td>[211 x 364] double</td>
-<td>&#160;</td>
+<td>outgoing fluorescence radiation in observation direction</td>
 </tr>
 </tbody>
 </table>

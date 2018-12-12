@@ -11,7 +11,7 @@ This is an input structure that controls the workflow.
 
 The values have binary (or tertiary) logic thus equal to 0 or 1 (or 2).
 
-Influence on the output files is highlighted in the corresponding section :ref:`output_files:Output files`
+Influence on the output files is highlighted in the corresponding section :ref:`outfiles:Output files`
 
 .. Note:: Not all combinations can bring to the desired result
 
@@ -32,7 +32,7 @@ Defines rules of input reading
 Switch in ``SCOPE.m`` (multiple)
 
 **0**
-    **individual run(s)**. Specify one value for fixed input parameters, and an equal number (> 1) of values for all parameters that vary between the runs.
+    **individual run(s)**: specify one value for fixed input parameters, and an equal number (> 1) of values for all parameters that vary between the runs.
 
 **1**
     | **time series** (uses text files with meteo input as time series from *"../data/input/dataset X"* with files similar to ../data/input/:ref:`directories/data:dataset for_verification` specified on the ``filenames`` sheet of ``input_data.xslx``
@@ -40,6 +40,25 @@ Switch in ``SCOPE.m`` (multiple)
 
 **2**
     **Lookup-Table**: specify a number of values in the row of input parameters. All possible combinations of inputs will be used.
+
+Let us illustrate what the difference is in details.
+
+It is possible to specify several values in a row on ``inputdata`` sheet of ``input_data.xslx``. Suppose we have an the following combination of input parameters. Notice, we provide two values for Cab and Cca parameters.
+
+.. figure:: ./images/simulation.bmp
+
+If **individual run(s)** (``options.simulation == 0``) was chosen the given combination will end up in **two** simulations:
+
+* Cab=80, Cca=20
+* Cab=40, Cca=10
+
+
+If  **Lookup-Table** (``options.simulation == 2``) was chosen the given combination will end up in **four** simulations:
+
+* Cab=80, Cca=20
+* Cab=80, Cca=10
+* Cab=40, Cca=20
+* Cab=40, Cca=10
 
 -----------------------
 

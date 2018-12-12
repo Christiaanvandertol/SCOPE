@@ -3,13 +3,13 @@ Getting started
 
 .. contents::
 
-Software requirements
-''''''''''''''''''''''''
+0. Software requirements
+--------------------------
 
 The model SCOPE_v1.70 is written in Matlab R2015b running on a Windows operating system. We took care not to use functions that are available in all recent Matlab versions, but we cannot give any warranty that it works under other operating systems and other Matlab versions.
 
 .. warning::
-    If you do not have Matlab on your computer you can use ``SCOPE.exe`` with `Matlab Runtime`_ **only R2015b (version 9.0)**
+    If you do **not** have Matlab on your computer you can use ``SCOPE.exe`` with `Matlab Runtime`_ **only R2015b (version 9.0)**
 
 
 .. _Matlab Runtime: https://nl.mathworks.com/products/compiler/matlab-runtime.html
@@ -18,64 +18,98 @@ SCOPE consists of several scripts and functions (modules), which can be used sep
 
 When the modules are used separately, then it is important to provide input in the structures specified in :ref:`structs:structs`.
 
-When the integrated model is called, then the input is automatically loaded from the spreadsheet (``input_data.xlsx``) and from the files specified therein (by default located in ../data/:ref:`directories/data:input`.
+When the integrated model is called, then the input is automatically loaded from the spreadsheet :ref:`directories/scope:``input_data.xlsx``` and from the files specified in ./:ref:`directories/data:data`/input.
 
 Basic knowledge of the use of Matlab is required to operate the model.
 
 The application of the model involves the following steps:
 
+
 1.	Unpack the zip file
 -------------------------------
 Unpack the model, and **leave the directory structure intact**.
+
 
 2.	Run the model once
 ------------------------------
 Run the model once, before modifying the parameters and input. It will check whether the software works under your system. The model runs with an example data set (``options.verify``), and the output is automatically compared to output that it should produce. If there is any difference in the results, messages will show up.
 
-The model is executed by opening Matlab, navigating to the directory where the matlab code is (‘cd ./SCOPE_v1.70/:ref:’), and running ‘SCOPE’. Running the model may take a while because almost all options are switched on. If the output of the model is not as expected, then messages will appear. There will also be graphs appearing showing the freshly produced output together with the expected output. If all is ok then no graphs or warnings are produced.
+* Navigate to the directory where the matlab code is
+    ./SCOPE_v1.70/:ref:`directories/scope:src`
+* Open ``SCOPE.m`` in Matlab
+* in Matlab command window type:
+    .. code-block:: matlab
 
-3.	Evaluate and complete the spreadsheet
------------------------------------------------
-‘input_data.xlsx’ or the input files ‘filenames’, ‘inputdata’ and ‘setoptions’
-The required input is specified in the spreadsheet file ‘input_data.xlsx’. Open this file. It has three sheets:
+        SCOPE
 
--	Readme:  here information about the simulation can be entered
--	Options: specify the simulation options here
--	Filenames:  specify the name of the simulation, the soil and leaf optical property files, and the file names of meteorological input time series.
--	InputData:  specify all the parameters and input variables. Meteorological data specified here will be overwritten by values in the input files if these files have been specified (filenames) and the series option is switched on (options).
 
-If you prefer not to use the spreadsheet, you can provide the input as a text file, and the options and file names as ‘.m’ file (which can be edited with any text editor like notepad). Examples are given. You can set the option whether to use the spreadsheet or text input in the file ‘set_parameter_filenames.m’, by commenting out (with ‘%’) the option that is not wanted. The filenames can be specified here.
+Running the model may take a while because almost all options are switched on. If the output of the model is not as expected, then messages will appear. There will also be graphs appearing showing the freshly produced output together with the expected output. If all is ok then no graphs or warnings are produced.
 
-4.	Simulation option ‘Individual runs’
+
+3.	Set the input in ``input_data.xlsx``
 ---------------------------------------------
-The last simulation option is important: to run the model for a few cases only, choose the option: simulation = 0. In that case the model runs for the input specified in the InputData sheet. It is possible to specify more than one value for one input variable, by filling in values in the next column. The model will run as many simulations as there are columns in the input data spreadsheet, say n runs. For run i it will select the data from column i for all variables that have n values. For all other variables, it will select the first value only. For example:
-Cab  	10 	20 	30
-Cdm 	0.012
-N 	1.5 	2
-It will do three runs, the first time with Cab = 10, Cdm = 0.012, and N = 1.5;  the second time with Cab = 20, Cdm = 0.012, and N = 1.5;  and a third time with Cab = 30, Cdm = 0.012 and N = 1.5.  The value of N = 2 is ignored and the run cycle ends.
-The output is the same as for the time series (see below), except that two additional files are produced: ‘pars_and_input.dat’ and ‘pars_and_input_short.dat’. Both files always have a header. The first file lists the values of all parameters and input variables (that are part of the structure ‘v’) that were used in the simulations, one row for each simulation. The second file lists only the parameters that were varied. Suppose that, for example, if 3 parameters were given 10 different values, while the other parameters were given only 1 single value for each simulation. In that case the pars_and_input_short.dat output file contains three columns with the parameter values corresponding to teach simulations.
 
-5.	Simulation option Time series
-------------------------------------------
+Main input file i``input_data.xlsx`` with 4 sheets is located in ./SCOPE_v1.70. In the documentation we refer to this file, although text alternatives are also possible.
 
-For the time series run, set simulation = 1. SCOPE now uses the meteorological input as saved in the ascii files specified in the sheet: ‘filenames’. SCOPE runs as many times as there are values in the ascii files. For all input that is not in files, it uses the first value specified in the ‘InputData’ sheet. A value for an input variable in the spreadsheet is overwritten by the value in the time series file of that variable, if this file is provided.
-Note: In version 1.70, it is possible to leave a few meteorological input data files blank. In that case, this variable will be the (constant) value in the input data spreadsheet or the general input data text file.
+.. Note::
+    If Excel is not available, it is possible to use input from text files (.m and .txt). See **alternative**.
 
-6.	Simulation option Lookup Table
-----------------------------------------
+    To specify which input to use (text or excel) comment / uncomment lines in ``set_parameter_filenames.m` with ``%`` sign.
 
-For the LUT option, specify ‘simulation = 2’. This option is similar to the ‘individual runs’, except that the model runs over all possible combinations of parameters. For example:
-Cab  	10 	20 	30
-Cdm 	0.012
-N 	1.5 	2
-It will do six runs, the first time with Cab = 10, Cdm = 0.012, and N = 1.5;  the second time with Cab = 20, Cdm = 0.012, and N = 1.5;  a third time with Cab = 30, Cdm = 0.012, and N = 1.5;  then fourth with Cab = 10, Cdm = 0.012 and N = 2.0, etc, cycling through values for Cab again.
+.. list-table::
+    :widths: 15 70 15
+    :header-rows: 1
+    :stub-columns: 1
 
-7.	To execute the model
-----------------------------------
-The model can be executed by calling ‘SCOPE’ in the command window of Matlab. Alternatively, separate modules can be called, provided that the required input is given. The modules have a help text describing how to do this, which can be called by typing ‘help modulename’, for example: ‘help ebal’. It is however more difficult, because the structures need to be provided.
-The output of each simulation is automatically saved in an output directory, together with files documenting the parameters used for this simulation, and the spreadsheet in directory ‘Parameters’.
-It is also possible to use the executable SCOPE.exe. In that case you will first need to install the Matlab Runtime Compiler for Matlab 2015b, which can be found on the Mathworks web site.
+    * - sheet (tab)
+      - content
+      - alternative
+    * - readme
+      - | sheets description of ``input_data.xlsx``
+        | explanation of leaf inclination distribution function (LIDF) parameters
+        | recommended values for plan functional types (PFTs)
+        | some parameter ranges
+      - \-
+    * - options
+      - :ref:`options:Options`
+      - ``setoptions.m``
+    * - filenames
+      - filenames for current simulation and for time-series
+      - ``filenames.m``
+    * - inputdata
+      - values for :ref:`structs/input/input_index:input structs`
+      - ``inputdata.txt``
 
-8.	To plot the output
--------------------------------
-An example of a module which creates graphs is provided with the model (plots.m). This function browses through the latest output directory, and plots all data present there in graphs. The titles of the graphs are the headings found in the output files.
+To find out ranges and units of input parameters take a look into :ref:`structs/input/input_index:input structs`.
+
+Pay extra attention to the :ref:`options:``simulation```
+
+
+4. Analyse the output
+-------------------------
+
+All output files and their content (variables, units) are available at :ref:`outfiles:Output files`.
+
+Some output files are available for each run, the others can be written with various :ref:`options:Options`.
+
+To plot the output either select ``options.makeplots`` or use function from :func:`.plots`
+
+.. Note::
+    Radiation, spectral and fluorescence output usually has two quantiles:
+
+    * outgoing diffuse light (**hemispherical**) W m-2 um-1
+    * outgoing light in observation directions (**directional**, the one that actually reaches the sensor) W m-2 um-1 sr-1
+
+    To get further information see: :ref:`my_proposal/brdf:Definition`
+
+
+5.	Going further
+---------------------------------------------
+
+``SCOPE.m`` is a script, thus after a run all matlab structures that were generated during the run (input, output, constants) are available in the workspace. You can get some extra variables that are not written to output files. You can find out available variables at :ref:`structs:Structs`.
+
+All functions are documented within the code and also at :ref:`api:API`.
+
+For any questions, please, use SCOPE_model SCOPE_model_ group.
+
+.. _SCOPE_model: https://groups.google.com/forum/?fromgroups#!forum/scope_model

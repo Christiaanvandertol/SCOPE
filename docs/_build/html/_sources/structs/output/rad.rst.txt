@@ -24,33 +24,33 @@ Calculated
 Output file
 """"""""""""
 
-- :ref:`outfiles/radiation:radiation.dat`
-- :ref:`outfiles/spectrum_obsdir_optical:spectrum_obsdir_optical.dat`
-- :ref:`outfiles/spectrum_hemis_optical:spectrum_hemis_optical.dat`
-- :ref:`outfiles/irradiance_spectra:irradiance_spectra.dat`
-- :ref:`outfiles/reflectance:reflectance.dat`
-- :ref:`outfiles/BOC_irradiance:BOC_irradiance.dat`
+- :ref:`outfiles/each:radiation.dat`
+- :ref:`outfiles/each:spectrum_obsdir_optical.dat`
+- :ref:`outfiles/each:spectrum_hemis_optical.dat`
+- :ref:`outfiles/each:irradiance_spectra.dat`
+- :ref:`outfiles/each:reflectance.dat`
+- :ref:`outfiles/each:BOC_irradiance.dat`
 
 if ``options.calc_ebal``
 
-- :ref:`outfiles/spectrum_obsdir_BlackBody:spectrum_obsdir_BlackBody.dat`
+- :ref:`outfiles/planck:spectrum_obsdir_BlackBody.dat`
 
 if ``options.calc_planck``
 
-- :ref:`outfiles/spectrum_hemis_thermal:spectrum_hemis_thermal.dat`
-- :ref:`outfiles/spectrum_obsdir_thermal:spectrum_obsdir_thermal.dat`
+- :ref:`outfiles/planck:spectrum_hemis_thermal.dat`
+- :ref:`outfiles/planck:spectrum_obsdir_thermal.dat`
 
 if ``options.calc_fluor``
 
 - :ref:`outfiles/fluorescence:fluorescence.dat`
-- :ref:`outfiles/fluorescencePSI:fluorescencePSI.dat`
-- :ref:`outfiles/fluorescencePSII:fluorescencePSII.dat`
-- :ref:`outfiles/fluorescence_hemis:fluorescence_hemis.dat`
-- :ref:`outfiles/fluorescence_emitted_by_all_leaves:fluorescence_emitted_by_all_leaves.dat`
-- :ref:`outfiles/fluorescence_emitted_by_all_photosystems:fluorescence_emitted_by_all_photosystems.dat`
-- :ref:`outfiles/fluorescence_sunlit:fluorescence_sunlit.dat`
-- :ref:`outfiles/fluorescence_shaded:fluorescence_shaded.dat`
-- :ref:`outfiles/fluorescence_scattered:fluorescence_scattered.dat`
+- :ref:`outfiles/fluorescence:fluorescencePSI.dat`
+- :ref:`outfiles/fluorescence:fluorescencePSII.dat`
+- :ref:`outfiles/fluorescence:fluorescence_hemis.dat`
+- :ref:`outfiles/fluorescence:fluorescence_emitted_by_all_leaves.dat`
+- :ref:`outfiles/fluorescence:fluorescence_emitted_by_all_photosystems.dat`
+- :ref:`outfiles/fluorescence:fluorescence_sunlit.dat`
+- :ref:`outfiles/fluorescence:fluorescence_shaded.dat`
+- :ref:`outfiles/fluorescence:fluorescence_scattered.dat`
 
 Variations
 """"""""""""

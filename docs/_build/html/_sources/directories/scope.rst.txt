@@ -3,11 +3,46 @@ SCOPE_v1.70
 
 .. contents::
 
-docs
------
+Files
+'''''''''''''
 
-This docs
+``input_data.xlsx``
+---------------------
 
+Main input file is ``input_data.xlsx`` with 4 sheets. In the documentation we refer to this file, although text alternatives are also possible.
+
+.. Note::
+    If Excel is not available, it is possible to use input from text files (.m and .txt). See **alternative**.
+
+    To specify which input to use (text or excel) comment / uncomment lines in ``set_parameter_filenames.m` with ``%`` sign.
+
+.. list-table::
+    :widths: 15 70 15
+    :header-rows: 1
+    :stub-columns: 1
+
+    * - sheet (tab)
+      - content
+      - alternative
+    * - readme
+      - | sheets description of ``input_data.xlsx``
+        | explanation of leaf inclination distribution function (LIDF) parameters
+        | recommended values for plan functional types (PFTs)
+        | some parameter ranges
+      - \-
+    * - options
+      - :ref:`options:Options`
+      - ``setoptions.m``
+    * - filenames
+      - filenames for current simulation and for time-series
+      - ``filenames.m``
+    * - inputdata
+      - values for :ref:`structs/input/input_index:input structs`
+      - ``inputdata.txt``
+
+
+Directories
+'''''''''''''
 
 output
 -------
@@ -32,7 +67,7 @@ The data are stored in the following directory:
 
     of the time when the simulation was started.
 
-for files see :ref:`output_files:Output files`
+for files see :ref:`outfiles:Output files`
 
 src
 ----

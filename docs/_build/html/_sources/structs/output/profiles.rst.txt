@@ -23,21 +23,21 @@ Output file
 
 if ``options.calc_vert_profiles``
 
-- :ref:`outfiles/layer_aPAR:layer_aPAR.dat`
-- :ref:`outfiles/layer_aPAR_Cab:layer_aPAR_Cab.dat`
+- :ref:`outfiles/profiles:layer_aPAR.dat`
+- :ref:`outfiles/profiles:layer_aPAR_Cab.dat`
 
 if ``options.calc_fluor`` & ``options.calc_vert_profiles``
 
-- :ref:`outfiles/layer_fluorescence:layer_fluorescence.dat`
+- :ref:`outfiles/profiles:layer_fluorescence.dat`
 
 if ``options.calc_ebal`` & ``options.calc_vert_profiles``
 
-- :ref:`outfiles/leaftemp:leaftemp.dat`
-- :ref:`outfiles/layer_H:layer_h.dat`
-- :ref:`outfiles/layer_lE:layer_le.dat`
-- :ref:`outfiles/layer_A:layer_a.dat`
-- :ref:`outfiles/layer_NPQ:layer_NPQ.dat`
-- :ref:`outfiles/layer_rn:layer_rn.dat`
+- :ref:`outfiles/profiles:leaftemp.dat`
+- :ref:`outfiles/profiles:layer_h.dat`
+- :ref:`outfiles/profiles:layer_le.dat`
+- :ref:`outfiles/profiles:layer_a.dat`
+- :ref:`outfiles/profiles:layer_NPQ.dat`
+- :ref:`outfiles/profiles:layer_rn.dat`
 
 Used
 """""

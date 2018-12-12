@@ -16,7 +16,7 @@ Output file
 
 if ``options.calc_vert_profiles``
 
-:ref:`outfiles/gap:gap.dat`
+:ref:`outfiles/profiles:gap.dat`
 
 Used
 """""

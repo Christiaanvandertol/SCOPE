@@ -6,6 +6,8 @@
 Welcome to SCOPE's documentation!
 =================================
 
+Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at al. 2009 :cite:`VanderTol2009`) radiative transfer model.
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents
@@ -14,12 +16,14 @@ Welcome to SCOPE's documentation!
    getting_started
    options
    directories
-   output_files
+   outfiles
 
    history
    acknowledgements
+   roadmap
 
    zreferences
+   versions
    support
 
 .. toctree::

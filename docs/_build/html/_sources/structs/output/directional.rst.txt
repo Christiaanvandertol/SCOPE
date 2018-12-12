@@ -22,7 +22,7 @@ Variations
 Output file
 """"""""""""
 
-- :ref:`outfiles/Directional:Directional`
+- :ref:`outfiles/directional:Directional/Angles (SunAngle x.xx degrees).dat`
 
 Used
 """""
@@ -92,15 +92,15 @@ Fields calculated in :func:`.calc_brdf`
     * - **BrightnessT**
       - K
       - [1 x 364] double
-      -
+      - brightness temperature
     * - ``options.calc_planck``
       -
       -
       -
     * - **Lot_**
-      -
+      - W m-2 um-1 sr-1
       - [161 x 364] double
-      -
+      - outgoing thermal radiation in observation direction
     * - ``options.calc_fluor``
       -
       -
@@ -108,4 +108,4 @@ Fields calculated in :func:`.calc_brdf`
     * - **LoF_**
       - W m-2 um-1 sr-1
       - [211 x 364] double
-      -
+      - outgoing fluorescence radiation in observation direction

@@ -12,15 +12,15 @@ Calculated
 Output file
 """"""""""""
 
-- :ref:`outfiles/fluxes:fluxes.dat`
+- :ref:`outfiles/each:fluxes.dat`
 
 if ``options.calc_vert_profiles`` & ``options.calc_ebal`` soil fluxes will also be recorded, because soil is the 61st layer.
 
-- :ref:`outfiles/leaftemp:leaftemp.dat`
-- :ref:`outfiles/layer_H:layer_h.dat`
-- :ref:`outfiles/layer_lE:layer_le.dat`
-- :ref:`outfiles/layer_A:layer_a.dat`
-- :ref:`outfiles/layer_rn:layer_rn.dat`
+- :ref:`outfiles/profiles:leaftemp.dat`
+- :ref:`outfiles/profiles:layer_h.dat`
+- :ref:`outfiles/profiles:layer_le.dat`
+- :ref:`outfiles/profiles:layer_a.dat`
+- :ref:`outfiles/profiles:layer_rn.dat`
 
 Variations
 """"""""""""

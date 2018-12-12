@@ -117,9 +117,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="directories.html">Directories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output_files.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
@@ -231,7 +232,7 @@
 </div>
 <p>This is an input structure that controls the workflow.</p>
 <p>The values have binary (or tertiary) logic thus equal to 0 or 1 (or 2).</p>
-<p>Influence on the output files is highlighted in the corresponding section <a class="reference internal" href="output_files.html#output-files"><span class="std std-ref">Output files</span></a></p>
+<p>Influence on the output files is highlighted in the corresponding section <a class="reference internal" href="outfiles.html#output-files"><span class="std std-ref">Output files</span></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Not all combinations can bring to the desired result</p>
@@ -248,7 +249,7 @@
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> (multiple)</p>
 <dl class="docutils">
 <dt><strong>0</strong></dt>
-<dd><strong>individual run(s)</strong>. Specify one value for fixed input parameters, and an equal number (&gt; 1) of values for all parameters that vary between the runs.</dd>
+<dd><strong>individual run(s)</strong>: specify one value for fixed input parameters, and an equal number (&gt; 1) of values for all parameters that vary between the runs.</dd>
 <dt><strong>1</strong></dt>
 <dd><div class="first last line-block">
 <div class="line"><strong>time series</strong> (uses text files with meteo input as time series from <em>“../data/input/dataset X”</em> with files similar to ../data/input/<a class="reference internal" href="directories/data.html#dataset-for-verification"><span class="std std-ref">dataset for_verification</span></a> specified on the <code class="docutils literal notranslate"><span class="pre">filenames</span></code> sheet of <code class="docutils literal notranslate"><span class="pre">input_data.xslx</span></code></div>
@@ -258,6 +259,23 @@
 <dt><strong>2</strong></dt>
 <dd><strong>Lookup-Table</strong>: specify a number of values in the row of input parameters. All possible combinations of inputs will be used.</dd>
 </dl>
+<p>Let us illustrate what the difference is in details.</p>
+<p>It is possible to specify several values in a row on <code class="docutils literal notranslate"><span class="pre">inputdata</span></code> sheet of <code class="docutils literal notranslate"><span class="pre">input_data.xslx</span></code>. Suppose we have an the following combination of input parameters. Notice, we provide two values for Cab and Cca parameters.</p>
+<div class="figure">
+<img alt="_images/simulation.bmp" src="_images/simulation.bmp" />
+</div>
+<p>If <strong>individual run(s)</strong> (<code class="docutils literal notranslate"><span class="pre">options.simulation</span> <span class="pre">==</span> <span class="pre">0</span></code>) was chosen the given combination will end up in <strong>two</strong> simulations:</p>
+<ul class="simple">
+<li>Cab=80, Cca=20</li>
+<li>Cab=40, Cca=10</li>
+</ul>
+<p>If  <strong>Lookup-Table</strong> (<code class="docutils literal notranslate"><span class="pre">options.simulation</span> <span class="pre">==</span> <span class="pre">2</span></code>) was chosen the given combination will end up in <strong>four</strong> simulations:</p>
+<ul class="simple">
+<li>Cab=80, Cca=20</li>
+<li>Cab=80, Cca=10</li>
+<li>Cab=40, Cca=20</li>
+<li>Cab=40, Cca=10</li>
+</ul>
 </div>
 </div>
 <hr class="docutils" />

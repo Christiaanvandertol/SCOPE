@@ -5,3 +5,6 @@ API
     :glob:
 
     api/*
+
+.. figure:: ./images/scheme.png
+
