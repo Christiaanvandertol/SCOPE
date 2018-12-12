@@ -1,1 +1,2 @@
 sphinxcontrib-matlabdomain
+sphinxcontrib-bibtex
