@@ -3,6 +3,18 @@ Version history
 
 .. contents::
 
+1.71
+''''''
+
+2018
+
+- **No changes to output or calculations were done.**
+- Interactive documentation for ReadTheDocs was created (./docs):
+    - ``code`` folder was renamed to ``src`` for autodocumentation
+    - all scripts were transformed to functions for autodocumentation
+    - functions were grouped into matlab modules (directories starting with ``+`` sign), see :ref:`api:API`
+    - **./SCOPE_v1.70/readme** was deleted
+
 1.70
 ''''''
 
