@@ -19,13 +19,15 @@ X = {
 
 %optional (leave empty for constant values From inputdata.TXT)
 'CO2_file'		, '';
-'z_file' 		, '';
+'SMC_file'		, '';
+
+% optional (leave empty for calculations based on t_file year timezn)
 'tts_file' 		, '';
 
 %optional two column tables (first column DOY second column value)
+'z_file' 		, '';
 'LAI_file'		, '';
 'hc_file'		, '';
-'SMC_file'		, '';
 'Vcmax_file'	, '';
 'Cab_file'		, '';
 

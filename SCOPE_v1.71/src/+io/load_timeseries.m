@@ -127,5 +127,6 @@ end
 if ~isempty(Cab_file)
     Cabtable        = load([path_input,Dataset_dir,'/',Cab_file]);
     V(1).Val         = interp1(Cabtable(:,1),Cabtable(:,2),t_);
-else V(1).Val        = leafbio.Cab*ones(size(t_));
+else
+    V(1).Val        = leafbio.Cab*ones(size(t_));
 end
