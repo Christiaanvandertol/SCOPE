@@ -29,7 +29,8 @@ Used
     * - ``cs, rhos, lambdas``
       - :func:`.Soil_Inertia0`
     * - ``SMC``
-      - :func:`.Soil_Inertia1`
+      - | :func:`.Soil_Inertia1`
+        | :func:`.BSM`
     * - ``CSSOIL``
       - :func:`.zo_and_d`
     * - ``refl``
@@ -102,7 +103,7 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
       - 10.0
       - soil boundary layer resistance *(from Aerodynamic)*
     * - **SMC**
-      - ?
+      - \-
       - double
       - 0.25
       - volumetric soil moisture content in the root zone

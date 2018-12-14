@@ -12,7 +12,7 @@ nw  = spec.nw;          % water refraction index spectrum
 B   = soilpar.BSMBrightness;        % soil brightness
 lat = soilpar.BSMlat;      % spectral shape latitude (range = 20 - 40 deg)
 lon = soilpar.BSMlon;      % spectral shape longitude (range = 45 - 65 deg)
-SMp = soilpar.SMC;      % soil moisture volume percentage (5 - 55)
+SMp = soilpar.SMC * 100;      % soil moisture volume percentage (5 - 55)
 
 % Empirical parameters
 
