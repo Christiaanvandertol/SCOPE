@@ -31,6 +31,7 @@ Used
     * - ``SMC``
       - | :func:`.Soil_Inertia1`
         | :func:`.BSM`
+        | :func:`.calc_rssrbs`
     * - ``CSSOIL``
       - :func:`.zo_and_d`
     * - ``refl``
