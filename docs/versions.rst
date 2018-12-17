@@ -3,22 +3,6 @@ Version history
 
 .. contents::
 
-1.72
-''''''
-
-2018
-
-- Bug with soil moisture content (SMC) for :func:`.BSM` is solved.
-    - SMC range in input is from **0 to 1** (used in :func:`.calc_rssrbs`, :func:`.Soil_Inertia1`)
-    - :func:`.BSM` required SMC in the range from **0 to 100**
-    - solution: scaling of SMC within :func:`.BSM`: SMC * 100
-    - now :func:`.BSM` accepts SMC from **0 to 1**
-    - this bug might effect the results if ``options.soilspectrum == 1``
-- Misleading comments in ``filenames`` were corrected
-    - SMC is a **one-column** file
-    - z-file is a **two-column** table
-- ``input_data_default.xlsx`` was added with the verification run parameters to make it easier to check that SCOPE still works after you changed something in the code and do not remember the initial configuration of the ``input_data.xlsx``
-
 1.71
 ''''''
 

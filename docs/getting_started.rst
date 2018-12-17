@@ -6,7 +6,7 @@ Getting started
 0. Software requirements
 --------------------------
 
-The model SCOPE_v1.72 is written in Matlab R2015b running on a Windows operating system. We took care not to use functions that are available in all recent Matlab versions, but we cannot give any warranty that it works under other operating systems and other Matlab versions.
+The model SCOPE_v1.71 is written in Matlab R2015b running on a Windows operating system. We took care not to use functions that are available in all recent Matlab versions, but we cannot give any warranty that it works under other operating systems and other Matlab versions.
 
 .. warning::
     If you do **not** have Matlab on your computer you can use ``SCOPE.exe`` with `Matlab Runtime`_ **only R2017b (version 9.3)**
@@ -37,7 +37,7 @@ Unpack the model, and **leave the directory structure intact**.
 Run the model once, before modifying the parameters and input. It will check whether the software works under your system. The model runs with an example data set (``options.verify``), and the output is automatically compared to output that it should produce. If there is any difference in the results, messages will show up.
 
 * Navigate to the directory where the matlab code is
-    ./SCOPE_v1.72/:ref:`directories/scope:src`
+    ./SCOPE_v1.71/:ref:`directories/scope:src`
 * Open ``SCOPE.m`` in Matlab
 * in Matlab command window type:
     .. code-block:: matlab
@@ -51,7 +51,7 @@ Running the model may take a while because almost all options are switched on. I
 3.	Set the input in ``input_data.xlsx``
 ---------------------------------------------
 
-Main input file i``input_data.xlsx`` with 4 sheets is located in ./SCOPE_v1.72. In the documentation we refer to this file, although text alternatives are also possible.
+Main input file i``input_data.xlsx`` with 4 sheets is located in ./SCOPE_v1.71. In the documentation we refer to this file, although text alternatives are also possible.
 
 .. Note::
     If Excel is not available, it is possible to use input from text files (.m and .txt). See **alternative**.
