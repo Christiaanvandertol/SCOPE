@@ -4,3 +4,10 @@ Bug report 11 December 2015 (CvdT):
 - input_data.xlsx: Unit of the soil heat capacity corrected in the metadata of the input data spreadsheet (Jkg-1K-1 instead of J m-3 K-1).
 - rtmf.m: Location in the code of the initialization of internal fluorescence fluxes corrected (this does not affect the output of the model).
 - rtmt_Planck: factor PI missing in the emission, duplicate multiplication by emissivity (17 March 2017)
+
+14 December 2018
+- SMC is in wrong units. In input from 0 to 1, it BSM from 5 to 55. 
+	- Solution: multiple by 100 inside BSM
+- load time series SMC should be one column file
+	- Solution: rearrange names in .xlsx input and setfilenames.m
+- Ca in time series in mg m-3, let's do ppm and leave conversion to the user

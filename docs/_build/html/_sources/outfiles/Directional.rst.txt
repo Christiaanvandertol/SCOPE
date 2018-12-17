@@ -7,6 +7,7 @@ The output files are stored in folder Directions of your output
     This is an optional output that requires ``options.calc_directional`` & ``options.calc_ebal``
     However, the folder will always be created
 
+
 Directional/Angles (SunAngle x.xx degrees).dat
 -------------------------------------------------
 
@@ -19,6 +20,7 @@ Contains the directions.
 columns - combination number (a set of direction used for simulation)
 
 Columns in the output files correspond to the columns in Angles
+
 
 Directional/BRDF (SunAngle x.xx degrees).dat
 -----------------------------------------------
@@ -38,6 +40,7 @@ Directional/BRDF (SunAngle x.xx degrees).dat
     * - **brdf_**
       - \-
       - bidirectional reflectance distribution function
+
 
 Directional/Temperatures (SunAngle x.xx degrees).dat
 ---------------------------------------------------------
@@ -85,6 +88,7 @@ if ``options.calc_fluor``
     * - **LoF_**
       - W m-2 um-1 sr-1
       - outgoing fluorescence radiation in observation direction
+
 
 Directional/read me.txt
 -------------------------
