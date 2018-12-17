@@ -1,0 +1,6 @@
+Bug report 11 December 2015 (CvdT):
+- output_data.m: Last column in output file radiance.dat corrected
+- RTMt_sb.m: Small error corrected in the outgoing longwave radiation, due to double counting of the 'rinf' component of incident thermal radiation
+- input_data.xlsx: Unit of the soil heat capacity corrected in the metadata of the input data spreadsheet (Jkg-1K-1 instead of J m-3 K-1).
+- rtmf.m: Location in the code of the initialization of internal fluorescence fluxes corrected (this does not affect the output of the model).
+- rtmt_Planck: factor PI missing in the emission, duplicate multiplication by emissivity (17 March 2017)

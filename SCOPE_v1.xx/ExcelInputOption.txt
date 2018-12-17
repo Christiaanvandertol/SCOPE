@@ -1,0 +1,2 @@
+1
+(1): Use input_data.xlsx input, or (0) use text files inputdata.txt, filenames.txt and setoptions.txt instead 
