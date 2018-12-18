@@ -25,6 +25,7 @@ leafbio.Cant    = V(60).Val(vi(60));
 leafbio.N       = V(6).Val(vi(6));
 leafbio.Vcmo    = V(9).Val(vi(9));
 leafbio.m       = V(10).Val(vi(10));
+leafbio.BallBerry0 = V(64).Val(vi(64)); % JAK 2016-10. Accidentally left out of v1.70
 leafbio.Type    = V(11).Val(vi(11));
 leafbio.Tparam  = V(14).Val(:); % this is correct (: instead of 14)
 fqe             = V(15).Val(vi(15));
