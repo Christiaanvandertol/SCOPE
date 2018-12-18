@@ -292,7 +292,15 @@ while CONT                          % while energy balance does not close
     [lEch,Hch,ech,Cch]     = heatfluxes((LAI+1)*(raa+rawc),rcwh,Tch,ea,Ta,e_to_q,0,Ca,Cih);
     [lEcu,Hcu,ecu,Ccu]     = heatfluxes((LAI+1)*(raa+rawc),rcwu,Tcu,ea,Ta,e_to_q,0,Ca,Ciu);
     [lEs,Hs]               = heatfluxes((LAI+1)*(raa+raws),rss ,Ts ,ea,Ta,e_to_q,PSIs,Ca,Ca);
-    
+
+    if any( ~isreal( Cch )) || any( ~isreal( Ccu ))
+       error('Heatfluxes produced complex values for CO2 concentration!')
+    end
+
+    if any( Cch < 0 ) || any( Ccu < 0 )
+       error('Heatfluxes produced negative values for CO2 concentration!')
+    end
+
     % integration over the layers and sunlit and shaded fractions
     Hstot       = Fs*Hs;
     Hctot       = LAI*(Fc*Hch + equations.meanleaf(canopy,Hcu,'angles_and_layers',Ps));
