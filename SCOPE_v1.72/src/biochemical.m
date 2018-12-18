@@ -102,6 +102,10 @@ else
 end
 Q             = biochem_in.Q;
 assert(all(Q(:) >=0), 'Negative light is not allowed!');
+assert(all(isreal(Q(:))), 'Complex-values are not allowed for PAR!');
+
+assert(all(Cs(:) >=0), 'Negative CO2 concentration is not allowed!');
+assert(all(isreal(Cs(:))), 'Complex-values are not allowed for CO2 concentration!');
 
 T             = biochem_in.T + 273.15*(biochem_in.T<200); % convert temperatures to K if not already
 eb            = biochem_in.eb;

@@ -293,11 +293,11 @@ while CONT                          % while energy balance does not close
     [lEcu,Hcu,ecu,Ccu]     = heatfluxes((LAI+1)*(raa+rawc),rcwu,Tcu,ea,Ta,e_to_q,0,Ca,Ciu);
     [lEs,Hs]               = heatfluxes((LAI+1)*(raa+raws),rss ,Ts ,ea,Ta,e_to_q,PSIs,Ca,Ca);
 
-    if any( ~isreal( Cch )) || any( ~isreal( Ccu ))
+    if any( ~isreal( Cch )) || any( ~isreal( Ccu(:) ))
        error('Heatfluxes produced complex values for CO2 concentration!')
     end
 
-    if any( Cch < 0 ) || any( Ccu < 0 )
+    if any( Cch < 0 ) || any( Ccu(:) < 0 )
        error('Heatfluxes produced negative values for CO2 concentration!')
     end
 
