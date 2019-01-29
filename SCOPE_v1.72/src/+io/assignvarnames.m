@@ -1,5 +1,5 @@
 function V = assignvarnames()
-V                           = struct('Name','','Val', zeros(60,1));
+V                           = struct('Name','','Val', zeros(64,1));
 V(1).Name                   = 'Cab';
 V(2).Name                   = 'Cca';
 V(3).Name                   = 'Cdm';
@@ -9,7 +9,7 @@ V(6).Name                   = 'N';
 V(7).Name                   = 'rho_thermal';
 V(8).Name                   = 'tau_thermal';
 V(9).Name                   = 'Vcmo';
-V(10).Name                   = 'm';
+V(10).Name                   = 'm';  % see # 64, below for intercept: 'BallBerry0'
 V(11).Name                  = 'Type';
 V(12).Name                  = 'kV';
 V(13).Name                  = 'Rdparam';
@@ -63,4 +63,5 @@ V(60).Name                  = 'Cant';       %Added March 2017
 V(61).Name                  = 'BSMBrightness';
 V(62).Name                  = 'BSMlat';
 V(63).Name                  = 'BSMlon';
+V(64).Name                  = 'BallBerry0'; % acccidentally left out of v1.7
 end

@@ -218,6 +218,7 @@ while CONT                          % while energy balance does not close
     biochem_in.Type         = leafbio.Type;
     biochem_in.p            = p;
     biochem_in.m            = leafbio.m;
+    biochem_in.BallBerry0   = leafbio.BallBerry0;
     biochem_in.O            = meteo.Oa;
     biochem_in.Rdparam      = leafbio.Rdparam;
     
@@ -241,11 +242,6 @@ while CONT                          % while energy balance does not close
     biochem_in.Vcmo     = fVh.*leafbio.Vcmo;
     biochem_in.Cs       = Cch;
     biochem_in.Q        = rad.Pnh_Cab*1E6;
-    if counter == 0
-        biochem_in.A        = -999;    
-    else 
-        biochem_in.A    = Ah;
-    end
     
     biochem_out         = b(biochem_in);
     Ah                  = biochem_out.A;
@@ -261,11 +257,6 @@ while CONT                          % while energy balance does not close
     biochem_in.Vcmo     = fVu.*leafbio.Vcmo;
     biochem_in.Cs       = Ccu;
     biochem_in.Q        = rad.Pnu_Cab*1E6;
-    if counter == 0
-        biochem_in.A        = -999;    
-    else 
-        biochem_in.A    = Au;
-    end
     
     biochem_out         = b(biochem_in);
  
@@ -292,7 +283,15 @@ while CONT                          % while energy balance does not close
     [lEch,Hch,ech,Cch]     = heatfluxes((LAI+1)*(raa+rawc),rcwh,Tch,ea,Ta,e_to_q,0,Ca,Cih);
     [lEcu,Hcu,ecu,Ccu]     = heatfluxes((LAI+1)*(raa+rawc),rcwu,Tcu,ea,Ta,e_to_q,0,Ca,Ciu);
     [lEs,Hs]               = heatfluxes((LAI+1)*(raa+raws),rss ,Ts ,ea,Ta,e_to_q,PSIs,Ca,Ca);
-    
+
+    if any( ~isreal( Cch )) || any( ~isreal( Ccu(:) ))
+       error('Heatfluxes produced complex values for CO2 concentration!')
+    end
+
+    if any( Cch < 0 ) || any( Ccu(:) < 0 )
+       error('Heatfluxes produced negative values for CO2 concentration!')
+    end
+
     % integration over the layers and sunlit and shaded fractions
     Hstot       = Fs*Hs;
     Hctot       = LAI*(Fc*Hch + equations.meanleaf(canopy,Hcu,'angles_and_layers',Ps));
@@ -346,9 +345,9 @@ while CONT                          % while energy balance does not close
 %     else
 %         Ts      = Tsold + G/GAM*sqrt(Deltat/pi);
 %     end  
-    % 2.8. error check (uncomment for debugging mode)
-   % if max(isnan(Tch))                ,fprintf('warning: canopy temperature gives NaNs \r'),     end
-   % if max(isnan(Ts))                 ,fprintf('warning soil temperature \r'),     end
+    % 2.8. error check 
+    if (any(isnan(Tch)) || any(isnan(Tcu(:)))), warning('Canopy temperature gives NaNs'), end
+    if any(isnan(Ts)), warning('Soil temperature gives NaNs'), end
   if counter>50, Wc = 0.2;  end
   
 end

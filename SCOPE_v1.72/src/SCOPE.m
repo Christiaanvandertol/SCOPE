@@ -17,7 +17,7 @@
 %     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %%
 % try   % for Compiler .exe
-clc
+%clc
 %clear all
 
 %% 0. globals
@@ -164,7 +164,7 @@ end
 path_input      = '../../data/input/';          % path of all inputs
 
 %% 6. Numerical parameters (iteration stops etc)
-iter.maxit           = 100;                          %                   maximum number of iterations
+iter.maxit           = 400;                          %                   maximum number of iterations
 iter.maxEBer         = 1;                            %[W m-2]            maximum accepted error in energy bal.
 iter.Wc              = 1;                         %                   Weight coefficient for iterative calculation of Tc
 
