@@ -17,8 +17,8 @@
 %     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %%
 % try   % for Compiler .exe
-%clc
-%clear all
+% clc
+% clear all
 
 %% 0. globals
 global constants

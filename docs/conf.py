@@ -15,7 +15,7 @@
 import os
 # import sys
 # sys.path.insert(0, os.path.abspath('..'))
-matlab_src_dir = os.path.abspath('../SCOPE_v1.72')
+matlab_src_dir = os.path.abspath('../SCOPE_v1.73')
 
 
 # -- Project information -----------------------------------------------------

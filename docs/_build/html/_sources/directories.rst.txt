@@ -12,7 +12,7 @@ Directories
 ::
 
     SCOPE-master.zip
-    ├── SCOPE_v1.72
+    ├── SCOPE_v1.73
     │   ├── output
     │   │   ├── example_directional_run
     │   │   │    ├── Directional
