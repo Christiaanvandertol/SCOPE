@@ -7,6 +7,7 @@ The code and detailed information are available at: https://github.com/peiqiyang
 
 Brief introduction
 ''''''''''''''''''''
+The original SCOPE model assumes that vegetation canopies are vertically homogeneous and horizontally infinite, as its radiative transfer routines are based on the classical 1-D SAIL model. However, in reality, **canopies generally exhibit large vertical heterogeneity of both biophysical and biochemical properties**. The development of mSCOPE is to incorporate the vertical variations of vegetation properties. Therefore, the model can be considered as a 2-D model since it does not consider the horizontal variations. It is noted that mSCOPE works for homogeneous canopies as well by just setting all the layers identical or using one layer. The original paper on mSCOPE :cite:`Yang2017`.
 
 This version of the mSCOPE model (mSCOPE_v1_beta) is based upon the SCOPE model (v1.61). It simulates the light interaction and energy balance of vertically heterogeneous canopies.
 mSCOPE keeps the same model structure and output of SCOPE, but uses a different solution for the radiative transfer of incident and emitted radiation in vegetation canopies.
