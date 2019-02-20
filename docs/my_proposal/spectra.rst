@@ -40,7 +40,8 @@ SCOPE model (in particular :func:`.fluspect_B_CX_PSI_PSII_combined`) works simil
 
 The other bonus is xanthopyll cycle, available with ``option.calc_xanthophyllabs``, that you might see as a tiny pick around 500 nm.
 
-.. Note:: We do not have a model for thermal emission of a single leaf. Any suggestions?
+.. Note:: We do not have a model for leaf reflectance in the thermal domain.
+          Have a suggestion - write to us :ref:`support:support`
 
 
 SCOPE canopy
