@@ -422,7 +422,12 @@ if options.verify
 end
 
 if options.makeplots
-    plot.plots(Output_dir)
+%     plot.plots(Output_dir)
+    ref = load([Output_dir, 'reflectance.dat']);
+    pars = dlmread([Output_dir, 'pars_and_input_short.dat'], '', 1, 0);
+    plot(1:2162, ref)
+    legend(cellstr(num2str(pars)))
+    title('LAI')
 end
 
 %% for Compiler

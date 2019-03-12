@@ -1,3 +1,6 @@
 /data
-/SCOPE*/output
-/SCOPE*/*.xlsx
+/SCOPE_v*/output
+/SCOPE_v*/*.xlsx
+/docs/.idea
+/SCOPE_v*/src/+my
+
