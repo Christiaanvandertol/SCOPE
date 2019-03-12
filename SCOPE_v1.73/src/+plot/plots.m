@@ -8,7 +8,7 @@ function plots(Output_dir)
 % Directory           =   directories(2+I(end)).name;
 
 %% load verification data
-path1_ = ['..' filesep 'output' filesep Output_dir filesep];
+path1_ = fullfile('..', 'output', Output_dir);
 info1   = dir([path1_ filesep '*.dat']);           %the most recent output
 
 L = length(info1);
