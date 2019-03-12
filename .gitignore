@@ -1,5 +1,6 @@
 /data
-/SCOPE_v1.73/output
-/SCOPE_v1.73/*.xlsx
+/SCOPE_v*/output
+/SCOPE_v*/*.xlsx
 /docs/.idea
-/SCOPE_v1.73/src/+my
+/SCOPE_v*/src/+my
+

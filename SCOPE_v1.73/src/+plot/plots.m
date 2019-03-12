@@ -8,8 +8,8 @@ function plots(Output_dir)
 % Directory           =   directories(2+I(end)).name;
 
 %% load verification data
-path1_ = ['..\output\' Output_dir ,'\'];
-info1   = dir([path1_ '\*.dat']);           %the most recent output
+path1_ = fullfile('..', 'output', Output_dir, filesep);
+info1   = dir([path1_ '*.dat']);           %the most recent output
 
 L = length(info1);
 wl = dlmread([path1_ 'wl.dat'],'',2,0);
