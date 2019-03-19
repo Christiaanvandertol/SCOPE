@@ -303,6 +303,7 @@ biochem_out.eta = eta;
 biochem_out.fs  = fs;
 biochem_out.rcw = rcw;
 biochem_out.qE  = rcw*NaN; % dummy output, to be consistent with SCOPE
+biochem_out.Kn  = rcw*NaN; % dummy output, to be consistent with SCOPE
 return;
 %%% end of function biochemical
 
