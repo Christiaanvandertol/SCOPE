@@ -27,6 +27,7 @@ What will you receive when you download the model
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 In the main folder, you will find
+
 - manuals
     - SCOPE manuals
     - SCOPE and mSCOPE presentations

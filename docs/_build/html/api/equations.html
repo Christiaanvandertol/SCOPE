@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="+helpers" href="helpers.html" />
     <link rel="prev" title="Core" href="core.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -91,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -176,19 +179,19 @@
 <p>The following modules contain physical or empirical equations used in the model</p>
 <span class="target" id="module-src.+equations"></span><dl class="function">
 <dt id="src.+equations.calc_rssrbs">
-<code class="descname">calc_rssrbs</code><span class="sig-paren">(</span><em>SMC</em>, <em>LAI</em>, <em>rbs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.calc_rssrbs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">calc_rssrbs</code><span class="sig-paren">(</span><em class="sig-param">SMC</em>, <em class="sig-param">LAI</em>, <em class="sig-param">rbs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.calc_rssrbs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="src.+equations.calczenithangle">
-<code class="descname">calczenithangle</code><span class="sig-paren">(</span><em>Doy</em>, <em>t</em>, <em>Omega_g</em>, <em>Fi_gm</em>, <em>Long</em>, <em>Lat</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.calczenithangle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">calczenithangle</code><span class="sig-paren">(</span><em class="sig-param">Doy</em>, <em class="sig-param">t</em>, <em class="sig-param">Omega_g</em>, <em class="sig-param">Fi_gm</em>, <em class="sig-param">Long</em>, <em class="sig-param">Lat</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.calczenithangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>author: Christiaan van der Tol (<a class="reference external" href="mailto:c&#46;vandertol&#37;&#52;&#48;utwente&#46;nl">c<span>&#46;</span>vandertol<span>&#64;</span>utwente<span>&#46;</span>nl</a>)
 date:     Jan 2003
 update:   Oct 2008 by Joris Timmermans (<a class="reference external" href="mailto:j_timmermans&#37;&#52;&#48;itc&#46;nl">j_timmermans<span>&#64;</span>itc<span>&#46;</span>nl</a>):</p>
 <blockquote>
 <div><blockquote>
 <div><ul class="simple">
-<li>corrected equation of time</li>
+<li><p>corrected equation of time</p></li>
 </ul>
 </div></blockquote>
 <p>Oct 2012 (CvdT) comment: input time is GMT, not local time!</p>
@@ -210,18 +213,18 @@ Fi_g      projected slope of the surface in the plane through the solar beam and
 
 <dl class="function">
 <dt id="src.+equations.fixedp_brent_ari">
-<code class="descname">fixedp_brent_ari</code><span class="sig-paren">(</span><em>func</em>, <em>x0</em>, <em>corner</em>, <em>tolFn</em>, <em>verbose</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.fixedp_brent_ari" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Find a fixed point of func(x) using Brent’s method, as described by Brent 1971</dt>
-<dd><dl class="first docutils">
-<dt>func is a single-argument function, f(x) that returns a value the same size as x:</dt>
-<dd>The goal is to find f(x) = x (or for Brent, f(x) - x = 0).</dd>
+<code class="sig-name descname">fixedp_brent_ari</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">x0</em>, <em class="sig-param">corner</em>, <em class="sig-param">tolFn</em>, <em class="sig-param">verbose</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.fixedp_brent_ari" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Find a fixed point of func(x) using Brent’s method, as described by Brent 1971</dt><dd><dl class="simple">
+<dt>func is a single-argument function, f(x) that returns a value the same size as x:</dt><dd><p>The goal is to find f(x) = x (or for Brent, f(x) - x = 0).</p>
+</dd>
 </dl>
 <p>x0 is the initial guess (or 2 x n matrix if we want to generalize)
 tol is the tolerance in x (or if two-valued, x, f(x)? )
 corner (optional) is a known “edge” in the function that could slow down the algorithm</p>
-<blockquote class="last">
-<div>if specified and the first two points include the corner, the corner will be substituted as a starting point.</div></blockquote>
+<blockquote>
+<div><p>if specified and the first two points include the corner, the corner will be substituted as a starting point.</p>
+</div></blockquote>
 </dd>
 </dl>
 <p>Written by: Ari Kornfeld, 2016-10</p>
@@ -229,7 +232,7 @@ corner (optional) is a known “edge” in the function that could slow down the
 
 <dl class="function">
 <dt id="src.+equations.leafangles">
-<code class="descname">leafangles</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.leafangles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">leafangles</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.leafangles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subroutine FluorSail_dladgen
 Version 2.3 
 For more information look to page 128 of “theory of radiative transfer models applied in optical remote sensing of
@@ -246,17 +249,17 @@ Email: <a class="reference external" href="mailto:j&#46;timmermans&#37;&#52;&#48
 
 <dl class="function">
 <dt id="src.+equations.meanleaf">
-<code class="descname">meanleaf</code><span class="sig-paren">(</span><em>canopy</em>, <em>F</em>, <em>choice</em>, <em>Ps</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.meanleaf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">meanleaf</code><span class="sig-paren">(</span><em class="sig-param">canopy</em>, <em class="sig-param">F</em>, <em class="sig-param">choice</em>, <em class="sig-param">Ps</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.meanleaf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="src.+equations.Planck">
-<code class="descname">Planck</code><span class="sig-paren">(</span><em>wl</em>, <em>Tb</em>, <em>em</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.Planck" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Planck</code><span class="sig-paren">(</span><em class="sig-param">wl</em>, <em class="sig-param">Tb</em>, <em class="sig-param">em</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.Planck" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="src.+equations.satvap">
-<code class="descname">satvap</code><span class="sig-paren">(</span><em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.satvap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">satvap</code><span class="sig-paren">(</span><em class="sig-param">T</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.satvap" title="Permalink to this definition">¶</a></dt>
 <dd><p>function [es,s]= satvap(T) 
 Author: Dr. ir. Christiaan van der Tol
 Date: 2003</p>
@@ -271,59 +274,59 @@ and s(T) = es(T)*ln(10)*a*b/(b+T)^2</p>
 
 <dl class="function">
 <dt id="src.+equations.Soil_Inertia0">
-<code class="descname">Soil_Inertia0</code><span class="sig-paren">(</span><em>cs</em>, <em>rhos</em>, <em>lambdas</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.Soil_Inertia0" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Soil_Inertia0</code><span class="sig-paren">(</span><em class="sig-param">cs</em>, <em class="sig-param">rhos</em>, <em class="sig-param">lambdas</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.Soil_Inertia0" title="Permalink to this definition">¶</a></dt>
 <dd><p>soil thermal inertia</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.+equations.Soil_Inertia1">
-<code class="descname">Soil_Inertia1</code><span class="sig-paren">(</span><em>SMC</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.Soil_Inertia1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Soil_Inertia1</code><span class="sig-paren">(</span><em class="sig-param">SMC</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.Soil_Inertia1" title="Permalink to this definition">¶</a></dt>
 <dd><p>soil inertia method by Murray and Verhoef (</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.+equations.soil_respiration">
-<code class="descname">soil_respiration</code><span class="sig-paren">(</span><em>Ts</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.soil_respiration" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">soil_respiration</code><span class="sig-paren">(</span><em class="sig-param">Ts</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.soil_respiration" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">function soil_respiration always returns 0 no matter what the input is</p>
+<p class="admonition-title">Warning</p>
+<p>function soil_respiration always returns 0 no matter what the input is</p>
 </div>
 <dl class="function">
 <dt id="src.+equations.tav">
-<code class="descname">tav</code><span class="sig-paren">(</span><em>alfa</em>, <em>nr</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.tav" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">tav</code><span class="sig-paren">(</span><em class="sig-param">alfa</em>, <em class="sig-param">nr</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.tav" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="src.+equations.zo_and_d">
-<code class="descname">zo_and_d</code><span class="sig-paren">(</span><em>soil</em>, <em>canopy</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.zo_and_d" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">zo_and_d</code><span class="sig-paren">(</span><em class="sig-param">soil</em>, <em class="sig-param">canopy</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.zo_and_d" title="Permalink to this definition">¶</a></dt>
 <dd><p>function zom_and_d calculates roughness length for momentum and zero
 plane displacement from vegetation height and LAI</p>
-<dl class="docutils">
-<dt>Date:     17 November 2008</dt>
-<dd>17 April 2013 (structures)</dd>
-<dt>Author:   A. Verhoef</dt>
-<dd>implemented into Matlab by C. van der Tol (<a class="reference external" href="mailto:c&#46;vandertol&#37;&#52;&#48;utwente&#46;nl">c<span>&#46;</span>vandertol<span>&#64;</span>utwente<span>&#46;</span>nl</a>)</dd>
+<dl class="simple">
+<dt>Date:     17 November 2008</dt><dd><p>17 April 2013 (structures)</p>
+</dd>
+<dt>Author:   A. Verhoef</dt><dd><p>implemented into Matlab by C. van der Tol (<a class="reference external" href="mailto:c&#46;vandertol&#37;&#52;&#48;utwente&#46;nl">c<span>&#46;</span>vandertol<span>&#64;</span>utwente<span>&#46;</span>nl</a>)</p>
+</dd>
 </dl>
 <p>Source:   Verhoef, McNaughton &amp; Jacobs (1997), HESS 1, 81-91</p>
-<dl class="docutils">
-<dt>usage: </dt>
-<dd>zo_and_d (soil,canopy)</dd>
-<dt>canopy fields used as inpuyt:</dt>
-<dd>LAI         one sided leaf area index
-hc           vegetation height (m)</dd>
-<dt>soil fields used:</dt>
-<dd>Cd          Averaged drag coefficient for the vegetation              
+<dl class="simple">
+<dt>usage: </dt><dd><p>zo_and_d (soil,canopy)</p>
+</dd>
+<dt>canopy fields used as inpuyt:</dt><dd><p>LAI         one sided leaf area index
+hc           vegetation height (m)</p>
+</dd>
+<dt>soil fields used:</dt><dd><p>Cd          Averaged drag coefficient for the vegetation              
 CR          Drag coefficient for isolated tree
 CSSOIL      Drag coefficient for soil
 CD1         Fitting parameter
-Psicor      Roughness layer correction</dd>
-<dt>constants used (as global)</dt>
-<dd>kappa       Von Karman’s constant</dd>
-<dt>output:</dt>
-<dd>zom         roughness lenght for momentum (m)
-d           zero plane displacement (m)</dd>
+Psicor      Roughness layer correction</p>
+</dd>
+<dt>constants used (as global)</dt><dd><p>kappa       Von Karman’s constant</p>
+</dd>
+<dt>output:</dt><dd><p>zom         roughness lenght for momentum (m)
+d           zero plane displacement (m)</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -340,7 +343,7 @@ d           zero plane displacement (m)</dd>
         <a href="helpers.html" class="btn btn-neutral float-right" title="+helpers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="core.html" class="btn btn-neutral" title="Core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="core.html" class="btn btn-neutral float-left" title="Core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -366,25 +369,16 @@ d           zero plane displacement (m)</dd>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

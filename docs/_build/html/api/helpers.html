@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="+io (input output)" href="io.html" />
     <link rel="prev" title="+equations" href="equations.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -91,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -176,14 +179,14 @@
 <p>Functions that are based on well-known equations: integration etc.</p>
 <span class="target" id="module-src.+helpers"></span><dl class="function">
 <dt id="src.+helpers.aggreg">
-<code class="descname">aggreg</code><span class="sig-paren">(</span><em>atmfile</em>, <em>SCOPEspec</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+helpers.aggreg" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">aggreg</code><span class="sig-paren">(</span><em class="sig-param">atmfile</em>, <em class="sig-param">SCOPEspec</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+helpers.aggreg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregate MODTRAN data over SCOPE bands by averaging (over rectangular band
 passes)</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.+helpers.count">
-<code class="descname">count</code><span class="sig-paren">(</span><em>nvars</em>, <em>v</em>, <em>vmax</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+helpers.count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">nvars</em>, <em class="sig-param">v</em>, <em class="sig-param">vmax</em>, <em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+helpers.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>nvars = number of digits
 v     = current vector of digits
 vmax  = maximum values of digits
@@ -193,7 +196,7 @@ vnew  = new vector of digits</p>
 
 <dl class="function">
 <dt id="src.+helpers.Sint">
-<code class="descname">Sint</code><span class="sig-paren">(</span><em>y</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+helpers.Sint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Sint</code><span class="sig-paren">(</span><em class="sig-param">y</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+helpers.Sint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simpson integration
 x and y must be any vectors (rows, columns), but of the same length
 x must be a monotonically increasing series</p>
@@ -212,7 +215,7 @@ x must be a monotonically increasing series</p>
         <a href="io.html" class="btn btn-neutral float-right" title="+io (input output)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="equations.html" class="btn btn-neutral" title="+equations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="equations.html" class="btn btn-neutral float-left" title="+equations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -238,25 +241,16 @@ x must be a monotonically increasing series</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="options.calc_directional &amp;&amp; options.calc_ebal" href="directional.html" />
     <link rel="prev" title="options.calc_vert_profiles" href="profiles.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -108,6 +110,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -185,25 +189,25 @@
 <div class="section" id="fluorescence-dat">
 <h2>fluorescence.dat<a class="headerlink" href="#fluorescence-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - fluorescence from both photosystems in observation direction</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>LoF_</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>fluorescence per wavelength in observation direction</td>
+<tr class="row-even"><td><p><strong>LoF_</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>fluorescence per wavelength in observation direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -211,27 +215,27 @@
 <div class="section" id="fluorescence-emitted-by-all-leaves-dat">
 <h2>fluorescence_emitted_by_all_leaves.dat<a class="headerlink" href="#fluorescence-emitted-by-all-leaves-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - total emitted fluorescence by all leaves.
 Within canopy scattering / re-absorption is omitted.
 Within leaf scattering / re-absorption is taken into account.</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Fem_</strong></td>
-<td>W m-2 um-1</td>
-<td>hemispherical emitted fluorescence by all leaves</td>
+<tr class="row-even"><td><p><strong>Fem_</strong></p></td>
+<td><p>W m-2 um-1</p></td>
+<td><p>hemispherical emitted fluorescence by all leaves</p></td>
 </tr>
 </tbody>
 </table>
@@ -239,27 +243,27 @@ Within leaf scattering / re-absorption is taken into account.</p>
 <div class="section" id="fluorescence-emitted-by-all-photosystems-dat">
 <h2>fluorescence_emitted_by_all_photosystems.dat<a class="headerlink" href="#fluorescence-emitted-by-all-photosystems-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - total emitted fluorescence by all photosystems for wavelengths
 Within canopy scattering / re-absorption is omitted.
 Within leaf scattering / re-absorption is omitted.</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Femtot</strong></td>
-<td>W m-2 um-1</td>
-<td>hemispherical emitted fluorescence by all photosystems per wavelengths (excluding leaf and canopy re-absorption and scattering)</td>
+<tr class="row-even"><td><p><strong>Femtot</strong></p></td>
+<td><p>W m-2 um-1</p></td>
+<td><p>hemispherical emitted fluorescence by all photosystems per wavelengths (excluding leaf and canopy re-absorption and scattering)</p></td>
 </tr>
 </tbody>
 </table>
@@ -267,25 +271,25 @@ Within leaf scattering / re-absorption is omitted.</p>
 <div class="section" id="fluorescence-hemis-dat">
 <h2>fluorescence_hemis.dat<a class="headerlink" href="#fluorescence-hemis-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - top of canopy (TOC) hemispherical fluorescence</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Fhem_</strong></td>
-<td>W m-2 um-1</td>
-<td>TOC hemispherical fluorescence</td>
+<tr class="row-even"><td><p><strong>Fhem_</strong></p></td>
+<td><p>W m-2 um-1</p></td>
+<td><p>TOC hemispherical fluorescence</p></td>
 </tr>
 </tbody>
 </table>
@@ -293,25 +297,25 @@ Within leaf scattering / re-absorption is omitted.</p>
 <div class="section" id="fluorescence-scattered-dat">
 <h2>fluorescence_scattered.dat<a class="headerlink" href="#fluorescence-scattered-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - top of canopy (TOC) fluorescence contribution from leaves and soil after scattering</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>sum(LoF_scattered) + sum(LoF_soil)</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>TOC directional fluorescence from leaves and soil after scattering</td>
+<tr class="row-even"><td><p><strong>sum(LoF_scattered) + sum(LoF_soil)</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>TOC directional fluorescence from leaves and soil after scattering</p></td>
 </tr>
 </tbody>
 </table>
@@ -319,25 +323,25 @@ Within leaf scattering / re-absorption is omitted.</p>
 <div class="section" id="fluorescence-shaded-dat">
 <h2>fluorescence_shaded.dat<a class="headerlink" href="#fluorescence-shaded-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - top of canopy (TOC) fluorescence contribution from shaded leaves in observer direction per wavelengths</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>LoF_shaded</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>TOC fluorescence from shaded leaves in observer direction</td>
+<tr class="row-even"><td><p><strong>LoF_shaded</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>TOC fluorescence from shaded leaves in observer direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -345,25 +349,25 @@ Within leaf scattering / re-absorption is omitted.</p>
 <div class="section" id="fluorescence-sunlit-dat">
 <h2>fluorescence_sunlit.dat<a class="headerlink" href="#fluorescence-sunlit-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - top of canopy (TOC) fluorescence contribution from sunlit leaves in observer direction per wavelengths</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>LoF_sunlit</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>TOC fluorescence from sunlit leaves in observer direction</td>
+<tr class="row-even"><td><p><strong>LoF_sunlit</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>TOC fluorescence from sunlit leaves in observer direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -371,25 +375,25 @@ Within leaf scattering / re-absorption is omitted.</p>
 <div class="section" id="fluorescencepsi-dat">
 <h2>fluorescencePSI.dat<a class="headerlink" href="#fluorescencepsi-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code> &amp;&amp; <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code> &amp;&amp; <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - fluorescence of photosystem I (PSI) per wavelength in observation direction</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>LoF1_</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>fluorescence of PSI per wavelength in observation direction</td>
+<tr class="row-even"><td><p><strong>LoF1_</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>fluorescence of PSI per wavelength in observation direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -397,25 +401,25 @@ Within leaf scattering / re-absorption is omitted.</p>
 <div class="section" id="fluorescencepsii-dat">
 <h2>fluorescencePSII.dat<a class="headerlink" href="#fluorescencepsii-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code> &amp;&amp; <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code> &amp;&amp; <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - fluorescence of photosystem II (PSII) per wavelength in observation direction</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>LoF2_</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>fluorescence of PSII per wavelength in observation direction</td>
+<tr class="row-even"><td><p><strong>LoF2_</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>fluorescence of PSII per wavelength in observation direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -433,7 +437,7 @@ Within leaf scattering / re-absorption is omitted.</p>
         <a href="directional.html" class="btn btn-neutral float-right" title="options.calc_directional &amp;&amp; options.calc_ebal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="profiles.html" class="btn btn-neutral" title="options.calc_vert_profiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="profiles.html" class="btn btn-neutral float-left" title="options.calc_vert_profiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -459,25 +463,16 @@ Within leaf scattering / re-absorption is omitted.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

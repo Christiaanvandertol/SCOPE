@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="leafbio" href="leafbio.html" />
     <link rel="prev" title="canopy" href="canopy.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -90,6 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -201,20 +205,20 @@
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">maxit,</span> <span class="pre">maxEBer,</span> <span class="pre">Wc</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">maxit,</span> <span class="pre">maxEBer,</span> <span class="pre">Wc</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">counter</span></code></td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">counter</span></code></p></td>
+<td><div class="line-block">
 <div class="line"><a class="reference internal" href="../../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></div>
 <div class="line"><a class="reference internal" href="../../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></div>
 </div>
@@ -226,44 +230,44 @@
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
 <p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>maxit</strong></td>
-<td>-</td>
-<td>int</td>
-<td>100</td>
-<td>maximum number of iterations</td>
+<tr class="row-even"><td><p><strong>maxit</strong></p></td>
+<td><p>-</p></td>
+<td><p>int</p></td>
+<td><p>100</p></td>
+<td><p>maximum number of iterations</p></td>
 </tr>
-<tr class="row-odd"><td><strong>maxEBer</strong></td>
-<td>W m-2</td>
-<td>double</td>
-<td>1.0</td>
-<td>maximum accepted error in energy balance</td>
+<tr class="row-odd"><td><p><strong>maxEBer</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>double</p></td>
+<td><p>1.0</p></td>
+<td><p>maximum accepted error in energy balance</p></td>
 </tr>
-<tr class="row-even"><td><strong>Wc</strong></td>
-<td>-</td>
-<td>double</td>
-<td>1.0</td>
-<td>weight coefficient for iterative calculation of Tc</td>
+<tr class="row-even"><td><p><strong>Wc</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>1.0</p></td>
+<td><p>weight coefficient for iterative calculation of Tc</p></td>
 </tr>
-<tr class="row-odd"><td><strong>counter</strong></td>
-<td>-</td>
-<td>int</td>
-<td>0</td>
-<td>counter, changed in <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+<tr class="row-odd"><td><p><strong>counter</strong></p></td>
+<td><p>-</p></td>
+<td><p>int</p></td>
+<td><p>0</p></td>
+<td><p>counter, changed in <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +285,7 @@
         <a href="leafbio.html" class="btn btn-neutral float-right" title="leafbio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="canopy.html" class="btn btn-neutral" title="canopy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="canopy.html" class="btn btn-neutral float-left" title="canopy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -307,25 +311,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

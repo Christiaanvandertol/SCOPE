@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Output files" href="../outfiles.html" />
     <link rel="prev" title="SCOPE_v1.73" href="scope.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -107,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -184,17 +187,19 @@
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#data" id="id3">data</a><ul>
-<li><a class="reference internal" href="#input" id="id4">input</a><ul>
-<li><a class="reference internal" href="#dataset-for-verification" id="id5">dataset for_verification</a></li>
-<li><a class="reference internal" href="#directional" id="id6">directional</a></li>
-<li><a class="reference internal" href="#fluspect-parameters" id="id7">fluspect_parameters</a></li>
-<li><a class="reference internal" href="#leafangles" id="id8">leafangles</a></li>
-<li><a class="reference internal" href="#radiationdata" id="id9">radiationdata</a></li>
-<li><a class="reference internal" href="#soil-spectrum" id="id10">soil_spectrum</a></li>
+<li><p><a class="reference internal" href="#data" id="id3">data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#input" id="id4">input</a></p>
+<ul>
+<li><p><a class="reference internal" href="#dataset-for-verification" id="id5">dataset for_verification</a></p></li>
+<li><p><a class="reference internal" href="#directional" id="id6">directional</a></p></li>
+<li><p><a class="reference internal" href="#fluspect-parameters" id="id7">fluspect_parameters</a></p></li>
+<li><p><a class="reference internal" href="#leafangles" id="id8">leafangles</a></p></li>
+<li><p><a class="reference internal" href="#radiationdata" id="id9">radiationdata</a></p></li>
+<li><p><a class="reference internal" href="#soil-spectrum" id="id10">soil_spectrum</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#measured" id="id11">measured</a></li>
+<li><p><a class="reference internal" href="#measured" id="id11">measured</a></p></li>
 </ul>
 </li>
 </ul>
@@ -207,26 +212,26 @@
 It is recommended to name your own dataset ‘dataset sitename or projectname’.
 The directory contains the following compulsory files (all in ASCII format):</p>
 <ul class="simple">
-<li>A time vector (<code class="docutils literal notranslate"><span class="pre">t_.dat</span></code>):  a vertical array of time values, in decimal days of the year [1:366.99]. For example, 10 January 2009, 12:00 would be: 10.5.  All other files (see below) should correspond to this time vector (and thus have the same size).</li>
-<li>A year vector (<code class="docutils literal notranslate"><span class="pre">year_.dat</span></code>):  the year corresponding to the time vector.  For example, 10 January 2009, 12:00 would be: 2009</li>
-<li>TOC incoming shortwave radiation (<code class="docutils literal notranslate"><span class="pre">Rin_.dat</span></code>):  a broadband (0.3 to 2.5 μm) measurement of incoming shortwave radiation (W m-2), perpendicular to the surface.</li>
-<li>TOC incoming long wave radiation (<code class="docutils literal notranslate"><span class="pre">Rli_.dat</span></code>):  a broadband (2.5 to 50 μm) measurement of incoming long wave radiation (W m-2), perpendicular to the surface.</li>
-<li>Air pressure (<code class="docutils literal notranslate"><span class="pre">p_.dat</span></code>):  air pressure (hPa or mbar)</li>
-<li>Air temperature measured above the canopy (<code class="docutils literal notranslate"><span class="pre">Ta_.dat</span></code>):  air temperature above the canopy in °C.</li>
-<li>Vapour pressure measured above the canopy (<code class="docutils literal notranslate"><span class="pre">e_.dat</span></code>):  vapour pressure above the canopy (hPa or mbar).</li>
-<li>Wind speed (<code class="docutils literal notranslate"><span class="pre">u_.dat</span></code>):  wind speed measured above the canopy (m s-1)</li>
+<li><p>A time vector (<code class="docutils literal notranslate"><span class="pre">t_.dat</span></code>):  a vertical array of time values, in decimal days of the year [1:366.99]. For example, 10 January 2009, 12:00 would be: 10.5.  All other files (see below) should correspond to this time vector (and thus have the same size).</p></li>
+<li><p>A year vector (<code class="docutils literal notranslate"><span class="pre">year_.dat</span></code>):  the year corresponding to the time vector.  For example, 10 January 2009, 12:00 would be: 2009</p></li>
+<li><p>TOC incoming shortwave radiation (<code class="docutils literal notranslate"><span class="pre">Rin_.dat</span></code>):  a broadband (0.3 to 2.5 μm) measurement of incoming shortwave radiation (W m-2), perpendicular to the surface.</p></li>
+<li><p>TOC incoming long wave radiation (<code class="docutils literal notranslate"><span class="pre">Rli_.dat</span></code>):  a broadband (2.5 to 50 μm) measurement of incoming long wave radiation (W m-2), perpendicular to the surface.</p></li>
+<li><p>Air pressure (<code class="docutils literal notranslate"><span class="pre">p_.dat</span></code>):  air pressure (hPa or mbar)</p></li>
+<li><p>Air temperature measured above the canopy (<code class="docutils literal notranslate"><span class="pre">Ta_.dat</span></code>):  air temperature above the canopy in °C.</p></li>
+<li><p>Vapour pressure measured above the canopy (<code class="docutils literal notranslate"><span class="pre">e_.dat</span></code>):  vapour pressure above the canopy (hPa or mbar).</p></li>
+<li><p>Wind speed (<code class="docutils literal notranslate"><span class="pre">u_.dat</span></code>):  wind speed measured above the canopy (m s-1)</p></li>
 </ul>
 <p>The following additional files (not compulsory) can be added:</p>
 <ul class="simple">
-<li>Carbon dioxide concentration measured above the canopy (mg  m-3)</li>
+<li><p>Carbon dioxide concentration measured above the canopy (mg  m-3)</p></li>
 </ul>
 <p>And the following tables (not compulsory):</p>
 <ul class="simple">
-<li>Leaf area index (<code class="docutils literal notranslate"><span class="pre">LAI_.dat</span></code>)</li>
-<li>Measurement height (<code class="docutils literal notranslate"><span class="pre">z_.dat</span></code>) (m)</li>
-<li>Vegetation height (<code class="docutils literal notranslate"><span class="pre">h_.dat</span></code>) (m)</li>
-<li>Maximum carboxylation capacity (<code class="docutils literal notranslate"><span class="pre">Table_Vcmax_.dat</span></code>)</li>
-<li>Chlorophyll content file (<code class="docutils literal notranslate"><span class="pre">Table_Cab_.dat</span></code>)</li>
+<li><p>Leaf area index (<code class="docutils literal notranslate"><span class="pre">LAI_.dat</span></code>)</p></li>
+<li><p>Measurement height (<code class="docutils literal notranslate"><span class="pre">z_.dat</span></code>) (m)</p></li>
+<li><p>Vegetation height (<code class="docutils literal notranslate"><span class="pre">h_.dat</span></code>) (m)</p></li>
+<li><p>Maximum carboxylation capacity (<code class="docutils literal notranslate"><span class="pre">Table_Vcmax_.dat</span></code>)</p></li>
+<li><p>Chlorophyll content file (<code class="docutils literal notranslate"><span class="pre">Table_Cab_.dat</span></code>)</p></li>
 </ul>
 <p>If a table is not present, then the corresponding a priori value specified in the file input_data.xlsx file is used instead. It is only useful to create the tables LAI_dat etc. if the leaf area index, measurement height, vegetation height etc. change with time during the measurement period.</p>
 <p>A table has a slightly different format than the other input files. A table has two columns: the first column contains the decimal DOY, the second column contains the value of the variable. The reason why tables have a different format is that the variables in the table are usually not measured at the same time interval as the meteorological input. For example, the LAI may be measured only once per month.</p>
@@ -234,8 +239,8 @@ The directory contains the following compulsory files (all in ASCII format):</p>
 The measurement height is only relevant for wind speed, vapour pressure and the carbon dioxide concentration. It is currently not possible to specify separate measurement heights for each of these variables.</p>
 <p>The carbon dioxide concentration must be provided in mg m-3. This is a commonly used unit in most data sets. SCOPE automatically converts this to ppm and to umol m-3 internally. If the carbon dioxide concentration file is not provided, SCOPE assumes a constant concentration corresponding to 380 ppm.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It is important that all files except for the tables have equal length, and that all measurements correspond to the time vector. A Julian calendar is used. The time zone should be provided (the difference between the local time in the file and UTC or GMT. Input files should be comma separated, space separated or tab separated ASCII files. They should not contain empty lines or comment lines.</p>
+<p class="admonition-title">Note</p>
+<p>It is important that all files except for the tables have equal length, and that all measurements correspond to the time vector. A Julian calendar is used. The time zone should be provided (the difference between the local time in the file and UTC or GMT. Input files should be comma separated, space separated or tab separated ASCII files. They should not contain empty lines or comment lines.</p>
 </div>
 <p>In case SCOPE is run in individual mode, then the meteorological input files are not used. In that case, all meteorological data are taken from the spreadsheet.</p>
 </div>
@@ -255,8 +260,8 @@ The measurement height is only relevant for wind speed, vapour pressure and the 
 <h3><a class="toc-backref" href="#id9">radiationdata</a><a class="headerlink" href="#radiationdata" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">RTMo.m</span></code> calculates spectra based on MODTRAN5 outputs (T-18 system, <a class="reference internal" href="../zreferences.html#verhoef2018" id="id2">[7]</a>). One .atm (atmospheric) file is provided in the data, 12 more are provided separately in a different .zip folder (in order to minimize the size of the SCOPE package, these are not provided standard). Note that in the input data  (files as well as the spreadsheet), the broadband input radiation may be provided. SCOPE linearly scales the input spectra of the optical and the thermal domain in such a way, that the spectrally integrated input shortwave and long wave radiation matches with the measured values. A limitation of this approach is that the same shape of the input spectrum is used independent on the atmospheric conditions. If this scaling is not wanted, then leave ‘Rin’ and ‘Rli’ empty in the spreadsheet.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In earlier versions of the model (1.34 and older), two input spectra of solar and sky radiation were provided (rad.txt and rad2.txt) in this directory. The data were calculated with MODTRAN4. The ASCII file in this directory consisted of three columns containing the following. The first column contained the wavelength in nm, the second column the solar radiation in W m-2 μm-1, and the third column the sky radiation in W m-2 μm-1. These data are now obsolete (since version 1.40).</p>
+<p class="admonition-title">Note</p>
+<p>In earlier versions of the model (1.34 and older), two input spectra of solar and sky radiation were provided (rad.txt and rad2.txt) in this directory. The data were calculated with MODTRAN4. The ASCII file in this directory consisted of three columns containing the following. The first column contained the wavelength in nm, the second column the solar radiation in W m-2 μm-1, and the third column the sky radiation in W m-2 μm-1. These data are now obsolete (since version 1.40).</p>
 </div>
 </div>
 <div class="section" id="soil-spectrum">
@@ -281,7 +286,7 @@ The measurement height is only relevant for wind speed, vapour pressure and the 
         <a href="../outfiles.html" class="btn btn-neutral float-right" title="Output files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="scope.html" class="btn btn-neutral" title="SCOPE_v1.73" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="scope.html" class="btn btn-neutral float-left" title="SCOPE_v1.73" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -307,25 +312,16 @@ The measurement height is only relevant for wind speed, vapour pressure and the 
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

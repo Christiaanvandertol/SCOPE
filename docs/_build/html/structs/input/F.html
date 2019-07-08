@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="angles" href="angles.html" />
     <link rel="prev" title="input structs" href="input_index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -90,6 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -191,8 +195,8 @@
 <p>Filenames from <code class="docutils literal notranslate"><span class="pre">filenames</span></code> sheet of <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code> or <code class="docutils literal notranslate"><span class="pre">filenames.m</span></code></p>
 <p>The files are located in ../<a class="reference internal" href="../../directories/data.html#data"><span class="std std-ref">data</span></a></p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is an array of 22 structs</p>
+<p class="admonition-title">Note</p>
+<p>This is an array of 22 structs</p>
 </div>
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
@@ -200,27 +204,27 @@
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">soil_file,</span> <span class="pre">leaf_file,</span> <span class="pre">atmos_file</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">LIDF_file</span></code> if provided</div>
 </div>
 </td>
-<td><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Simulation_Name</span></code></td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.create_output_files" title="src.+io.create_output_files"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">create_output_files()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Simulation_Name</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/io.html#src.+io.create_output_files" title="src.+io.create_output_files"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">create_output_files()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td>other structs from this</td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></td>
+<tr class="row-even"><td><p>other structs from this</p></td>
+<td><p><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -228,32 +232,32 @@
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
 <p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>. Each of 22 structs in this array has these fields.</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>FileID</strong></td>
-<td>-</td>
-<td>char</td>
-<td>defined in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></td>
-<td>SCOPE file identifiers</td>
+<tr class="row-even"><td><p><strong>FileID</strong></p></td>
+<td><p>-</p></td>
+<td><p>char</p></td>
+<td><p>defined in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p></td>
+<td><p>SCOPE file identifiers</p></td>
 </tr>
-<tr class="row-odd"><td><strong>FileNames</strong></td>
-<td>-</td>
-<td>[1 x 1] cell</td>
-<td>-</td>
-<td>filenames from <code class="docutils literal notranslate"><span class="pre">filenames</span></code></td>
+<tr class="row-odd"><td><p><strong>FileNames</strong></p></td>
+<td><p>-</p></td>
+<td><p>[1 x 1] cell</p></td>
+<td><p>-</p></td>
+<td><p>filenames from <code class="docutils literal notranslate"><span class="pre">filenames</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -271,7 +275,7 @@
         <a href="angles.html" class="btn btn-neutral float-right" title="angles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="input_index.html" class="btn btn-neutral" title="input structs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="input_index.html" class="btn btn-neutral float-left" title="input structs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -297,25 +301,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="optipar" href="optipar.html" />
     <link rel="prev" title="constant structs" href="constants_index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -90,6 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -194,43 +198,43 @@
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">sigmaSB</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigmaSB</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">MH2O,</span> <span class="pre">Mair,</span> <span class="pre">rhoa,</span> <span class="pre">cp,</span> <span class="pre">g,</span> <span class="pre">kappa,</span> <span class="pre">sigmaSB</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MH2O,</span> <span class="pre">Mair,</span> <span class="pre">rhoa,</span> <span class="pre">cp,</span> <span class="pre">g,</span> <span class="pre">kappa,</span> <span class="pre">sigmaSB</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">kappa</span></code></td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kappa</span></code></p></td>
+<td><div class="line-block">
 <div class="line"><a class="reference internal" href="../../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></div>
 <div class="line"><a class="reference internal" href="../../api/core.html#src.resistances" title="src.resistances"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">resistances()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">rhoa,</span> <span class="pre">cp,</span> <span class="pre">MH2O,</span> <span class="pre">R</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.heatfluxes" title="src.heatfluxes"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">heatfluxes()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rhoa,</span> <span class="pre">cp,</span> <span class="pre">MH2O,</span> <span class="pre">R</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/core.html#src.heatfluxes" title="src.heatfluxes"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">heatfluxes()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">deg2rad,</span> <span class="pre">Mair,</span> <span class="pre">MCO2,</span> <span class="pre">rhoa</span></code></td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deg2rad,</span> <span class="pre">Mair,</span> <span class="pre">MCO2,</span> <span class="pre">rhoa</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">sigmaSB,</span> <span class="pre">C2K</span></code></td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sigmaSB,</span> <span class="pre">C2K</span></code></p></td>
+<td><div class="line-block">
 <div class="line"><a class="reference internal" href="../../api/not_used.html#src.not_used.Brightness_T" title="src.not_used.Brightness_T"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Brightness_T()</span></code></a></div>
 <div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">deg2rad</span></code></td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deg2rad</span></code></p></td>
+<td><div class="line-block">
 <div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
 <div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
 <div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
@@ -238,8 +242,8 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">A,</span> <span class="pre">h,</span> <span class="pre">c</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">A,</span> <span class="pre">h,</span> <span class="pre">c</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -247,104 +251,104 @@
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
 <p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.define_constants" title="src.+io.define_constants"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">define_constants()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>A</strong></td>
-<td>mol-1</td>
-<td>double</td>
-<td>6.02214E23</td>
-<td>Constant of Avogadro</td>
+<tr class="row-even"><td><p><strong>A</strong></p></td>
+<td><p>mol-1</p></td>
+<td><p>double</p></td>
+<td><p>6.02214E23</p></td>
+<td><p>Constant of Avogadro</p></td>
 </tr>
-<tr class="row-odd"><td><strong>h</strong></td>
-<td>J s</td>
-<td>double</td>
-<td>6.6262E-34</td>
-<td>Planck’s constant</td>
+<tr class="row-odd"><td><p><strong>h</strong></p></td>
+<td><p>J s</p></td>
+<td><p>double</p></td>
+<td><p>6.6262E-34</p></td>
+<td><p>Planck’s constant</p></td>
 </tr>
-<tr class="row-even"><td><strong>c</strong></td>
-<td>m s-1</td>
-<td>double</td>
-<td>299792458</td>
-<td>Speed of light</td>
+<tr class="row-even"><td><p><strong>c</strong></p></td>
+<td><p>m s-1</p></td>
+<td><p>double</p></td>
+<td><p>299792458</p></td>
+<td><p>Speed of light</p></td>
 </tr>
-<tr class="row-odd"><td><strong>cp</strong></td>
-<td>J kg-1 K-1</td>
-<td>double</td>
-<td>1004</td>
-<td>Specific heat of dry air</td>
+<tr class="row-odd"><td><p><strong>cp</strong></p></td>
+<td><p>J kg-1 K-1</p></td>
+<td><p>double</p></td>
+<td><p>1004</p></td>
+<td><p>Specific heat of dry air</p></td>
 </tr>
-<tr class="row-even"><td><strong>R</strong></td>
-<td>J mol-1K-1</td>
-<td>double</td>
-<td>8.314</td>
-<td>Molar gas constant</td>
+<tr class="row-even"><td><p><strong>R</strong></p></td>
+<td><p>J mol-1K-1</p></td>
+<td><p>double</p></td>
+<td><p>8.314</p></td>
+<td><p>Molar gas constant</p></td>
 </tr>
-<tr class="row-odd"><td><strong>rhoa</strong></td>
-<td>kg m-3</td>
-<td>double</td>
-<td>1.2047</td>
-<td>Specific mass of air</td>
+<tr class="row-odd"><td><p><strong>rhoa</strong></p></td>
+<td><p>kg m-3</p></td>
+<td><p>double</p></td>
+<td><p>1.2047</p></td>
+<td><p>Specific mass of air</p></td>
 </tr>
-<tr class="row-even"><td><strong>g</strong></td>
-<td>m s-2</td>
-<td>double</td>
-<td>9.81</td>
-<td>Gravity acceleration</td>
+<tr class="row-even"><td><p><strong>g</strong></p></td>
+<td><p>m s-2</p></td>
+<td><p>double</p></td>
+<td><p>9.81</p></td>
+<td><p>Gravity acceleration</p></td>
 </tr>
-<tr class="row-odd"><td><strong>kappa</strong></td>
-<td>-</td>
-<td>double</td>
-<td>0.4</td>
-<td>Von Karman constant</td>
+<tr class="row-odd"><td><p><strong>kappa</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>0.4</p></td>
+<td><p>Von Karman constant</p></td>
 </tr>
-<tr class="row-even"><td><strong>MH2O</strong></td>
-<td>g mol-1</td>
-<td>double</td>
-<td>18</td>
-<td>Molecular mass of water</td>
+<tr class="row-even"><td><p><strong>MH2O</strong></p></td>
+<td><p>g mol-1</p></td>
+<td><p>double</p></td>
+<td><p>18</p></td>
+<td><p>Molecular mass of water</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Mair</strong></td>
-<td>g mol-1</td>
-<td>double</td>
-<td>28.96</td>
-<td>Molecular mass of dry air</td>
+<tr class="row-odd"><td><p><strong>Mair</strong></p></td>
+<td><p>g mol-1</p></td>
+<td><p>double</p></td>
+<td><p>28.96</p></td>
+<td><p>Molecular mass of dry air</p></td>
 </tr>
-<tr class="row-even"><td><strong>MCO2</strong></td>
-<td>g mol-1</td>
-<td>double</td>
-<td>44</td>
-<td>Molecular mass of carbon dioxide</td>
+<tr class="row-even"><td><p><strong>MCO2</strong></p></td>
+<td><p>g mol-1</p></td>
+<td><p>double</p></td>
+<td><p>44</p></td>
+<td><p>Molecular mass of carbon dioxide</p></td>
 </tr>
-<tr class="row-odd"><td><strong>sigmaSB</strong></td>
-<td>W m-2 K-4</td>
-<td>double</td>
-<td>5.67E-8</td>
-<td>Stefan Boltzman constant</td>
+<tr class="row-odd"><td><p><strong>sigmaSB</strong></p></td>
+<td><p>W m-2 K-4</p></td>
+<td><p>double</p></td>
+<td><p>5.67E-8</p></td>
+<td><p>Stefan Boltzman constant</p></td>
 </tr>
-<tr class="row-even"><td><strong>deg2rad</strong></td>
-<td>rad</td>
-<td>double</td>
-<td>pi/180</td>
-<td>Conversion from deg to rad</td>
+<tr class="row-even"><td><p><strong>deg2rad</strong></p></td>
+<td><p>rad</p></td>
+<td><p>double</p></td>
+<td><p>pi/180</p></td>
+<td><p>Conversion from deg to rad</p></td>
 </tr>
-<tr class="row-odd"><td><strong>C2K</strong></td>
-<td>K</td>
-<td>double</td>
-<td>273.15</td>
-<td>Melting point of water</td>
+<tr class="row-odd"><td><p><strong>C2K</strong></p></td>
+<td><p>K</p></td>
+<td><p>double</p></td>
+<td><p>273.15</p></td>
+<td><p>Melting point of water</p></td>
 </tr>
 </tbody>
 </table>
@@ -362,7 +366,7 @@
         <a href="optipar.html" class="btn btn-neutral float-right" title="optipar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="constants_index.html" class="btn btn-neutral" title="constant structs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="constants_index.html" class="btn btn-neutral float-left" title="constant structs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -388,25 +392,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

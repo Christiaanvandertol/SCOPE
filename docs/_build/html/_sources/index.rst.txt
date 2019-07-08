@@ -25,6 +25,7 @@ Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at
    zreferences
    versions
    mSCOPE
+   retrieval/retrieval
    support
 
 .. toctree::

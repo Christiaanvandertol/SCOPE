@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Brief history of the model" href="../history.html" />
     <link rel="prev" title="options.calc_fluo" href="fluorescence.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -104,6 +106,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -180,8 +184,8 @@
 <h1><code class="docutils literal notranslate"><span class="pre">options.calc_directional</span></code> &amp;&amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code><a class="headerlink" href="#options-calc-directional-options-calc-ebal" title="Permalink to this headline">¶</a></h1>
 <p>The output files are stored in folder Directions of your output</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is an optional output that requires <code class="docutils literal notranslate"><span class="pre">options.calc_directional</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code>
+<p class="admonition-title">Note</p>
+<p>This is an optional output that requires <code class="docutils literal notranslate"><span class="pre">options.calc_directional</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code>
 However, the folder will always be created</p>
 </div>
 <div class="section" id="directional-angles-sunangle-x-xx-degrees-dat">
@@ -189,9 +193,9 @@ However, the folder will always be created</p>
 <p>Contains the directions.</p>
 <blockquote>
 <div><ul class="simple">
-<li>The 1st row gives the observation zenith angles</li>
-<li>The 2nd row gives the observation azimuth angles</li>
-<li>The 3rd row gives the solar zenith angles (constant from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</li>
+<li><p>The 1st row gives the observation zenith angles</p></li>
+<li><p>The 2nd row gives the observation azimuth angles</p></li>
+<li><p>The 3rd row gives the solar zenith angles (constant from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p></li>
 </ul>
 </div></blockquote>
 <p>columns - combination number (a set of direction used for simulation)</p>
@@ -201,28 +205,28 @@ However, the folder will always be created</p>
 <h2>Directional/BRDF (SunAngle x.xx degrees).dat<a class="headerlink" href="#directional-brdf-sunangle-x-xx-degrees-dat" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>The 1st column gives the wl values corresponding to the BRDF values</li>
-<li>Other columns give the BRDF values corresponding to the directions given by observation zenith angles (first column in the Angles file)</li>
+<li><p>The 1st column gives the wl values corresponding to the BRDF values</p></li>
+<li><p>Other columns give the BRDF values corresponding to the directions given by observation zenith angles (first column in the Angles file)</p></li>
 </ul>
 </div></blockquote>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>wlS</strong></td>
-<td>nm</td>
-<td>full wl range SCOPE</td>
+<tr class="row-even"><td><p><strong>wlS</strong></p></td>
+<td><p>nm</p></td>
+<td><p>full wl range SCOPE</p></td>
 </tr>
-<tr class="row-odd"><td><strong>brdf_</strong></td>
-<td>-</td>
-<td>bidirectional reflectance distribution function</td>
+<tr class="row-odd"><td><p><strong>brdf_</strong></p></td>
+<td><p>-</p></td>
+<td><p>bidirectional reflectance distribution function</p></td>
 </tr>
 </tbody>
 </table>
@@ -231,36 +235,36 @@ However, the folder will always be created</p>
 <h2>Directional/Temperatures (SunAngle x.xx degrees).dat<a class="headerlink" href="#directional-temperatures-sunangle-x-xx-degrees-dat" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>The 1st column gives the wl values corresponding to the brightness temperature values (except for broadband)</li>
-<li>Other columns give the brightness temperature (BT) values corresponding to the directions given by a column in the Angles file</li>
+<li><p>The 1st column gives the wl values corresponding to the brightness temperature values (except for broadband)</p></li>
+<li><p>Other columns give the brightness temperature (BT) values corresponding to the directions given by a column in the Angles file</p></li>
 </ul>
 </div></blockquote>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>BrightnessT</strong></td>
-<td>K</td>
-<td>brightness temperature</td>
+<tr class="row-even"><td><p><strong>BrightnessT</strong></p></td>
+<td><p>K</p></td>
+<td><p>brightness temperature</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><strong>wlT</strong></td>
-<td>nm</td>
-<td>thermal wl range SCOPE</td>
+<tr class="row-even"><td><p><strong>wlT</strong></p></td>
+<td><p>nm</p></td>
+<td><p>thermal wl range SCOPE</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Lot_</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>outgoing thermal radiation in observation direction</td>
+<tr class="row-odd"><td><p><strong>Lot_</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>outgoing thermal radiation in observation direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -270,28 +274,28 @@ However, the folder will always be created</p>
 <p>if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 <blockquote>
 <div><ul class="simple">
-<li>The 1st column gives the wl values corresponding to the brightness temperature values (except for broadband)</li>
-<li>Other columns give the fluorescence corresponding to the directions given by a column in the Angles file</li>
+<li><p>The 1st column gives the wl values corresponding to the brightness temperature values (except for broadband)</p></li>
+<li><p>Other columns give the fluorescence corresponding to the directions given by a column in the Angles file</p></li>
 </ul>
 </div></blockquote>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>wlF</strong></td>
-<td>nm</td>
-<td>fluorescence wl range SCOPE</td>
+<tr class="row-even"><td><p><strong>wlF</strong></p></td>
+<td><p>nm</p></td>
+<td><p>fluorescence wl range SCOPE</p></td>
 </tr>
-<tr class="row-odd"><td><strong>LoF_</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>outgoing fluorescence radiation in observation direction</td>
+<tr class="row-odd"><td><p><strong>LoF_</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>outgoing fluorescence radiation in observation direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -313,7 +317,7 @@ However, the folder will always be created</p>
         <a href="../history.html" class="btn btn-neutral float-right" title="Brief history of the model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="fluorescence.html" class="btn btn-neutral" title="options.calc_fluo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="fluorescence.html" class="btn btn-neutral float-left" title="options.calc_fluo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -339,25 +343,16 @@ However, the folder will always be created</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

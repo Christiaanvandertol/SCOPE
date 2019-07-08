@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="soilemp" href="soilemp.html" />
     <link rel="prev" title="constants" href="constants.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -90,6 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -196,32 +200,32 @@
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">nr,</span> <span class="pre">Kdm,</span> <span class="pre">Kab,</span> <span class="pre">Kw,</span> <span class="pre">Ks,</span> <span class="pre">Kant</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">Kca</span> <span class="pre">(or</span> <span class="pre">KcaV,</span> <span class="pre">KcaZ)</span></code></div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line"><a class="reference internal" href="../../api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a></div>
 <div class="line"><a class="reference internal" href="../../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">phiI,</span> <span class="pre">phiII</span></code>  (if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code>)</div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">phi</span></code></div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> <a class="reference internal" href="../../api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> <a class="reference internal" href="../../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
 </div>
@@ -233,98 +237,98 @@
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
 <p>Fields loaded in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="20%" />
-<col width="20%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>wl</strong></td>
-<td>nm</td>
-<td>[2001 x 1] double</td>
-<td>SAC wavelength range 400-2400</td>
+<tr class="row-even"><td><p><strong>wl</strong></p></td>
+<td><p>nm</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC wavelength range 400-2400</p></td>
 </tr>
-<tr class="row-odd"><td><strong>nr</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>refractive index</td>
+<tr class="row-odd"><td><p><strong>nr</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>refractive index</p></td>
 </tr>
-<tr class="row-even"><td><strong>Kab</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of chlorophylls a + b</td>
+<tr class="row-even"><td><p><strong>Kab</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of chlorophylls a + b</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Kca</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of carotenoids (violaxanthin + zeaxanthin)</td>
+<tr class="row-odd"><td><p><strong>Kca</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of carotenoids (violaxanthin + zeaxanthin)</p></td>
 </tr>
-<tr class="row-even"><td><strong>Ks</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of senescent material</td>
+<tr class="row-even"><td><p><strong>Ks</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of senescent material</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Kw</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of water</td>
+<tr class="row-odd"><td><p><strong>Kw</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of water</p></td>
 </tr>
-<tr class="row-even"><td><strong>Kdm</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of dry matter</td>
+<tr class="row-even"><td><p><strong>Kdm</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of dry matter</p></td>
 </tr>
-<tr class="row-odd"><td><strong>phiI</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of PSI</td>
+<tr class="row-odd"><td><p><strong>phiI</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of PSI</p></td>
 </tr>
-<tr class="row-even"><td><strong>phiII</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of PSI</td>
+<tr class="row-even"><td><p><strong>phiII</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of PSI</p></td>
 </tr>
-<tr class="row-odd"><td><strong>phi</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of PSI + PSII</td>
+<tr class="row-odd"><td><p><strong>phi</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of PSI + PSII</p></td>
 </tr>
-<tr class="row-even"><td><strong>KcaV</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of violaxanthin</td>
+<tr class="row-even"><td><p><strong>KcaV</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of violaxanthin</p></td>
 </tr>
-<tr class="row-odd"><td><strong>KcaZ</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of zeaxanthin</td>
+<tr class="row-odd"><td><p><strong>KcaZ</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of zeaxanthin</p></td>
 </tr>
-<tr class="row-even"><td><strong>Kant</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>SAC of anthocyanins</td>
+<tr class="row-even"><td><p><strong>Kant</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>SAC of anthocyanins</p></td>
 </tr>
-<tr class="row-odd"><td><strong>KcaV2</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>former SAC of violaxanthin</td>
+<tr class="row-odd"><td><p><strong>KcaV2</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>former SAC of violaxanthin</p></td>
 </tr>
-<tr class="row-even"><td><strong>GSV</strong></td>
-<td>nm-1</td>
-<td>[2001 x 3] double</td>
-<td>Global Soil Vectors spectra</td>
+<tr class="row-even"><td><p><strong>GSV</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 3] double</p></td>
+<td><p>Global Soil Vectors spectra</p></td>
 </tr>
-<tr class="row-odd"><td><strong>nw</strong></td>
-<td>nm-1</td>
-<td>[2001 x 1] double</td>
-<td>water refraction index spectrum</td>
+<tr class="row-odd"><td><p><strong>nw</strong></p></td>
+<td><p>nm-1</p></td>
+<td><p>[2001 x 1] double</p></td>
+<td><p>water refraction index spectrum</p></td>
 </tr>
 </tbody>
 </table>
@@ -342,7 +346,7 @@
         <a href="soilemp.html" class="btn btn-neutral float-right" title="soilemp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="constants.html" class="btn btn-neutral" title="constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="constants.html" class="btn btn-neutral float-left" title="constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -368,25 +372,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

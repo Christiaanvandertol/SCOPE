@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Biochem_out" href="biochem_out.html" />
     <link rel="prev" title="V" href="V.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -90,6 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -185,8 +189,8 @@
   <div class="section" id="biochem-in">
 <h1>biochem_in<a class="headerlink" href="#biochem-in" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is an internal struct of <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>. It is only available within <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> in debug mode.</p>
+<p class="admonition-title">Note</p>
+<p>This is an internal struct of <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>. It is only available within <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> in debug mode.</p>
 </div>
 <p>Input of the biochemical routine <a class="reference internal" href="../../api/core.html#src.biochemical" title="src.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> or <a class="reference internal" href="../../api/core.html#src.biochemical_MD12" title="src.biochemical_MD12"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical_MD12()</span></code></a> for <strong>leaf</strong> photosynthesis and fluorescence.</p>
 <div class="section" id="initialized">
@@ -200,169 +204,169 @@
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
 <p>Fields initialized in <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Fluorescence_model</strong></td>
-<td>-</td>
-<td>bool</td>
-<td><code class="docutils literal notranslate"><span class="pre">options.Fluorescence_model</span></code></td>
+<tr class="row-even"><td><p><strong>Fluorescence_model</strong></p></td>
+<td><p>-</p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">options.Fluorescence_model</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><strong>Type</strong></td>
-<td>-</td>
-<td>char</td>
-<td>photosynthesis type C3 or C4</td>
+<tr class="row-odd"><td><p><strong>Type</strong></p></td>
+<td><p>-</p></td>
+<td><p>char</p></td>
+<td><p>photosynthesis type C3 or C4</p></td>
 </tr>
-<tr class="row-even"><td><strong>p</strong></td>
-<td>hPa</td>
-<td>double</td>
-<td>atmospheric pressure</td>
+<tr class="row-even"><td><p><strong>p</strong></p></td>
+<td><p>hPa</p></td>
+<td><p>double</p></td>
+<td><p>atmospheric pressure</p></td>
 </tr>
-<tr class="row-odd"><td><strong>m</strong></td>
-<td>&#160;</td>
-<td>double</td>
-<td>Ball-Berry stomatal conductance parameter</td>
+<tr class="row-odd"><td><p><strong>m</strong></p></td>
+<td></td>
+<td><p>double</p></td>
+<td><p>Ball-Berry stomatal conductance parameter</p></td>
 </tr>
-<tr class="row-even"><td><strong>O</strong></td>
-<td>per mille</td>
-<td>double</td>
-<td>atmospheric O2 concentration</td>
+<tr class="row-even"><td><p><strong>O</strong></p></td>
+<td><p>per mille</p></td>
+<td><p>double</p></td>
+<td><p>atmospheric O2 concentration</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Rdparam</strong></td>
-<td>-</td>
-<td>double</td>
-<td>fraction of respiration</td>
+<tr class="row-odd"><td><p><strong>Rdparam</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>fraction of respiration</p></td>
 </tr>
-<tr class="row-even"><td><strong>T</strong></td>
-<td>ºC</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p><strong>T</strong></p></td>
+<td><p>ºC</p></td>
+<td><div class="line-block">
 <div class="line">[13 x 36 x 60] double</div>
 <div class="line">[60 x 1] double</div>
 </div>
 </td>
-<td>leaf temperature per canopy layer</td>
+<td><p>leaf temperature per canopy layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>eb</strong></td>
-<td>hPa</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p><strong>eb</strong></p></td>
+<td><p>hPa</p></td>
+<td><div class="line-block">
 <div class="line">[13 x 36 x 60] double</div>
 <div class="line">[60 x 1] double</div>
 </div>
 </td>
-<td>leaf water (ea) per canopy layer</td>
+<td><p>leaf water (ea) per canopy layer</p></td>
 </tr>
-<tr class="row-even"><td><strong>Cs</strong></td>
-<td>ppm</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p><strong>Cs</strong></p></td>
+<td><p>ppm</p></td>
+<td><div class="line-block">
 <div class="line">[13 x 36 x 60] double</div>
 <div class="line">[60 x 1] double</div>
 </div>
 </td>
-<td>leaf CO2 concentration per canopy layer</td>
+<td><p>leaf CO2 concentration per canopy layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Vcmo</strong></td>
-<td>umol m-2 s-1</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p><strong>Vcmo</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><div class="line-block">
 <div class="line">[13 x 36 x 60] double</div>
 <div class="line">[60 x 1] double</div>
 </div>
 </td>
-<td>maximum carboxylation rate per canopy layer</td>
+<td><p>maximum carboxylation rate per canopy layer</p></td>
 </tr>
-<tr class="row-even"><td><strong>Q</strong></td>
-<td>W m-2</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p><strong>Q</strong></p></td>
+<td><p>W m-2</p></td>
+<td><div class="line-block">
 <div class="line">[13 x 36 x 60] double</div>
 <div class="line">[60 x 1] double</div>
 </div>
 </td>
-<td>absorbed photosynthetically active radiation (PAR) by chlorophylls per canopy layer</td>
+<td><p>absorbed photosynthetically active radiation (PAR) by chlorophylls per canopy layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>A</strong></td>
-<td>umol m-2 s-1</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p><strong>A</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><div class="line-block">
 <div class="line">[13 x 36 x 60] double</div>
 <div class="line">[60 x 1] double</div>
 </div>
 </td>
-<td>photosynthesis (CO2 assimilation rate) per canopy layer</td>
+<td><p>photosynthesis (CO2 assimilation rate) per canopy layer</p></td>
 </tr>
 </tbody>
 </table>
 <p>These parameters are specific for <a class="reference internal" href="../../api/core.html#src.biochemical" title="src.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>tempcor</strong></td>
-<td>-</td>
-<td>double</td>
-<td><code class="docutils literal notranslate"><span class="pre">options.apply_T_corr</span></code></td>
+<tr class="row-even"><td><p><strong>tempcor</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">options.apply_T_corr</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><strong>Tparams</strong></td>
-<td>K</td>
-<td>[5 x 1] double</td>
-<td>the temperature response of fluorescence</td>
+<tr class="row-odd"><td><p><strong>Tparams</strong></p></td>
+<td><p>K</p></td>
+<td><p>[5 x 1] double</p></td>
+<td><p>the temperature response of fluorescence</p></td>
 </tr>
-<tr class="row-even"><td><strong>stressfactor</strong></td>
-<td>-</td>
-<td>double</td>
-<td>stress factor to reduce Vcmax</td>
+<tr class="row-even"><td><p><strong>stressfactor</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>stress factor to reduce Vcmax</p></td>
 </tr>
 </tbody>
 </table>
 <p>These parameters are specific for <a class="reference internal" href="../../api/core.html#src.biochemical_MD12" title="src.biochemical_MD12"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical_MD12()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Tyear</strong></td>
-<td>ºC</td>
-<td>double</td>
-<td>mean annual temperature</td>
+<tr class="row-even"><td><p><strong>Tyear</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>double</p></td>
+<td><p>mean annual temperature</p></td>
 </tr>
-<tr class="row-odd"><td><strong>beta</strong></td>
-<td>-</td>
-<td>double</td>
-<td>fraction of photons partitioned to PSII</td>
+<tr class="row-odd"><td><p><strong>beta</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>fraction of photons partitioned to PSII</p></td>
 </tr>
-<tr class="row-even"><td><strong>kNPQs</strong></td>
-<td>s-1</td>
-<td>double</td>
-<td>rate constant of sustained thermal dissipation</td>
+<tr class="row-even"><td><p><strong>kNPQs</strong></p></td>
+<td><p>s-1</p></td>
+<td><p>double</p></td>
+<td><p>rate constant of sustained thermal dissipation</p></td>
 </tr>
-<tr class="row-odd"><td><strong>qLs</strong></td>
-<td>-</td>
-<td>double</td>
-<td>fraction of functional reaction centres</td>
+<tr class="row-odd"><td><p><strong>qLs</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>fraction of functional reaction centres</p></td>
 </tr>
 </tbody>
 </table>
@@ -380,7 +384,7 @@
         <a href="biochem_out.html" class="btn btn-neutral float-right" title="Biochem_out" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="V.html" class="btn btn-neutral" title="V" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="V.html" class="btn btn-neutral float-left" title="V" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -406,25 +410,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

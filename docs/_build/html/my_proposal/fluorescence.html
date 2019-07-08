@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Energy balance" href="energy_balance.html" />
     <link rel="prev" title="Spectra" href="spectra.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -101,6 +103,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -180,13 +184,13 @@
 <h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
 <p>Light reaching a leaf (pretty much any object) can be reflected, transmitted or absorbed. In plants absorbed light can be spent on three different processes:</p>
 <ol class="arabic simple">
-<li>photochemistry (assimilation CO2)</li>
-<li>non-photochemical quenching (NPQ): heat dissipation</li>
-<li>chlorophyll fluorescence excitation</li>
+<li><p>photochemistry (assimilation CO2)</p></li>
+<li><p>non-photochemical quenching (NPQ): heat dissipation</p></li>
+<li><p>chlorophyll fluorescence excitation</p></li>
 </ol>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/aPAR_destiny.png"><img alt="../_images/aPAR_destiny.png" src="../_images/aPAR_destiny.png" style="width: 454.0px; height: 353.0px;" /></a>
-<p class="caption"><span class="caption-text">Source: <a class="reference external" href="http://spie.org/newsroom/4725-remote-sensing-of-terrestrial-chlorophyll-fluorescence-from-space?SSO=1">http://spie.org/newsroom/4725-remote-sensing-of-terrestrial-chlorophyll-fluorescence-from-space?SSO=1</a></span></p>
+<p class="caption"><span class="caption-text">Source: <a class="reference external" href="http://spie.org/newsroom/4725-remote-sensing-of-terrestrial-chlorophyll-fluorescence-from-space?SSO=1">http://spie.org/newsroom/4725-remote-sensing-of-terrestrial-chlorophyll-fluorescence-from-space?SSO=1</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Fluorescence</span> <span class="ow">is</span> <span class="n">light</span> <span class="n">emitted</span> <span class="n">by</span> <span class="n">chlorophyll</span> <span class="n">molecules</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span> <span class="mi">640</span><span class="o">-</span><span class="mi">800</span> <span class="n">nm</span><span class="o">.</span>
 </pre></div>
@@ -198,33 +202,33 @@
 <p>SCOPE model simulates 3 hemispherical fluorescence quantiles:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>fluorescence emitted by all photosystems without any scattering / re-absorption neither within leaf, nor withing canopy</li>
-<li>fluorescence emitted by all leaves without any scattering / re-absorption within canopy or from soil</li>
-<li>fluorescence emitted by canopy (all leaf layers) accounting for all scattering / re-absorption events</li>
+<li><p>fluorescence emitted by all photosystems without any scattering / re-absorption neither within leaf, nor withing canopy</p></li>
+<li><p>fluorescence emitted by all leaves without any scattering / re-absorption within canopy or from soil</p></li>
+<li><p>fluorescence emitted by canopy (all leaf layers) accounting for all scattering / re-absorption events</p></li>
 </ol>
 </div></blockquote>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../_images/fluorescence.png" src="../_images/fluorescence.png" />
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Notice the difference in ranges and units between directional and hemispherical fluorescence.</p>
+<p class="admonition-title">Note</p>
+<p>Notice the difference in ranges and units between directional and hemispherical fluorescence.</p>
 </div>
 <p>SCOPE model simulates directional fluorescence (the one that actually reaches a sensor) and its components coming from:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>sunlit leaves</li>
-<li>shaded leaves</li>
-<li>scattered by leaves and soil</li>
+<li><p>sunlit leaves</p></li>
+<li><p>shaded leaves</p></li>
+<li><p>scattered by leaves and soil</p></li>
 </ol>
 </div></blockquote>
 <p>It is also possible to partition directional fruorescence between photosystem I and II (PSI, PSII) with <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code>, not recommended though.</p>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../_images/fluorescence_contributors.png" src="../_images/fluorescence_contributors.png" />
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There are much more outputs of <a class="reference internal" href="../api/core.html#src.biochemical" title="src.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> related to Pulse-Amplitude-Modulation (PAM) Fluorometry quantiles that are stored in internal structure <code class="docutils literal notranslate"><span class="pre">biochem_out</span></code>.</p>
+<p class="admonition-title">Note</p>
+<p>There are much more outputs of <a class="reference internal" href="../api/core.html#src.biochemical" title="src.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> related to Pulse-Amplitude-Modulation (PAM) Fluorometry quantiles that are stored in internal structure <code class="docutils literal notranslate"><span class="pre">biochem_out</span></code>.</p>
 </div>
 </div>
 </div>
@@ -240,7 +244,7 @@
         <a href="energy_balance.html" class="btn btn-neutral float-right" title="Energy balance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="spectra.html" class="btn btn-neutral" title="Spectra" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="spectra.html" class="btn btn-neutral float-left" title="Spectra" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -266,25 +270,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

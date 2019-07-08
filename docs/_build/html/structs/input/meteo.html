@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="soil" href="soil.html" />
     <link rel="prev" title="leafbio" href="leafbio.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -90,6 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval/retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -200,31 +204,31 @@
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">z</span></code></td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">z</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">Ta,</span> <span class="pre">ea,</span> <span class="pre">Ca,</span> <span class="pre">p</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">u,</span> <span class="pre">z</span></code> -&gt; <a class="reference internal" href="../internal/resist_in.html#resist-in"><span class="std std-ref">Resist_in</span></a></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">Oa</span></code> -&gt; <a class="reference internal" href="../internal/biochem_in.html#biochem-in"><span class="std std-ref">biochem_in</span></a></div>
 </div>
 </td>
-<td><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+<td><p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Rin,</span> <span class="pre">Rli</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Rin,</span> <span class="pre">Rli</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Rin,</span> <span class="pre">Rli</span></code></td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Rin,</span> <span class="pre">Rli</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -232,74 +236,74 @@
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
 <p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>z</strong></td>
-<td>m</td>
-<td>double</td>
-<td>10.0</td>
-<td>measurement height of meteorological data</td>
+<tr class="row-even"><td><p><strong>z</strong></p></td>
+<td><p>m</p></td>
+<td><p>double</p></td>
+<td><p>10.0</p></td>
+<td><p>measurement height of meteorological data</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Rin</strong></td>
-<td>W m-2</td>
-<td>double</td>
-<td>600.0</td>
-<td>broadband incoming shortwave radiation (0.4-2.5 um)</td>
+<tr class="row-odd"><td><p><strong>Rin</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>double</p></td>
+<td><p>600.0</p></td>
+<td><p>broadband incoming shortwave radiation (0.4-2.5 um)</p></td>
 </tr>
-<tr class="row-even"><td><strong>Ta</strong></td>
-<td>ºC</td>
-<td>double</td>
-<td>20.0</td>
-<td>air temperature</td>
+<tr class="row-even"><td><p><strong>Ta</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>double</p></td>
+<td><p>20.0</p></td>
+<td><p>air temperature</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Rli</strong></td>
-<td>W m-2</td>
-<td>double</td>
-<td>300.0</td>
-<td>broadband incoming longwave radiation (2.5-50 um)</td>
+<tr class="row-odd"><td><p><strong>Rli</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>double</p></td>
+<td><p>300.0</p></td>
+<td><p>broadband incoming longwave radiation (2.5-50 um)</p></td>
 </tr>
-<tr class="row-even"><td><strong>p</strong></td>
-<td>hPa</td>
-<td>double</td>
-<td>970.0</td>
-<td>air pressure</td>
+<tr class="row-even"><td><p><strong>p</strong></p></td>
+<td><p>hPa</p></td>
+<td><p>double</p></td>
+<td><p>970.0</p></td>
+<td><p>air pressure</p></td>
 </tr>
-<tr class="row-odd"><td><strong>ea</strong></td>
-<td>hPa</td>
-<td>double</td>
-<td>15.0</td>
-<td>atmospheric vapour pressure</td>
+<tr class="row-odd"><td><p><strong>ea</strong></p></td>
+<td><p>hPa</p></td>
+<td><p>double</p></td>
+<td><p>15.0</p></td>
+<td><p>atmospheric vapour pressure</p></td>
 </tr>
-<tr class="row-even"><td><strong>u</strong></td>
-<td>m s-1</td>
-<td>double</td>
-<td>2.0</td>
-<td>wind speed at height z</td>
+<tr class="row-even"><td><p><strong>u</strong></p></td>
+<td><p>m s-1</p></td>
+<td><p>double</p></td>
+<td><p>2.0</p></td>
+<td><p>wind speed at height z</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Ca</strong></td>
-<td>ppm</td>
-<td>double</td>
-<td>380.0</td>
-<td>atmospheric CO2 concentration</td>
+<tr class="row-odd"><td><p><strong>Ca</strong></p></td>
+<td><p>ppm</p></td>
+<td><p>double</p></td>
+<td><p>380.0</p></td>
+<td><p>atmospheric CO2 concentration</p></td>
 </tr>
-<tr class="row-even"><td><strong>Oa</strong></td>
-<td>per mille</td>
-<td>double</td>
-<td>209.0</td>
-<td>atmospheric O2 concentration</td>
+<tr class="row-even"><td><p><strong>Oa</strong></p></td>
+<td><p>per mille</p></td>
+<td><p>double</p></td>
+<td><p>209.0</p></td>
+<td><p>atmospheric O2 concentration</p></td>
 </tr>
 </tbody>
 </table>
@@ -317,7 +321,7 @@
         <a href="soil.html" class="btn btn-neutral float-right" title="soil" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="leafbio.html" class="btn btn-neutral" title="leafbio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="leafbio.html" class="btn btn-neutral float-left" title="leafbio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -343,25 +347,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
