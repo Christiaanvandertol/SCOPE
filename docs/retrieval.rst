@@ -2,7 +2,7 @@ Retrieval (Model inversion)
 =============================
 
 .. warning::
-    Github of the project: https://github.com/Prikaziuk/demostrator
+    Github of the project: https://github.com/Prikaziuk/retrieval_rtmo
 
 .. contents::
 
