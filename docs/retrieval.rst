@@ -56,7 +56,7 @@ There are two basic inversion approaches:
         - **disadvantage** coarse: if you tune 6 parameters giving only 10 steps for each you
           end up in a look-up table with 1.000.000 simulations
     * numerical optimization
-        - spectra is calculated on the spot (for each measurement during the run)
+        - spectra are calculated on the spot (for each measurement during the run)
         - algorithm is minimizing the cost-function (difference between modelled and measured data)
         - **advantage** sharp values
         - **disadvantage** slow, local minimum trap
