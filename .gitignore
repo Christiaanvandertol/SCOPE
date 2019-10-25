@@ -1,4 +1,7 @@
-/data/input/dataset majadas
+*.xlsx
+*.asv
+/data
 /docs/.idea
+/SCOPE_v*/output
 /SCOPE_v*/src/+my
 /SCOPE_v*/src/not_used
