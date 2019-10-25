@@ -1,7 +1,7 @@
 function Lb = Planck(wl,Tb,em)
 
-    c1 = 1.191066e-22;
-    c2 = 14388.33;
+    c1 = 1.191066e-22;  % 2 * h * c ^ 2 * (1e-6)  to make the resulting radiance per um
+    c2 = 14388.33;      % h * c / k  * (1e6)  to make it um * K
     if nargin<3
         em = ones(size(Tb));
     end

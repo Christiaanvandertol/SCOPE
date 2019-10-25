@@ -276,7 +276,7 @@ for PS = 2:-1:2-isfield(leafopt,'MbI')   % Do for both photosystems II and I (or
     Fem(:,PS) = iLAI*sum(Fplu+Fmin,2);
     
     for ilayer = 1:nl+1
-        Fiprofile(ilayer,PS) = 0.001 * helpers.Sint(Fplu(:,ilayer),spectral.wlF);
+        Fiprofile(ilayer,PS) = 0.001 * equations.Sint(Fplu(:,ilayer),spectral.wlF);
     end
 end
 rad.Fem_  = Fem(:,1) + Fem(:,2);
@@ -296,6 +296,6 @@ rad.LoF_soil        = LoF_4;
 
 profiles.fluorescence   = Fiprofile(:,1) + Fiprofile(:,2);
  
-rad.Eoutf = 0.001 * helpers.Sint(sum(Fhem_,2),spectral.wlF); 
+rad.Eoutf = 0.001 * equations.Sint(sum(Fhem_,2),spectral.wlF); 
 rad.Eminf_ = Emin_;
 rad.Epluf_ = Eplu_;

@@ -158,8 +158,7 @@ F1          = zeros(nl+1,1);
 F2          = zeros(nl+1,1);
 F1top       = 0;
 while cont
-    F1topn  = -rinf*F2(1);
-    F1(1)   = F1topn;
+    F1(1)   = F1top;
     for j   = 1:nl
         F1(j+1) = F1(j)*(1-m*iLAI)+ fHc*Hc(j);
     end
@@ -167,6 +166,7 @@ while cont
     for j   = nl:-1:1
         F2(j)   = F2(j+1)*(1-m*iLAI) + fHc*Hc(j);
     end
+    F1topn  = -rinf*F2(1);
     cont    = abs(F1topn-F1top)>crit;
     F1top   = F1topn;
     counter = counter + 1;

@@ -19,3 +19,4 @@ b           = 237.3;         %degrees C
 %% calculations
 es          = 6.107*10.^(7.5.*T./(b+T));
 s           = es*log(10)*a*b./(b+T).^2;
+end

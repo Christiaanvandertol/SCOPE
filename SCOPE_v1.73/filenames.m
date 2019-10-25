@@ -8,29 +8,54 @@ X = {
 
 %The following are only for the time series option!
 'Dataset_dir'		, 'for_verification'; 
-'t_file'		, 't_.dat';
-'year_file'		, 'year_.dat';
-'Rin_file'		, 'Rin_.dat';
-'Rli_file'		, 'Rli_.dat';
-'p_file' 		, 'p_.dat';
-'Ta_file'		, 'Ta_.dat';
-'ea_file'		, 'ea_.dat';
-'u_file'		, 'u_.dat';
+'verification_dir'	, 'verificationdata';
+'ec_file_berkeley'	, 'ts_input.csv';
+
+% values from `interpolation_csv` will be linearly interpolated to timestamp (t) of ec_file_berkeley
+'interpolation_csv'	, '';
+
+% Variables below are COLUMN NAMES in time_series_files (ec_file_berkeley, interpolation_csv)
+'t'		, 'f_date';
+'Rin'   , 'Rin';
+'Rli'   , 'Rli';
+'p' 	, 'p';
+'Ta'	, 'Ta';
+'u'		, 'u';
+'ea'	, 'ea';
+'RH'	, '';  % only for ea calculations ea = RH * satvap(Ta)
+
+'tts' 	, '';  % if not present - calculated from t, timezn, LAT, LON
 
 %optional (leave empty for constant values From inputdata.TXT)
-'CO2_file'		, '';
-'SMC_file'		, '';
+% leaf
+'Cab' 		, '';
+'Cca'		, '';
+'Cdm'		, '';
+'Cw'	    , '';
+'Cs'		, '';
+'Cant'		, '';
+'N'		    , '';
 
-% optional (leave empty for calculations based on t_file year timezn)
-'tts_file' 		, '';
+% BSM
+'SMC'				, '';
+'BSMBrightness'		, '';
+'BSMlat'			, '';
+'BSMlon'		    , '';
 
-%optional two column tables (first column DOY second column value)
-'z_file' 		, '';
-'LAI_file'		, '';
-'hc_file'		, '';
-'Vcmax_file'	, '';
-'Cab_file'		, '';
+% canopy
+'LAI'		, '';  
+'hc'		, '';
+'LIDFa'		, '';
+'LIDFb'		, '';
 
-%optional leaf inclination distribution file with 3 headerlines (see
+% meteo
+'z'		, '';
+'Ca'	, '';
+
+%biochemistry
+'Vcmo'		, '';
+
+
+%optional leaf inclination distribution file with 13 rows (see
 %example). It MUST be located in ../data/leafangles/
 'LIDF_file'     , ''};

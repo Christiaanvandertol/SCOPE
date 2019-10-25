@@ -314,15 +314,15 @@ Esky_   = pi./(1-t3.*rdd).*(t1.*(t5+t12.*rsd)+Fd+(1-rdd).*Ls.*t3+t16);
 [fEsuno,fEskyo,fEsunt,fEskyt]          = deal(0*Esun_);   %initialization
 
 J_o             = wl<3000;                          %find optical spectrum
-Esunto          = 0.001 * helpers.Sint(Esun_(J_o),wl(J_o)); %Calculate optical sun fluxes (by Integration), including conversion mW >> W 
-Eskyto          = 0.001 * helpers.Sint(Esky_(J_o),wl(J_o)); %Calculate optical sun fluxes (by Integration)
+Esunto          = 0.001 * equations.Sint(Esun_(J_o),wl(J_o)); %Calculate optical sun fluxes (by Integration), including conversion mW >> W 
+Eskyto          = 0.001 * equations.Sint(Esky_(J_o),wl(J_o)); %Calculate optical sun fluxes (by Integration)
 Etoto           = Esunto + Eskyto;                  %Calculate total fluxes
 fEsuno(J_o)     = Esun_(J_o)/Etoto;                 %fraction of contribution of Sun fluxes to total light
 fEskyo(J_o)     = Esky_(J_o)/Etoto;                 %fraction of contribution of Sky fluxes to total light
 
 J_t             = wl>=3000;                         %find thermal spectrum
-Esuntt          = 0.001 * helpers.Sint(Esun_(J_t),wl(J_t)); %Themal solar fluxes
-Eskytt          = 0.001 * helpers.Sint(Esky_(J_t),wl(J_t)); %Thermal Sky fluxes
+Esuntt          = 0.001 * equations.Sint(Esun_(J_t),wl(J_t)); %Themal solar fluxes
+Eskytt          = 0.001 * equations.Sint(Esky_(J_t),wl(J_t)); %Thermal Sky fluxes
 Etott           = Eskytt + Esuntt;                  %Total
 fEsunt(J_t)     = Esun_(J_t)/Etott;                 %fraction from Esun 
 fEskyt(J_t)     = Esky_(J_t)/Etott;                 %fraction from Esky
@@ -351,12 +351,12 @@ for i = 1:nwl
 end
 
 % Incident and absorbed solar radiation
-Psun        = 0.001 * helpers.Sint(e2phot(wlPAR*1E-9,Esun_(Ipar)),wlPAR);   % Incident solar PAR in PAR units
-%Psky        = 0.001 * helpers.Sint(e2phot(wlPAR*1E-9,Esky_(Ipar)),wlPAR);
-Asun        = 0.001 * helpers.Sint(Esun_.*epsc,wl);                         % Total absorbed solar radiation
-Pnsun       = 0.001 * helpers.Sint(e2phot(wlPAR*1E-9,Esun_(Ipar).*epsc(Ipar)),wlPAR);  % Absorbed solar radiation  in PAR range in moles m-2 s-1
-Rnsun_PAR   = 0.001 * helpers.Sint(Esun_(Ipar).*epsc(Ipar),wlPAR);  
-Pnsun_Cab   = 0.001 * helpers.Sint(e2phot(wlPAR*1E-9,kChlrel(Ipar).*Esun_(Ipar).*epsc(Ipar)),wlPAR);  
+Psun        = 0.001 * equations.Sint(e2phot(wlPAR*1E-9,Esun_(Ipar)),wlPAR);   % Incident solar PAR in PAR units
+%Psky        = 0.001 * equations.Sint(e2phot(wlPAR*1E-9,Esky_(Ipar)),wlPAR);
+Asun        = 0.001 * equations.Sint(Esun_.*epsc,wl);                         % Total absorbed solar radiation
+Pnsun       = 0.001 * equations.Sint(e2phot(wlPAR*1E-9,Esun_(Ipar).*epsc(Ipar)),wlPAR);  % Absorbed solar radiation  in PAR range in moles m-2 s-1
+Rnsun_PAR   = 0.001 * equations.Sint(Esun_(Ipar).*epsc(Ipar),wlPAR);  
+Pnsun_Cab   = 0.001 * equations.Sint(e2phot(wlPAR*1E-9,kChlrel(Ipar).*Esun_(Ipar).*epsc(Ipar)),wlPAR);  
                                                                     % Absorbed solar radiation by Cab in PAR range in moles m-2 s-1
 
 %% 3. outgoing fluxes, hemispherical and in viewing direction, spectrum
@@ -375,13 +375,13 @@ Lo_         = piLo_/pi;
 % up and down and hemispherical out, cumulative over wavelenght
 IwlP        = spectral.IwlP;
 IwlT        = spectral.IwlT;
-Eouto       = 0.001 * helpers.Sint(Eout_(IwlP),wlP);   %     [1] hemispherical out, in optical range (W m-2)
-Eoutt       = 0.001 * helpers.Sint(Eout_(IwlT),wlT);   %     [1] hemispherical out, in thermal range (W m-2)
+Eouto       = 0.001 * equations.Sint(Eout_(IwlP),wlP);   %     [1] hemispherical out, in optical range (W m-2)
+Eoutt       = 0.001 * equations.Sint(Eout_(IwlT),wlT);   %     [1] hemispherical out, in thermal range (W m-2)
 
 %% 4. net fluxes, spectral and total, and incoming fluxes
 % incident PAR at the top of canopy, spectral and spectrally integrated
 P_          = e2phot(wl(Ipar)*1E-9,(Esun_(Ipar)+Esky_(Ipar)));  
-P           = .001 * helpers.Sint(P_,wlPAR);
+P           = .001 * equations.Sint(P_,wlPAR);
 
 % total direct radiation (incident and net) per leaf area (W m-2 leaf)
 Pdir        = fs * Psun;                        % [13 x 36]   incident    
@@ -397,7 +397,7 @@ for j = 1:nl
     E_         = .5*(Emin_(j,:) + Emin_(j+1,:)+ Eplu_(j,:)+ Eplu_(j+1,:));
     
     % incident PAR flux, integrated over all wavelengths (moles m-2 s-1) 
-    Pdif(j)    = .001 * helpers.Sint(e2phot(wlPAR*1E-9,E_(Ipar)'),wlPAR);  % [nl] , including conversion mW >> W 
+    Pdif(j)    = .001 * equations.Sint(e2phot(wlPAR*1E-9,E_(Ipar)'),wlPAR);  % [nl] , including conversion mW >> W 
     
     % net radiation (mW m-2 um-1) and net PAR (moles m-2 s-1 um-1), per wavelength
     Rndif_(j,:)         = E_.*epsc';                                                   % [nl,nwl]  Net (absorbed) radiation by leaves
@@ -406,15 +406,15 @@ for j = 1:nl
     Rndif_PAR_(j,:)     = Rndif_(j,Ipar);  % [nl,nwlPAR]  Net (absorbed) as PAR energy
     
     % net radiation (W m-2) and net PAR (moles m-2 s-1), integrated over all wavelengths
-    Rndif(j)            = .001 * helpers.Sint(Rndif_(j,:),wl);              % [nl]  Full spectrum net diffuse flux
-    Pndif(j)            =        helpers.Sint(Pndif_(j,Ipar),wlPAR);        % [nl]  Absorbed PAR 
-    Pndif_Cab(j)        =        helpers.Sint(Pndif_Cab_(j,Ipar),wlPAR);    % [nl]  Absorbed PAR by Cab integrated
-    Rndif_PAR(j)        = .001 * helpers.Sint(Rndif_PAR_(j,Ipar),wlPAR);    % [nl]  Absorbed PAR by Cab integrated
+    Rndif(j)            = .001 * equations.Sint(Rndif_(j,:),wl);              % [nl]  Full spectrum net diffuse flux
+    Pndif(j)            =        equations.Sint(Pndif_(j,Ipar),wlPAR);        % [nl]  Absorbed PAR 
+    Pndif_Cab(j)        =        equations.Sint(Pndif_Cab_(j,Ipar),wlPAR);    % [nl]  Absorbed PAR by Cab integrated
+    Rndif_PAR(j)        = .001 * equations.Sint(Rndif_PAR_(j,Ipar),wlPAR);    % [nl]  Absorbed PAR by Cab integrated
 end
 
 % soil layer, direct and diffuse radiation
-Rndirsoil   = .001 * helpers.Sint(Esun_.*epss,wl);          % [1] Absorbed solar flux by the soil
-Rndifsoil   = .001 * helpers.Sint(Emin_(nl+1,:).*epss',wl); % [1] Absorbed diffuse downward flux by the soil (W m-2)
+Rndirsoil   = .001 * equations.Sint(Esun_.*epss,wl);          % [1] Absorbed solar flux by the soil
+Rndifsoil   = .001 * equations.Sint(Emin_(nl+1,:).*epss',wl); % [1] Absorbed diffuse downward flux by the soil (W m-2)
 
 % net (n) radiation R and net PAR P per component: sunlit (u), shaded (h) soil(s) and canopy (c),
 % [W m-2 leaf or soil surface um-1]

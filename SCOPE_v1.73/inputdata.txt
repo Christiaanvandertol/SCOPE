@@ -78,8 +78,8 @@ rbs	10						s m-1	soil boundary layer resistance
 rwc	0						s m-1	within canopy layer resistance
 								
 timeseries (this option is only for time series)								
-startDOY	169.0							Julian day (decimal) of start of simulations
-endDOY	170							Julian day (decimal) of end of simulations
+startDOY	20060618							timestamp start YYYYMMDD[HHMMSS]
+endDOY	20060619							timestamp end YYYYMMDD[HHMMSS]
 LAT	52.25						decimal deg	Latitude
 LON	5.69						decimal deg	Longitude
 timezn 	1						hours	east of Greenwich

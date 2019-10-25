@@ -72,15 +72,22 @@ else
     X = X(j,(1:end));
 end
 
-F = struct('FileID',{'Simulation_Name','soil_file','leaf_file','atmos_file'...
-    'Dataset_dir','t_file','year_file','Rin_file','Rli_file'...
-    ,'p_file','Ta_file','ea_file','u_file','CO2_file','z_file','tts_file'...
-    ,'LAI_file','hc_file','SMC_file','Vcmax_file','Cab_file','LIDF_file'});
+f_names = {'Simulation_Name','soil_file','leaf_file','atmos_file', 'Dataset_dir',...
+             'ec_file_berkeley', 'interpolation_csv', 'LIDF_file', 'verification_dir'};  % must be in this order
+cols = {'t', 'Rin','Rli', 'p','Ta','ea','u','RH', 'tts'};  % expected from EC file as well as ('Ca','SMC')
+interpolatable = {
+    'Cab','Cca','Cdm','Cw','Cs','Cant','N',...  % leaf
+    'SMC','BSMBrightness', 'BSMlat', 'BSMlon',...  % soil
+    'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
+    'z','Ca', ...  % meteo
+    'Vcmo'  % biochemistry
+    };
+
+F = struct('FileID', [f_names, cols, interpolatable]);
 for i = 1:length(F)
     k = find(strcmp(F(i).FileID,strtok(X(:,1))));
     if ~isempty(k)
-        F(i).FileName = strtok(X(k,2));
-        %if i==4, F(i).FileName = strtok(X(k,2:end)); end
+        F(i).FileName = char(strtok(X(k,2)));
     end
 end
 
@@ -113,7 +120,7 @@ for i = 1:length(V)
                 if (options.simulation == 1 || (options.simulation~=1 && (i<46 || i>50)))
                     fprintf(1,'%s %s %s \n','warning: input "', V(i).Name, '" not provided in input spreadsheet');
                     if (options.simulation ==1 && (i==1 ||i==9||i==22||i==23||i==54 || (i>29 && i<37)))
-                        fprintf(1,'%s %s %s\n', 'I will look for the values in Dataset Directory "',char(F(5).FileName),'"');
+                        fprintf(1,'%s %s %s\n', 'I will look for the values in Dataset Directory "',F(5).FileName,'"');
                     else
                         if (i== 24 || i==25)
                             fprintf(1,'%s %s %s\n', 'will estimate it from LAI, CR, CD1, Psicor, and CSSOIL');
@@ -127,7 +134,7 @@ for i = 1:length(V)
                                     fprintf(1,'%s \n', 'this input is required: SCOPE ends');
                                     return
                                 else
-                                    fprintf(1,'%s %s %s\n', '... no problem, I will find it in Dataset Directory "',char(F(5).FileName), '"');
+                                    fprintf(1,'%s %s %s\n', '... no problem, I will find it in Dataset Directory "',F(5).FileName, '"');
                                 end
                             end
                         end
@@ -169,25 +176,8 @@ iter.maxEBer         = 1;                            %[W m-2]            maximum
 iter.Wc              = 1;                         %                   Weight coefficient for iterative calculation of Tc
 
 %% 7. Load spectral data for leaf and soil
-%opticoef    = xlsread([path_input,'fluspect_parameters/',char(F(3).FileName)]);  % file with leaf spectral parameters
-%xlsread([path_input,'fluspect_parameters/',char(F(3).FileName)]);  % file with leaf spectral parameters
-load([path_input,'fluspect_parameters/',char(F(3).FileName)]);
-rsfile      = load([path_input,'soil_spectrum/',char(F(2).FileName)]);        % file with soil reflectance spectra
-% Optical coefficient data used by fluspect
-% optipar.nr    = opticoef(:,2);
-% optipar.Kab   = opticoef(:,3);
-% optipar.Kca   = opticoef(:,4);
-% optipar.Ks    = opticoef(:,5);
-% optipar.Kw    = opticoef(:,6);
-% optipar.Kdm   = opticoef(:,7);
-% optipar.nw   = opticoef(:,8);
-% optipar.phiI  = opticoef(:,9);
-% optipar.phiII = opticoef(:,10);
-% optipar.GSV1  = opticoef(:,11); 
-% optipar.GSV2  = opticoef(:,12);
-% optipar.GSV3  = opticoef(:,13);
-% optipar.KcaV   = opticoef(:,14);
-% optipar.KcaZ   = opticoef(:,15);
+load([path_input,'fluspect_parameters/', F(3).FileName]);
+rsfile = load([path_input,'soil_spectrum/', F(2).FileName]);        % file with soil reflectance spectra
 
 %% 8. Load directional data from a file
 directional = struct;
@@ -236,7 +226,7 @@ spectral.IwlF = (640:850)-399;
 if options.simulation == 1
     vi = ones(length(V),1);
     [soil,leafbio,canopy,meteo,angles,xyt]  = io.select_input(V,vi,canopy,options);
-    [V,xyt,canopy]  = io.load_timeseries(V,leafbio,soil,canopy,meteo,constants,F,xyt,path_input,options);
+    [V, xyt]  = io.load_timeseries(V, F, xyt, path_input, interpolatable);
 else
     soil = struct;
 end
@@ -266,8 +256,8 @@ switch options.simulation
     case 2, telmax  = prod(double(vmax)); [xyt.t,xyt.year]= deal(zeros(telmax,1));
 end
 [rad,thermal,fluxes] = io.initialize_output_structures(spectral);
-atmfile     = [path_input 'radiationdata/' char(F(4).FileName(1))];
-atmo.M      = helpers.aggreg(atmfile,spectral.SCOPEspec);
+atmfile     = [path_input 'radiationdata/' F(4).FileName];
+atmo.M      = equations.aggreg(atmfile,spectral.SCOPEspec);
 
 %% 13. create output files
 Output_dir = io.create_output_files(parameter_file, F, path_of_code, options, V, vmax, spectral);
@@ -288,9 +278,15 @@ for k = 1:telmax
         calculate = 0;
         if k>=I_tmin && k<=I_tmax
             quality_is_ok   = ~isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli);
-            fprintf('time = %4.2f \n', xyt.t(k));
+            if isdatetime(xyt.t)
+                fprintf('time = %s \n', datestr(xyt.t(k)));
+            else
+                fprintf('time = %4.2f \n', xyt.t(k));
+            end
             if quality_is_ok
                 calculate = 1;
+            else
+                warning('there is NaN somewhere in meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli')
             end
         end
     end
@@ -299,7 +295,7 @@ for k = 1:telmax
         
         iter.counter = 0;
         
-        LIDF_file            = char(F(22).FileName);
+        LIDF_file = F(8).FileName;
         if  ~isempty(LIDF_file)
             canopy.lidf     = dlmread([path_input,'leafangles/',LIDF_file],'',3,0);
         else
@@ -358,8 +354,8 @@ for k = 1:telmax
         soil.Ts     = meteo.Ta * ones(2,1);       % initial soil surface temperature
         
         if length(F(4).FileName)>1 && options.simulation==0
-            atmfile     = [path_input 'radiationdata/' char(F(4).FileName(k))];
-            atmo.M      = helpers.aggreg(atmfile,spectral.SCOPEspec);
+            atmfile     = [path_input 'radiationdata/' F(4).FileName(k)];
+            atmo.M      = equations.aggreg(atmfile,spectral.SCOPEspec);
         end
         atmo.Ta     = meteo.Ta;
         
@@ -414,11 +410,11 @@ for k = 1:telmax
         end    
         io.output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles, directional, angles)
     end
-    if options.simulation==2 && telmax>1, vi  = helpers.count(nvars,vi,vmax,1); end
+    if options.simulation==2 && telmax>1, vi  = equations.count(nvars,vi,vmax,1); end
 end
 
 if options.verify
-    io.output_verification(Output_dir)
+    io.output_verification(Output_dir, F(9).FileName)
 end
 
 if options.makeplots
@@ -435,5 +431,5 @@ end
 %     disp(['ERROR: ' ME.message])
 % end
 % fprintf('\nThe run is finished. Press any key to close the window')
-% fprintf('\nIf no error message was produced navigate to ./SCOPE_v1.70/output to see the results')
+% fprintf('\nIf no error message was produced navigate to ./SCOPE_v*/output to see the results')
 % pause

@@ -105,7 +105,11 @@ Ts              = soil.Ts;
 p               = meteo.p;
 if options.soil_heat_method < 2 && options.simulation ==1
     if k>1
-        Deltat          = (t-xyt.t(k-1))*86400;           %           Duration of the time interval (s)
+        if isdatetime(xyt.t)
+            Deltat          = seconds(t-xyt.t(k-1)); 
+        else
+            Deltat          = (t-xyt.t(k-1))*86400;           %           Duration of the time interval (s)
+        end
     else
         Deltat          = 1/48*86400;
     end

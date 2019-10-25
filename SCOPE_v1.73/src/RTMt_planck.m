@@ -164,15 +164,15 @@ for i = 1:length(IT)
     F2              = zeros(nl+1,1);                %   [nl+1]  
     F1top           = 0;                            %   [1]
     while cont
-        F1topn      = -rinf(i)*F2(1);
-        F1(1)       = F1topn;
+        F1(1)       = F1top;
         for j       = 1:nl
             F1(j+1) = F1(j)*(1-m(i)*iLAI)+ fHc(i)*Hci(j);
         end        
         F2(nl+1)    = fbottom(i)*F1(nl+1) + fHs(i)*Hsi;          
         for j       = nl:-1:1
             F2(j)   = F2(j+1)*(1-m(i)*iLAI) + fHc(i)*Hci(j);
-        end      
+        end
+        F1topn      = -rinf(i)*F2(1);
         cont        = abs(F1topn-F1top)>crit;     %     [1]         check to continue
         F1top       = F1topn;                     %     [1]         Reset F1topn
         counter     = counter + 1;                %     [1]

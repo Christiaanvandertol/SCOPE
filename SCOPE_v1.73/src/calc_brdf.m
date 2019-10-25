@@ -16,8 +16,8 @@ tto_poversampling   = [10:10:60     , 10:10:60    , 10:10:60    , 10:10:60]';   
 
 noap_o              = size(tto_poversampling,1);                    % [1]               number of oversampling angles
 
-directional.psi     = [directional.psi;psi_hoversampling;psi_poversampling];   % [..]              observer azimuth angle
-directional.tto     = [directional.tto;tto_hoversampling;tto_poversampling];   % [..]              observer zenith  angle
+directional.psi_ov     = [directional.psi;psi_hoversampling;psi_poversampling];   % [..]              observer azimuth angle
+directional.tto_ov     = [directional.tto;tto_hoversampling;tto_poversampling];   % [..]              observer zenith  angle
 
 %% allocate memory
 directional.brdf_       = zeros(length(spectral.wlS),noa + noah_o+noap_o);      % [nwlS, noa+noa_o+noap_o]  
@@ -33,8 +33,8 @@ directional_angles = angles;
 for j=1:(noa+noah_o+noap_o)
     
     %optical BRDF
-    directional_angles.tto = directional.tto(j);
-    directional_angles.psi = directional.psi(j);   
+    directional_angles.tto = directional.tto_ov(j);
+    directional_angles.psi = directional.psi_ov(j);   
     [directional_rad,directional_gap] = RTMo(spectral,atmo,soil,leafopt,canopy,directional_angles,meteo,rad,options);
     directional.brdf_(:,j)  = directional_rad.rso;%Lo_./E_tot;          % [nwl]            BRDF (spectral) (nm-1)
     
@@ -47,9 +47,9 @@ for j=1:(noa+noah_o+noap_o)
         
     else            %thermal directional brightness temperatures (Stefan-Boltzmann)
         directional_rad                 = RTMt_sb(spectral,directional_rad,...
-                                            soil,leafopt,canopy,directional_gap,directional_angles,thermal.Tcu,thermal.Tch,thermal.Ts(1),thermal.Ts(1),1);
-        directional.Lot(j)              = directional_rad.Eoutte;
-        directional.BrightnessT(j)      = (pi*rad.Lot/constants.sigmaSB)^0.25;
+                                            soil,leafopt,canopy,directional_gap,directional_angles,thermal.Tcu,thermal.Tch,thermal.Ts(2),thermal.Ts(1),1);
+        directional.Lot(j)              = directional_rad.Lot;
+        directional.BrightnessT(j)      = (pi*directional_rad.Lot/constants.sigmaSB)^0.25;
     end
     
     if options.calc_fluor

@@ -1,4 +1,4 @@
-function output_verification(Output_dir)
+function output_verification(Output_dir, verification_dir)
 % Date: 07 August 2012
 % Author: Christiaan van der Tol (tol@itc.nl)
 % output_verification.m (script) checks if the output of the latest run
@@ -25,7 +25,7 @@ function output_verification(Output_dir)
 % Directory = Output_dir
 
 %% load verification data
-path0_ = ['..' filesep 'output' filesep 'verificationdata' filesep];
+path0_ = ['..' filesep 'output' filesep verification_dir filesep];
 path1_ = ['..' filesep 'output' filesep Output_dir filesep];
 
 info0   = dir([path0_ filesep '*.dat']);         %'standard' validation data (to compare with)
@@ -68,8 +68,8 @@ for i = 1:L
                 spn = ceil(sqrt(size(D0,2)));              
                 figure(i)         
                 if spn>7
-                    nl = length(D0);
-                    for z = 1:min(47,nl)
+                    nr = min(size(D1, 1), size(D0, 1));
+                    for z = 1:nr
                         plot(D0(z,:)'), hold on, plot(D1(z,:)','r')
                     end
                     title(info0(i).name)

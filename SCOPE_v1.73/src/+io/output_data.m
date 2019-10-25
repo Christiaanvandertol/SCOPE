@@ -11,6 +11,14 @@ function output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, ga
 %                04 Oct 2012: (CvdT) included reflectance and fPAR
 %                10 Mar 2013: (CvdT) major revision: introduced structures
 %                22 Nov 2013: (CvdT) added additional outputs
+%%
+if isdatetime(xyt.t)
+    get_doy = @(x) juliandate(x) - juliandate(datetime(year(x), 1, 0));
+    V(46).Val = get_doy(io.timestamp2datetime(xyt.startDOY));
+    V(47).Val = get_doy(io.timestamp2datetime(xyt.endDOY));
+    xyt.t = get_doy(xyt.t);
+end
+
 %% Standard output
 
 % fluxes
