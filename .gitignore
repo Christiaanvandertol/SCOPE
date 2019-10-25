@@ -1,7 +1,8 @@
-/SCOPE_v*/*.xlsx
-/SCOPE_v*/src/*.asv
-/data
-/docs/.idea
-/SCOPE_v*/output
-/SCOPE_v*/src/+my
-/SCOPE_v*/src/not_used
+data
+docs/.idea
+SCOPE_v*/output/
+SCOPE_v*/~$input_data*.xlsx
+SCOPE_v*/input_data*.xlsx
+SCOPE_v*/src/*.asv
+SCOPE_v*/src/+my
+SCOPE_v*/src/not_used
