@@ -1,5 +1,5 @@
-*.xlsx
-*.asv
+/SCOPE_v*/*.xlsx
+/SCOPE_v*/src/*.asv
 /data
 /docs/.idea
 /SCOPE_v*/output
