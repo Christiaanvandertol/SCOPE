@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Retrieval (Model inversion) &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hyperspectral retrieval" href="retrieval/hyperspectral.html" />
+    <link rel="prev" title="mSCOPE" href="mSCOPE.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Retrieval (Model inversion)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="retrieval/hyperspectral.html">Hyperspectral retrieval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retrieval/multispectral.html">Multispectral retrieval (satellite)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retrieval/plots.html">Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retrieval/sensors.html">Custom sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retrieval/tricks.html">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#highlights">Highlights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition">Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#directory-structure">Directory structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acknowledgement">Acknowledgement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Retrieval (Model inversion)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/retrieval.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="retrieval-model-inversion">
+<h1><a class="toc-backref" href="#id1">Retrieval (Model inversion)</a><a class="headerlink" href="#retrieval-model-inversion" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Github of the project: <a class="reference external" href="https://github.com/Prikaziuk/retrieval_rtmo">https://github.com/Prikaziuk/retrieval_rtmo</a></p>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#retrieval-model-inversion" id="id1">Retrieval (Model inversion)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#highlights" id="id2">Highlights</a></p></li>
+<li><p><a class="reference internal" href="#definition" id="id3">Definition</a></p></li>
+<li><p><a class="reference internal" href="#directory-structure" id="id4">Directory structure</a></p></li>
+<li><p><a class="reference internal" href="#acknowledgement" id="id5">Acknowledgement</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="retrieval/hyperspectral.html">Hyperspectral retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrieval/multispectral.html">Multispectral retrieval (satellite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrieval/plots.html">Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrieval/sensors.html">Custom sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrieval/tricks.html">Tricks</a></li>
+</ul>
+</div>
+<div class="section" id="highlights">
+<h2><a class="toc-backref" href="#id2">Highlights</a><a class="headerlink" href="#highlights" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Numerical optimization of RTMo (optical) module of SCOPE model</dt><dd><ul class="simple">
+<li><p>Top of canopy (TOC) reflectance</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Sensors</dt><dd><ul class="simple">
+<li><p>ground (ASD, FLOX)</p></li>
+<li><p>airborne (HyPlant)</p></li>
+<li><p>satellite (Sentinel-2 MSI, Sentinel-3 OLCI)</p></li>
+<li><p>custom - just add yourself into <code class="docutils literal notranslate"><span class="pre">input/sensors.xlsx</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Available options</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Hyperspectral instruments:</dt><dd><ul>
+<li><p>data format - text</p></li>
+<li><p>parallel computing (parfor)</p></li>
+<li><p>time-series (angles, radiation)</p></li>
+<li><p>calculation of observation geometry from coordinates and time</p></li>
+<li><p>plotting of validation data (1 : 1 plots)</p></li>
+<li><p>output - .xlsx or .csv</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Multispectral instruments (Satellites):</dt><dd><ul>
+<li><p>data format - NetCDF4</p></li>
+<li><p>parallel computing (parfor)</p></li>
+<li><p>retrieval on an image subset (K x K pixels)</p></li>
+<li><p>output - .xlsx + NetCDF4</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="definition">
+<h2><a class="toc-backref" href="#id3">Definition</a><a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<p>Typically you provide vegetation parameters and SCOPE gives you expected reflectance spectra.
+For retrieval you provide the reflectance spectra and SCOPE gives you expected vegetation parameters, resulting in similar spectra.</p>
+<p>That is why it is called model inversion. We somehow want to get the input (parameters) from the output (spectra).</p>
+<dl class="simple">
+<dt>There are two basic inversion approaches:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>look-up table</dt><dd><ul>
+<li><p>spectra are produced beforehand in the desired ranges of values</p></li>
+<li><p>for example you change chlorophyll content (Cab) from 0 to 100 ug cm-2 in steps of 5.</p></li>
+<li><p><strong>advantage</strong> fast</p></li>
+<li><p><strong>disadvantage</strong> coarse: if you tune 6 parameters giving only 10 steps for each you
+end up in a look-up table with 1.000.000 simulations</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>numerical optimization</dt><dd><ul>
+<li><p>spectra are calculated on the spot (for each measurement during the run)</p></li>
+<li><p>algorithm is minimizing the cost-function (difference between modelled and measured data)</p></li>
+<li><p><strong>advantage</strong> sharp values</p></li>
+<li><p><strong>disadvantage</strong> slow, local minimum trap</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="directory-structure">
+<h2><a class="toc-backref" href="#id4">Directory structure</a><a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>demonstrator-master.zip
+├── src
+│   ├── +helpers
+│   ├── +io
+│   ├── +models
+│   ├── +plot
+│   ├── +sat
+│   ├── +to_sensor
+│   ├── +ts
+│   ├── COST_4SAIL_common.m
+│   ├── fit_spectra.m
+<span class="hll">│   ├── Input_data.xlsx
+</span><span class="hll">│   ├── main.m
+</span><span class="hll">│   ├── main_sat.m
+</span>│   └── propagate_uncertainty.m
+│
+├── input
+│   ├── fluspect_data
+│   ├── radiationdata
+│   ├── soil_spectrum
+│   ├── PC_flu.xlsx
+<span class="hll">│   └── sensors.xlsx
+</span>│
+├── measured
+│   ├── airborne
+│   ├── canopy
+│   ├── leaf
+│   ├── synthetic
+│   └── Sentinel-2_sample.nc
+│
+└── output
+    ├── sample_S2
+    └── sample_synthetic
+</pre></div>
+</div>
+</div>
+<div class="section" id="acknowledgement">
+<h2><a class="toc-backref" href="#id5">Acknowledgement</a><a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>The project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement No 721995.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="http://www.trusteenetwork.eu/"><img alt="_images/trustee_logo.png" src="_images/trustee_logo.png" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="retrieval/hyperspectral.html" class="btn btn-neutral float-right" title="Hyperspectral retrieval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mSCOPE.html" class="btn btn-neutral float-left" title="mSCOPE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

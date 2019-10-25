@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hyperspectral retrieval &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Multispectral retrieval (satellite)" href="multispectral.html" />
+    <link rel="prev" title="Retrieval (Model inversion)" href="../retrieval.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../retrieval.html">Retrieval (Model inversion)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hyperspectral retrieval</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#minimal-input">Minimal input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#i-do-not-know-the-observation-geometry">I do not know the observation geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-series-different-angles-for-different-spectra">Time series (different angles for different spectra)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallel-computing-parfor">Parallel computing (parfor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output">Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="multispectral.html">Multispectral retrieval (satellite)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots.html">Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html">Custom sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tricks.html">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#highlights">Highlights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#definition">Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#directory-structure">Directory structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#acknowledgement">Acknowledgement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../retrieval.html">Retrieval (Model inversion)</a> &raquo;</li>
+        
+      <li>Hyperspectral retrieval</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/retrieval/hyperspectral.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hyperspectral-retrieval">
+<h1>Hyperspectral retrieval<a class="headerlink" href="#hyperspectral-retrieval" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="minimal-input">
+<h2>Minimal input<a class="headerlink" href="#minimal-input" title="Permalink to this headline">¶</a></h2>
+<p>Input is provided in <code class="docutils literal notranslate"><span class="pre">./src/Input_data.xlsx</span></code> that has several sheets.</p>
+<p>To run the model for hyperspectral instruments use <code class="docutils literal notranslate"><span class="pre">main.m</span></code>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>sheet</p></td>
+<td><p>purpose</p></td>
+<td><p>action</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Input</span></code></p></td>
+<td><p>Parameters and ranges</p></td>
+<td><div class="line-block">
+<div class="line">Set 1 in the column <strong>tune</strong> in front of the parameter you want to retrieve</div>
+<div class="line">Change <strong>value</strong> of fixed parameters (where tune == 0)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Filenames</span></code></p></td>
+<td><p>Hyperspectral retrieval</p></td>
+<td><div class="line-block">
+<div class="line">Provide path to measured <strong>reflectance</strong> (text)</div>
+<div class="line">Provide path to wavelength of measurements <strong>reflectance_wl</strong></div>
+<div class="line">Select <strong>instrument_name</strong> or provide <strong>FWHM</strong></div>
+<div class="line">Chose the number of the spectrum you fit <strong>c</strong> or all (-999)</div>
+<div class="line">Provide geometry <strong>tts, tto, psi</strong></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="i-do-not-know-the-observation-geometry">
+<h2>I do not know the observation geometry<a class="headerlink" href="#i-do-not-know-the-observation-geometry" title="Permalink to this headline">¶</a></h2>
+<p>With handheld spectrometers such as ASD observation zenith angle (tto) is 0 (nadir), which makes relative azimuth angle (phi) not important,
+however solar zenith angle (tts) is constantly changing.</p>
+<p>Good news! We can calculate solar zenith angle from date, time and coordinates of the measurement.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>sheet</p></td>
+<td><p>purpose</p></td>
+<td><p>action</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Filenames</span></code></p></td>
+<td><p>Hyperspectral retrieval</p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Delete</span></code> value for <strong>tts</strong> (leave empty cell)</div>
+<div class="line">Provide <strong>lat, lon</strong> of the measurements</div>
+<div class="line">Provide <strong>datetime</strong></div>
+<div class="line">Datetime format is <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code> (“2019-07-01 12:30:20”)</div>
+<div class="line">Provide <strong>tz</strong> timezone of measurements (UTC+tz)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Timezone is provided in relation to UTC, so Netherlands are tz == 1 in Winter and tz == 2 in Summer.
+If your time is already UTC tz == 0.</p>
+<p><strong>summertime</strong> option simply increments <strong>tz</strong>. It is the same providing for the Netherlands tz = 1, summertime = 1 or tz = 2, summertime = 0.</p>
+</div>
+<div class="section" id="time-series-different-angles-for-different-spectra">
+<h2>Time series (different angles for different spectra)<a class="headerlink" href="#time-series-different-angles-for-different-spectra" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of columns in any file from <code class="docutils literal notranslate"><span class="pre">TimeSeres</span></code> sheet has to be equal to those in the <strong>reflectance</strong> file.</p>
+</div>
+<p>Usually you have more than one spectra to fit and those spectra were probably recorded at different time and with different angles.
+Sensitivity analysis shows that solar and observation angles are crucial for accurate reflectance simulation.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>sheet</p></td>
+<td><p>purpose</p></td>
+<td><p>action</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Filenames</span></code></p></td>
+<td><p>Hyperspectral retrieval</p></td>
+<td><div class="line-block">
+<div class="line">Put 1 in <strong>timeseries</strong> cell (B23)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TimeSeres</span></code></p></td>
+<td><p>Paths (hyperspectral only)</p></td>
+<td><div class="line-block">
+<div class="line">Enable <strong>timeseries</strong> on <code class="docutils literal notranslate"><span class="pre">Filenames</span></code> sheet</div>
+<div class="line">Provide paths to files with angles <strong>tts_path</strong>, <strong>tto_path</strong>, <strong>psi_path</strong></div>
+<div class="line">Or <strong>datetime_path</strong> to the file with date and time of the measurements</div>
+<div class="line">Datetime format is <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code> (“2019-07-01 12:30:20”)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>You can provide only one path (for instance tts_path), then values for tto and psi are taken from the <code class="docutils literal notranslate"><span class="pre">Filenames</span></code> sheet.</p>
+</div>
+<div class="section" id="parallel-computing-parfor">
+<h2>Parallel computing (parfor)<a class="headerlink" href="#parallel-computing-parfor" title="Permalink to this headline">¶</a></h2>
+<p>Each spectra is optimized on a single core (CPU). It is possible to use more cores (3 on modern computers) to speed up the processing.</p>
+<p>Obviously, it is useful only with Time series mode.</p>
+<ol class="arabic simple">
+<li><p>Find and uncomment the following lines in <code class="docutils literal notranslate"><span class="pre">main.m</span></code> (currently 149-154)</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">main.m</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-matlab notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>149
+150
+151
+152
+153
+154
+155</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">%% uncomment these lines, select N_proc you want, change for-loop to parfor-loop</span>
+<span class="n">N_proc</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">if</span> <span class="nb">isempty</span><span class="p">(</span><span class="n">gcp</span><span class="p">(</span><span class="s">&#39;nocreate&#39;</span><span class="p">))</span>
+<span class="c">%     prof = parallel.importProfile(&#39;local_Copy.settings&#39;);</span>
+<span class="c">%     parallel.defaultClusterProfile(prof);</span>
+    <span class="n">parpool</span><span class="p">(</span><span class="n">N_proc</span><span class="p">,</span> <span class="s">&#39;IdleTimeout&#39;</span><span class="p">,</span> <span class="n">Inf</span><span class="p">);</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Change <strong>for</strong> to <strong>parfor</strong> in <a href="#id1"><span class="problematic" id="id2">``</span></a>main.m``(currently 166)</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">main.m</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-matlab notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>164
+165
+166
+167
+168</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">%% fitting</span>
+<span class="c">%% change to parfor if you like</span>
+<span class="k">parfor</span> <span class="nb">j</span> <span class="p">=</span> <span class="n">c</span>
+    <span class="c">...</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although parfor loops are, of course, faster, writing data to file from each iteration is slower (at least in the current implementation).
+We suggest first running one spectra without parallel computing to make sure you would not fail.
+Then write results to file <strong>after</strong> the parfor loop with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">io.save_output()</span></code></p>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>We were experimenting with various output formats to satisfy Linux user and comply with the requirements of parfor loop.</p>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Input_data.xlsx</span></code> is copied into <strong>output_path</strong> directory renamed as “%Y-%m-%d_%H%M%S.xlsx” (“2019-06-09-181952.xlsx”) and the following sheets are written:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>sheet</p></td>
+<td><p>output</p></td>
+<td><p>workspace matrix <a class="footnote-reference brackets" href="#id7" id="id3">4</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Output</span></code></p></td>
+<td><div class="line-block">
+<div class="line">RMSE of spectral fit</div>
+<div class="line">retrieved parameter values</div>
+<div class="line">propagated standard deviation from <strong>reflectance_std</strong></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><cite>rmse_all</cite></div>
+<div class="line"><cite>parameters</cite> <a class="footnote-reference brackets" href="#id8" id="id4">5</a></div>
+<div class="line"><cite>parameters_std</cite></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Rmeas</span></code></p></td>
+<td><div class="line-block">
+<div class="line">wavelength of measurements</div>
+<div class="line">measured reflectance from <strong>reflectance</strong> file</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><cite>measured.wl</cite></div>
+<div class="line"><cite>measured.refl</cite></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Rmod</span></code></p></td>
+<td><div class="line-block">
+<div class="line">wavelength of measurements</div>
+<div class="line">simulated (best-fit) reflectance</div>
+</div>
+</td>
+<td><p><cite>refl_mod</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Rsoilmod</span></code></p></td>
+<td><div class="line-block">
+<div class="line">wavelength of measurements</div>
+<div class="line">simulated soil reflectance (BSM model)</div>
+</div>
+</td>
+<td><p><cite>refl_soil</cite></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Fluorescence</span></code> <a class="footnote-reference brackets" href="#id9" id="id5">6</a></p></td>
+<td><div class="line-block">
+<div class="line">wavelength of fluorescence 640:850</div>
+<div class="line"><strong>only if SIF_PC were tuned</strong></div>
+<div class="line">fluorescence in radiance units (W m-2 sr-1)</div>
+</div>
+</td>
+<td><p><cite>sif_rad</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Fluorescence_norm</span></code> <a class="footnote-reference brackets" href="#id9" id="id6">6</a></p></td>
+<td><div class="line-block">
+<div class="line">wavelength of fluorescence 640:850</div>
+<div class="line"><strong>only if SIF_PC were tuned</strong></div>
+<div class="line">fluorescence in reflectance units</div>
+</div>
+</td>
+<td><p><cite>sif_norm</cite></p></td>
+</tr>
+</tbody>
+</table>
+<p>Those sheets are already present in <code class="docutils literal notranslate"><span class="pre">Input_data.xlsx</span></code> but are written later.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">4</a></span></dt>
+<dd><p>Each matrix (besides measured.refl) is preallocated with zeros and each column corresponds to the column in measured.refl.</p>
+<p>In this way if you tune only, say, the spectrum number 5 (c == 5) and you have 10 spectra in your <strong>reflectance</strong> file
+all these matrices will have 10 columns, 9 filled with zeros and the column number 5 with your retrieved values.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id4">5</a></span></dt>
+<dd><p>The order of row of <em>parameters</em> corresponds to the row of <code class="docutils literal notranslate"><span class="pre">tab</span></code> table read from <code class="docutils literal notranslate"><span class="pre">Input</span></code> sheet of <code class="docutils literal notranslate"><span class="pre">Input_data.xlsx</span></code>.</p>
+<p>In other words row names of <em>parameters</em> == <em>tab.variable</em></p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">6</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
+<dd><p>Currently sun-induced fluorescence (SIF) is reconstructed as a liner combination of the four principal components (SIF_PC1-4) to speed-up the retrieval.</p>
+<p>Although it can improve the fit in red-NIR region do not trust the values too much.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can load all the results back to matlab from the output “%Y-%m-%d_%H%M%S.xlsx” file with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">io.read_output()</span></code></p>
+</div>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<p>Matlab can read .xlsx files but can’t write into this format on Linux.
+We hope you can configure <code class="docutils literal notranslate"><span class="pre">Input_data.xlsx</span></code> at your Linux machine or have it configured elsewhere.</p>
+<p>On Linux inside <strong>output_path</strong> directory one more directory is created named as “%Y-%m-%d_%H%M%S” (“2019-06-09-181952”).</p>
+<p><code class="docutils literal notranslate"><span class="pre">Input_data.xlsx</span></code> is copied into that subfolder. All sheets listed in Windows section with the same information are written as separate .csv files.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="multispectral.html" class="btn btn-neutral float-right" title="Multispectral retrieval (satellite)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../retrieval.html" class="btn btn-neutral float-left" title="Retrieval (Model inversion)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
