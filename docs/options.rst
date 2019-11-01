@@ -35,8 +35,7 @@ Switch in ``SCOPE.m`` (multiple)
     **individual run(s)**: specify one value for fixed input parameters, and an equal number (> 1) of values for all parameters that vary between the runs.
 
 **1**
-    | **time series** (uses text files with meteo input as time series from *"../data/input/dataset X"* with files similar to ../data/input/:ref:`directories/data:dataset for_verification` specified on the ``filenames`` sheet of ``input_data.xslx``
-    | :func:`.load_timeseries`
+    **time series** (uses text files with meteo input as time series from *"../data/input/dataset X"* with files similar to ../data/input/:ref:`directories/data:dataset for_verification` specified on the ``filenames`` sheet of ``input_data.xslx``
 
 **2**
     **Lookup-Table**: specify a number of values in the row of input parameters. All possible combinations of inputs will be used.

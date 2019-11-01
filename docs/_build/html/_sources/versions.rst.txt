@@ -3,6 +3,22 @@ Version history
 
 .. contents::
 
+1.74
+''''''
+
+2019
+
+* Major changes in ``timeseries`` input:
+    - meteorological data can be provided directly from eddy covariance file of berkeley format (FLUXNET standard since 2015) => single .csv (used to be a bunch of .dat files)
+    - several years of time series can be run at once => startDOY, endDOY are timestamps (long integers of format YYMMDD[HHMMSS]) (used to be Julian decimal day of year)
+    - direct usage of all :ref:`retrieval:Retrieval (Model inversion)` output in timeseries => linear interpolation to meteorological data timestamp (used to be only for Cab and LAI)
+    - ``filenames`` tab now has also *column names* instead of file names
+    - automatic conversion of units for air pressure (p) (ec - kPa, SCOPE - hPa), soil moisture (SMC) and relative himidity (rH) if needed
+    - calculation of atmospherc vapor pressure (ea) from relative humidity and air temperature (Ta) if ea not provided
+    - :func:`+io.loadtimeseries` rewritten
+* Minor bug fixes in :func:`.RTMt_planck` :func:`.RTMt_sb`
+* Functions in +helpers were merged with +equations to reduce confusion between two modules
+
 1.73
 ''''''
 

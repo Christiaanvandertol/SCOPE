@@ -108,7 +108,7 @@ Obviously, it is useful only with Time series mode.
         parpool(N_proc, 'IdleTimeout', Inf);
     end
 
-2. Change **for** to **parfor** in ``main.m``(currently 166)
+2. Change **for** to **parfor** in ``main.m`` (currently 166)
 
 .. code-block:: matlab
     :lineno-start: 164

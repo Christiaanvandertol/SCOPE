@@ -32,3 +32,12 @@ The following modules contain physical or empirical equations used in the model
 .. autofunction:: tav
 
 .. autofunction:: zo_and_d
+
+
+Functions that are based on well-known equations: integration etc.
+
+.. autofunction:: aggreg
+
+.. autofunction:: count
+
+.. autofunction:: Sint

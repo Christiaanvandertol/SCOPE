@@ -63,7 +63,7 @@ input_path - path to an excel file with sheet 'fwhm' with two columns - band cen
 The function will write the second sheet 'sensor' that can be copied to ``input/sensors.xlsx``.
 The function will also plot the resulting SRFs.
 
-The example of input_path is in ``input/bands_from_fwhm.xlsx`.
+The example of input_path is in ``input/bands_from_fwhm.xlsx``.
 
 .. Note::
         Having introduced new sensor, you might want to perform a sensitivity analysis with :ref:`retrieval/tricks:Synthetic data generation`

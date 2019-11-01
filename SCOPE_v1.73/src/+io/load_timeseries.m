@@ -1,15 +1,15 @@
-function [V, xyt]  = load_timeseries(V, F, xyt, path_input, interpolatable)
+function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
     
     %% filenames
-    Dataset_dir         = ['dataset ' F(5).FileName];
-    berkeley_file       = F(6).FileName;
-    interpolation_csv   = F(7).FileName;
+    Dataset_dir = ['dataset ' F(5).FileName];
+    meteo_ec_csv = F(6).FileName;
+    vegetation_retrieved_csv  = F(7).FileName;
 
     t_column = F(strcmp({F.FileID}, 't')).FileName;
     rh_column = F(strcmp({F.FileID}, 'RH')).FileName;
 
     %% read berkeley format dataset
-    df = readtable(fullfile(path_input, Dataset_dir, berkeley_file), ...
+    df = readtable(fullfile(path_input, Dataset_dir, meteo_ec_csv), ...
         'TreatAsEmpty', {'.','NA','N/A'});
     t_ = df.(t_column);
     year_n = ones(size(t_)) * 2006;
@@ -42,16 +42,16 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input, interpolatable)
     xyt.year = year_n(time_i);  % for legacy and doy to date convertion
 
     %% optional interpolation_csv file
-    interpolation_present = false;
-    if ~isempty(interpolation_csv)
-        interpolation_present = true;
-        df_int = readtable(fullfile(path_input, Dataset_dir, interpolation_csv), ...
+    interpolatable_cols = {};
+    if ~isempty(vegetation_retrieved_csv)
+        df_int = readtable(fullfile(path_input, Dataset_dir, vegetation_retrieved_csv), ...
             'TreatAsEmpty', {'.','NA','N/A'});
         t_int = df_int.(t_column);
         if any(t_int > 367)
             t_int = io.timestamp2datetime(t_int);
         end
         assert(min(t_) >= min(t_int) & max(t_) <= max(t_int), '`interpolation_csv` timestamp is outside `ec_file_berkeley` timestamp')
+        interpolatable_cols = df_int.Properties.VariableNames;
     end
 
     %% make correspondence: F.FileID : index in V struct
@@ -66,7 +66,7 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input, interpolatable)
         fi_i = iF(i);
         vi_i = iV(i);
         col_name = char(f_names(fi_i));
-        if interpolation_present && any(strcmp(interpolatable, f_ids(fi_i)))
+        if any(strcmp(interpolatable_cols, col_name))
             V(vi_i).Val = interp1(t_int, df_int.(col_name), t_);
         else
             tmp = df_sub.(col_name);

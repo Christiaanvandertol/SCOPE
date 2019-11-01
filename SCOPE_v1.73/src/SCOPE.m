@@ -73,17 +73,16 @@ else
 end
 
 f_names = {'Simulation_Name','soil_file','leaf_file','atmos_file', 'Dataset_dir',...
-             'ec_file_berkeley', 'interpolation_csv', 'LIDF_file', 'verification_dir'};  % must be in this order
-cols = {'t', 'Rin','Rli', 'p','Ta','ea','u','RH', 'tts'};  % expected from EC file as well as ('Ca','SMC')
-interpolatable = {
-    'Cab','Cca','Cdm','Cw','Cs','Cant','N',...  % leaf
-    'SMC','BSMBrightness', 'BSMlat', 'BSMlon',...  % soil
-    'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
-    'z','Ca', ...  % meteo
-    'Vcmo'  % biochemistry
-    };
+           'meteo_ec_csv', 'vegetation_retrieved_csv', 'LIDF_file', 'verification_dir'};  % must be in this order
+cols = {'t', 'Rin','Rli', 'p','Ta','ea','u','RH', 'tts', ...  % expected from EC file as well as ('Ca','SMC')
+        'Cab','Cca','Cdm','Cw','Cs','Cant','N',...  % leaf
+        'SMC','BSMBrightness', 'BSMlat', 'BSMlon',...  % soil
+        'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
+        'z','Ca', ...  % meteo
+        'Vcmo'  % biochemistry
+        };
 
-F = struct('FileID', [f_names, cols, interpolatable]);
+F = struct('FileID', [f_names, cols]);
 for i = 1:length(F)
     k = find(strcmp(F(i).FileID,strtok(X(:,1))));
     if ~isempty(k)
@@ -226,7 +225,7 @@ spectral.IwlF = (640:850)-399;
 if options.simulation == 1
     vi = ones(length(V),1);
     [soil,leafbio,canopy,meteo,angles,xyt]  = io.select_input(V,vi,canopy,options);
-    [V, xyt]  = io.load_timeseries(V, F, xyt, path_input, interpolatable);
+    [V, xyt]  = io.load_timeseries(V, F, xyt, path_input);
 else
     soil = struct;
 end

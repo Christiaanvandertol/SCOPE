@@ -192,7 +192,7 @@ fprintf(fidp,'\r');
 
 %%
 if options.calc_directional && options.calc_ebal
-    Output_angle    =   [directional.tto';  directional.psi'; angles.tts*ones(size(directional.psi'))];
+    Output_angle    =   [directional.tto_ov';  directional.psi_ov'; angles.tts*ones(size(directional.psi_ov'))];
     Output_brdf     =   [spectral.wlS'     directional.brdf_];
     if options.calc_planck
         Output_temp =   [spectral.wlT'    directional.Lot_];

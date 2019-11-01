@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="+helpers" href="helpers.html" />
+    <link rel="next" title="+io (input output)" href="io.html" />
     <link rel="prev" title="Core" href="core.html" /> 
 </head>
 
@@ -89,7 +89,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
@@ -102,7 +101,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="core.html">Core</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">+equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">+helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">+io (input output)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="not_used.html">not_used</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot.html">+plot</a></li>
@@ -330,6 +328,32 @@ d           zero plane displacement (m)</p>
 </dl>
 </dd></dl>
 
+<p>Functions that are based on well-known equations: integration etc.</p>
+<dl class="function">
+<dt id="src.+equations.aggreg">
+<code class="sig-name descname">aggreg</code><span class="sig-paren">(</span><em class="sig-param">atmfile</em>, <em class="sig-param">SCOPEspec</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.aggreg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate MODTRAN data over SCOPE bands by averaging (over rectangular band
+passes)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.+equations.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">nvars</em>, <em class="sig-param">v</em>, <em class="sig-param">vmax</em>, <em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>nvars = number of digits
+v     = current vector of digits
+vmax  = maximum values of digits
+id    = starting digit
+vnew  = new vector of digits</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.+equations.Sint">
+<code class="sig-name descname">Sint</code><span class="sig-paren">(</span><em class="sig-param">y</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#src.+equations.Sint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simpson integration
+x and y must be any vectors (rows, columns), but of the same length
+x must be a monotonically increasing series</p>
+</dd></dl>
+
 </div>
 
 
@@ -340,7 +364,7 @@ d           zero plane displacement (m)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="helpers.html" class="btn btn-neutral float-right" title="+helpers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="io.html" class="btn btn-neutral float-right" title="+io (input output)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="core.html" class="btn btn-neutral float-left" title="Core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

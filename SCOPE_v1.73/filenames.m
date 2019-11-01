@@ -9,12 +9,12 @@ X = {
 %The following are only for the time series option!
 'Dataset_dir'		, 'for_verification'; 
 'verification_dir'	, 'verificationdata';
-'ec_file_berkeley'	, 'ts_input.csv';
+'meteo_ec_csv'	, 'ts_input.csv';
 
-% values from `interpolation_csv` will be linearly interpolated to timestamp (t) of ec_file_berkeley
-'interpolation_csv'	, '';
+% values from `vegetation_retrieved_csv` will be linearly interpolated to timestamp (t) of meteo_ec_csv
+'vegetation_retrieved_csv'	, '';
 
-% Variables below are COLUMN NAMES in time_series_files (ec_file_berkeley, interpolation_csv)
+% Variables below are COLUMN NAMES in time_series_files (meteo_ec_csv, vegetation_retrieved_csv)
 't'		, 'f_date';
 'Rin'   , 'Rin';
 'Rli'   , 'Rli';

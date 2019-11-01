@@ -75,7 +75,6 @@ src
 .m files with the code.
 
 * :ref:`api/equations:+equations`
-* :ref:`api/helpers:+helpers`
 * :ref:`api/io:+io (input output)`
 * :ref:`api/plot:+plot`
 * :ref:`api/not_used:not_used`

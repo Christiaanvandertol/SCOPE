@@ -9,7 +9,7 @@ Getting started
 The model SCOPE_v1.73 is written in Matlab R2015b running on a Windows operating system. We took care not to use functions that are available in all recent Matlab versions, but we cannot give any warranty that it works under other operating systems and other Matlab versions.
 
 .. warning::
-    If you do **not** have Matlab on your computer you can use ``SCOPE.exe`` with `Matlab Runtime`_ **only R2017b (version 9.3)**
+    If you do **not** have Matlab on your computer you can use ``SCOPE.exe`` with `Matlab Runtime`_ **only R2019a (version 9.6)**
 
     Compiled version ``SCOPE.exe`` can be run only with the Excel file input (``input_data.xlsx``).
 
@@ -51,7 +51,7 @@ Running the model may take a while because almost all options are switched on. I
 3.	Set the input in ``input_data.xlsx``
 ---------------------------------------------
 
-Main input file i``input_data.xlsx`` with 4 sheets is located in ./SCOPE_v1.73. In the documentation we refer to this file, although text alternatives are also possible.
+Main input file is ``input_data.xlsx`` with 4 sheets is located in ./SCOPE_v1.73. In the documentation we refer to this file, although text alternatives are also possible.
 
 .. Note::
     If Excel is not available, it is possible to use input from text files (.m and .txt). See **alternative**.

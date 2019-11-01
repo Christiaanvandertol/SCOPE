@@ -20,7 +20,6 @@ Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at
 
    history
    acknowledgements
-   roadmap
 
    zreferences
    versions

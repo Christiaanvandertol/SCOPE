@@ -89,7 +89,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
@@ -197,9 +196,9 @@ In the simples case SRF is just a gaussian curve with the centre at the band wav
 </ol>
 <p>Hyperspectral instruments typically have individual sensors for visible and SWIR regions with different FWHM.
 However, taken that SSI is &lt; 3 nm and FWHM is relatively small, we do not think it is necessary to reconstruct the gaussian curve for each spectral region.</p>
-<div class="figure align-default" id="id3">
+<div class="figure align-default" id="id1">
 <img alt="../_images/FWHM.png" src="../_images/FWHM.png" />
-<p class="caption"><span class="caption-text">From this figure you can see that FWHM is important for accurate radiance simulation, but not so important for reflectance.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">From this figure you can see that FWHM is important for accurate radiance simulation, but not so important for reflectance.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="multispectral">
@@ -225,8 +224,8 @@ However, taken that SSI is &lt; 3 nm and FWHM is relatively small, we do not thi
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>After adding SRF of sensor to <code class="docutils literal notranslate"><span class="pre">input/sensors.xlsx</span></code> add its name into <code class="xref mat mat-func docutils literal notranslate"><span class="pre">io.read_fixed_input()</span></code> (line 22)</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">+io/read_fixed_input.m</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">+io/read_fixed_input.m</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-matlab notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
 17
 18
@@ -249,7 +248,7 @@ However, taken that SSI is &lt; 3 nm and FWHM is relatively small, we do not thi
 <p>input_path - path to an excel file with sheet ‘fwhm’ with two columns - band centre, fwhm.</p>
 <p>The function will write the second sheet ‘sensor’ that can be copied to <code class="docutils literal notranslate"><span class="pre">input/sensors.xlsx</span></code>.
 The function will also plot the resulting SRFs.</p>
-<p>The example of input_path is in <a href="#id1"><span class="problematic" id="id2">``</span></a>input/bands_from_fwhm.xlsx`.</p>
+<p>The example of input_path is in <code class="docutils literal notranslate"><span class="pre">input/bands_from_fwhm.xlsx</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Having introduced new sensor, you might want to perform a sensitivity analysis with <a class="reference internal" href="tricks.html#synthetic-data-generation"><span class="std std-ref">Synthetic data generation</span></a>
