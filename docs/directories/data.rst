@@ -38,6 +38,21 @@ This file can be made from the results of :ref:`retrieval:Retrieval (Model inver
 .. warning::
     * column name of the timestamp (**t** on **filenames** tab) in 'meteo_ec_csv' and 'vegetation_retrieved_csv' should be the same (TIMESTAMP_START, for example)
     * Excel truncates long integers (as timestamp) in .csv files => do not modify timeseries files with Excel or declare the column as text.
+    * we can calculated date from DOY and year for you:
+        - provide **t** as decimal (julian) day of year (as in SCOPE < v1.74)
+        - provide year column in your .csv
+        - startDOY, endDOY must **remain** in YYYYMMDD[HHMM] format
+
+.. note::
+    SCOPE uses date for 2 things only:
+        * input/output:
+            - subset your  'meteo_ec_csv' to startDOY, endDOY
+            - write it into 'fluxes.dat', 'surftemp.dat', 'radiation.dat'
+        * calculations:
+            - solar zenith angle (tts) if it is not provided
+                - if your timeseries are from different places (lat, lon) you **must** provide tts
+            - to account for soil temperature from the previous step if ``options.soil_heat_method == 0``
+                - if your timeseries are not ordered => set ``options.soil_heat_method == 2``
 
 
 directional

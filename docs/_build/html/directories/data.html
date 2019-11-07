@@ -239,7 +239,52 @@ The time step here <strong>does not</strong> have to coincide with the one in th
 <ul class="simple">
 <li><p>column name of the timestamp (<strong>t</strong> on <strong>filenames</strong> tab) in ‘meteo_ec_csv’ and ‘vegetation_retrieved_csv’ should be the same (TIMESTAMP_START, for example)</p></li>
 <li><p>Excel truncates long integers (as timestamp) in .csv files =&gt; do not modify timeseries files with Excel or declare the column as text.</p></li>
+<li><dl class="simple">
+<dt>we can calculated date from DOY and year for you:</dt><dd><ul>
+<li><p>provide <strong>t</strong> as decimal (julian) day of year (as in SCOPE &lt; v1.74)</p></li>
+<li><p>provide year column in your .csv</p></li>
+<li><p>startDOY, endDOY must <strong>remain</strong> in YYYYMMDD[HHMM] format</p></li>
 </ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>SCOPE uses date for 2 things only:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>input/output:</dt><dd><ul>
+<li><p>subset your  ‘meteo_ec_csv’ to startDOY, endDOY</p></li>
+<li><p>write it into ‘fluxes.dat’, ‘surftemp.dat’, ‘radiation.dat’</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>calculations:</dt><dd><ul>
+<li><dl class="simple">
+<dt>solar zenith angle (tts) if it is not provided</dt><dd><ul>
+<li><p>if your timeseries are from different places (lat, lon) you <strong>must</strong> provide tts</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>to account for soil temperature from the previous step if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">==</span> <span class="pre">0</span></code></dt><dd><ul>
+<li><p>if your timeseries are not ordered =&gt; set <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">==</span> <span class="pre">2</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
 </div>
 </div>
 </div>

@@ -74,7 +74,7 @@ end
 
 f_names = {'Simulation_Name','soil_file','leaf_file','atmos_file', 'Dataset_dir',...
            'meteo_ec_csv', 'vegetation_retrieved_csv', 'LIDF_file', 'verification_dir'};  % must be in this order
-cols = {'t', 'Rin','Rli', 'p','Ta','ea','u','RH', 'tts', ...  % expected from EC file as well as ('Ca','SMC')
+cols = {'t', 'year', 'Rin','Rli', 'p','Ta','ea','u','RH', 'tts', ...  % expected from EC file as well as ('Ca','SMC')
         'Cab','Cca','Cdm','Cw','Cs','Cant','N',...  % leaf
         'SMC','BSMBrightness', 'BSMlat', 'BSMlon',...  % soil
         'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
@@ -232,10 +232,6 @@ end
 
 %% 12. preparations
 if options.simulation==1
-    diff_tmin           =   abs(xyt.t-xyt.startDOY);
-    diff_tmax           =   abs(xyt.t-xyt.endDOY);
-    I_tmin              =   find(min(diff_tmin)==diff_tmin);
-    I_tmax              =   find(min(diff_tmax)==diff_tmax);
     if options.soil_heat_method<2
         if (isempty(meteo.Ta) || meteo.Ta<-273), meteo.Ta = 20; end
         soil.Tsold = meteo.Ta*ones(12,2);
@@ -243,10 +239,7 @@ if options.simulation==1
 end
 
 nvars = length(V);
-vmax = ones(nvars,1);
-for i = 1:nvars
-    vmax(i) = length(V(i).Val);
-end
+my = cellfun(@length, {V.Val})';
 vmax([14,27],1) = 1; % these are Tparam and LIDFb
 vi      = ones(nvars,1);
 switch options.simulation
@@ -274,24 +267,14 @@ for k = 1:telmax
         fprintf('simulation %i ', k );
         fprintf('of %i \n', telmax);
     else
-        calculate = 0;
-        if k>=I_tmin && k<=I_tmax
-            quality_is_ok   = ~isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli);
-            if isdatetime(xyt.t)
-                fprintf('time = %s \n', datestr(xyt.t(k)));
-            else
-                fprintf('time = %4.2f \n', xyt.t(k));
-            end
-            if quality_is_ok
-                calculate = 1;
-            else
-                warning('there is NaN somewhere in meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli')
-            end
+        calculate = ~isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli);
+        fprintf('time = %s: %i / %i\n', datestr(xyt.t(k)), k, telmax)
+        if calculate == 0
+            warning('skipping calculations: there is NaN somewhere in meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli')
         end
     end
     
-    if calculate
-        
+    if calculate   
         iter.counter = 0;
         
         LIDF_file = F(8).FileName;

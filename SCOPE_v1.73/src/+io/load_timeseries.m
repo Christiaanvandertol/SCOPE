@@ -6,20 +6,25 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
     vegetation_retrieved_csv  = F(7).FileName;
 
     t_column = F(strcmp({F.FileID}, 't')).FileName;
+    year_column = F(strcmp({F.FileID}, 'year')).FileName;
     rh_column = F(strcmp({F.FileID}, 'RH')).FileName;
 
     %% read berkeley format dataset
     df = readtable(fullfile(path_input, Dataset_dir, meteo_ec_csv), ...
         'TreatAsEmpty', {'.','NA','N/A'});
     t_ = df.(t_column);
-    year_n = ones(size(t_)) * 2006;
-    if any(t_ > 367)  % is timestamp
-        % t = datestr(datenum(2006, 0, df.t), 'yyyymmddHHMMSS.FFF');
-        t_ = io.timestamp2datetime(t_);
-        xyt.startDOY = io.timestamp2datetime(xyt.startDOY);
-        xyt.endDOY = io.timestamp2datetime(xyt.endDOY);
-        year_n = year(t_);
+    
+    if all(t_ <= 367)  % doy is provided
+        assert(~isempty(year_column), 'Please, provide year in your .csv')
+        % then we calculate ts for you
+        year_n = df.(year_column);
+        t_ = datestr(datenum(year_n, 0, t_), 'yyyymmddHHMMSS.FFF');
     end
+    
+    t_ = io.timestamp2datetime(t_);
+    xyt.startDOY = io.timestamp2datetime(xyt.startDOY);
+    xyt.endDOY = io.timestamp2datetime(xyt.endDOY);
+    year_n = year(t_);
     
     %% filtering
     time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY);   
@@ -66,6 +71,7 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
         fi_i = iF(i);
         vi_i = iV(i);
         col_name = char(f_names(fi_i));
+        % TODO replace missing by default?
         if any(strcmp(interpolatable_cols, col_name))
             V(vi_i).Val = interp1(t_int, df_int.(col_name), t_);
         else

@@ -1,4 +1,5 @@
 data
+*.asv
 docs/.idea
 SCOPE_v*/output/
 SCOPE_v*/~$input_data*.xlsx
