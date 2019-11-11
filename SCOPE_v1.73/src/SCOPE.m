@@ -239,7 +239,7 @@ if options.simulation==1
 end
 
 nvars = length(V);
-my = cellfun(@length, {V.Val})';
+vmax = cellfun(@length, {V.Val})';
 vmax([14,27],1) = 1; % these are Tparam and LIDFb
 vi      = ones(nvars,1);
 switch options.simulation
