@@ -74,7 +74,7 @@ end
 
 f_names = {'Simulation_Name','soil_file','leaf_file','atmos_file', 'Dataset_dir',...
            'meteo_ec_csv', 'vegetation_retrieved_csv', 'LIDF_file', 'verification_dir'};  % must be in this order
-cols = {'t', 'year', 'Rin','Rli', 'p','Ta','ea','u','RH', 'tts', ...  % expected from EC file as well as ('Ca','SMC')
+cols = {'t', 'year', 'Rin','Rli', 'p','Ta','ea','u','RH', 'VPD', 'tts', ...  % expected from EC file as well as ('Ca','SMC')
         'Cab','Cca','Cdm','Cw','Cs','Cant','N',...  % leaf
         'SMC','BSMBrightness', 'BSMlat', 'BSMlon',...  % soil
         'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
@@ -239,7 +239,7 @@ if options.simulation==1
 end
 
 nvars = length(V);
-my = cellfun(@length, {V.Val})';
+vmax = cellfun(@length, {V.Val})';
 vmax([14,27],1) = 1; % these are Tparam and LIDFb
 vi      = ones(nvars,1);
 switch options.simulation
@@ -252,14 +252,16 @@ atmfile     = [path_input 'radiationdata/' F(4).FileName];
 atmo.M      = equations.aggreg(atmfile,spectral.SCOPEspec);
 
 %% 13. create output files
-Output_dir = io.create_output_files(parameter_file, F, path_of_code, options, V, vmax, spectral);
+Output_dir = io.create_output_files_csv(parameter_file, F, path_of_code, options, V, vmax, spectral);
 
 %% 14. Run the model
 fprintf('\n The calculations start now \r')
 calculate = 1;
 
 for k = 1:telmax
-    
+%     if k ~=  23
+%         continue
+%     end
     if options.simulation == 1, vi(vmax>1) = k; end
     if options.simulation == 0, vi(vmax==telmax) = k; end
     [soil,leafbio,canopy,meteo,angles,xyt] = io.select_input(V,vi,canopy,options,xyt,soil);
@@ -267,10 +269,10 @@ for k = 1:telmax
         fprintf('simulation %i ', k );
         fprintf('of %i \n', telmax);
     else
-        calculate = ~isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli);
+%         calculate = ~isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli);
         fprintf('time = %s: %i / %i\n', datestr(xyt.t(k)), k, telmax)
-        if calculate == 0
-            warning('skipping calculations: there is NaN somewhere in meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli')
+        if isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli)
+            warning('run is invalid: there is NaN somewhere in meteo input [p, Ta, ea, u, Rin, Rli]')
         end
     end
     
@@ -335,10 +337,10 @@ for k = 1:telmax
         
         soil.Ts     = meteo.Ta * ones(2,1);       % initial soil surface temperature
         
-        if length(F(4).FileName)>1 && options.simulation==0
-            atmfile     = [path_input 'radiationdata/' F(4).FileName(k)];
-            atmo.M      = equations.aggreg(atmfile,spectral.SCOPEspec);
-        end
+%         if length(F(4).FileName)>1 && options.simulation==0
+%             atmfile     = [path_input 'radiationdata/' F(4).FileName(k)];
+%             atmo.M      = equations.aggreg(atmfile,spectral.SCOPEspec);
+%         end
         atmo.Ta     = meteo.Ta;
         
         [rad,gap,profiles]   = RTMo(spectral,atmo,soil,leafopt,canopy,angles,meteo,rad,options);
@@ -390,13 +392,13 @@ for k = 1:telmax
                 rad.Femtot = 1E3*leafbio.fqe* optipar.phi(spectral.IwlF) * fluxes.aPAR_Cab_eta;
             end
         end    
-        io.output_data(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles, directional, angles)
+        io.output_data_csv(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles, directional, angles)
     end
     if options.simulation==2 && telmax>1, vi  = equations.count(nvars,vi,vmax,1); end
 end
 
 if options.verify
-    io.output_verification(Output_dir, F(9).FileName)
+    io.output_verification_csv(Output_dir, F(9).FileName)
 end
 
 if options.makeplots

@@ -104,16 +104,15 @@ Ca              = meteo.Ca;
 Ts              = soil.Ts;
 p               = meteo.p;
 if options.soil_heat_method < 2 && options.simulation ==1
-    if k>1
-        if isdatetime(xyt.t)
-            Deltat          = seconds(t-xyt.t(k-1)); 
-        else
-            Deltat          = (t-xyt.t(k-1))*86400;           %           Duration of the time interval (s)
+    if k > 1
+        Deltat = seconds(t-xyt.t(k-1)); %           Duration of the time interval (s)
+        if Deltat < 0
+            warning('Timeseries are not ordered, it confuses soil heat model and may cause incorrect fluxes')
         end
     else
-        Deltat          = 1/48*86400;
+        Deltat = 1 / 48 * 86400;
     end
-    x 		= [1:12;1:12]'*Deltat;
+    x     = [1:12;1:12]'*Deltat;
     Tsold = soil.Tsold;
 end
 
@@ -166,8 +165,17 @@ end
 LAI = canopy.LAI;
 
 %% 2. Energy balance iteration loop
+% net radiation optical (does not change in ebal)
+Rnhc = rad.Rnhc;
+Rnuc = rad.Rnuc;
+Rnhs = rad.Rnhs;
+Rnus = rad.Rnus;
 
 %'Energy balance loop (Energy balance and radiative transfer)
+failed = 0;
+warned_complex = 0;
+warned_negative = 0;
+warned_nan = 0;
 
 while CONT                          % while energy balance does not close
     
@@ -181,10 +189,10 @@ while CONT                          % while energy balance does not close
     Rnhst = rad.Rnhst;
     Rnust = rad.Rnust;
     
-    Rnhc = rad.Rnhc;
-    Rnuc = rad.Rnuc;
-    Rnhs = rad.Rnhs;
-    Rnus = rad.Rnus;
+    if ~warned_complex && ~isreal([Rnhct(:); Rnuct(:); Rnhst(:); Rnust(:)]) 
+        warned_complex = 1;
+        fprintf('WARNING: complex thermal radiance, counter=%i', counter)
+    end
     
     Rnch        = Rnhc + Rnhct;             %           Canopy (shaded) net radiation
     Rncu        = Rnuc + Rnuct;             %           Canopy (sunlit) net radiation
@@ -215,6 +223,11 @@ while CONT                          % while energy balance does not close
     rawc  = resist_out.rawc;
     raws  = resist_out.raws;
     
+    if ~warned_complex && ~isreal([ustar, raa, rawc, raws])  % any of them
+        warned_complex = 1;
+        fprintf('WARNING: complex resistances, counter=%i\n', counter)
+    end
+    
     % 2.3. Biochemical processes
     
     % photosynthesis (A), fluorescence factor (F), and stomatal resistance (rcw), for shaded (1) and sunlit (h) leaves
@@ -234,7 +247,8 @@ while CONT                          % while energy balance does not close
         biochem_in.NPQs        = leafbio.kNPQs;
         biochem_in.stressfactor = leafbio.stressfactor;
     else
-        b                   = @biochemical; % specific for Berry-v.d.Tol model
+%         b                   = @biochemical; % specific for Berry-v.d.Tol model
+        b = @biochemical_no_nested;
         biochem_in.tempcor      = options.apply_T_corr;
         biochem_in.Tparams      = leafbio.Tparam;
         biochem_in.stressfactor = SMCsf;    
@@ -248,6 +262,11 @@ while CONT                          % while energy balance does not close
     biochem_in.Q        = rad.Pnh_Cab*1E6;
     
     biochem_out         = b(biochem_in);
+    if biochem_out.failed
+        failed = 1;
+        break
+    end
+   
     Ah                  = biochem_out.A;
     Cih                 = biochem_out.Ci;
     Fh                  = biochem_out.eta;
@@ -263,6 +282,10 @@ while CONT                          % while energy balance does not close
     biochem_in.Q        = rad.Pnu_Cab*1E6;
     
     biochem_out         = b(biochem_in);
+    if biochem_out.failed
+        failed = 1;
+        break
+    end
  
     Au                  = biochem_out.A;
     Ciu                 = biochem_out.Ci;
@@ -270,13 +293,6 @@ while CONT                          % while energy balance does not close
     rcwu                = biochem_out.rcw;
     qEu                 = biochem_out.qE;
     Knu                 = biochem_out.Kn;
-    
-    Pinh                = rad.Pnh;
-    Pinu                = rad.Pnu;
-    Pinh_Cab            = rad.Pnh_Cab;
-    Pinu_Cab            = rad.Pnu_Cab;
-    Rnh_PAR             = rad.Rnh_PAR;        
-    Rnu_PAR             = rad.Rnu_PAR;
     
     % 2.4. Fluxes (latent heat flux (lE), sensible heat flux (H) and soil heat flux G
     % in analogy to Ohm's law, for canopy (c) and soil (s). All in units of [W m-2]
@@ -288,24 +304,56 @@ while CONT                          % while energy balance does not close
     [lEcu,Hcu,ecu,Ccu]     = heatfluxes((LAI+1)*(raa+rawc),rcwu,Tcu,ea,Ta,e_to_q,0,Ca,Ciu);
     [lEs,Hs]               = heatfluxes((LAI+1)*(raa+raws),rss ,Ts ,ea,Ta,e_to_q,PSIs,Ca,Ca);
 
-    if any( ~isreal( Cch )) || any( ~isreal( Ccu(:) ))
-       error('Heatfluxes produced complex values for CO2 concentration!')
+%     if any( ~isreal( Cch )) || any( ~isreal( Ccu(:) ))
+%         failed = 1;
+%         warning('ERROR: Heatfluxes produced complex values for CO2 concentration!')
+%         break
+%     end
+    
+    if ~warned_complex && ~isreal([lEch(:); Hch(:); lEcu(:); Hcu(:); lEs(:); Hs(:)])
+        warned_complex = 1;
+        fprintf('WARNING: complex in heatfluxes, counter = %i\n', counter)
     end
-
-    if any( Cch < 0 ) || any( Ccu(:) < 0 )
-       error('Heatfluxes produced negative values for CO2 concentration!')
+    
+    if ~warned_complex && ~isreal([Cch(:); Ccu(:)])
+        warned_complex = 1;
+        fprintf('WARNING: complex CO2 concentration, counter = %i\n', counter)
+    elseif ~warned_negative && any([Cch(:); Ccu(:)] < 0)
+        warned_negative = 1;
+        fprintf('WARNING: negative CO2 concentration, counter = %i\n', counter)
     end
+    
+    if ~warned_complex && ~isreal([ech(:); ecu(:)])
+        warned_complex = 1;
+        fprintf('WARNING: complex vapour pressure at the leaf surface, counter = %i\n', counter)
+    elseif ~warned_negative && any([ech(:); ecu(:)] < 0)
+        warned_negative = 1;
+        fprintf('WARNING: negative vapour pressure at the leaf surface, counter = %i\n', counter)
+    end
+    
+%     if any( Cch < 0 ) || any( Ccu(:) < 0 )
+%         failed = 1;
+%         warning('ERROR: Heatfluxes produced negative values for CO2 concentration!')
+%         break
+%     end
 
     % integration over the layers and sunlit and shaded fractions
     Hstot       = Fs*Hs;
     Hctot       = LAI*(Fc*Hch + equations.meanleaf(canopy,Hcu,'angles_and_layers',Ps));
     Htot        = Hstot + Hctot;
+    
+    % soil heat flux
     if SoilHeatMethod==2
        G = 0.35*Rns;
     else      
        G = GAM/sqrt(pi) * 2* sum(([Ts'; Tsold(1:end-1,:)] - Tsold)/Deltat .* (sqrt(x) - sqrt(x-Deltat)));
+       if ~warned_complex && ~isreal(G)
+            warned_complex = 1;
+            fprintf('WARNING: complex soil heat flux, counter = %i\n', counter)
+       end
        G = G';
     end
+    
     % 2.5. Monin-Obukhov length L
     L           = -rhoa*cp*ustar.^3.*(Ta+273.15)./(kappa*g*Htot);           % [1]
     L(L<-1E3)   = -1E3;                                                     % [1] 
@@ -326,17 +374,26 @@ while CONT                          % while energy balance does not close
                     maxEBerch >   maxEBer     |...
                     maxEBers  >   maxEBer)    &...
                     counter   <   maxit+1;%        Continue iteration?
+    if ~CONT
+        if any(isnan([maxEBercu, maxEBerch, maxEBers]))
+            fprintf('WARNING: NaN in fluxes, counter = %i\n', counter)
+            failed = 1;
+        end
+        break
+    end
                 
     % 2.7. New estimates of soil (s) and leaf (c) temperatures, shaded (h) and sunlit (1) 
     %Tch         = Ta + update(Tch-Ta,Wc,(raa + rawc)/(rhoa*cp).*(Rnch - lEch));
     Tch         = Tch + Wc*(Rnch-lEch-Hch)./((rhoa*cp)./((LAI+1)*(raa + rawc)) + 4*sigmaSB*(Tch+273.15).^3);
     %Tcu         = Ta + update(Tcu-Ta,Wc,(raa + rawc)/(rhoa*cp).*(Rncu - lEcu));
     Tcu         = Tcu + Wc*(Rncu-lEcu-Hcu)./((rhoa*cp)./((LAI+1)*(raa + rawc)) + 4*sigmaSB*(Tcu+273.15).^3);
-    
-    
-    
+
     Ts(abs(Ts)>100 ) = Ta;
     %Ts          = Ta + update(Ts-Ta,Wc, (raa + raws)/(rhoa*cp).*(Rns - lEs - G));     
+%     if ~isreal(G)
+%         G = real(G);
+%         disp('G')
+%     end
     Ts         = Ts + Wc*(Rns-lEs-Hs-G)./((rhoa*cp)./(raa + rawc) + (rhoa*cp)./(raa + rawc) + 4*sigmaSB*(Ts+273.15).^3);
 
 %     if mean(abs(Hs))>1E4,
@@ -350,20 +407,63 @@ while CONT                          % while energy balance does not close
 %         Ts      = Tsold + G/GAM*sqrt(Deltat/pi);
 %     end  
     % 2.8. error check 
-    if (any(isnan(Tch)) || any(isnan(Tcu(:)))), warning('Canopy temperature gives NaNs'), end
-    if any(isnan(Ts)), warning('Soil temperature gives NaNs'), end
-  if counter>50, Wc = 0.2;  end
-  
+    if ~warned_complex && ~isreal([Tch(:); Tcu(:)])
+        warned_complex = 1;
+        fprintf('WARNING: complex canopy temperatures, counter = %i\n', counter)
+    elseif ~warned_nan && any(isnan([Tch(:); Tcu(:)]))
+        warned_nan = 1;
+        fprintf('WARNING: NaN in canopy temperatures, counter = %i\n', counter)
+    end
+    
+    if ~warned_complex && ~isreal(Ts)
+        warned_complex = 1;
+        fprintf('WARNING: complex soil temperatures, counter = %i\n', counter)
+    elseif ~warned_nan && any(isnan(Ts))
+        warned_nan = 1;
+        fprintf('WARNING: NaN in soil temperatures, counter = %i\n', counter)
+    end
+%     if (any(isnan(Tch)) || any(isnan(Tcu(:)))), warning('Canopy temperature gives NaNs'), end
+%     if any(isnan(Ts)), warning('Soil temperature gives NaNs'), end
+    
+    if counter>50, Wc = 0.2;  end  
+end
+
+if failed
+    warning('ERROR: Substituting all fluxes, temperatures and thermal radiance by nans, counter=%i', counter)
+    [rad.Emint, rad.Eplut] = deal(nan(size(rad.Rnhc) + [1 0])); % nl + soil
+    [rad.Eoutte, rad.Lot] = deal(nan);
+    [Ah, Cih, Fh, rcwh, qEh, Knh, lEch, Hch, Tch, Rnhct] = deal(nan(size(rad.Rnhc)));
+    [Au, Ciu, Fu, rcwu, qEu, Knu, lEcu, Hcu, Tcu, Rnuct] = deal(nan(size(rad.Rnuc)));
+    [G, lEs, Hs, Ts] = deal(nan(2,1));
+    [Htot, Hstot, Rnhst, Rnust] = deal(nan);
+    [ustar, raa, rawc, raws] = deal(nan);
+    
+    % net radiations
+    Rnch = Rnhc + Rnhct;             %           Canopy (shaded) net radiation
+    Rncu = Rnuc + Rnuct;             %           Canopy (sunlit) net radiation
+    Rnsh = Rnhs + Rnhst;             %           Soil   (shaded) net radiation
+    Rnsu = Rnus + Rnust;             %           Soil   (sunlit) net radiation
+    Rns  = [Rnsh Rnsu]';             %           Soil   (sun+sh) net radiation
+    rad.Rnhct = Rnhct;
+    rad.Rnuct = Rnuct;
+    rad.Rnhst = Rnhst;
+    rad.Rnust = Rnust;
 end
 
 iter.counter = counter;
+
 profiles.etah = Fh;
 profiles.etau = Fu; 
 
-if SoilHeatMethod<2
+profiles.Knu = Knu;
+profiles.Knh = Knh;
+
+if SoilHeatMethod < 2
     Tsold(2:end,:) = soil.Tsold(1:end-1,:);
     Tsold(1,:) 	= Ts(:);
-    if isnan(Ts), Tsold(1,:) = Tsold(2,:); end
+    if isnan(Ts) 
+        Tsold(1,:) = Tsold(2,:); 
+    end
     soil.Tsold = Tsold;
 end
 
@@ -371,13 +471,19 @@ Tbr         = (rad.Eoutte/constants.sigmaSB)^0.25;
 Lot_        = equations.Planck(spectral.wlS',Tbr);
 rad.LotBB_  = Lot_;           % Note that this is the blackbody radiance!
 
+Pinh                = rad.Pnh;
+Pinu                = rad.Pnu;
+Pinh_Cab            = rad.Pnh_Cab;
+Pinu_Cab            = rad.Pnu_Cab;
+Rnh_PAR             = rad.Rnh_PAR;        
+Rnu_PAR             = rad.Rnu_PAR;
+
 %% 3. Print warnings whenever the energy balance could not be solved
 if counter>=maxit
-    fprintf(1,'%s \n','warning: maximum number of iteratations exceeded');
-    fprintf(1,'%s ',['Energy balance error sunlit vegetation = ',sprintf('%4.2f',maxEBercu),'W m-2 ']);
-    fprintf(1,'%s ',['Energy balance error shaded vegetation = ',sprintf('%4.2f',maxEBerch),'W m-2 ']);
-    fprintf(1,'%s ',['Energy balance error soil              = ',sprintf('%4.2f',maxEBers ),'W m-2 ']);
-    fprintf(1,'\r');
+    fprintf('WARNING: maximum number of iteratations exceeded\n');
+    fprintf('Energy balance error sunlit vegetation = %4.2f W m-2\n' ,maxEBercu);
+    fprintf('Energy balance error shaded vegetation = %4.2f W m-2\n' ,maxEBerch);
+    fprintf('Energy balance error soil              = %4.2f W m-2\n' ,maxEBers);
 end
 
 %% 4. Calculate the output per layer
@@ -410,7 +516,6 @@ end
 %% 5. Calculate spectrally integrated energy, water and CO2 fluxes
 % sum of all leaves, and average leaf temperature 
 %     (note that averaging temperature is physically not correct...)
-
 Rnctot          = LAI*(Fc*Rnch + equations.meanleaf(canopy,Rncu,'angles_and_layers',Ps)); % net radiation leaves
 lEctot          = LAI*(Fc*lEch + equations.meanleaf(canopy,lEcu,'angles_and_layers',Ps)); % latent heat leaves
 Hctot           = LAI*(Fc*Hch  + equations.meanleaf(canopy,Hcu ,'angles_and_layers',Ps)); % sensible heat leaves
@@ -469,9 +574,7 @@ thermal.Tch   = Tch;
 
 fluxes.Au     = Au;
 fluxes.Ah     = Ah;
-
-profiles.Knu     = Knu;
-profiles.Knh     = Knh;
+end
 % function Tnew = update(Told, Wc, innovation)
 %     Tnew        = Wc.*innovation + (1-Wc).*Told;
 % return

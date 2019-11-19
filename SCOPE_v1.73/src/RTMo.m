@@ -490,7 +490,7 @@ rad.Etoto   = Etoto;
 %% APPENDIX I functions J1 and J2 (introduced for numerically stable solutions)
 
 function J1 = calcJ1(x,m,k,LAI)
-if abs(m-k)>1E-3;
+if abs(m-k)>1E-3
     J1 = (exp(m*LAI*x)-exp(k*LAI*x))./(k-m);
 else
     J1 = -.5*(exp(m*LAI*x)+exp(k*LAI*x))*LAI.*x.*(1-1/12*(k-m).^2*LAI^2.*x.^2);

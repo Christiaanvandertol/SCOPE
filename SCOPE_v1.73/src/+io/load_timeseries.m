@@ -7,12 +7,13 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
 
     t_column = F(strcmp({F.FileID}, 't')).FileName;
     year_column = F(strcmp({F.FileID}, 'year')).FileName;
-    rh_column = F(strcmp({F.FileID}, 'RH')).FileName;
 
     %% read berkeley format dataset
     df = readtable(fullfile(path_input, Dataset_dir, meteo_ec_csv), ...
         'TreatAsEmpty', {'.','NA','N/A'});
+%     df = standardizeMissing(df, -9999); > 2013a
     t_ = df.(t_column);
+    t_(t_ == -9999) = nan;
     
     if all(t_ <= 367)  % doy is provided
         assert(~isempty(year_column), 'Please, provide year in your .csv')
@@ -99,17 +100,31 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
     end
 
     %% ea calculation
-    if ~any(strcmp(f_ids, 'ea')) && ~any(strcmp(f_ids, 'Ta'))  % ea wasn't read but Ta was
+    if ~any(strcmp(f_ids, 'ea')) && any(strcmp(f_ids, 'Ta'))  % ea wasn't read but Ta was
         ta = V(strcmp(v_names, 'Ta')).Val;
+        es = equations.satvap(ta);
         vi_ea = strcmp(v_names, 'ea');
+        rh_column = F(strcmp({F.FileID}, 'RH')).FileName;
+        vpd_column = F(strcmp({F.FileID}, 'VPD')).FileName;
         if ~isempty(rh_column)
-            rh = replace_9999(df_sub.(rh_file));
+            rh = df_sub.(rh_column);
+            rh(rh == -9999) = nan;
             if any(rh > 10)
                 rh = rh / 100;    % rh from [0 100] to [0 1]
+                warning('converted relative hudimity from [0 100] to [0 1]')
             end
-            V(vi_ea).Val = equations.satvap(ta) .* rh;
+            ea = es .* rh;
             warning('calculated ea from Ta and RH')
+        elseif ~isempty(vpd_column)
+            vpd = df_sub.(vpd_column);
+            vpd(vpd == -9999) = nan;
+            ea = es - vpd;
+            warning('calculated ea from Ta and VPD')
+            if any(ea < 0)
+                warning('some ea < 0, is your VPD in hPa?')
+            end
         end
+        V(vi_ea).Val = ea;
     end
 
     %% units convertion

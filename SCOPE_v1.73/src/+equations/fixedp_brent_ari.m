@@ -1,4 +1,4 @@
-function [b, err2, fcounter] = fixedp_brent_ari(func, x0, corner, tolFn, verbose)
+function [b, failed, err2, fcounter] = fixedp_brent_ari(func, x0, corner, tolFn, verbose)
 % Find a fixed point of func(x) using Brent's method, as described by Brent 1971
 %   func is a single-argument function, f(x) that returns a value the same size as x:
 %        The goal is to find f(x) = x (or for Brent, f(x) - x = 0).
@@ -8,7 +8,7 @@ function [b, err2, fcounter] = fixedp_brent_ari(func, x0, corner, tolFn, verbose
 %      if specified and the first two points include the corner, the corner will be substituted as a starting point.
 %
 %  Written by: Ari Kornfeld, 2016-10
-
+failed = 0;
 tolx_1 = 0; % we don't want to converge in x
 subsetLimit = 0; % never use subsets of x
 accelBisection = false; % should we divide the interval by ever-increasing fractions (1/2, 1/3, 1/4) when consecutive calls make no improvement?
@@ -110,7 +110,9 @@ if any(not_bracketting_zero)
        not_bracketting_zero = (sign(err1) == sign(err2) & err_outside_tol);
        both_positive = not_bracketting_zero;
        if any(both_positive) && ntries > 10
-            error('Couldn''t find contrapoint in 10 tries!')
+           failed = 1;
+           warning('ERROR: Couldn''t find contrapoint in 10 tries!')
+           return
         end
         ntries = ntries + 1;
    end
@@ -309,7 +311,10 @@ while any( err_outside_tol )
     
     % Quick sanity check
     if ~all(use_secant | use_quad | use_bisection |  ~err_outside_tol)
-        error('Somehow, we didn''t update idx: %d\n', find(~(use_secant | use_quad | use_bisection |  ~err_outside_tol)));
+        failed = 1;
+        warning('ERROR: Somehow, we didn''t update idx: %d\n', ...
+            find(~(use_secant | use_quad | use_bisection |  ~err_outside_tol)));
+        return
     end
     
     %-----
@@ -328,7 +333,9 @@ while any( err_outside_tol )
     %fprintf('Laggards: %d\n', sum(err_outside_tol));
     counter = counter + 1;
     if (counter > iter_limit)
-        error('iteration limit exceeded');
+        failed = 1;
+        warning('ERROR: iteration limit exceeded');
+        return
     end
     %-----------------
     %  Now reorganize a, b, c so b is in best

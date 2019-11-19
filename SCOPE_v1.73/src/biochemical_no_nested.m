@@ -1,4 +1,4 @@
-function biochem_out = biochemical(biochem_in,Ci_input)
+function biochem_out = biochemical_no_nested(biochem_in,Ci_input)
 %
 % Date: 	21 Sep 2012
 % Update:   20 Feb 2013
@@ -101,11 +101,23 @@ else
    Cs         = NaN; %biochem_in.Ci;
 end
 Q             = biochem_in.Q;
-assert(all(Q(:) >=0), 'Negative light is not allowed!');
-assert(all(isreal(Q(:))), 'Complex-values are not allowed for PAR!');
 
-assert(all(Cs(:) >=0), 'Negative CO2 concentration is not allowed!');
-assert(all(isreal(Cs(:))), 'Complex-values are not allowed for CO2 concentration!');
+
+% assert(all(Q(:) >=0), 'Negative light is not allowed!');
+% assert(all(isreal(Q(:))), 'Complex-values are not allowed for PAR!');
+if any(Q(:) < 0) || ~isreal(Q)
+    warning('ERROR: complex or negative light')
+    biochem_out.failed = 1;
+    return
+end
+
+% assert(all(Cs(:) >=0), 'Negative CO2 concentration is not allowed!');
+% assert(all(isreal(Cs(:))), 'Complex-values are not allowed for CO2 concentration!');
+if ~isreal(Cs)
+    warning('ERROR: complex leaf CO2 concentration')
+    biochem_out.failed = 1;
+    return
+end
 
 T             = biochem_in.T + 273.15*(biochem_in.T<200); % convert temperatures to K if not already
 eb            = biochem_in.eb;
@@ -298,19 +310,23 @@ end
 RH = min(1, eb./equations.satvap(T-273.15) ); % jak: don't allow "supersaturated" air! (esp. on T curves)
 warnings = [];
 
-fcount = 0; % the number of times we called computeA()
+% fcount = 0; % the number of times we called computeA()  # persistent?
+computeA()  % clears persistent fcount
+computeA_fun = @(x) computeA(x, Type, g_m, Vs_C3, MM_consts, Rd, Vcmax, Gamma_star, Je, effcon, atheta, kpepcase);
+
+
 if  ~isempty(Ci_input) 
     Ci = Ci_input; % in units of bar.
     if any(Ci_input > 1)
         % assume Ci_input is in units of ppm. Convert to bar
         Ci = Ci_input .* ppm2bar;
     end
-    A =  computeA(Ci);
+%     A =  computeA_fun(Ci);
     
 elseif all(BallBerry0 == 0)
     % b = 0: no need to iterate:
     Ci = BallBerry(Cs, RH, [], BallBerrySlope, BallBerry0, minCi);
-    A =  computeA(Ci);
+%     A =  computeA_fun(Ci);
     
 else
     % compute Ci using iteration (JAK)
@@ -319,78 +335,19 @@ else
     tol = 1e-7;  % 0.1 ppm more-or-less
     % Setting the "corner" argument to Gamma may be useful for low Ci cases, but not very useful for atmospheric CO2, so it's ignored.
     %                     (fn,                           x0, corner, tolerance)
-    Ci = equations.fixedp_brent_ari(@(x) Ci_next(x, Cs, RH, minCi), Cs, [], tol); % [] in place of Gamma: it didn't make much difference
+    [Ci, failed] = equations.fixedp_brent_ari(@(x) Ci_next(x, Cs, RH, minCi, BallBerrySlope, BallBerry0, computeA_fun, ppm2bar), Cs, [], tol); % [] in place of Gamma: it didn't make much difference
     %NOTE: A is computed in Ci_next on the final returned Ci. fixedp_brent_ari() guarantees that it was done on the returned values.
-    %A =  computeA(Ci);
+%     A =  computeA_fun(Ci);
 end
 
-%% Test-function for iteration
-%   (note that it assigns A in the function's context.)  
-%   As with the next section, this code can be read as if the function body executed at this point. 
-%    (if iteration was used). In other words, A is assigned at this point in the file (when iterating).
-    function [err, Ci_out] = Ci_next(Ci_in, Cs, RH, minCi)
-        % compute the difference between "guessed" Ci (Ci_in) and Ci computed using BB after computing A
-        A = computeA(Ci_in);
-        A_bar = A .* ppm2bar;
-        Ci_out = BallBerry(Cs, RH, A_bar, BallBerrySlope, BallBerry0, minCi); %[Ci_out, gs]
-       
-        err = Ci_out - Ci_in; % f(x) - x
-    end
+if failed
+    biochem_out.failed = 1;
+    return
+end
 
-%% Compute Assimilation.
-%  Note: even though computeA() is written as a separate function, 
-%    the code is, in fact, executed exactly this point in the file (i.e. between the previous if clause and the next section
-    function [A, biochem_out] = computeA(Ci)
-        % global: Type, Vcmax, Gamma_star, MM_consts, Vs_C3, effcon, Je, atheta, Rd    %Kc, O, Ko, Vcmax25, qt
-
-        if strcmpi('C3', Type)
-           %[Ci, gs] = BallBerry(Cs, RH, A_bar, BallBerrySlope, BallBerry0, 0.3, Ci_input);
-           %effcon      = 0.2;
-           % without g_m:
-           Vs          = Vs_C3; % = (Vcmax25/2) .* exp(log(1.8).*qt);    % doesn't change on iteration.
-           if any(g_m < Inf)
-               % with g_m:
-               Vc = sel_root( 1./g_m, -(MM_consts + Ci +(Rd + Vcmax)./g_m), Vcmax.*(Ci - Gamma_star + Rd./g_m), -1);
-               Ve = sel_root( 1./g_m, -(Ci + 2*Gamma_star +(Rd + Je .* effcon)./g_m), Je .* effcon.*(Ci - Gamma_star + Rd./g_m), -1);
-               CO2_per_electron = Ve ./ Je;
-           else
-               Vc          = Vcmax.*(Ci-Gamma_star)./(MM_consts + Ci);  % MM_consts = (Kc .* (1+O./Ko)) % doesn't change on iteration.
-               CO2_per_electron = (Ci-Gamma_star)./(Ci+2*Gamma_star) .* effcon;
-               Ve          = Je .* CO2_per_electron;
-           end
-        else  %C4
-            %[Ci, gs] = BallBerry(Cs, RH, A_bar, BallBerrySlope, BallBerry0, 0.1, Ci_input);
-            Vc          = Vcmax;
-            Vs          = kpepcase.*Ci;
-            %effcon      = 0.17;                    % Berry and Farquhar (1978): 1/0.167 = 6
-            CO2_per_electron = effcon; % note: (Ci-Gamma_star)./(Ci+2*Gamma_star) = 1 for C4 (since O = 0); this line avoids 0/0 when Ci = 0
-            Ve          = Je .* CO2_per_electron;
-        end
-
-        % find the smoothed minimum of Ve, Vc = V, then V, Vs
-%         [a1,a2]     = abc(atheta,-(Vc+Ve),Vc.*Ve);
-%         % select the min or max  depending on the side of the CO2 compensation point
-%         %  note that Vc, Ve < 0 when Ci < Gamma_star (as long as Q > 0; Q = 0 is also ok),
-%         %     so the original construction selects the value closest to zero.
-%         V           = min(a1,a2).*(Ci>Gamma_star) + max(a1,a2).*(Ci<=Gamma_star);
-%         [a1,a2]     = abc(0.98,-(V+Vs),V.*Vs);
-%         Ag          = min(a1,a2);
-        V           = sel_root(atheta,-(Vc+Ve),Vc.*Ve, sign(-Vc) ); % i.e. sign(Gamma_star - Ci)
-        Ag          = sel_root(0.98,-(V+Vs),V.*Vs, -1);
-        A           = Ag - Rd;
-        
-        if nargout > 1
-            biochem_out.A = A;
-            biochem_out.Ag = Ag;
-            biochem_out.Vc = Vc;
-            biochem_out.Vs = Vs;
-            biochem_out.Ve = Ve;
-            biochem_out.CO2_per_electron = CO2_per_electron;
-        end
-        fcount = fcount + 1; % # of times we called computeA
-
-    end
-
+[A, biochem_out] =  computeA_fun(Ci);
+Ag = biochem_out.Ag;
+CO2_per_electron = biochem_out.CO2_per_electron;
 % (ppm2bar), A_bar
 %tic;
 %toc
@@ -452,13 +409,13 @@ biochem_out.gs      =  gs;
 %biochem_out.gs      = BallBerrySlope.*A.*RH./Cs; % mol/m2/s no intercept term.
 biochem_out.RH      =  RH;
 biochem_out.warnings = warnings;
-biochem_out.fcount = fcount;  % the number of times we called computeA()
+% biochem_out.fcount = fcount;  % the number of times we called computeA()
 %fprintf('fcount = %d\n', fcount);
 
 biochem_out.Vcmax   = Vcmax;
-biochem_out.Vc = Vc;  % export the components of A for diagnostic charts
-biochem_out.Ve = Ve;
-biochem_out.Vs = Vs;
+% biochem_out.Vc = Vc;  % export the components of A for diagnostic charts
+% biochem_out.Ve = Ve;
+% biochem_out.Vs = Vs;
 biochem_out.Rd = Rd;
 
 biochem_out.Ja      = Ja;
@@ -487,7 +444,7 @@ biochem_out.fm      = fm;
 biochem_out.Fm_Fo    = fm ./ fo;  % parameters used for curve fitting
 biochem_out.Ft_Fo    = fs ./ fo;  % parameters used for curve fitting
 biochem_out.qQ      = qQ;
-biochem_out.failed = 0;
+biochem_out.failed  = 0;
 return;
 
 end  % end of function biochemical
@@ -602,4 +559,75 @@ function [eta,qE,qQ,fs,fo,fm,fo0,fm0,Kn] = Fluorescencemodel(ps,x, Kp,Kf,Kd,Knpa
 
 end
 
+%% Test-function for iteration
+%   (note that it assigns A in the function's context.)  
+%   As with the next section, this code can be read as if the function body executed at this point. 
+%    (if iteration was used). In other words, A is assigned at this point in the file (when iterating).
+function [err, Ci_out] = Ci_next(Ci_in, Cs, RH, minCi, BallBerrySlope, BallBerry0, A_fun, ppm2bar)
+    % compute the difference between "guessed" Ci (Ci_in) and Ci computed using BB after computing A
+    A = A_fun(Ci_in);
+    A_bar = A .* ppm2bar;
+    Ci_out = BallBerry(Cs, RH, A_bar, BallBerrySlope, BallBerry0, minCi); %[Ci_out, gs]
+    
+    err = Ci_out - Ci_in; % f(x) - x
+end
+
+%% Compute Assimilation.
+%  Note: even though computeA() is written as a separate function, 
+%    the code is, in fact, executed exactly this point in the file (i.e. between the previous if clause and the next section
+function [A, biochem_out] = computeA(Ci, Type, g_m, Vs_C3, MM_consts, Rd, Vcmax, Gamma_star, Je, effcon, atheta, kpepcase)
+    % global: Type, Vcmax, Gamma_star, MM_consts, Vs_C3, effcon, Je, atheta, Rd    %Kc, O, Ko, Vcmax25, qt
+    persistent fcount
+    if nargin == 0
+        fcount = 0;
+        return
+    end
+    if strcmpi('C3', Type)
+       %[Ci, gs] = BallBerry(Cs, RH, A_bar, BallBerrySlope, BallBerry0, 0.3, Ci_input);
+       %effcon      = 0.2;
+       % without g_m:
+       Vs          = Vs_C3; % = (Vcmax25/2) .* exp(log(1.8).*qt);    % doesn't change on iteration.
+       if any(g_m < Inf)
+           % with g_m:
+           Vc = sel_root( 1./g_m, -(MM_consts + Ci +(Rd + Vcmax)./g_m), Vcmax.*(Ci - Gamma_star + Rd./g_m), -1);
+           Ve = sel_root( 1./g_m, -(Ci + 2*Gamma_star +(Rd + Je .* effcon)./g_m), Je .* effcon.*(Ci - Gamma_star + Rd./g_m), -1);
+           CO2_per_electron = Ve ./ Je;
+       else
+           Vc          = Vcmax.*(Ci-Gamma_star)./(MM_consts + Ci);  % MM_consts = (Kc .* (1+O./Ko)) % doesn't change on iteration.
+           CO2_per_electron = (Ci-Gamma_star)./(Ci+2*Gamma_star) .* effcon;
+           Ve          = Je .* CO2_per_electron;
+       end
+    else  %C4
+        %[Ci, gs] = BallBerry(Cs, RH, A_bar, BallBerrySlope, BallBerry0, 0.1, Ci_input);
+        Vc          = Vcmax;
+        Vs          = kpepcase.*Ci;
+        %effcon      = 0.17;                    % Berry and Farquhar (1978): 1/0.167 = 6
+        CO2_per_electron = effcon; % note: (Ci-Gamma_star)./(Ci+2*Gamma_star) = 1 for C4 (since O = 0); this line avoids 0/0 when Ci = 0
+        Ve          = Je .* CO2_per_electron;
+    end
+
+    % find the smoothed minimum of Ve, Vc = V, then V, Vs
+%         [a1,a2]     = abc(atheta,-(Vc+Ve),Vc.*Ve);
+%         % select the min or max  depending on the side of the CO2 compensation point
+%         %  note that Vc, Ve < 0 when Ci < Gamma_star (as long as Q > 0; Q = 0 is also ok),
+%         %     so the original construction selects the value closest to zero.
+%         V           = min(a1,a2).*(Ci>Gamma_star) + max(a1,a2).*(Ci<=Gamma_star);
+%         [a1,a2]     = abc(0.98,-(V+Vs),V.*Vs);
+%         Ag          = min(a1,a2);
+    V           = sel_root(atheta,-(Vc+Ve),Vc.*Ve, sign(-Vc) ); % i.e. sign(Gamma_star - Ci)
+    Ag          = sel_root(0.98,-(V+Vs),V.*Vs, -1);
+    A           = Ag - Rd;
+    fcount = fcount + 1; % # of times we called computeA
+    
+    if nargout > 1
+        biochem_out.A = A;
+        biochem_out.Ag = Ag;
+        biochem_out.Vc = Vc;
+        biochem_out.Vs = Vs;
+        biochem_out.Ve = Ve;
+        biochem_out.CO2_per_electron = CO2_per_electron;
+        biochem_out.fcount = fcount;
+    end
+
+end
 

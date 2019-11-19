@@ -127,7 +127,7 @@ if options.save_headers
         fprintf(fidf,' fluortot fluor_yield');
     end
     fprintf(fidf,'\r');
-    fprintf(fidf,'""        ""      ""  JulianDay  Wm-2   Wm-2 Wm-2 Wm-2 Wm-2   Wm-2 umolm-2s-1 Wm-2 Wm-2 Wm-2 Wm-2 umolm-2s-1 umolm-2s-1 umolumol-1 Wm-2 umolm-2s-1');
+    fprintf(fidf,'""        ""      ""  JulianDay  Wm-2   Wm-2 Wm-2 Wm-2 Wm-2   Wm-2 umolm-2s-1 Wm-2 Wm-2 Wm-2 Wm-2 umolm-2s-1 umolm-2s-1 umolumol-1 "" Wm-2 umolm-2s-1');
     if options.calc_fluor
         fprintf(fidf,' W m-2 WW^{-1}');
     end

@@ -1,4 +1,4 @@
-function output_verification(Output_dir, verification_dir)
+function output_verification_csv(Output_dir, verification_dir)
 % Date: 07 August 2012
 % Author: Christiaan van der Tol (tol@itc.nl)
 % output_verification.m (script) checks if the output of the latest run
@@ -28,8 +28,8 @@ function output_verification(Output_dir, verification_dir)
 path0_ = ['..' filesep 'output' filesep verification_dir filesep];
 path1_ = ['..' filesep 'output' filesep Output_dir filesep];
 
-info0   = dir([path0_ filesep '*.dat']);         %'standard' validation data (to compare with)
-info1   = dir([path1_ filesep '*.dat']);           %the most recent output
+info0   = dir([path0_ filesep '*.csv']);         %'standard' validation data (to compare with)
+info1   = dir([path1_ filesep '*.csv']);           %the most recent output
 
 [differentsize,differentcontent,differentnumberoffiles]  = deal(0);
 
@@ -45,7 +45,7 @@ for i = 1:L
     s0 = info0(i).bytes;
     n0 = info0(i).name;
     for j = 1:length(info1)
-        k = strcmp(info1(j).name,n0);
+        k = strcmp(info1(j).name, n0);
         if k, break, end
     end
     if k
@@ -55,14 +55,14 @@ for i = 1:L
             fprintf(['(' num2str(s1) ' instead of ' num2str(s0) ' bytes) \r'])
             differentsize = 1;
         else
-            if (~strcmp(info0(i).name,'pars_and_input.dat') && ~strcmp(info0(i).name,'pars_and_input_short.dat'))
-                D0 = dlmread([path0_ info0(i).name],'',2,0);
-                D1 = dlmread([path1_ info1(j).name],'',2,0);
-            elseif strcmp(info0(i).name,'pars_and_input_short.dat')
+            if (~strcmp(info0(i).name,'pars_and_input.csv') && ~strcmp(info0(i).name,'pars_and_input_short.csv'))
+                D0 = dlmread([path0_ info0(i).name],',',2,0);
+                D1 = dlmread([path1_ info1(j).name],',',2,0);
+            elseif strcmp(info0(i).name,'pars_and_input_short.csv')
                     continue
             else
-                D0 = dlmread([path0_ info0(i).name],'',1,0);
-                D1 = dlmread([path1_ info1(j).name],'',1,0);
+                D0 = dlmread([path0_ info0(i).name],',',1,0);
+                D1 = dlmread([path1_ info1(j).name],',',1,0);
             end
             if (sum(sum(D0-D1).^2))>1E-9
                 fprintf(['\nWarning: data in the output file ' info0(i).name ' are different from the verification output \r '])
