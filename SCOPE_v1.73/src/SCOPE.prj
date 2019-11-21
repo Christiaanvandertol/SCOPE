@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="D:\PyCharm_projects\SCOPE-CvT\SCOPE_v1.73\src\SCOPE.prj" location="D:\PyCharm_projects\SCOPE-CvT\SCOPE_v1.73\src" name="SCOPE" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="3643192666" file="D:\PyCharm_projects\SCOPE-CvT\SCOPE_v1.73\src\SCOPE.prj" location="D:\PyCharm_projects\SCOPE-CvT\SCOPE_v1.73\src" name="SCOPE" preferred-package-location="D:\PyCharm_projects\SCOPE-CvT\SCOPE_v1.73\src\SCOPE\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>SCOPE</param.appname>
     <param.icon />
     <param.icons />
@@ -102,7 +102,9 @@
       <file>${PROJECT_ROOT}\SCOPE.m</file>
     </fileset.resources>
     <fileset.package />
-    <fileset.depfun />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\biochemical_no_nested.m</file>
+    </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}\SCOPE\for_testing" name="splash.png" optional="false">D:\PyCharm_projects\SCOPE-CvT\SCOPE_v1.73\src\SCOPE\for_testing\splash.png</file>
       <file location="${PROJECT_ROOT}\SCOPE\for_testing" name="readme.txt" optional="true">D:\PyCharm_projects\SCOPE-CvT\SCOPE_v1.73\src\SCOPE\for_testing\readme.txt</file>
