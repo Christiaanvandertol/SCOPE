@@ -1,4 +1,4 @@
-function [lE, H, ec, Cc]  = heatfluxes(ra,rs,Tc,ea,Ta,e_to_q,PSI,Ca,Ci)
+function [lE, H, ec, Cc, lambda, s]  = heatfluxes(ra,rs,Tc,ea,Ta,e_to_q,PSI,Ca,Ci)
 
 global constants
 
@@ -37,7 +37,8 @@ R    = constants.R;
 %   Cc          CO2 concentration at the leaf surface   umol m-3
 
 lambda      = (2.501-0.002361*Tc)*1E6;  %      [J kg-1]  Evapor. heat (J kg-1)
-ei          = equations.satvap(Tc).*exp(1E-3*PSI*MH2O/R./(Tc+273.15));  
+[es,s]      = equations.satvap(Tc);
+ei          = es.*exp(1E-3*PSI*MH2O/R./(Tc+273.15));  
 qi          = ei .* e_to_q;
 qa          = ea .* e_to_q;
 

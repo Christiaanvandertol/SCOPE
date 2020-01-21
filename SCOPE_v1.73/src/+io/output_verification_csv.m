@@ -66,7 +66,7 @@ for i = 1:L
             end
             if (sum(sum(D0-D1).^2))>1E-9
                 fprintf(['\nWarning: data in the output file ' info0(i).name ' are different from the verification output \r '])
-                h0 = textread([path0_ info0(i).name],'%s');
+                h0 = textread([path0_ info0(i).name],'%s', 'bufsize', 1e6);  % what do we need?
                 spn = ceil(sqrt(size(D0,2)));              
                 figure(i)         
                 if spn>7

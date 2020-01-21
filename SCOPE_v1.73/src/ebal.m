@@ -300,9 +300,9 @@ while CONT                          % while energy balance does not close
     PSIs = 0;%soil.PSIs;
     rss  = soil.rss;
     
-    [lEch,Hch,ech,Cch]     = heatfluxes((LAI+1)*(raa+rawc),rcwh,Tch,ea,Ta,e_to_q,0,Ca,Cih);
-    [lEcu,Hcu,ecu,Ccu]     = heatfluxes((LAI+1)*(raa+rawc),rcwu,Tcu,ea,Ta,e_to_q,0,Ca,Ciu);
-    [lEs,Hs]               = heatfluxes((LAI+1)*(raa+raws),rss ,Ts ,ea,Ta,e_to_q,PSIs,Ca,Ca);
+    [lEch,Hch,ech,Cch,lambdah,sh]     = heatfluxes((LAI+1)*(raa+rawc),rcwh,Tch,ea,Ta,e_to_q,0,Ca,Cih);
+    [lEcu,Hcu,ecu,Ccu,lambdau,su]     = heatfluxes((LAI+1)*(raa+rawc),rcwu,Tcu,ea,Ta,e_to_q,0,Ca,Ciu);
+    [lEs,Hs,~,~,lambdas,ss]           = heatfluxes((LAI+1)*(raa+raws),rss ,Ts ,ea,Ta,e_to_q,PSIs,Ca,Ca);
 
 %     if any( ~isreal( Cch )) || any( ~isreal( Ccu(:) ))
 %         failed = 1;
@@ -382,30 +382,11 @@ while CONT                          % while energy balance does not close
         break
     end
                 
-    % 2.7. New estimates of soil (s) and leaf (c) temperatures, shaded (h) and sunlit (1) 
-    %Tch         = Ta + update(Tch-Ta,Wc,(raa + rawc)/(rhoa*cp).*(Rnch - lEch));
-    Tch         = Tch + Wc*(Rnch-lEch-Hch)./((rhoa*cp)./((LAI+1)*(raa + rawc)) + 4*sigmaSB*(Tch+273.15).^3);
-    %Tcu         = Ta + update(Tcu-Ta,Wc,(raa + rawc)/(rhoa*cp).*(Rncu - lEcu));
-    Tcu         = Tcu + Wc*(Rncu-lEcu-Hcu)./((rhoa*cp)./((LAI+1)*(raa + rawc)) + 4*sigmaSB*(Tcu+273.15).^3);
-
-    Ts(abs(Ts)>100 ) = Ta;
-    %Ts          = Ta + update(Ts-Ta,Wc, (raa + raws)/(rhoa*cp).*(Rns - lEs - G));     
-%     if ~isreal(G)
-%         G = real(G);
-%         disp('G')
-%     end
-    Ts         = Ts + Wc*(Rns-lEs-Hs-G)./((rhoa*cp)./(raa + rawc) + (rhoa*cp)./(raa + rawc) + 4*sigmaSB*(Ts+273.15).^3);
-
-%     if mean(abs(Hs))>1E4,
-%         Ts(:) = Ta-1; Tcu(:) = Ta-1; Tch(:) = Ta-1;
-%     end
-    
-    
-    %     if t==0 || SoilHeatMethod == 2,
-%         Ts      = Ta + update(Ts-Ta,Wc, (raa + raws)/(rhoa*cp).*(Rns - lEs - G));
-%     else
-%         Ts      = Tsold + G/GAM*sqrt(Deltat/pi);
-%     end  
+    % 2.7. New estimates of soil (s) and leaf (c) temperatures, shaded (h) and sunlit (1)    
+    Tch         = Tch + Wc*(Rnch-lEch-Hch)./((rhoa*cp)./((LAI+1)*(raa + rawc)) + rhoa*lambdah*e_to_q.*sh./(raa+rawc+rcwh)+ 4*sigmaSB*(Tch+273.15).^3);
+    Tcu         = Tcu + Wc*(Rncu-lEcu-Hcu)./((rhoa*cp)./((LAI+1)*(raa + rawc)) + rhoa*lambdau*e_to_q.*su./(raa+rawc+rcwu)+ 4*sigmaSB*(Tcu+273.15).^3);
+    Ts          = Ts + Wc*(Rns-lEs-Hs-G)./(rhoa*cp./(raa + rawc) + rhoa*lambdas*e_to_q.*ss/(raa+raws+rss)+ 4*sigmaSB*(Ts+273.15).^3);
+ 
     % 2.8. error check 
     if ~warned_complex && ~isreal([Tch(:); Tcu(:)])
         warned_complex = 1;

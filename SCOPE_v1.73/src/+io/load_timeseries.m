@@ -12,7 +12,15 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
     df = readtable(fullfile(path_input, Dataset_dir, meteo_ec_csv), ...
         'TreatAsEmpty', {'.','NA','N/A'});
 %     df = standardizeMissing(df, -9999); > 2013a
-    t_ = df.(t_column);
+    one_day = false;
+    if isempty(t_column)
+        t_ = zeros(size(df, 1), 1);
+        warning('t column is not specified, it is OK if options.soil_heat_method == 2')
+        t_(:) = xyt.startDOY;
+        one_day = true;
+    else
+        t_ = df.(t_column);
+    end
     t_(t_ == -9999) = nan;
     
     if all(t_ <= 367)  % doy is provided
@@ -94,8 +102,12 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
             t_ = get_doy(t_);
         end
         DOY_  = floor(t_);
-        time_ = 24*(t_-DOY_);
-        ttsR  = equations.calczenithangle(DOY_,time_ - xyt.timezn ,0,0,xyt.LON,xyt.LAT);     %sun zenith angle in rad
+        time_ = 24*(t_ - DOY_) - xyt.timezn;
+        if one_day
+            warning('time for solar zenith angle (tts) calculation is taken as 12 o`clock')
+            time_ = 12;
+        end
+        ttsR  = equations.calczenithangle(DOY_,time_,0,0,xyt.LON,xyt.LAT);     %sun zenith angle in rad
         V(vi_tts).Val = min(85, ttsR / pi * 180);     
     end
 
