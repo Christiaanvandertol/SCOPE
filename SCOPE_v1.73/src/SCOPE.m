@@ -259,7 +259,6 @@ fprintf('\n The calculations start now \r')
 calculate = 1;
 
 for k = 1:telmax
-    tic
 %     if k ~=  23
 %         continue
 %     end
@@ -396,7 +395,6 @@ for k = 1:telmax
         io.output_data_csv(Output_dir, options, k, iter, xyt, fluxes, rad, thermal, gap, meteo, spectral, V, vi, vmax, profiles, directional, angles)
     end
     if options.simulation==2 && telmax>1, vi  = equations.count(nvars,vi,vmax,1); end
-    toc
 end
 
 if options.verify

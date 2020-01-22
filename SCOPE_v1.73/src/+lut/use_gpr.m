@@ -18,15 +18,10 @@ function use_gpr(gpr_path, full_set_path)
     
     tab = array2table(res, 'VariableNames', {'Actot'});
     writetable(tab, csv_out)
-    fprintf('saved `%s`', csv_out)
+    fprintf('saved `%s`\n', csv_out)
     
     im = lut.csv2image_plane(val_in, res);
-    imwrite(im, map_out)
+    lut.write_tiff(im, map_out)
     
-    figure
-    imagesc(im)
-    cb = colorbar;
-    title(cb, '[\mumol CO_2 cm^{-2} s^{-1}]')
-    title('GPR GPP')
-    saveas(gcf, fig_out)
+    lut.plot_image(im, 'GPR', fig_out)
 end

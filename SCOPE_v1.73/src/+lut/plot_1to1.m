@@ -8,6 +8,6 @@ function plot_1to1(meas, mod, what, out_path)
     l.Color = 'r';
     refline
     title([what ' vs SCOPE'])
-    legend('scatter', '1-to-1 line', 'regression', 'Location', 'bestoutside')
+    legend('scatter', '1-to-1 line', 'regression', 'Location', 'southeast')
     saveas(gcf, out_path)
 end
