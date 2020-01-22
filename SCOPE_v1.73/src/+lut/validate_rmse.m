@@ -8,6 +8,15 @@ function validate_rmse(lut_in_path, lut_out_path, val_in_path, val_out_path)
         val_out_path = fullfile(in_dir, 'validation_out.csv');
     end
     fig_path = fullfile(fileparts(val_in_path), 'validation_rmse.png');
+    
+    assert(exist(lut_in_path, 'file') ~= 0, ['Did not find `%s` file.\n'... 
+        'Have you generated the LUT input with lut.generate_lut_input()?'], lut_in_path)
+    assert(exist(lut_out_path, 'file') ~= 0, ['Did not find `%s` file.\n'...
+        'Have you copied the `fluxes.csv` from `../output` after SCOPE run on lut_in.csv?'], lut_out_path)
+    assert(exist(val_in_path, 'file') ~= 0, ['Did not find `%s` file.\n'... 
+        'Have you generated the validation input with lut.pick100()?'], val_in_path)
+    assert(exist(val_out_path, 'file') ~= 0, ['Did not find `%s` file.\n'...
+        'Have you copied the `fluxes.csv` from `../output` after SCOPE run on validation_in.csv?'], val_out_path)
 
     lut_in = readtable(lut_in_path);
     lut_out = lut.read_actot(lut_out_path);

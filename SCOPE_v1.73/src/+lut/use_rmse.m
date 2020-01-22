@@ -9,6 +9,13 @@ function use_rmse(lut_in_path, lut_out_path, full_set_path)
     csv_out = fullfile(fileparts(full_set_path), 'results_rmse.csv');
     map_out = fullfile(fileparts(full_set_path), 'results_rmse.tif');
     fig_out = fullfile(fileparts(full_set_path), 'results_rmse.png');
+    
+    assert(exist(lut_in_path, 'file') ~= 0, ['Did not find `%s` file.\n'... 
+        'Have you generated the LUT input with lut.generate_lut_input()?'], lut_in_path)
+    assert(exist(lut_out_path, 'file') ~= 0, ['Did not find `%s` file.\n'...
+        'Have you copied the `fluxes.csv` from `../output` after SCOPE run on lut_in.csv?'], lut_out_path)
+    assert(exist(full_set_path, 'file') ~= 0, ['Did not find `%s` file.\n'... 
+        'Have you flattened the images with lut.image2csv()?'], full_set_path)
 
     lut_in = readtable(lut_in_path);
     lut_out = lut.read_actot(lut_out_path);

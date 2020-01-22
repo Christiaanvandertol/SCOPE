@@ -8,6 +8,11 @@ function use_gpr(gpr_path, full_set_path)
     csv_out = fullfile(fileparts(full_set_path), 'results_gpr.csv');
     map_out = fullfile(fileparts(full_set_path), 'results_gpr.tif');
     fig_out = fullfile(fileparts(full_set_path), 'results_gpr.png');
+    
+    assert(exist(gpr_path, 'file') ~= 0, ['Did not find `%s` file.\n'... 
+        'Have you trained the gaussian process regression (GPR) with lut.train_gpr()?'], gpr_path)
+    assert(exist(full_set_path, 'file') ~= 0, ['Did not find `%s` file.\n'... 
+        'Have you flattened the images with lut.image2csv()?'], full_set_path)
 
     gpr = load(gpr_path);
     gprMdl = gpr.gprMdl;

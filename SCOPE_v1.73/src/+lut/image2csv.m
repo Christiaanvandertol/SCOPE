@@ -1,7 +1,4 @@
 function image2csv(im_path, outdir)
-
-%     ret_path = 'D:\PyCharm_projects\demostrator\output\george\lely\2019-12-10-131939\2019-12-10-131939.nc';
-%     ret_path = 'D:\PyCharm_projects\demostrator\output\george\vre\2019-12-14-024659';
     
     if nargin == 0
         im_path = '../exercise/images';
@@ -12,6 +9,7 @@ function image2csv(im_path, outdir)
     end
     csv_out = fullfile(outdir, sprintf('%s.csv', name));
     var_names = {'Cab', 'LAI'};  % or dir(images) if only .tif
+    assert(exist(im_path, 'dir') == 7, '`%s` does not exist. Please, put images (Cab.tif and LAI.tif) into that folder', im_path)
     fprintf('reading images from `%s`\n', im_path)
     
     [~, ~, ext] = fileparts(im_path);
@@ -23,20 +21,7 @@ function image2csv(im_path, outdir)
 
     [r, c] = size(get_val(var_names{1}));
     
-    %% subset
-%     ir = get80_central(r);
-%     ic = get80_central(c);
-%     r = length(ir);
-%     c = length(ic);
-%     
-%     figure
-%     imagesc(get_val(var_names{1}))
-% %     colorbar
-%     title(colorbar,'[\mug cm^{-2}]');
-%     title(var_names{1})
-%     rectangle('Position',[min(ic)-1, min(ir)-1, c, r], 'LineWidth',2,'EdgeColor','r')
-    
-    %%
+    %% flattening
     fprintf('Flattening %d rows, %d columns\n', r, c)
     vals = nan(r*c, length(var_names));
     for i=1:length(var_names)
@@ -64,17 +49,4 @@ function image2csv(im_path, outdir)
     
     writetable(df_clean, csv_out)
     fprintf('saved to `%s`\n', csv_out)
-end
-
-function ind = get80_central(x, step)
-    
-    if nargin < 2
-        step = 10;
-    end
-
-    mid = round(x / 2);
-    lo = max(0, mid - step);
-    hi = min(x, mid + step);
-    ind = lo:hi;
-
 end
