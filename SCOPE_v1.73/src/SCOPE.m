@@ -16,9 +16,9 @@
 %     You should have received a copy of the GNU General Public License
 %     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %%
-try   % for Compiler .exe
-clc
-clear all
+% try   % for Compiler .exe
+% clc
+% clear all
 
 %% 0. globals
 global constants
@@ -28,8 +28,8 @@ global constants
 
 %% 2. simulation options
 path_of_code                = cd;
-% run ../set_parameter_filenames; 
-parameter_file = {'input_data.xlsx'};  % for Compiler .exe
+run ../set_parameter_filenames; 
+% parameter_file = {'input_data.xlsx'};  % for Compiler .exe
 
 if length(parameter_file)>1, useXLSX = 0; else useXLSX = 1; end
 
@@ -411,9 +411,9 @@ if options.makeplots
 end
 
 %% for Compiler
-catch ME
-    disp(['ERROR: ' ME.message])
-end
-fprintf('\nThe run is finished. Press any key to close the window')
-fprintf('\nIf no error message was produced navigate to ./SCOPE_v*/output to see the results')
-pause
+% catch ME
+%     disp(['ERROR: ' ME.message])
+% end
+% fprintf('\nThe run is finished. Press any key to close the window')
+% fprintf('\nIf no error message was produced navigate to ./SCOPE_v*/output to see the results')
+% pause
