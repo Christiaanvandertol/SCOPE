@@ -341,11 +341,14 @@ delta1      = Esky_  - rinf.*Eplu0;
 delta2      = Eplu_1 - rinf.*Emin_1;
 
 % calculation of the fluxes in the canopy
+[J1kx, J2kx] = deal(zeros(length(xl),nwl));
+for i = 1:length(xl)
+    J1kx(i,:)            = calcJ1(xl(i),m,k,LAI);    %           [nl]
+    J2kx(i,:)            = calcJ2(xl(i),m,k,LAI);    %           [nl]
+end
 for i = 1:nwl
-    J1kx            = calcJ1(xl,m(i),k,LAI);    %           [nl]
-    J2kx            = calcJ2(xl,m(i),k,LAI);    %           [nl]
-    F1              = Esun_(i)*J1kx*(sf(i)+rinf(i)*sb(i)) + delta1(i)*exp( m(i)*LAI*xl);      %[nl]
-    F2              = Esun_(i)*J2kx*(sb(i)+rinf(i)*sf(i)) + delta2(i)*exp(-m(i)*LAI*(xl+1));  %[nl]
+    F1              = Esun_(i)*J1kx(:,i)*(sf(i)+rinf(i)*sb(i)) + delta1(i)*exp( m(i)*LAI*xl);      %[nl]
+    F2              = Esun_(i)*J2kx(:,i)*(sb(i)+rinf(i)*sf(i)) + delta2(i)*exp(-m(i)*LAI*(xl+1));  %[nl]
     Emin_(:,i)      = (F1+rinf(i)*F2)/(1-rinf2(i));%        [nl,nwl]
     Eplu_(:,i)      = (F2+rinf(i)*F1)/(1-rinf2(i));%        [nl,nwl]
 end
@@ -488,19 +491,27 @@ rad.Rnu_PAR = Rnuc_PAR;     % [13x36x60 double] net PAR absorbed (W m-2) of sunl
 rad.Etoto   = Etoto;
 
 %% APPENDIX I functions J1 and J2 (introduced for numerically stable solutions)
-
 function J1 = calcJ1(x,m,k,LAI)
-if abs(m-k)>1E-3
-    J1 = (exp(m*LAI*x)-exp(k*LAI*x))./(k-m);
-else
-    J1 = -.5*(exp(m*LAI*x)+exp(k*LAI*x))*LAI.*x.*(1-1/12*(k-m).^2*LAI^2.*x.^2);
-end
+
+    % Modified by W. Verhoef on 14 Jan 2016 to repair a malfunctioning of
+    % RTMo_lite; should be inserted in RTMo as well - that is what we did
+
+    J1 = zeros(length(m),1);
+
+    sing = abs((m-k)*LAI) < 1e-6;   % near singularity logical array
+    
+    CS = find(sing);                % indices singular case
+    CN = find(~sing);               % indices normal case
+        
+    J1(CN) = (exp(m(CN)*LAI*x)-exp(k*LAI*x))./(k-m(CN));
+    
+    J1(CS) = -.5*(exp(m(CS)*LAI*x)+exp(k*LAI*x))*LAI.*x.*(1-1/12*(k-m(CS)).^2*LAI^2.*x.^2);
+
 return
 
 function J2 = calcJ2(x,m,k,LAI)
-J2 = (exp(k*LAI*x)-exp(-k*LAI)*exp(-m*LAI*(1+x)))./(k+m);
+    J2 = (exp(k*LAI*x)-exp(-k*LAI)*exp(-m*LAI*(1+x)))./(k+m);
 return;
-
 %% APPENDIX II function volscat
 
 function [chi_s,chi_o,frho,ftau]    =   volscat(tts,tto,psi,ttli)
