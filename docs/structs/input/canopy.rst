@@ -55,7 +55,10 @@ Used
       - ``SCOPE.m``
 
 
+The meaning of LIDFa and LIDFb in relation to the leaf angle distribution (LAD) is presented in
 
+.. figure:: ../../images/LAD.png
+    :align: center
 
 
 Fields

@@ -7,5 +7,5 @@ SCOPE_v*/input_data*.xlsx
 SCOPE_v*/src/*.asv
 SCOPE_v*/src/+my
 SCOPE_v*/src/not_used
-SCOPE_v*/src/exercise_extra
-SCOPE_v*/exercise
+SCOPE_v*/src/exercise*
+SCOPE_v*/exercise*

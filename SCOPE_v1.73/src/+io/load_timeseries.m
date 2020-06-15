@@ -31,6 +31,9 @@ function [V, xyt]  = load_timeseries(V, F, xyt, path_input)
     end
     
     t_ = io.timestamp2datetime(t_);
+    if all(hour(t_) == 0)
+        one_day = true;
+    end
     xyt.startDOY = io.timestamp2datetime(xyt.startDOY);
     xyt.endDOY = io.timestamp2datetime(xyt.endDOY);
     year_n = year(t_);
