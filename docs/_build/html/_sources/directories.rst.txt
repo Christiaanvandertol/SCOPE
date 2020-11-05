@@ -3,8 +3,9 @@ Directories
 
 
 .. toctree::
-    directories/scope
-    directories/data
+    directories/src
+    directories/input
+    directories/output
 
 .. warning::
     Do not change directory names or file names inside them!
@@ -12,33 +13,33 @@ Directories
 ::
 
     SCOPE-master.zip
-    ├── SCOPE_v1.73
-    │   ├── output
-    │   │   ├── example_directional_run
-    │   │   │    ├── Directional
-    │   │   │    └── Parameters
-    │   │   └── verificationdata
-    │   │        └── Parameters
-    │   └── src
-    │       ├── +equations
-    │       ├── +helpers
-    │       ├── +io
-    │       ├── +plot
-    │       └── not_used
-    ├── data
-    │   ├── input
-    │   │   ├── dataset for_verification
-    │   │   ├── directional
-    │   │   ├── fluspect_parameters
-    │   │   ├── leafangles
-    │   │   ├── PFT
-    │   │   ├── radiationdata
-    │   │   └── soil_spectrum
-    │   └── measured
-    │       ├── dataset Duke
-    │       ├── dataset for_verification
-    │       ├── dataset Merzenhausen
-    │       ├── dataset reading 1
-    │       ├── dataset reading 2
-    │       └── dataset yarnton 2013
-    └──  docs
+    │
+    ├── SCOPE.m
+    ├── set_parameter_filenames.csv
+    │
+    ├── src
+    │   ├── +lut
+    │   ├── fluxes
+    │   ├── IO
+    │   ├── RTMs
+    │   └── supporting
+    │
+    ├── input
+    │   ├── dataset dat
+    │   ├── dataset for_verification
+    │   ├── dataset mSCOPE_ts
+    │   ├── directional
+    │   ├── fluspect_parameters
+    │   ├── leafangles
+    │   ├── radiationdata
+    │   ├── soil_spectra
+    │   │
+    │   ├── filenames.csv
+    │   ├── input_data_default.csv
+    │   ├── mSCOPE.csv
+    │   └── setoptions.csv
+    │
+    ├── output
+    │   └── verificationdata
+    │
+    └── docs

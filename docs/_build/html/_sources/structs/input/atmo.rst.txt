@@ -6,7 +6,7 @@ Atmospheric transfer functions from standard FLEX atmospheres
 Initialized
 """"""""""""
 
-``SCOPE.m`` loaded from ../data/input/:ref:`directories/data:radiationdata` and aggregated by :func:`.aggreg`.
+``SCOPE.m`` loaded from ./input/:ref:`directories/input:radiationdata` and aggregated by :func:`.aggreg`.
 
 Filename is specified on ``filenames`` sheet, ``atmos_file`` cell of ``input_data.xlsx``
 

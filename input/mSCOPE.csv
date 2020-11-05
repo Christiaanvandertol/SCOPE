@@ -1,0 +1,11 @@
+﻿input of mSCOPE,,,,
+nly,number of layer,3,,
+pLAI,LAI for each layer,0.5,1,1.5
+pCab,,40,20,80
+pCca,,20,20,20
+pCdm,,0.012,0.012,0.012
+pCw,,0.009,0.009,0.009
+pCs,,0,0,0
+pN,,1.4,1.4,1.4
+total LAI,,3,,
+,,top,→,bottom

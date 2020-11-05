@@ -17,34 +17,34 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="options.calc_fluo" href="fluorescence.html" />
-    <link rel="prev" title="options.calc_ebal &amp; options.calc_planck" href="planck.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -79,36 +79,18 @@
             
             
               <p class="caption"><span class="caption-text">Contents</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../outfiles.html">Output files</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="each.html">In each simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="planck.html"><code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code></a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gap-dat">gap.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-a-dat">layer_a.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-apar-dat">layer_aPAR.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-apar-cab-dat">layer_aPAR_Cab.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-fluorescence-dat">layer_fluorescence.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-h-dat">layer_h.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-le-dat">layer_le.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-npq-dat">layer_NPQ.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-rn-dat">layer_rn.dat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#leaftemp-dat">leaftemp.dat</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="fluorescence.html"><code class="docutils literal notranslate"><span class="pre">options.calc_fluo</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="directional.html"><code class="docutils literal notranslate"><span class="pre">options.calc_directional</span></code> &amp;&amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -160,8 +142,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../outfiles.html">Output files</a> &raquo;</li>
-        
       <li><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></li>
     
     
@@ -186,33 +166,33 @@
 <div class="section" id="gap-dat">
 <h2>gap.dat<a class="headerlink" href="#gap-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - [Ps Po Pso] =&gt; 61 * 3 columns</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Ps</strong></td>
-<td>-</td>
-<td>fraction of sunlit leaves per layer</td>
+<tr class="row-even"><td><p><strong>Ps</strong></p></td>
+<td><p>-</p></td>
+<td><p>fraction of sunlit leaves per layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Po</strong></td>
-<td>-</td>
-<td>fraction of observed leaves per layer</td>
+<tr class="row-odd"><td><p><strong>Po</strong></p></td>
+<td><p>-</p></td>
+<td><p>fraction of observed leaves per layer</p></td>
 </tr>
-<tr class="row-even"><td><strong>Pso</strong></td>
-<td>-</td>
-<td>fraction of sunlit and (at the same time) observed per layer</td>
+<tr class="row-even"><td><p><strong>Pso</strong></p></td>
+<td><p>-</p></td>
+<td><p>fraction of sunlit and (at the same time) observed per layer</p></td>
 </tr>
 </tbody>
 </table>
@@ -220,29 +200,29 @@
 <div class="section" id="layer-a-dat">
 <h2>layer_a.dat<a class="headerlink" href="#layer-a-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - photosynthesis per layer, total soil respiration (60 + 1)</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>A1d</strong></td>
-<td>umol m-2 s-1</td>
-<td>mean photosynthesis leaves, per layer</td>
+<tr class="row-even"><td><p><strong>A1d</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>mean photosynthesis leaves, per layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Resp</strong></td>
-<td>umol m-2 s-1</td>
-<td>soil respiration rate</td>
+<tr class="row-odd"><td><p><strong>Resp</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>soil respiration rate</p></td>
 </tr>
 </tbody>
 </table>
@@ -250,25 +230,25 @@
 <div class="section" id="layer-apar-dat">
 <h2>layer_aPAR.dat<a class="headerlink" href="#layer-apar-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - absorbed photosynthetically active radiation (aPAR)</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Pn1d</strong></td>
-<td>umol m-2 s-1</td>
-<td>aPAR per leaf layer</td>
+<tr class="row-even"><td><p><strong>Pn1d</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>aPAR per leaf layer</p></td>
 </tr>
 </tbody>
 </table>
@@ -276,25 +256,25 @@
 <div class="section" id="layer-apar-cab-dat">
 <h2>layer_aPAR_Cab.dat<a class="headerlink" href="#layer-apar-cab-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - absorbed photosynthetically active radiation (aPAR) by chlorophylls (Cab) per leaf layer</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Pn1d_Cab</strong></td>
-<td>umol m-2 s-1</td>
-<td>aPAR by Cab per leaf layer</td>
+<tr class="row-even"><td><p><strong>Pn1d_Cab</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>aPAR by Cab per leaf layer</p></td>
 </tr>
 </tbody>
 </table>
@@ -302,25 +282,25 @@
 <div class="section" id="layer-fluorescence-dat">
 <h2>layer_fluorescence.dat<a class="headerlink" href="#layer-fluorescence-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - upward fluorescence per layer</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>fluorescence</strong></td>
-<td>W m-2</td>
-<td>upward fluorescence per layer</td>
+<tr class="row-even"><td><p><strong>fluorescence</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>upward fluorescence per layer</p></td>
 </tr>
 </tbody>
 </table>
@@ -328,29 +308,29 @@
 <div class="section" id="layer-h-dat">
 <h2>layer_h.dat<a class="headerlink" href="#layer-h-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - sensible heat flux per layer, total sensible heat of soil (60 + 1)</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Hc1d</strong></td>
-<td>W m-2</td>
-<td>mean sensible heat leaves, per layer</td>
+<tr class="row-even"><td><p><strong>Hc1d</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>mean sensible heat leaves, per layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Hstot</strong></td>
-<td>W m-2</td>
-<td>sensible heat of soil</td>
+<tr class="row-odd"><td><p><strong>Hstot</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>sensible heat of soil</p></td>
 </tr>
 </tbody>
 </table>
@@ -358,29 +338,29 @@
 <div class="section" id="layer-le-dat">
 <h2>layer_le.dat<a class="headerlink" href="#layer-le-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - latent heat flux per layer, total latent heat of soil (60 + 1)</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>lEc1d</strong></td>
-<td>W m-2</td>
-<td>mean latent heat leaves, per layer</td>
+<tr class="row-even"><td><p><strong>lEc1d</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>mean latent heat leaves, per layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>lEstot</strong></td>
-<td>W m-2</td>
-<td>latent heat of soil</td>
+<tr class="row-odd"><td><p><strong>lEstot</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>latent heat of soil</p></td>
 </tr>
 </tbody>
 </table>
@@ -388,25 +368,25 @@
 <div class="section" id="layer-npq-dat">
 <h2>layer_NPQ.dat<a class="headerlink" href="#layer-npq-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - average NPQ = 1-(fm-fo)/(fm0-fo0), per layer (60)</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>qE</strong></td>
-<td>&#160;</td>
-<td>average NPQ = 1-(fm-fo)/(fm0-fo0), per layer</td>
+<tr class="row-even"><td><p><strong>qE</strong></p></td>
+<td></td>
+<td><p>average NPQ = 1-(fm-fo)/(fm0-fo0), per layer</p></td>
 </tr>
 </tbody>
 </table>
@@ -414,29 +394,29 @@
 <div class="section" id="layer-rn-dat">
 <h2>layer_rn.dat<a class="headerlink" href="#layer-rn-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - net radiation per leaf layer, total net radiation of soil (60 + 1)</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Rn1d</strong></td>
-<td>W m-2</td>
-<td>net radiation per leaf layer</td>
+<tr class="row-even"><td><p><strong>Rn1d</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>net radiation per leaf layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Rnstot</strong></td>
-<td>W m-2</td>
-<td>net radiation of soil</td>
+<tr class="row-odd"><td><p><strong>Rnstot</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>net radiation of soil</p></td>
 </tr>
 </tbody>
 </table>
@@ -444,33 +424,33 @@
 <div class="section" id="leaftemp-dat">
 <h2>leaftemp.dat<a class="headerlink" href="#leaftemp-dat" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
 </div>
 <p>rows - time (simulation number)</p>
 <p>columns - leaf temperatures per layer (60 * 3) leaf temperature of sunlit leaves, shaded leaves, and weighted average leaf temperature per layer</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Tcu1d</strong></td>
-<td>ºC</td>
-<td>leaf temperature of sunlit leaves, per layer</td>
+<tr class="row-even"><td><p><strong>Tcu1d</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>leaf temperature of sunlit leaves, per layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Tch</strong></td>
-<td>ºC</td>
-<td>leaf temperature of shaded leaves, per layer</td>
+<tr class="row-odd"><td><p><strong>Tch</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>leaf temperature of shaded leaves, per layer</p></td>
 </tr>
-<tr class="row-even"><td><strong>Tc1d</strong></td>
-<td>ºC</td>
-<td>weighted average leaf temperature, per layer</td>
+<tr class="row-even"><td><p><strong>Tc1d</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>weighted average leaf temperature, per layer</p></td>
 </tr>
 </tbody>
 </table>
@@ -482,15 +462,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="fluorescence.html" class="btn btn-neutral float-right" title="options.calc_fluo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="planck.html" class="btn btn-neutral" title="options.calc_ebal &amp; options.calc_planck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -514,25 +485,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plots &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Custom sensors" href="sensors.html" />
+    <link rel="prev" title="Multispectral retrieval (satellite)" href="multispectral.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../retrieval.html">Retrieval (Model inversion)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hyperspectral.html">Hyperspectral retrieval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multispectral.html">Multispectral retrieval (satellite)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reflectance">Reflectance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validation-1-1">Validation (1 : 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jacobian">Jacobian</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html">Custom sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tricks.html">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#highlights">Highlights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#definition">Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#directory-structure">Directory structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieval.html#acknowledgement">Acknowledgement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../retrieval.html">Retrieval (Model inversion)</a> &raquo;</li>
+        
+      <li>Plots</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/retrieval/plots.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plots">
+<h1>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h1>
+<p>We provide several plots for the validation of retrieval quality.</p>
+<div class="section" id="reflectance">
+<h2>Reflectance<a class="headerlink" href="#reflectance" title="Permalink to this headline">¶</a></h2>
+<p>Modelled and measured reflectance curves show if the modelled curve is close enough to the measured curve.</p>
+<div class="figure align-default">
+<img alt="../_images/modelled_vs_measured.png" src="../_images/modelled_vs_measured.png" />
+</div>
+<p>As there might be many spectra we do not show all the figures immediately after the run finishes
+but we save them all in the matlab graphical array named <code class="docutils literal notranslate"><span class="pre">figures</span></code> with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">plot.reflectance_hidden()</span></code>
+To actually see them set visibility property of the j-th figure to ‘on’:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">set</span><span class="p">(</span><span class="n">figures</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="s">&#39;Visible&#39;</span><span class="p">,</span> <span class="s">&#39;on&#39;</span><span class="p">)</span>    <span class="c">% show the plot for the 1st spectrum</span>
+<span class="n">set</span><span class="p">(</span><span class="n">figures</span><span class="p">(</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">),</span> <span class="s">&#39;Visible&#39;</span><span class="p">,</span> <span class="s">&#39;on&#39;</span><span class="p">)</span>  <span class="c">% show the plots for the 5, 6, 7 spectra</span>
+<span class="n">set</span><span class="p">(</span><span class="n">figures</span><span class="p">,</span> <span class="s">&#39;Visible&#39;</span><span class="p">,</span> <span class="s">&#39;on&#39;</span><span class="p">)</span>       <span class="c">% show the plots for all spectra</span>
+</pre></div>
+</div>
+<p>If you close the figure (by pressing the upper right red cross) it will also disappear from <code class="docutils literal notranslate"><span class="pre">figures</span></code> array;
+in fact there will be “handle to the deleted figure”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can draw all these plots again from the “%Y-%m-%d_%H%M%S.xlsx” file with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">plot.replot_all()</span></code></p>
+</div>
+</div>
+<div class="section" id="validation-1-1">
+<h2>Validation (1 : 1)<a class="headerlink" href="#validation-1-1" title="Permalink to this headline">¶</a></h2>
+<p>To see how well the retrieval worked for your spectra you can provide <strong>validation</strong> on <code class="docutils literal notranslate"><span class="pre">Filenames</span></code> tab.</p>
+<dl class="simple">
+<dt>Validation file requirements:</dt><dd><ul class="simple">
+<li><p>first columns - parameter names as they are on <code class="docutils literal notranslate"><span class="pre">Input</span></code> tab</p></li>
+<li><p>other columns - measured values of this parameter for each spectra.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Overall the number of columns in <strong>validation</strong> file equals to the number of columns in the <strong>reflectance</strong> file <strong>+1</strong> for parameter names.</p>
+<p>Example:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>names</p></td>
+<td><p>spec_1</p></td>
+<td><p>spec_2</p></td>
+<td><p>spec_3</p></td>
+</tr>
+<tr class="row-even"><td><p>LAI</p></td>
+<td><p>1.0</p></td>
+<td><p>NA</p></td>
+<td><p>1.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cab</p></td>
+<td><p>40</p></td>
+<td><p>30</p></td>
+<td><p>50</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default">
+<img alt="../_images/quality_of_synthetic.png" src="../_images/quality_of_synthetic.png" />
+</div>
+</div>
+<div class="section" id="jacobian">
+<h2>Jacobian<a class="headerlink" href="#jacobian" title="Permalink to this headline">¶</a></h2>
+<p>The algorithm of local minimum search <code class="xref mat mat-func docutils literal notranslate"><span class="pre">lsqnonlin()</span></code> uses the gradient descent method
+where the next step is driven by the cost-function partial derivative matrix - Jacobian matrix.</p>
+<p>For each spectra we calculate the Jacobian matrix at the last step of optimization to propagate standard deviation of reflectance to that of the retrieved parameters.</p>
+<p>Jacobian can be plot with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">plot.jacobian(J_all,</span> <span class="pre">tab,</span> <span class="pre">measured.wl,</span> <span class="pre">j)()</span></code> and
+its SVD (singular value decomposition) can be plot with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">plot.jacobian_svd(J_all,</span> <span class="pre">tab,</span> <span class="pre">measured.wl,</span> <span class="pre">j)()</span></code> for j-th spectra.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We do not write the Jacobian matrix to file.
+If you want to analyze it plot it immediately after the model run or save as the .mat file yourself.</p>
+</div>
+<div class="figure align-default">
+<img alt="../_images/Jac.png" src="../_images/Jac.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sensors.html" class="btn btn-neutral float-right" title="Custom sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="multispectral.html" class="btn btn-neutral float-left" title="Multispectral retrieval (satellite)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

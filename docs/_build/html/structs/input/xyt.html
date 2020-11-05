@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="constant structs" href="../constants/constants_index.html" />
     <link rel="prev" title="soil" href="soil.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -192,8 +195,8 @@
 <p>Geographical location and time of the project</p>
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a>
-<a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
+<p><a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a>
+<a class="reference internal" href="../../api/IO.html#src.IO.load_timeseries" title="src.IO.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
@@ -201,109 +204,109 @@
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">t,</span> <span class="pre">timezn,</span> <span class="pre">LON,</span> <span class="pre">LAT</span></code></td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t,</span> <span class="pre">timezn,</span> <span class="pre">LON,</span> <span class="pre">LAT</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/IO.html#src.IO.load_timeseries" title="src.IO.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">t</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">t,</span> <span class="pre">startDOY,</span> <span class="pre">endDOY</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">SCOPE</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t,</span> <span class="pre">startDOY,</span> <span class="pre">endDOY</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SCOPE</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">year,</span> <span class="pre">t</span></code></td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">year,</span> <span class="pre">t</span></code></p></td>
+<td><p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields initialized in <a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>startDOY</strong></td>
-<td>-</td>
-<td>double</td>
-<td>169.0</td>
-<td>Julian day (decimal) of start of simulations</td>
+<tr class="row-even"><td><p><strong>startDOY</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>169.0</p></td>
+<td><p>Julian day (decimal) of start of simulations</p></td>
 </tr>
-<tr class="row-odd"><td><strong>endDOY</strong></td>
-<td>-</td>
-<td>double</td>
-<td>170.0</td>
-<td>Julian day (decimal) of end of simulations</td>
+<tr class="row-odd"><td><p><strong>endDOY</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>170.0</p></td>
+<td><p>Julian day (decimal) of end of simulations</p></td>
 </tr>
-<tr class="row-even"><td><strong>LAT</strong></td>
-<td>decimal deg</td>
-<td>double</td>
-<td>52.25</td>
-<td>Latitude</td>
+<tr class="row-even"><td><p><strong>LAT</strong></p></td>
+<td><p>decimal deg</p></td>
+<td><p>double</p></td>
+<td><p>52.25</p></td>
+<td><p>Latitude</p></td>
 </tr>
-<tr class="row-odd"><td><strong>LON</strong></td>
-<td>decimal deg</td>
-<td>double</td>
-<td>5.69</td>
-<td>Longitude</td>
+<tr class="row-odd"><td><p><strong>LON</strong></p></td>
+<td><p>decimal deg</p></td>
+<td><p>double</p></td>
+<td><p>5.69</p></td>
+<td><p>Longitude</p></td>
 </tr>
-<tr class="row-even"><td><strong>timezn</strong></td>
-<td>hours</td>
-<td>double</td>
-<td>1.0</td>
-<td>east of Greenwich</td>
+<tr class="row-even"><td><p><strong>timezn</strong></p></td>
+<td><p>hours</p></td>
+<td><p>double</p></td>
+<td><p>1.0</p></td>
+<td><p>east of Greenwich</p></td>
 </tr>
 </tbody>
 </table>
-<p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields initialized in <a class="reference internal" href="../../api/IO.html#src.IO.load_timeseries" title="src.IO.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><p class="first last" id="xyt-t"><strong>t</strong></p>
+<tr class="row-even"><td><p id="xyt-t"><strong>t</strong></p>
 </td>
-<td>-</td>
-<td>[n x 1] double</td>
-<td>[214 x 1]</td>
-<td>Julian day (decimal)</td>
+<td><p>-</p></td>
+<td><p>[n x 1] double</p></td>
+<td><p>[214 x 1]</p></td>
+<td><p>Julian day (decimal)</p></td>
 </tr>
-<tr class="row-odd"><td><p class="first last" id="xyt-year"><strong>year</strong></p>
+<tr class="row-odd"><td><p id="xyt-year"><strong>year</strong></p>
 </td>
-<td>-</td>
-<td>[m x 1] int</td>
-<td>[216 x 1]</td>
-<td>Calendar year</td>
+<td><p>-</p></td>
+<td><p>[m x 1] int</p></td>
+<td><p>[216 x 1]</p></td>
+<td><p>Calendar year</p></td>
 </tr>
 </tbody>
 </table>
@@ -321,7 +324,7 @@
         <a href="../constants/constants_index.html" class="btn btn-neutral float-right" title="constant structs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="soil.html" class="btn btn-neutral" title="soil" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="soil.html" class="btn btn-neutral float-left" title="soil" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -347,25 +350,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

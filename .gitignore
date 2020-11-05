@@ -1,3 +1,13 @@
-/data
-/SCOPE_v1.72/output
-/SCOPE_v1.72/*.xlsx
+data
+*.asv
+docs/.idea
+SCOPE_v*/output/
+SCOPE_v*/~$input_data*.xlsx
+SCOPE_v*/input_data*.xlsx
+SCOPE_v*/src/*.asv
+SCOPE_v*/src/+my
+SCOPE_v*/src/not_used
+SCOPE_v*/src/exercise*
+SCOPE_v*/exercise*
+SCOPE_v1.73/
+data/

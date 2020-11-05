@@ -3,6 +3,45 @@ Version history
 
 .. contents::
 
+2.00
+''''''
+
+2020
+
+detailed description can be found at https://gmd.copernicus.org/preprints/gmd-2020-251/
+
+* Major improvements:
+    - much faster computational time (even faster with :ref:`options:``lite```)
+    - in-built mSCOPE implementation
+    - intuitive code and data organization: :ref:`directories:Directories`
+    - .csv input files instead of .xlsx: :ref:`directories/input:input`
+    - .csv output files
+    - emulator guideline for per-pixel applications (inspired by ARTMO) :ref:`api/lut:+lut`
+
+* minor changes:
+    - options:
+        - removed: makeplots, rt_thermal, calc_zo (now does it by default), save_headers
+        - added: lite, mSCOPE, saveCSV
+    - calculation of LST added
+    - output files changed
+
+
+1.74
+''''''
+
+2019
+
+* Major changes in ``timeseries`` input:
+    - meteorological data can be provided directly from eddy covariance file of berkeley format (FLUXNET standard since 2015) => single .csv (used to be a bunch of .dat files)
+    - several years of time series can be run at once => startDOY, endDOY are timestamps (long integers of format YYMMDD[HHMMSS]) (used to be Julian decimal day of year)
+    - direct usage of all :ref:`retrieval:Retrieval (Model inversion)` output in timeseries => linear interpolation to meteorological data timestamp (used to be only for Cab and LAI)
+    - ``filenames`` tab now has also *column names* instead of file names
+    - automatic conversion of units for air pressure (p) (ec - kPa, SCOPE - hPa), soil moisture (SMC) and relative himidity (rH) if needed
+    - calculation of atmospherc vapor pressure (ea) from relative humidity and air temperature (Ta) if ea not provided
+    - :func:`+io.loadtimeseries` rewritten
+* Minor bug fixes in :func:`.RTMt_planck` :func:`.RTMt_sb`
+* Functions in +helpers were merged with +equations to reduce confusion between two modules
+
 1.73
 ''''''
 

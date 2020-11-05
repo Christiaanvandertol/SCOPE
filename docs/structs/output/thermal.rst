@@ -13,7 +13,7 @@ Calculated
 Output file
 """"""""""""
 
-- :ref:`outfiles/each:surftemp.dat`
+- :ref:`outfiles/each:fluxes.csv`
 - :ref:`outfiles/each:aerodyn.dat`
 
 Used

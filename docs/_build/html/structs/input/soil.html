@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="xyt" href="xyt.html" />
     <link rel="prev" title="meteo" href="meteo.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -192,220 +195,220 @@
 <p>Soil properties (such as soil moisture, emissivity and the reflectance spectrum)</p>
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+<p><a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
 <p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#soil-tsold">soil.Tsold</a> may be changed by <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> (default case)</p>
-<p><a class="reference internal" href="#soil-rss">soil.rss</a>, <a class="reference internal" href="#soil-rbs">soil.rbs</a> may be calculated by <a class="reference internal" href="../../api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_rss_rbs</span></code> is selected</p>
-<p><a class="reference internal" href="#soil-gam">soil.GAM</a> produced by <a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> or <a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span></code></p>
+<p><a class="reference internal" href="#soil-tsold">soil.Tsold</a> may be changed by <a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> (default case)</p>
+<p><a class="reference internal" href="#soil-rss">soil.rss</a>, <a class="reference internal" href="#soil-rbs">soil.rbs</a> may be calculated by <a class="reference internal" href="../../api/supporting.html#src.supporting.calc_rssrbs" title="src.supporting.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_rss_rbs</span></code> is selected</p>
+<p><a class="reference internal" href="#soil-gam">soil.GAM</a> produced by <a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> or <a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia1" title="src.supporting.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span></code></p>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">spectrum,</span> <span class="pre">rs_thermal</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spectrum,</span> <span class="pre">rs_thermal</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">cs,</span> <span class="pre">rhos,</span> <span class="pre">lambdas</span></code></td>
-<td><a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cs,</span> <span class="pre">rhos,</span> <span class="pre">lambdas</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">SMC</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.BSM" title="src.BSM"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a></div>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SMC</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia1" title="src.supporting.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.BSM" title="src.RTMs.BSM"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/supporting.html#src.supporting.calc_rssrbs" title="src.supporting.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">CSSOIL</span></code></td>
-<td><a class="reference internal" href="../../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CSSOIL</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.zo_and_d" title="src.supporting.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">refl</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">refl</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMz" title="src.RTMs.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">Ts,</span> <span class="pre">Tsold,</span> <span class="pre">GAM,</span> <span class="pre">rss</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">rbs,</span> <span class="pre">rss</span></code> -&gt; <a class="reference internal" href="../internal/resist_in.html#resist-in"><span class="std std-ref">Resist_in</span></a></div>
 </div>
 </td>
-<td><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></td>
+<td><p><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields initialized in <a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>spectrum</strong></td>
-<td>-</td>
-<td>int</td>
-<td>1</td>
-<td>spectrum number (column in the database soil_file)</td>
+<tr class="row-even"><td><p><strong>spectrum</strong></p></td>
+<td><p>-</p></td>
+<td><p>int</p></td>
+<td><p>1</p></td>
+<td><p>spectrum number (column in the database soil_file)</p></td>
 </tr>
-<tr class="row-odd"><td><p class="first last" id="soil-rss"><strong>rss</strong></p>
+<tr class="row-odd"><td><p id="soil-rss"><strong>rss</strong></p>
 </td>
-<td>s m-1</td>
-<td>double</td>
-<td>500.0</td>
-<td>soil resistance for evaporation from the pore space</td>
+<td><p>s m-1</p></td>
+<td><p>double</p></td>
+<td><p>500.0</p></td>
+<td><p>soil resistance for evaporation from the pore space</p></td>
 </tr>
-<tr class="row-even"><td><strong>rs_thermal</strong></td>
-<td>-</td>
-<td>double</td>
-<td>0.06</td>
-<td>broadband soil reflectance in the thermal range <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">emissivity</span></code></td>
+<tr class="row-even"><td><p><strong>rs_thermal</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>0.06</p></td>
+<td><p>broadband soil reflectance in the thermal range <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">emissivity</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><strong>cs</strong></td>
-<td>J kg-1 K-1</td>
-<td>double</td>
-<td>1180.0</td>
-<td>specific heat capacity of the soil</td>
+<tr class="row-odd"><td><p><strong>cs</strong></p></td>
+<td><p>J kg-1 K-1</p></td>
+<td><p>double</p></td>
+<td><p>1180.0</p></td>
+<td><p>specific heat capacity of the soil</p></td>
 </tr>
-<tr class="row-even"><td><strong>rhos</strong></td>
-<td>kg m-3</td>
-<td>double</td>
-<td>1800.0</td>
-<td>specific mass of the soil</td>
+<tr class="row-even"><td><p><strong>rhos</strong></p></td>
+<td><p>kg m-3</p></td>
+<td><p>double</p></td>
+<td><p>1800.0</p></td>
+<td><p>specific mass of the soil</p></td>
 </tr>
-<tr class="row-odd"><td><strong>CSSOIL</strong></td>
-<td>?</td>
-<td>double</td>
-<td>0.01</td>
-<td>Drag coefficient for soil Verhoef et al. (1997) <em>(from Aerodynamic)</em></td>
+<tr class="row-odd"><td><p><strong>CSSOIL</strong></p></td>
+<td><p>?</p></td>
+<td><p>double</p></td>
+<td><p>0.01</p></td>
+<td><p>Drag coefficient for soil Verhoef et al. (1997) <em>(from Aerodynamic)</em></p></td>
 </tr>
-<tr class="row-even"><td><strong>lambdas</strong></td>
-<td>J m-1 K-1</td>
-<td>double</td>
-<td>1.55</td>
-<td>heat conductivity of the soil</td>
+<tr class="row-even"><td><p><strong>lambdas</strong></p></td>
+<td><p>J m-1 K-1</p></td>
+<td><p>double</p></td>
+<td><p>1.55</p></td>
+<td><p>heat conductivity of the soil</p></td>
 </tr>
-<tr class="row-odd"><td><p class="first last" id="soil-rbs"><strong>rbs</strong></p>
+<tr class="row-odd"><td><p id="soil-rbs"><strong>rbs</strong></p>
 </td>
-<td>s m-1</td>
-<td>double</td>
-<td>10.0</td>
-<td>soil boundary layer resistance <em>(from Aerodynamic)</em></td>
+<td><p>s m-1</p></td>
+<td><p>double</p></td>
+<td><p>10.0</p></td>
+<td><p>soil boundary layer resistance <em>(from Aerodynamic)</em></p></td>
 </tr>
-<tr class="row-even"><td><strong>SMC</strong></td>
-<td>-</td>
-<td>double</td>
-<td>0.25</td>
-<td>volumetric soil moisture content in the root zone</td>
+<tr class="row-even"><td><p><strong>SMC</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>0.25</p></td>
+<td><p>volumetric soil moisture content in the root zone</p></td>
 </tr>
-<tr class="row-odd"><td><strong>BSMBrightness</strong></td>
-<td>?</td>
-<td>double</td>
-<td>0.5</td>
-<td>BSM model parameter for soil brightness</td>
+<tr class="row-odd"><td><p><strong>BSMBrightness</strong></p></td>
+<td><p>?</p></td>
+<td><p>double</p></td>
+<td><p>0.5</p></td>
+<td><p>BSM model parameter for soil brightness</p></td>
 </tr>
-<tr class="row-even"><td><strong>BSMlat</strong></td>
-<td>?</td>
-<td>double</td>
-<td>25.0</td>
-<td>BSM model parameter ‘lat’</td>
+<tr class="row-even"><td><p><strong>BSMlat</strong></p></td>
+<td><p>?</p></td>
+<td><p>double</p></td>
+<td><p>25.0</p></td>
+<td><p>BSM model parameter ‘lat’</p></td>
 </tr>
-<tr class="row-odd"><td><strong>BSMlon</strong></td>
-<td>?</td>
-<td>double</td>
-<td>45.0</td>
-<td>BSM model parameter  ‘long’</td>
+<tr class="row-odd"><td><p><strong>BSMlon</strong></p></td>
+<td><p>?</p></td>
+<td><p>double</p></td>
+<td><p>45.0</p></td>
+<td><p>BSM model parameter  ‘long’</p></td>
 </tr>
 </tbody>
 </table>
 <p>Derived variables</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><p class="first last" id="soil-gam"><strong>GAM</strong></p>
+<tr class="row-even"><td><p id="soil-gam"><strong>GAM</strong></p>
 </td>
-<td>?</td>
-<td>double</td>
-<td>~1814.4 <a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></td>
-<td>soil thermal inertia</td>
+<td><p>?</p></td>
+<td><p>double</p></td>
+<td><p>~1814.4 <a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></p></td>
+<td><p>soil thermal inertia</p></td>
 </tr>
 </tbody>
 </table>
 <p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><p class="first last" id="soil-tsold"><strong>Tsold</strong></p>
+<tr class="row-even"><td><p id="soil-tsold"><strong>Tsold</strong></p>
 </td>
-<td>ºC?</td>
-<td>[12 x 2] double</td>
-<td>20.0</td>
-<td>only if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code></td>
+<td><p>ºC?</p></td>
+<td><p>[12 x 2] double</p></td>
+<td><p>20.0</p></td>
+<td><p>only if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><strong>refl</strong></td>
-<td>-</td>
-<td>[2162 x 1] double</td>
-<td>[2162 x 1] double</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p><strong>refl</strong></p></td>
+<td><p>-</p></td>
+<td><p>[2162 x 1] double</p></td>
+<td><p>[2162 x 1] double</p></td>
+<td><div class="line-block">
 <div class="line">soil reflectance</div>
 <div class="line">in fact length == nwl</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><strong>Ts</strong></td>
-<td>ºC?</td>
-<td>[2 x 1] double</td>
-<td>[~15; ~15]</td>
-<td>initial soil surface temperature</td>
+<tr class="row-even"><td><p><strong>Ts</strong></p></td>
+<td><p>ºC?</p></td>
+<td><p>[2 x 1] double</p></td>
+<td><p>[~15; ~15]</p></td>
+<td><p>initial soil surface temperature</p></td>
 </tr>
 </tbody>
 </table>
@@ -423,7 +426,7 @@
         <a href="xyt.html" class="btn btn-neutral float-right" title="xyt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="meteo.html" class="btn btn-neutral" title="meteo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="meteo.html" class="btn btn-neutral float-left" title="meteo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -449,25 +452,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

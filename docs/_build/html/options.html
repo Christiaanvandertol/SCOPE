@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Directories" href="directories.html" />
     <link rel="prev" title="Getting started" href="getting_started.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -89,29 +91,26 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#variations-in-input">Variations in input</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rt-thermal"><code class="docutils literal notranslate"><span class="pre">rt_thermal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#calc-zo"><code class="docutils literal notranslate"><span class="pre">calc_zo</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#soilspectrum"><code class="docutils literal notranslate"><span class="pre">soilspectrum</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#soil-heat-method"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-rss-rbs"><code class="docutils literal notranslate"><span class="pre">calc_rss_rbs</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#variations-in-output">Variations in output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lite"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-ebal"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-planck"><code class="docutils literal notranslate"><span class="pre">calc_planck</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-directional"><code class="docutils literal notranslate"><span class="pre">calc_directional</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-xanthophyllabs"><code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-vert-profiles"><code class="docutils literal notranslate"><span class="pre">calc_vert_profiles</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-fluor"><code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#calc-psi"><code class="docutils literal notranslate"><span class="pre">calc_PSI</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fluorescence-model"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#apply-t-corr"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#for-users-comfort">For users’ comfort</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#verify"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#save-headers"><code class="docutils literal notranslate"><span class="pre">save_headers</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#makeplots"><code class="docutils literal notranslate"><span class="pre">makeplots</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#savecsv"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -120,9 +119,10 @@
 <li class="toctree-l1"><a class="reference internal" href="outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -195,38 +195,39 @@
             
   <div class="section" id="options">
 <h1>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h1>
-<p>Effectively this are (almost <a class="footnote-reference" href="#id3" id="id1">[1]</a> <a class="footnote-reference" href="#id4" id="id2">[2]</a>) all capabilities of the SCOPE model.</p>
+<p>Effectively this are (almost <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="footnote-reference brackets" href="#id4" id="id2">2</a>) all capabilities of the SCOPE model.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#initialized" id="id5">Initialized</a></li>
-<li><a class="reference internal" href="#rules-of-input-reading" id="id6">Rules of input reading</a><ul>
-<li><a class="reference internal" href="#simulation" id="id7"><code class="docutils literal notranslate"><span class="pre">simulation</span></code></a></li>
+<li><p><a class="reference internal" href="#initialized" id="id5">Initialized</a></p></li>
+<li><p><a class="reference internal" href="#rules-of-input-reading" id="id6">Rules of input reading</a></p>
+<ul>
+<li><p><a class="reference internal" href="#simulation" id="id7"><code class="docutils literal notranslate"><span class="pre">simulation</span></code></a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#variations-in-input" id="id8">Variations in input</a><ul>
-<li><a class="reference internal" href="#rt-thermal" id="id9"><code class="docutils literal notranslate"><span class="pre">rt_thermal</span></code></a></li>
-<li><a class="reference internal" href="#calc-zo" id="id10"><code class="docutils literal notranslate"><span class="pre">calc_zo</span></code></a></li>
-<li><a class="reference internal" href="#soilspectrum" id="id11"><code class="docutils literal notranslate"><span class="pre">soilspectrum</span></code></a></li>
-<li><a class="reference internal" href="#soil-heat-method" id="id12"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a></li>
-<li><a class="reference internal" href="#calc-rss-rbs" id="id13"><code class="docutils literal notranslate"><span class="pre">calc_rss_rbs</span></code></a></li>
+<li><p><a class="reference internal" href="#variations-in-input" id="id8">Variations in input</a></p>
+<ul>
+<li><p><a class="reference internal" href="#soilspectrum" id="id9"><code class="docutils literal notranslate"><span class="pre">soilspectrum</span></code></a></p></li>
+<li><p><a class="reference internal" href="#soil-heat-method" id="id10"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a></p></li>
+<li><p><a class="reference internal" href="#calc-rss-rbs" id="id11"><code class="docutils literal notranslate"><span class="pre">calc_rss_rbs</span></code></a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#variations-in-output" id="id14">Variations in output</a><ul>
-<li><a class="reference internal" href="#calc-ebal" id="id15"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a></li>
-<li><a class="reference internal" href="#calc-planck" id="id16"><code class="docutils literal notranslate"><span class="pre">calc_planck</span></code></a></li>
-<li><a class="reference internal" href="#calc-directional" id="id17"><code class="docutils literal notranslate"><span class="pre">calc_directional</span></code></a></li>
-<li><a class="reference internal" href="#calc-xanthophyllabs" id="id18"><code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></a></li>
-<li><a class="reference internal" href="#calc-vert-profiles" id="id19"><code class="docutils literal notranslate"><span class="pre">calc_vert_profiles</span></code></a></li>
-<li><a class="reference internal" href="#calc-fluor" id="id20"><code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code></a></li>
-<li><a class="reference internal" href="#calc-psi" id="id21"><code class="docutils literal notranslate"><span class="pre">calc_PSI</span></code></a></li>
-<li><a class="reference internal" href="#fluorescence-model" id="id22"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a></li>
-<li><a class="reference internal" href="#apply-t-corr" id="id23"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a></li>
+<li><p><a class="reference internal" href="#variations-in-output" id="id12">Variations in output</a></p>
+<ul>
+<li><p><a class="reference internal" href="#lite" id="id13"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a></p></li>
+<li><p><a class="reference internal" href="#calc-ebal" id="id14"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a></p></li>
+<li><p><a class="reference internal" href="#calc-planck" id="id15"><code class="docutils literal notranslate"><span class="pre">calc_planck</span></code></a></p></li>
+<li><p><a class="reference internal" href="#calc-directional" id="id16"><code class="docutils literal notranslate"><span class="pre">calc_directional</span></code></a></p></li>
+<li><p><a class="reference internal" href="#calc-xanthophyllabs" id="id17"><code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></a></p></li>
+<li><p><a class="reference internal" href="#calc-vert-profiles" id="id18"><code class="docutils literal notranslate"><span class="pre">calc_vert_profiles</span></code></a></p></li>
+<li><p><a class="reference internal" href="#calc-fluor" id="id19"><code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code></a></p></li>
+<li><p><a class="reference internal" href="#fluorescence-model" id="id20"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a></p></li>
+<li><p><a class="reference internal" href="#apply-t-corr" id="id21"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#for-users-comfort" id="id24">For users’ comfort</a><ul>
-<li><a class="reference internal" href="#verify" id="id25"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a></li>
-<li><a class="reference internal" href="#save-headers" id="id26"><code class="docutils literal notranslate"><span class="pre">save_headers</span></code></a></li>
-<li><a class="reference internal" href="#makeplots" id="id27"><code class="docutils literal notranslate"><span class="pre">makeplots</span></code></a></li>
+<li><p><a class="reference internal" href="#for-users-comfort" id="id22">For users’ comfort</a></p>
+<ul>
+<li><p><a class="reference internal" href="#verify" id="id23"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a></p></li>
+<li><p><a class="reference internal" href="#savecsv" id="id24"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a></p></li>
 </ul>
 </li>
 </ul>
@@ -235,12 +236,12 @@
 <p>The values have binary (or tertiary) logic thus equal to 0 or 1 (or 2).</p>
 <p>Influence on the output files is highlighted in the corresponding section <a class="reference internal" href="outfiles.html#output-files"><span class="std std-ref">Output files</span></a></p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Not all combinations can bring to the desired result</p>
+<p class="admonition-title">Note</p>
+<p>Not all combinations can bring to the desired result</p>
 </div>
 <div class="section" id="initialized">
 <h2><a class="toc-backref" href="#id5">Initialized</a><a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>: read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code> or <code class="docutils literal notranslate"><span class="pre">setoptions.m</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>: read from <code class="docutils literal notranslate"><span class="pre">setoptions.csv</span></code></p>
 </div>
 <div class="section" id="rules-of-input-reading">
 <h2><a class="toc-backref" href="#id6">Rules of input reading</a><a class="headerlink" href="#rules-of-input-reading" title="Permalink to this headline">¶</a></h2>
@@ -248,69 +249,39 @@
 <h3><a class="toc-backref" href="#id7"><code class="docutils literal notranslate"><span class="pre">simulation</span></code></a><a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h3>
 <p>Defines rules of input reading</p>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> (multiple)</p>
-<dl class="docutils">
-<dt><strong>0</strong></dt>
-<dd><strong>individual run(s)</strong>: specify one value for fixed input parameters, and an equal number (&gt; 1) of values for all parameters that vary between the runs.</dd>
-<dt><strong>1</strong></dt>
-<dd><div class="first last line-block">
-<div class="line"><strong>time series</strong> (uses text files with meteo input as time series from <em>“../data/input/dataset X”</em> with files similar to ../data/input/<a class="reference internal" href="directories/data.html#dataset-for-verification"><span class="std std-ref">dataset for_verification</span></a> specified on the <code class="docutils literal notranslate"><span class="pre">filenames</span></code> sheet of <code class="docutils literal notranslate"><span class="pre">input_data.xslx</span></code></div>
-<div class="line"><a class="reference internal" href="api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></div>
-</div>
+<dl class="simple">
+<dt><strong>0</strong></dt><dd><p><strong>individual run(s)</strong>: specify one value for fixed input parameters, and an equal number (&gt; 1) of values for all parameters that vary between the runs.</p>
 </dd>
-<dt><strong>2</strong></dt>
-<dd><strong>Lookup-Table</strong>: specify a number of values in the row of input parameters. All possible combinations of inputs will be used.</dd>
+<dt><strong>1</strong></dt><dd><p><strong>time series</strong> (uses text files with meteo input as time series from <em>“./input/dataset X”</em> with files similar to ./input/<a class="reference internal" href="directories/input.html#dataset-for-verification"><span class="std std-ref">dataset for_verification</span></a> specified in the <code class="docutils literal notranslate"><span class="pre">filenames.csv</span></code></p>
+</dd>
+<dt><strong>2</strong></dt><dd><p><strong>Lookup-Table</strong>: specify a number of values in the row of input parameters. All possible combinations of inputs will be used.</p>
+</dd>
 </dl>
 <p>Let us illustrate what the difference is in details.</p>
-<p>It is possible to specify several values in a row on <code class="docutils literal notranslate"><span class="pre">inputdata</span></code> sheet of <code class="docutils literal notranslate"><span class="pre">input_data.xslx</span></code>. Suppose we have an the following combination of input parameters. Notice, we provide two values for Cab and Cca parameters.</p>
-<div class="figure">
+<p>It is possible to specify several values in a row on <code class="docutils literal notranslate"><span class="pre">input_data.csv</span></code>. Suppose we have an the following combination of input parameters. Notice, we provide two values for Cab and Cca parameters.</p>
+<div class="figure align-default">
 <img alt="_images/simulation.bmp" src="_images/simulation.bmp" />
 </div>
 <p>If <strong>individual run(s)</strong> (<code class="docutils literal notranslate"><span class="pre">options.simulation</span> <span class="pre">==</span> <span class="pre">0</span></code>) was chosen the given combination will end up in <strong>two</strong> simulations:</p>
 <ul class="simple">
-<li>Cab=80, Cca=20</li>
-<li>Cab=40, Cca=10</li>
+<li><p>Cab=80, Cca=20</p></li>
+<li><p>Cab=40, Cca=10</p></li>
 </ul>
 <p>If  <strong>Lookup-Table</strong> (<code class="docutils literal notranslate"><span class="pre">options.simulation</span> <span class="pre">==</span> <span class="pre">2</span></code>) was chosen the given combination will end up in <strong>four</strong> simulations:</p>
 <ul class="simple">
-<li>Cab=80, Cca=20</li>
-<li>Cab=80, Cca=10</li>
-<li>Cab=40, Cca=20</li>
-<li>Cab=40, Cca=10</li>
+<li><p>Cab=80, Cca=20</p></li>
+<li><p>Cab=80, Cca=10</p></li>
+<li><p>Cab=40, Cca=20</p></li>
+<li><p>Cab=40, Cca=10</p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="variations-in-input">
 <h2><a class="toc-backref" href="#id8">Variations in input</a><a class="headerlink" href="#variations-in-input" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="rt-thermal">
-<h3><a class="toc-backref" href="#id9"><code class="docutils literal notranslate"><span class="pre">rt_thermal</span></code></a><a class="headerlink" href="#rt-thermal" title="Permalink to this headline">¶</a></h3>
-<p>Leaf and soil emissivity in thermal range</p>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<p><strong>0</strong></p>
-<blockquote>
-<div>provide emissivity values as input <a class="reference internal" href="structs/input/leafbio.html#leafbio"><span class="std std-ref">leafbio</span></a> (rho_thermal, tau_thermal), <a class="reference internal" href="structs/input/soil.html#soil"><span class="std std-ref">soil</span></a>.rs_thermal</div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd>use values from fluspect and soil at 2400 nm for the TIR range</dd>
-</dl>
-</div>
-<hr class="docutils" />
-<div class="section" id="calc-zo">
-<h3><a class="toc-backref" href="#id10"><code class="docutils literal notranslate"><span class="pre">calc_zo</span></code></a><a class="headerlink" href="#calc-zo" title="Permalink to this headline">¶</a></h3>
-<p>roughness length for momentum of the canopy (zo) and displacement height (d)</p>
-<p>Switch in <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> <a class="reference internal" href="api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
-<p><strong>0</strong></p>
-<blockquote>
-<div>zo and d values provided in the inputdata <a class="reference internal" href="structs/input/canopy.html#canopy"><span class="std std-ref">canopy</span></a></div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd>calculate zo and d from the LAI, canopy height, CD1, CR, CSSOIL (recommended if LAI changes in time series) <code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></dd>
-</dl>
-</div>
-<hr class="docutils" />
 <div class="section" id="soilspectrum">
-<h3><a class="toc-backref" href="#id11"><code class="docutils literal notranslate"><span class="pre">soilspectrum</span></code></a><a class="headerlink" href="#soilspectrum" title="Permalink to this headline">¶</a></h3>
-<p>Calculate soil reflectance or use from a file in ../data/input/<a class="reference internal" href="directories/data.html#soil-spectrum"><span class="std std-ref">soil_spectrum</span></a></p>
+<h3><a class="toc-backref" href="#id9"><code class="docutils literal notranslate"><span class="pre">soilspectrum</span></code></a><a class="headerlink" href="#soilspectrum" title="Permalink to this headline">¶</a></h3>
+<p>Calculate soil reflectance or use from a file in ./input/<a class="reference internal" href="directories/input.html#soil-spectra"><span class="std std-ref">soil_spectra</span></a></p>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 <p><strong>0</strong></p>
 <blockquote>
@@ -320,87 +291,98 @@
 <div class="line">variable name is <code class="docutils literal notranslate"><span class="pre">rsfile</span></code></div>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd>simulate soil spectrum with the BSM model (<code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code>) parameters are fixed in code</dd>
+<dl class="simple">
+<dt><strong>1</strong></dt><dd><p>simulate soil spectrum with the BSM model (<code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code>) parameters are fixed in code</p>
+</dd>
 </dl>
 </div>
 <hr class="docutils" />
 <div class="section" id="soil-heat-method">
-<h3><a class="toc-backref" href="#id12"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a><a class="headerlink" href="#soil-heat-method" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a><a class="headerlink" href="#soil-heat-method" title="Permalink to this headline">¶</a></h3>
 <p>Method of ground heat flux (G) calculation</p>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a>, <a class="reference internal" href="api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a>, <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 <p><strong>0</strong></p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">standard calculation of thermal inertia from soil characteristic</div>
-<div class="line"><a class="reference internal" href="api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> in <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></div>
+<div class="line"><a class="reference internal" href="api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> in <a class="reference internal" href="api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></div>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd><div class="first last line-block">
-<div class="line">empirically calibrated formula from soil moisture content <a class="reference internal" href="api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a> in <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></div>
+<dl>
+<dt><strong>1</strong></dt><dd><div class="line-block">
+<div class="line">empirically calibrated formula from soil moisture content <a class="reference internal" href="api/supporting.html#src.supporting.Soil_Inertia1" title="src.supporting.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a> in <a class="reference internal" href="api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></div>
 </div>
 </dd>
-<dt><strong>2</strong></dt>
-<dd><div class="first last line-block">
+<dt><strong>2</strong></dt><dd><div class="line-block">
 <div class="line">as constant fraction (0.35) of soil net radiation</div>
-<div class="line"><a class="reference internal" href="api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> in <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></div>
+<div class="line"><a class="reference internal" href="api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> in <a class="reference internal" href="api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></div>
 </div>
 </dd>
 </dl>
 </div>
 <hr class="docutils" />
 <div class="section" id="calc-rss-rbs">
-<h3><a class="toc-backref" href="#id13"><code class="docutils literal notranslate"><span class="pre">calc_rss_rbs</span></code></a><a class="headerlink" href="#calc-rss-rbs" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11"><code class="docutils literal notranslate"><span class="pre">calc_rss_rbs</span></code></a><a class="headerlink" href="#calc-rss-rbs" title="Permalink to this headline">¶</a></h3>
 <p>soil resistance for evaporation from the pore space (rss) and soil boundary layer resistance (rbs)</p>
-<p>Switch in <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+<p>Switch in <a class="reference internal" href="api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
 <p><strong>0</strong></p>
 <blockquote>
-<div>use resistance rss and rbs as provided in inputdata <a class="reference internal" href="structs/input/soil.html#soil"><span class="std std-ref">soil</span></a></div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd>calculate rss from soil moisture content and correct rbs for LAI <a class="reference internal" href="api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a></dd>
+<div><p>use resistance rss and rbs as provided in inputdata <a class="reference internal" href="structs/input/soil.html#soil"><span class="std std-ref">soil</span></a></p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>1</strong></dt><dd><p>calculate rss from soil moisture content and correct rbs for LAI <a class="reference internal" href="api/supporting.html#src.supporting.calc_rssrbs" title="src.supporting.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a></p>
+</dd>
 </dl>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="variations-in-output">
-<h2><a class="toc-backref" href="#id14">Variations in output</a><a class="headerlink" href="#variations-in-output" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> (SAIL) is executed in any valid run. Other functions may be included with these options.</p>
+<h2><a class="toc-backref" href="#id12">Variations in output</a><a class="headerlink" href="#variations-in-output" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lite">
+<h3><a class="toc-backref" href="#id13"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a><a class="headerlink" href="#lite" title="Permalink to this headline">¶</a></h3>
+<p>Switch in <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+<p><strong>0</strong></p>
+<blockquote>
+<div><p>Normal SCOPE execution</p>
+</div></blockquote>
+<p><strong>1</strong></p>
+<blockquote>
+<div><p>Truncated to 1 canopy layer</p>
+</div></blockquote>
+</div>
 <hr class="docutils" />
 <div class="section" id="calc-ebal">
-<h3><a class="toc-backref" href="#id15"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a><a class="headerlink" href="#calc-ebal" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a><a class="headerlink" href="#calc-ebal" title="Permalink to this headline">¶</a></h3>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 <p><strong>0</strong></p>
 <blockquote>
-<div>Only <a class="reference internal" href="api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> is run (with <a class="reference internal" href="api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code>)</div></blockquote>
+<div><p>Only <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> is run (with <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code>)</p>
+</div></blockquote>
 <p><strong>1</strong></p>
 <blockquote>
 <div><p>Calculate the complete energy balance.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">required for <code class="docutils literal notranslate"><span class="pre">calc_planck</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></p>
+<p class="admonition-title">Warning</p>
+<p>required for <code class="docutils literal notranslate"><span class="pre">calc_planck</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></p>
 </div>
 </div></blockquote>
 </div>
 <hr class="docutils" />
 <div class="section" id="calc-planck">
-<h3><a class="toc-backref" href="#id16"><code class="docutils literal notranslate"><span class="pre">calc_planck</span></code></a><a class="headerlink" href="#calc-planck" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15"><code class="docutils literal notranslate"><span class="pre">calc_planck</span></code></a><a class="headerlink" href="#calc-planck" title="Permalink to this headline">¶</a></h3>
 <p>Calculate spectrum of thermal radiation with spectral emissivity instead of broadband</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">only effective with <code class="docutils literal notranslate"><span class="pre">calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code></p>
+<p class="admonition-title">Warning</p>
+<p>only effective with <code class="docutils literal notranslate"><span class="pre">calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code></p>
 </div>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></p>
+<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p>
 <p><strong>0</strong></p>
 <blockquote>
-<div><a class="reference internal" href="api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a> - broadband brightness temperature is calculated in accordance to Stefan-Boltzman’s equation.</div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd><div class="first last line-block">
-<div class="line"><a class="reference internal" href="api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <a class="reference internal" href="api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a> (if <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>).</div>
+<div><p><a class="reference internal" href="api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a> - broadband brightness temperature is calculated in accordance to Stefan-Boltzman’s equation.</p>
+</div></blockquote>
+<dl>
+<dt><strong>1</strong></dt><dd><div class="line-block">
+<div class="line"><a class="reference internal" href="api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code> (if <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>).</div>
 <div class="line">Calculation is done per each wavelength thus takes more time than Stefan-Boltzman.</div>
 </div>
 </dd>
@@ -408,39 +390,38 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="calc-directional">
-<h3><a class="toc-backref" href="#id17"><code class="docutils literal notranslate"><span class="pre">calc_directional</span></code></a><a class="headerlink" href="#calc-directional" title="Permalink to this headline">¶</a></h3>
-<p>Calculate BRDF and directional temperature for many angles specified in the file: <a class="reference internal" href="directories/data.html#directional"><span class="std std-ref">directional</span></a>.</p>
+<h3><a class="toc-backref" href="#id16"><code class="docutils literal notranslate"><span class="pre">calc_directional</span></code></a><a class="headerlink" href="#calc-directional" title="Permalink to this headline">¶</a></h3>
+<p>Calculate BRDF and directional temperature for many angles specified in the file: <a class="reference internal" href="directories/input.html#directional"><span class="std std-ref">directional</span></a>.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<ul class="last simple">
-<li>only effective with <code class="docutils literal notranslate"><span class="pre">calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code></li>
-<li>Be patient, this takes some time</li>
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>only effective with <code class="docutils literal notranslate"><span class="pre">calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code></p></li>
+<li><p>Be patient, this takes some time</p></li>
 </ul>
 </div>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></p>
+<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p>
 <p><strong>0</strong></p>
 <blockquote>
 <div><ul class="simple">
 <li></li>
 </ul>
 </div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd><div class="first last line-block">
-<div class="line">struct <a class="reference internal" href="structs/output/directional.html#directional"><span class="std std-ref">directional</span></a> is loaded from the file <a class="reference internal" href="directories/data.html#directional"><span class="std std-ref">directional</span></a></div>
-<div class="line"><a class="reference internal" href="api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></div>
+<dl>
+<dt><strong>1</strong></dt><dd><div class="line-block">
+<div class="line">struct <a class="reference internal" href="structs/output/directional.html#directional"><span class="std std-ref">directional</span></a> is loaded from the file <a class="reference internal" href="directories/input.html#directional"><span class="std std-ref">directional</span></a></div>
+<div class="line"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></div>
 </div>
 </dd>
 </dl>
 </div>
 <hr class="docutils" />
 <div class="section" id="calc-xanthophyllabs">
-<h3><a class="toc-backref" href="#id18"><code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></a><a class="headerlink" href="#calc-xanthophyllabs" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17"><code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></a><a class="headerlink" href="#calc-xanthophyllabs" title="Permalink to this headline">¶</a></h3>
 <p>Calculate dynamic xanthopyll absorption (zeaxanthin) for simulating PRI (photochemical reflectance index)</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<ul class="last simple">
-<li>only effective with <code class="docutils literal notranslate"><span class="pre">calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code></li>
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>only effective with <code class="docutils literal notranslate"><span class="pre">calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code></p></li>
 </ul>
 </div>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
@@ -450,163 +431,117 @@
 <li></li>
 </ul>
 </div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd><a class="reference internal" href="api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <a class="reference internal" href="api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a> (if <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>)</dd>
+<dl class="simple">
+<dt><strong>1</strong></dt><dd><p><a class="reference internal" href="api/RTMs.html#src.RTMs.RTMz" title="src.RTMs.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code> (if <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>)</p>
+</dd>
 </dl>
 </div>
 <hr class="docutils" />
 <div class="section" id="calc-vert-profiles">
-<h3><a class="toc-backref" href="#id19"><code class="docutils literal notranslate"><span class="pre">calc_vert_profiles</span></code></a><a class="headerlink" href="#calc-vert-profiles" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18"><code class="docutils literal notranslate"><span class="pre">calc_vert_profiles</span></code></a><a class="headerlink" href="#calc-vert-profiles" title="Permalink to this headline">¶</a></h3>
 <p>Calculation of vertical profiles (per 60 canopy layers).</p>
 <p>Corresponding structure <a class="reference internal" href="structs/output/profiles.html#profiles"><span class="std std-ref">profiles</span></a></p>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> and <a class="reference internal" href="api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> and <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 <p><strong>0</strong></p>
 <blockquote>
-<div>Profiles are not calculated</div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd><div class="first last line-block">
-<div class="line">Photosynthetically active radiation (PAR) per layer is calculated in <a class="reference internal" href="api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
-<div class="line">Energy, temperature and photosynthesis fluxes per layer are calculated in <a class="reference internal" href="api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></div>
-<div class="line">Fluorescence fluxes are calculated in <a class="reference internal" href="api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a> if (<code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code>)</div>
+<div><p>Profiles are not calculated</p>
+</div></blockquote>
+<dl>
+<dt><strong>1</strong></dt><dd><div class="line-block">
+<div class="line">Photosynthetically active radiation (PAR) per layer is calculated in <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
+<div class="line">Energy, temperature and photosynthesis fluxes per layer are calculated in <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></div>
+<div class="line">Fluorescence fluxes are calculated in <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a> if (<code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code>)</div>
 </div>
 </dd>
 </dl>
 </div>
 <hr class="docutils" />
 <div class="section" id="calc-fluor">
-<h3><a class="toc-backref" href="#id20"><code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code></a><a class="headerlink" href="#calc-fluor" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19"><code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code></a><a class="headerlink" href="#calc-fluor" title="Permalink to this headline">¶</a></h3>
 <p>Calculation of fluorescence</p>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></p>
+<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p>
 <p><strong>0</strong></p>
 <blockquote>
-<div>No fluorescence</div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd><div class="first last line-block">
-<div class="line"><a class="reference internal" href="api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <a class="reference internal" href="api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a> (if <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>)</div>
+<div><p>No fluorescence</p>
+</div></blockquote>
+<dl>
+<dt><strong>1</strong></dt><dd><div class="line-block">
+<div class="line"><a class="reference internal" href="api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a> is launched in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code> (if <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>)</div>
 <div class="line">total emitted fluorescence is calculated by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></div>
 </div>
 </dd>
 </dl>
 </div>
 <hr class="docutils" />
-<div class="section" id="calc-psi">
-<h3><a class="toc-backref" href="#id21"><code class="docutils literal notranslate"><span class="pre">calc_PSI</span></code></a><a class="headerlink" href="#calc-psi" title="Permalink to this headline">¶</a></h3>
-<p>Separate fluorescence of photosystems I and II (PSI, PSII) or not</p>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
-<p><strong>0</strong></p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><strong>recommended</strong></div>
-<div class="line">treat the whole fluorescence spectrum as one spectrum (new calibrated optipar)</div>
-<div class="line">fluspect version <a class="reference internal" href="api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
-</div>
-</div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd><div class="first last line-block">
-<div class="line">differentiate PSI and PSII with Franck et al. spectra (of SCOPE 1.62 and older)</div>
-<div class="line">fluspect version <a class="reference internal" href="api/core.html#src.fluspect_B_CX" title="src.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a></div>
-<div class="line">fluorescence quantum efficiency of PSI is set to 0.2 of PSII in <a class="reference internal" href="api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></div>
-</div>
-</dd>
-</dl>
-</div>
-<hr class="docutils" />
 <div class="section" id="fluorescence-model">
-<h3><a class="toc-backref" href="#id22"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a><a class="headerlink" href="#fluorescence-model" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a><a class="headerlink" href="#fluorescence-model" title="Permalink to this headline">¶</a></h3>
 <p>Fluorescence model</p>
-<p>Switch in <a class="reference internal" href="api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<p>Switch in <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 <p><strong>0</strong></p>
 <blockquote>
-<div>empirical, with sustained NPQ (fit to Flexas’ data)</div></blockquote>
-<dl class="docutils">
-<dt><strong>1</strong></dt>
-<dd>empirical, with sigmoid for Kn: <a class="reference internal" href="api/core.html#src.biochemical" title="src.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> (Berry-Van der Tol)</dd>
-<dt><strong>2</strong></dt>
-<dd><a class="reference internal" href="api/core.html#src.biochemical_MD12" title="src.biochemical_MD12"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical_MD12()</span></code></a> (von Caemmerer-Magnani)</dd>
+<div><p>empirical, with sustained NPQ (fit to Flexas’ data)</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>1</strong></dt><dd><p>empirical, with sigmoid for Kn: <a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical" title="src.fluxes.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> (Berry-Van der Tol)</p>
+</dd>
+<dt><strong>2</strong></dt><dd><p><a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical_MD12" title="src.fluxes.biochemical_MD12"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical_MD12()</span></code></a> (von Caemmerer-Magnani)</p>
+</dd>
 </dl>
 </div>
 <hr class="docutils" />
 <div class="section" id="apply-t-corr">
-<h3><a class="toc-backref" href="#id23"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a><a class="headerlink" href="#apply-t-corr" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a><a class="headerlink" href="#apply-t-corr" title="Permalink to this headline">¶</a></h3>
 <p>correct Vcmax and rate constants for temperature</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">only effective with <code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span> <span class="pre">!=</span> <span class="pre">2</span></code> i.e. for <a class="reference internal" href="api/core.html#src.biochemical" title="src.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a></p>
+<p class="admonition-title">Warning</p>
+<p>only effective with <code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span> <span class="pre">!=</span> <span class="pre">2</span></code> i.e. for <a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical" title="src.fluxes.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a></p>
 </div>
-<p>Switch in <a class="reference internal" href="api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
-<dl class="docutils">
-<dt><strong>0</strong></dt>
-<dd><ul class="first last simple">
+<p>Switch in <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<dl class="simple">
+<dt><strong>0</strong></dt><dd><ul class="simple">
 <li></li>
 </ul>
 </dd>
-<dt><strong>1</strong></dt>
-<dd>correction in accordance to Q10 rule</dd>
+<dt><strong>1</strong></dt><dd><p>correction in accordance to Q10 rule</p>
+</dd>
 </dl>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="for-users-comfort">
-<h2><a class="toc-backref" href="#id24">For users’ comfort</a><a class="headerlink" href="#for-users-comfort" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">For users’ comfort</a><a class="headerlink" href="#for-users-comfort" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="verify">
-<h3><a class="toc-backref" href="#id25"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a><a class="headerlink" href="#verify" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a><a class="headerlink" href="#verify" title="Permalink to this headline">¶</a></h3>
 <p>verify the results (compare to saved ‘standard’ output) to test the code for the first time</p>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<dl class="docutils">
-<dt><strong>0</strong></dt>
-<dd><ul class="first last simple">
+<dl class="simple">
+<dt><strong>0</strong></dt><dd><ul class="simple">
 <li></li>
 </ul>
 </dd>
-<dt><strong>1</strong></dt>
-<dd>runs <a class="reference internal" href="api/io.html#src.+io.output_verification" title="src.+io.output_verification"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_verification()</span></code></a></dd>
+<dt><strong>1</strong></dt><dd><p>runs <code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_verification()</span></code></p>
+</dd>
 </dl>
 </div>
 <hr class="docutils" />
-<div class="section" id="save-headers">
-<h3><a class="toc-backref" href="#id26"><code class="docutils literal notranslate"><span class="pre">save_headers</span></code></a><a class="headerlink" href="#save-headers" title="Permalink to this headline">¶</a></h3>
-<p>write header lines in output files</p>
-<p>Switch in <a class="reference internal" href="api/io.html#src.+io.create_output_files" title="src.+io.create_output_files"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">create_output_files()</span></code></a></p>
-<dl class="docutils">
-<dt><strong>0</strong></dt>
-<dd><ul class="first last simple">
-<li></li>
-</ul>
+<div class="section" id="savecsv">
+<h3><a class="toc-backref" href="#id24"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a><a class="headerlink" href="#savecsv" title="Permalink to this headline">¶</a></h3>
+<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">bin_to_csv()</span></code></p>
+<dl class="simple">
+<dt><strong>0</strong></dt><dd><p>leave .bin files in output folder</p>
 </dd>
-<dt><strong>1</strong></dt>
-<dd>runs additional section in <a class="reference internal" href="api/io.html#src.+io.create_output_files" title="src.+io.create_output_files"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">create_output_files()</span></code></a> which writes two lines (names, units) in output files</dd>
+<dt><strong>1</strong></dt><dd><p>convert .bin files to .csv with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">bin_to_csv()</span></code>, delete .bin files</p>
+</dd>
 </dl>
-</div>
 <hr class="docutils" />
-<div class="section" id="makeplots">
-<h3><a class="toc-backref" href="#id27"><code class="docutils literal notranslate"><span class="pre">makeplots</span></code></a><a class="headerlink" href="#makeplots" title="Permalink to this headline">¶</a></h3>
-<p>plot the results</p>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<dl class="docutils">
-<dt><strong>0</strong></dt>
-<dd><ul class="first last simple">
-<li></li>
-</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>extra output variables that are not saved to files (see <a class="reference internal" href="structs.html#structs"><span class="std std-ref">Structs</span></a>) are available in the workspace after the model run.</p>
 </dd>
-<dt><strong>1</strong></dt>
-<dd>launches <a class="reference internal" href="api/plot.html#src.+plot.plots" title="src.+plot.plots"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">plots()</span></code></a> for the results of the last run</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>model can be varied by user, please, consult <a class="reference internal" href="api.html#api"><span class="std std-ref">API</span></a> to learn signatures of functions</p>
+</dd>
 </dl>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>extra output variables that are not saved to files (see <a class="reference internal" href="structs.html#structs"><span class="std std-ref">Structs</span></a>) are available in the workspace after the model run.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>model can be varied by user, please, consult <a class="reference internal" href="api.html#api"><span class="std std-ref">API</span></a> to learn signatures of functions</td></tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -622,7 +557,7 @@
         <a href="directories.html" class="btn btn-neutral float-right" title="Directories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="getting_started.html" class="btn btn-neutral" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -648,25 +583,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

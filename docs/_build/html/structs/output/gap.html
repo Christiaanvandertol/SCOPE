@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="leafopt" href="leafopt.html" />
     <link rel="prev" title="fluxes" href="fluxes.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -189,12 +192,12 @@
 <h1>gap<a class="headerlink" href="#gap" title="Permalink to this headline">¶</a></h1>
 <p>Probabilities of levels being observed, illuminated per layer</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is an optional struct that requires <code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> to be output, however it will be calculated anyway</p>
+<p class="admonition-title">Note</p>
+<p>This is an optional struct that requires <code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> to be output, however it will be calculated anyway</p>
 </div>
 <div class="section" id="calculated">
 <h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+<p><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
 </div>
 <div class="section" id="output-file">
 <h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
@@ -203,38 +206,38 @@
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Ps</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></div>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Ps</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Pso</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Pso</span></code></p></td>
+<td><p><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Ps,</span> <span class="pre">Po,</span> <span class="pre">Pso</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Ps,</span> <span class="pre">Po,</span> <span class="pre">Pso</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMz" title="src.RTMs.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">K</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">K</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
 </div>
 </td>
 </tr>
@@ -243,44 +246,44 @@
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields initialized in <a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="20%" />
-<col width="20%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Ps</strong></td>
-<td>-</td>
-<td>[61 x 1] double</td>
-<td>fraction of sunlit leaves per layer</td>
+<tr class="row-even"><td><p><strong>Ps</strong></p></td>
+<td><p>-</p></td>
+<td><p>[61 x 1] double</p></td>
+<td><p>fraction of sunlit leaves per layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Po</strong></td>
-<td>-</td>
-<td>[61 x 1] double</td>
-<td>fraction of observed leaves per layer</td>
+<tr class="row-odd"><td><p><strong>Po</strong></p></td>
+<td><p>-</p></td>
+<td><p>[61 x 1] double</p></td>
+<td><p>fraction of observed leaves per layer</p></td>
 </tr>
-<tr class="row-even"><td><strong>Pso</strong></td>
-<td>-</td>
-<td>[61 x 1] double</td>
-<td>fraction of sunlit and (at the same time) observed per layer</td>
+<tr class="row-even"><td><p><strong>Pso</strong></p></td>
+<td><p>-</p></td>
+<td><p>[61 x 1] double</p></td>
+<td><p>fraction of sunlit and (at the same time) observed per layer</p></td>
 </tr>
-<tr class="row-odd"><td><strong>K</strong></td>
-<td>-</td>
-<td>double</td>
-<td>extinction coefficient in direction of observer integrated over leaf angles</td>
+<tr class="row-odd"><td><p><strong>K</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>extinction coefficient in direction of observer integrated over leaf angles</p></td>
 </tr>
-<tr class="row-even"><td><strong>k</strong></td>
-<td>-</td>
-<td>double</td>
-<td>extinction coefficient in direction of sun integrated over leaf angles</td>
+<tr class="row-even"><td><p><strong>k</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>extinction coefficient in direction of sun integrated over leaf angles</p></td>
 </tr>
 </tbody>
 </table>
@@ -298,7 +301,7 @@
         <a href="leafopt.html" class="btn btn-neutral float-right" title="leafopt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="fluxes.html" class="btn btn-neutral" title="fluxes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="fluxes.html" class="btn btn-neutral float-left" title="fluxes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -324,25 +327,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

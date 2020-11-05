@@ -11,10 +11,10 @@ Initialized
 Variations
 """"""""""""
 
-canopy.lidf_ can be read from ``LIDF_file`` if its name is provided in the ``filenames`` sheet of ``input_data.xlsx``
+canopy.lidf_ can be read from ``LIDF_file`` if its name is provided in the ``filenames.csv``.
 
 .. note::
-    ``LIDF_file`` must be located in ``/data/input/leafangles`` (:ref:`directories/data:leafangles`) and have **3 header lines**.
+    ``LIDF_file`` must be located in ``./input/leafangles`` (:ref:`directories/input:leafangles`) and have **3 header lines**.
 
 canopy.zo_, canopy.d_ may be calculated by :func:`.zo_and_d` if ``options.calc_zo`` is selected
 
@@ -55,7 +55,10 @@ Used
       - ``SCOPE.m``
 
 
+The meaning of LIDFa and LIDFb in relation to the leaf angle distribution (LAD) is presented in
 
+.. figure:: ../../images/LAD.png
+    :align: center
 
 
 Fields

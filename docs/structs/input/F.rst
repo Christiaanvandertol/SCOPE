@@ -1,9 +1,9 @@
 F
 ====
 
-Filenames from ``filenames`` sheet of ``input_data.xlsx`` or ``filenames.m``
+Filenames from ``filenames.csv``.
 
-The files are located in ../:ref:`directories/data:data`
+The files are located in ./:ref:`directories/input:input`
 
 .. Note:: This is an array of 22 structs
 

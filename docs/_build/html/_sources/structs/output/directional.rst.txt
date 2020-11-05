@@ -37,7 +37,7 @@ Used
 Fields
 """""""
 
-Fields initialized in ``SCOPE.m`` (read from :ref:`directories/data:directional`)
+Fields initialized in ``SCOPE.m`` (read from :ref:`directories/input:directional`)
 
 .. list-table::
     :widths: 10 10 20 60

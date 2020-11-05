@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="fluxes" href="fluxes.html" />
     <link rel="prev" title="output structs" href="output_index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -189,139 +192,139 @@
   <div class="section" id="directional">
 <h1>directional<a class="headerlink" href="#directional" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is an optional struct that requires <code class="docutils literal notranslate"><span class="pre">options.calc_directional</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code>
+<p class="admonition-title">Note</p>
+<p>This is an optional struct that requires <code class="docutils literal notranslate"><span class="pre">options.calc_directional</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code>
 to be output and calculated</p>
 </div>
 <div class="section" id="calculated">
 <h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></p>
+<p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p>
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">psi,</span> <span class="pre">tto</span></code> initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> are extended in <a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">psi,</span> <span class="pre">tto</span></code> initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> are extended in <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code> enables <code class="docutils literal notranslate"><span class="pre">Lot_</span></code> calculation (disables of <code class="docutils literal notranslate"><span class="pre">Lot</span></code> and <code class="docutils literal notranslate"><span class="pre">BrightnessT</span></code>)</p>
 <p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code> enables <code class="docutils literal notranslate"><span class="pre">LoF_</span></code> calculation</p>
 </div>
 <div class="section" id="output-file">
 <h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../../outfiles/directional.html#directional-angles-sunangle-x-xx-degrees-dat"><span class="std std-ref">Directional/Angles (SunAngle x.xx degrees).dat</span></a></li>
+<li><p><a class="reference internal" href="../../outfiles/directional.html#directional-angles-sunangle-x-xx-degrees-dat"><span class="std std-ref">Directional/Angles (SunAngle x.xx degrees).dat</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">noa</span></code></td>
-<td><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">noa</span></code></p></td>
+<td><p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> (read from <a class="reference internal" href="../../directories/data.html#directional"><span class="std std-ref">directional</span></a>)</p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields initialized in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> (read from <a class="reference internal" href="../../directories/input.html#directional"><span class="std std-ref">directional</span></a>)</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>noa</strong></td>
-<td>-</td>
-<td>double</td>
-<td>number of observation angles</td>
+<tr class="row-even"><td><p><strong>noa</strong></p></td>
+<td><p>-</p></td>
+<td><p>double</p></td>
+<td><p>number of observation angles</p></td>
 </tr>
-<tr class="row-odd"><td><strong>psi</strong></td>
-<td>deg</td>
-<td>[333 x 1] double</td>
-<td>observation relative azimuth angles</td>
+<tr class="row-odd"><td><p><strong>psi</strong></p></td>
+<td><p>deg</p></td>
+<td><p>[333 x 1] double</p></td>
+<td><p>observation relative azimuth angles</p></td>
 </tr>
-<tr class="row-even"><td><strong>tto</strong></td>
-<td>deg</td>
-<td>[333 x 1] double</td>
-<td>observation zenith angles</td>
+<tr class="row-even"><td><p><strong>tto</strong></p></td>
+<td><p>deg</p></td>
+<td><p>[333 x 1] double</p></td>
+<td><p>observation zenith angles</p></td>
 </tr>
 </tbody>
 </table>
-<p>Fields calculated in <a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields calculated in <code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>psi</strong></td>
-<td>deg</td>
-<td>[364 x 1] double</td>
-<td>observation relative azimuth angles</td>
+<tr class="row-even"><td><p><strong>psi</strong></p></td>
+<td><p>deg</p></td>
+<td><p>[364 x 1] double</p></td>
+<td><p>observation relative azimuth angles</p></td>
 </tr>
-<tr class="row-odd"><td><strong>tto</strong></td>
-<td>deg</td>
-<td>[364 x 1] double</td>
-<td>observation zenith angles</td>
+<tr class="row-odd"><td><p><strong>tto</strong></p></td>
+<td><p>deg</p></td>
+<td><p>[364 x 1] double</p></td>
+<td><p>observation zenith angles</p></td>
 </tr>
-<tr class="row-even"><td><strong>brdf_</strong></td>
-<td>-</td>
-<td>[2162 x 364] double</td>
-<td>bidirectional reflectance distribution function</td>
+<tr class="row-even"><td><p><strong>brdf_</strong></p></td>
+<td><p>-</p></td>
+<td><p>[2162 x 364] double</p></td>
+<td><p>bidirectional reflectance distribution function</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Eoutte</strong></td>
-<td>&#160;</td>
-<td>[1 x 364] double</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p><strong>Eoutte</strong></p></td>
+<td></td>
+<td><p>[1 x 364] double</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><strong>Lot</strong></td>
-<td>&#160;</td>
-<td>[161 x 364] double</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><strong>Lot</strong></p></td>
+<td></td>
+<td><p>[161 x 364] double</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><strong>BrightnessT</strong></td>
-<td>K</td>
-<td>[1 x 364] double</td>
-<td>brightness temperature</td>
+<tr class="row-odd"><td><p><strong>BrightnessT</strong></p></td>
+<td><p>K</p></td>
+<td><p>[1 x 364] double</p></td>
+<td><p>brightness temperature</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code></td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code></p></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><strong>Lot_</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>[161 x 364] double</td>
-<td>outgoing thermal radiation in observation direction</td>
+<tr class="row-odd"><td><p><strong>Lot_</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>[161 x 364] double</p></td>
+<td><p>outgoing thermal radiation in observation direction</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><strong>LoF_</strong></td>
-<td>W m-2 um-1 sr-1</td>
-<td>[211 x 364] double</td>
-<td>outgoing fluorescence radiation in observation direction</td>
+<tr class="row-odd"><td><p><strong>LoF_</strong></p></td>
+<td><p>W m-2 um-1 sr-1</p></td>
+<td><p>[211 x 364] double</p></td>
+<td><p>outgoing fluorescence radiation in observation direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -339,7 +342,7 @@ to be output and calculated</p>
         <a href="fluxes.html" class="btn btn-neutral float-right" title="fluxes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="output_index.html" class="btn btn-neutral" title="output structs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="output_index.html" class="btn btn-neutral float-left" title="output structs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -365,25 +368,16 @@ to be output and calculated</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

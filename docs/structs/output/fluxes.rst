@@ -12,7 +12,7 @@ Calculated
 Output file
 """"""""""""
 
-- :ref:`outfiles/each:fluxes.dat`
+- :ref:`outfiles/each:fluxes.csv`
 
 if ``options.calc_vert_profiles`` & ``options.calc_ebal`` soil fluxes will also be recorded, because soil is the 61st layer.
 

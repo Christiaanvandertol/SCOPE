@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="atmo" href="atmo.html" />
     <link rel="prev" title="F" href="F.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -191,82 +194,82 @@
 <p>Solar and observation zenith and azimuth angles</p>
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+<p><a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">tts</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">tto,</span> <span class="pre">psi</span></code> -&gt; directional_angles</div>
 </div>
 </td>
-<td><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a></td>
+<td><p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tto,</span> <span class="pre">psi</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tto,</span> <span class="pre">psi</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">tts,</span> <span class="pre">tto,</span> <span class="pre">psi</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tts,</span> <span class="pre">tto,</span> <span class="pre">psi</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMz" title="src.RTMs.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tts</span></code></td>
-<td><a class="reference internal" href="../../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tts</span></code></p></td>
+<td><p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields initialized in <a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="10%" />
-<col width="50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>default</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>default</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>tts</strong></td>
-<td>deg</td>
-<td>double</td>
-<td>30.0</td>
-<td>solar zenith angle</td>
+<tr class="row-even"><td><p><strong>tts</strong></p></td>
+<td><p>deg</p></td>
+<td><p>double</p></td>
+<td><p>30.0</p></td>
+<td><p>solar zenith angle</p></td>
 </tr>
-<tr class="row-odd"><td><strong>tto</strong></td>
-<td>deg</td>
-<td>double</td>
-<td>0.0</td>
-<td>observer zenith angle</td>
+<tr class="row-odd"><td><p><strong>tto</strong></p></td>
+<td><p>deg</p></td>
+<td><p>double</p></td>
+<td><p>0.0</p></td>
+<td><p>observer zenith angle</p></td>
 </tr>
-<tr class="row-even"><td><strong>psi</strong></td>
-<td>deg</td>
-<td>double</td>
-<td>90.0</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p><strong>psi</strong></p></td>
+<td><p>deg</p></td>
+<td><p>double</p></td>
+<td><p>90.0</p></td>
+<td><div class="line-block">
 <div class="line">azimuthal difference between solar and observation angle</div>
 <div class="line">relative azimuth angle</div>
 </div>
@@ -288,7 +291,7 @@
         <a href="atmo.html" class="btn btn-neutral float-right" title="atmo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="F.html" class="btn btn-neutral" title="F" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="F.html" class="btn btn-neutral float-left" title="F" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -314,25 +317,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

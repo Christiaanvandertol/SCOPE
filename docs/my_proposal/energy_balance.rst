@@ -7,7 +7,6 @@ Definition
 '''''''''''''
 
 Net radiation (Rn):
-.. http://www.indiana.edu/~geog109/topics/04_radiation/4c-RadiationBalance_nf.pdf
 
 >>> Rn = (SW_in - SW_out) + (LW_in - LW_out)
 

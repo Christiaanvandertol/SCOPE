@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="internal structs" href="../internal/internal_index.html" />
     <link rel="prev" title="rad" href="rad.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../outfiles.html">Output files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">Brief history of the model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrieval.html">Retrieval (Model inversion)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programmer Reference</span></p>
@@ -188,107 +191,107 @@
   <div class="section" id="thermal">
 <h1>thermal<a class="headerlink" href="#thermal" title="Permalink to this headline">¶</a></h1>
 <p>Leaf, soil and air temperatures</p>
-<p>Fields are initialized by <a class="reference internal" href="../../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
+<p>Fields are initialized by <a class="reference internal" href="../../api/IO.html#src.IO.initialize_output_structures" title="src.IO.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
 <div class="section" id="calculated">
 <h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<p><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 </div>
 <div class="section" id="output-file">
 <h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../../outfiles/each.html#surftemp-dat"><span class="std std-ref">surftemp.dat</span></a></li>
-<li><a class="reference internal" href="../../outfiles/each.html#aerodyn-dat"><span class="std std-ref">aerodyn.dat</span></a></li>
+<li><p><a class="reference internal" href="../../outfiles/each.html#fluxes-csv"><span class="std std-ref">fluxes.csv</span></a></p></li>
+<li><p><span class="xref std std-ref">outfiles/each:aerodyn.dat</span></p></li>
 </ul>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="75%" />
-<col width="25%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>user</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Tcu,</span> <span class="pre">Tch,</span> <span class="pre">Ts(1)</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a> (if <code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code>) -&gt; <a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.calc_brdf" title="src.calc_brdf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code></a> (else) -&gt; <a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Tcu,</span> <span class="pre">Tch,</span> <span class="pre">Ts(1)</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code> (if <code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code>) -&gt; <a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_brdf()</span></code> (else) -&gt; <a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Tcu,</span> <span class="pre">Tch,</span> <span class="pre">Ts(1),</span> <span class="pre">Ts(2)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> (if <code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code>) -&gt; <a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Tcu,</span> <span class="pre">Tch,</span> <span class="pre">Ts(1),</span> <span class="pre">Ts(2)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code> (if <code class="docutils literal notranslate"><span class="pre">options.calc_planck</span></code>) -&gt; <a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields added in <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
-<table border="1" class="colwidths-given docutils">
+<p>Fields added in <a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>variable</td>
-<td>units</td>
-<td>type</td>
-<td>description</td>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>type</p></td>
+<td><p>description</p></td>
 </tr>
-<tr class="row-even"><td><strong>Tcave</strong></td>
-<td>ºC</td>
-<td>double</td>
-<td>canopy weighted average temperature</td>
+<tr class="row-even"><td><p><strong>Tcave</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>double</p></td>
+<td><p>canopy weighted average temperature</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Tsave</strong></td>
-<td>ºC</td>
-<td>double</td>
-<td>soil weighted average temperature</td>
+<tr class="row-odd"><td><p><strong>Tsave</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>double</p></td>
+<td><p>soil weighted average temperature</p></td>
 </tr>
-<tr class="row-even"><td><strong>raa</strong></td>
-<td>s m-1</td>
-<td>double</td>
-<td>total aerodynamic resistance above canopy</td>
+<tr class="row-even"><td><p><strong>raa</strong></p></td>
+<td><p>s m-1</p></td>
+<td><p>double</p></td>
+<td><p>total aerodynamic resistance above canopy</p></td>
 </tr>
-<tr class="row-odd"><td><strong>rawc</strong></td>
-<td>s m-1</td>
-<td>double</td>
-<td>canopy total aerodynamic resistance below canopy</td>
+<tr class="row-odd"><td><p><strong>rawc</strong></p></td>
+<td><p>s m-1</p></td>
+<td><p>double</p></td>
+<td><p>canopy total aerodynamic resistance below canopy</p></td>
 </tr>
-<tr class="row-even"><td><strong>raws</strong></td>
-<td>s m-1</td>
-<td>double</td>
-<td>soil total aerodynamic resistance below canopy</td>
+<tr class="row-even"><td><p><strong>raws</strong></p></td>
+<td><p>s m-1</p></td>
+<td><p>double</p></td>
+<td><p>soil total aerodynamic resistance below canopy</p></td>
 </tr>
-<tr class="row-odd"><td><strong>ustar</strong></td>
-<td>m s-1</td>
-<td>double</td>
-<td>friction velocity</td>
+<tr class="row-odd"><td><p><strong>ustar</strong></p></td>
+<td><p>m s-1</p></td>
+<td><p>double</p></td>
+<td><p>friction velocity</p></td>
 </tr>
-<tr class="row-even"><td><strong>Ts</strong></td>
-<td>ºC</td>
-<td>[2 x 1] double</td>
-<td>sunlit and shaded soil temperature</td>
+<tr class="row-even"><td><p><strong>Ts</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>[2 x 1] double</p></td>
+<td><p>sunlit and shaded soil temperature</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Ta</strong></td>
-<td>ºC</td>
-<td>double</td>
-<td>air temperature as in input</td>
+<tr class="row-odd"><td><p><strong>Ta</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>double</p></td>
+<td><p>air temperature as in input</p></td>
 </tr>
-<tr class="row-even"><td><strong>Tcu</strong></td>
-<td>ºC</td>
-<td>[13 x 36 x 60] double</td>
-<td>sunlit leaves canopy temperature</td>
+<tr class="row-even"><td><p><strong>Tcu</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>[13 x 36 x 60] double</p></td>
+<td><p>sunlit leaves canopy temperature</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Tch</strong></td>
-<td>ºC</td>
-<td>[60 x 1] double</td>
-<td>shaded leaves canopy temperature</td>
+<tr class="row-odd"><td><p><strong>Tch</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>[60 x 1] double</p></td>
+<td><p>shaded leaves canopy temperature</p></td>
 </tr>
 </tbody>
 </table>
@@ -306,7 +309,7 @@
         <a href="../internal/internal_index.html" class="btn btn-neutral float-right" title="internal structs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="rad.html" class="btn btn-neutral" title="rad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="rad.html" class="btn btn-neutral float-left" title="rad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -332,25 +335,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -1,14 +1,55 @@
 ``options.calc_fluo``
 =======================
 
-fluorescence.dat
+fluorescence_scalars.csv
+---------------------------
+
+rows - time (simulation number)
+
+columns - variables
+
+.. list-table::
+    :widths: 20 20 60
+
+    * - variable
+      - units
+      - description
+    * - **F_1stpeak**
+      - W m-2 um-1 sr-1
+      - rad.F685
+    * - **wl_1stpeak**
+      - nm
+      - rad.wl685
+    * - **F_2ndpeak**
+      - W m-2 um-1 sr-1
+      - rad.F740
+    * - **wl_2ndpeak**
+      - nm
+      - rad.wl740
+    * - **F687**
+      - W m-2 um-1 sr-1
+      - rad.F687
+    * - **F760**
+      - W m-2 um-1 sr-1
+      - rad.F760
+    * - **LFtot**
+      - W m-2 um-1 sr-1
+      - rad.LoutF
+    * - **EFtot**
+      - W m-2
+      - rad.EoutF
+    * - **EFtot_RC**
+      - W m-2
+      - rad.EoutFrc
+
+fluorescence.csv
 -------------------
 
 .. Note:: ``options.calc_fluor``
 
 rows - time (simulation number)
 
-columns - fluorescence from both photosystems in observation direction
+columns - wl 640:1:850 nm
 
 .. list-table::
     :widths: 20 20 60
@@ -20,16 +61,15 @@ columns - fluorescence from both photosystems in observation direction
       - W m-2 um-1 sr-1
       - fluorescence per wavelength in observation direction
 
-fluorescence_emitted_by_all_leaves.dat
------------------------------------------
+
+sigmaF.csv
+-------------------
 
 .. Note:: ``options.calc_fluor``
 
 rows - time (simulation number)
 
-columns - total emitted fluorescence by all leaves.
-Within canopy scattering / re-absorption is omitted.
-Within leaf scattering / re-absorption is taken into account.
+columns - wl 640:1:850 nm
 
 .. list-table::
     :widths: 20 20 60
@@ -37,41 +77,18 @@ Within leaf scattering / re-absorption is taken into account.
     * - variable
       - units
       - description
-    * - **Fem_**
-      - W m-2 um-1
-      - hemispherical emitted fluorescence by all leaves
+    * - **sigmaF**
+      - sr-1
+      - escape probability
 
-
-fluorescence_emitted_by_all_photosystems.dat
------------------------------------------------
-
-.. Note:: ``options.calc_fluor``
-
-rows - time (simulation number)
-
-columns - total emitted fluorescence by all photosystems for wavelengths
-Within canopy scattering / re-absorption is omitted.
-Within leaf scattering / re-absorption is omitted.
-
-
-.. list-table::
-    :widths: 20 20 60
-
-    * - variable
-      - units
-      - description
-    * - **Femtot**
-      - W m-2 um-1
-      - hemispherical emitted fluorescence by all photosystems per wavelengths (excluding leaf and canopy re-absorption and scattering)
-
-fluorescence_hemis.dat
+fluorescence_hemis.csv
 ------------------------
 
 .. Note:: ``options.calc_fluor``
 
 rows - time (simulation number)
 
-columns - top of canopy (TOC) hemispherical fluorescence
+columns - wl 640:1:850 nm
 
 .. list-table::
     :widths: 20 20 60
@@ -79,18 +96,17 @@ columns - top of canopy (TOC) hemispherical fluorescence
     * - variable
       - units
       - description
-    * - **Fhem_**
+    * - **EoutF_**
       - W m-2 um-1
-      - TOC hemispherical fluorescence
+      - TOC hemispherically integrated fluorescence
 
-fluorescence_scattered.dat
+
+Lo_spectrum_inclF.csv
 -----------------------------
 
-.. Note:: ``options.calc_fluor``
-
 rows - time (simulation number)
 
-columns - top of canopy (TOC) fluorescence contribution from leaves and soil after scattering
+columns - wl number (2162)
 
 .. list-table::
     :widths: 20 20 60
@@ -98,86 +114,6 @@ columns - top of canopy (TOC) fluorescence contribution from leaves and soil aft
     * - variable
       - units
       - description
-    * - **sum(LoF_scattered) + sum(LoF_soil)**
+    * - **Lototf_**
       - W m-2 um-1 sr-1
-      - TOC directional fluorescence from leaves and soil after scattering
-
-
-fluorescence_shaded.dat
---------------------------
-
-.. Note:: ``options.calc_fluor``
-
-rows - time (simulation number)
-
-columns - top of canopy (TOC) fluorescence contribution from shaded leaves in observer direction per wavelengths
-
-.. list-table::
-    :widths: 20 20 60
-
-    * - variable
-      - units
-      - description
-    * - **LoF_shaded**
-      - W m-2 um-1 sr-1
-      - TOC fluorescence from shaded leaves in observer direction
-
-
-fluorescence_sunlit.dat
--------------------------
-
-.. Note:: ``options.calc_fluor``
-
-rows - time (simulation number)
-
-columns - top of canopy (TOC) fluorescence contribution from sunlit leaves in observer direction per wavelengths
-
-.. list-table::
-    :widths: 20 20 60
-
-    * - variable
-      - units
-      - description
-    * - **LoF_sunlit**
-      - W m-2 um-1 sr-1
-      - TOC fluorescence from sunlit leaves in observer direction
-
-
-fluorescencePSI.dat
-----------------------
-
-.. Note:: ``options.calc_fluor`` && ``options.calc_PSI``
-
-rows - time (simulation number)
-
-columns - fluorescence of photosystem I (PSI) per wavelength in observation direction
-
-.. list-table::
-    :widths: 20 20 60
-
-    * - variable
-      - units
-      - description
-    * - **LoF1_**
-      - W m-2 um-1 sr-1
-      - fluorescence of PSI per wavelength in observation direction
-
-
-fluorescencePSII.dat
-----------------------
-
-.. Note:: ``options.calc_fluor`` && ``options.calc_PSI``
-
-rows - time (simulation number)
-
-columns - fluorescence of photosystem II (PSII) per wavelength in observation direction
-
-.. list-table::
-    :widths: 20 20 60
-
-    * - variable
-      - units
-      - description
-    * - **LoF2_**
-      - W m-2 um-1 sr-1
-      - fluorescence of PSII per wavelength in observation direction
+      - upwelling radiance in observation direction including fluorescence
