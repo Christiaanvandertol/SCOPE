@@ -6,21 +6,14 @@ Getting started
 0. Software requirements
 --------------------------
 
-The model SCOPE_v1.73 is written in Matlab R2015b running on a Windows operating system. We took care not to use functions that are available in all recent Matlab versions, but we cannot give any warranty that it works under other operating systems and other Matlab versions.
+The model SCOPE is written in Matlab R2015b running on a Windows operating system. We took care not to use functions that are available in all recent Matlab versions, but we cannot give any warranty that it works under other operating systems and other Matlab versions.
 
-.. warning::
-    If you do **not** have Matlab on your computer you can use ``SCOPE.exe`` with `Matlab Runtime`_ **only R2019a (version 9.6)**
-
-    Compiled version ``SCOPE.exe`` can be run only with the Excel file input (``input_data.xlsx``).
-
-
-.. _Matlab Runtime: https://nl.mathworks.com/products/compiler/matlab-runtime.html
 
 SCOPE consists of several scripts and functions (modules), which can be used separately or as parts of the integrated SCOPE model (``SCOPE.m``).
 
 When the modules are used separately, then it is important to provide input in the structures specified in :ref:`structs:structs`.
 
-When the integrated model is called, then the input is automatically loaded from the spreadsheet :ref:`directories/scope:``input_data.xlsx``` and from the files specified in ./:ref:`directories/data:data`/input.
+When the integrated model is called, then the input is automatically loaded from the csv and other files located in ./:ref:`directories/input:input`/
 
 Basic knowledge of the use of Matlab is required to operate the model.
 
@@ -36,8 +29,7 @@ Unpack the model, and **leave the directory structure intact**.
 ------------------------------
 Run the model once, before modifying the parameters and input. It will check whether the software works under your system. The model runs with an example data set (``options.verify``), and the output is automatically compared to output that it should produce. If there is any difference in the results, messages will show up.
 
-* Navigate to the directory where the matlab code is
-    ./SCOPE_v1.73/:ref:`directories/scope:src`
+* Navigate to the directory where the ``SCOPE.m`` is (root directory)
 * Open ``SCOPE.m`` in Matlab
 * in Matlab command window type:
     .. code-block:: matlab
@@ -48,42 +40,26 @@ Run the model once, before modifying the parameters and input. It will check whe
 Running the model may take a while because almost all options are switched on. If the output of the model is not as expected, then messages will appear. There will also be graphs appearing showing the freshly produced output together with the expected output. If all is ok then no graphs or warnings are produced.
 
 
-3.	Set the input in ``input_data.xlsx``
+3.	Set the input in csv files
 ---------------------------------------------
 
-Main input file is ``input_data.xlsx`` with 4 sheets is located in ./SCOPE_v1.73. In the documentation we refer to this file, although text alternatives are also possible.
-
-.. Note::
-    If Excel is not available, it is possible to use input from text files (.m and .txt). See **alternative**.
-
-    To specify which input to use (text or excel) comment / uncomment lines in ``set_parameter_filenames.m` with ``%`` sign.
-
-.. Warning::
-    Compiled version ``SCOPE.exe`` can be run only with the Excel file input (``input_data.xlsx``).
+Main input files - ``filenames.csv, input_data.scv, setoptions.csv`` (former excel sheets) are located in ``./input``.
 
 .. list-table::
-    :widths: 15 70 15
+    :widths: 30 70
     :header-rows: 1
     :stub-columns: 1
 
-    * - sheet (tab)
+    * - file
       - content
-      - alternative
-    * - readme
-      - | sheets description of ``input_data.xlsx``
-        | explanation of leaf inclination distribution function (LIDF) parameters
-        | recommended values for plan functional types (PFTs)
-        | some parameter ranges
-      - \-
     * - options
       - :ref:`options:Options`
-      - ``setoptions.m``
     * - filenames
       - filenames for current simulation and for time-series
-      - ``filenames.m``
     * - inputdata
       - values for :ref:`structs/input/input_index:input structs`
-      - ``inputdata.txt``
+    * - mSCOPE
+      - leaf traits per canopy layer: *optional* only used when ``options.mSCOPE == 1``
 
 To find out ranges and units of input parameters take a look into :ref:`structs/input/input_index:input structs`.
 
@@ -115,6 +91,4 @@ To plot the output either select ``options.makeplots`` or use function from :fun
 
 All functions are documented within the code and also at :ref:`api:API`.
 
-For any questions, please, use SCOPE_model SCOPE_model_ group.
-
-.. _SCOPE_model: https://groups.google.com/forum/?fromgroups#!forum/scope_model
+For any questions, please, use github issues.

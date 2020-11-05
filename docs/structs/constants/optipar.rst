@@ -8,12 +8,12 @@ Concentration * SAC
 Initialized
 """"""""""""
 
-``SCOPE.m``: read from :ref:`directories/data:fluspect_parameters`
+``SCOPE.m``: read from :ref:`directories/input:fluspect_parameters`
 
 Variations
 """"""""""""
 
-Different files (corresponding to PROSPECT versions) from :ref:`directories/data:fluspect_parameters` can be selected on ``filenames`` sheet, ``leaf_files`` cell in ``input_data.xlsx`` or uncomment lines directly in ``SCOPE.m`` (~ 170)
+Different files (corresponding to PROSPECT versions) from :ref:`directories/input:fluspect_parameters` can be selected in ``filenames.csv`` (``leaf_files`` cell) or uncomment lines directly in ``SCOPE.m`` (~ 170)
 
 Used
 """""

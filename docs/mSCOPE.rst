@@ -33,7 +33,7 @@ In the main folder, you will find
     - SCOPE and mSCOPE presentations
 
 - inputdata
-    - input is the same as the original SCOPE: :ref:`directories/data:input`
+    - input is the same as the original SCOPE: :ref:`directories/input:input`
 
 - output
     .. Note:: the output is saved in the directory

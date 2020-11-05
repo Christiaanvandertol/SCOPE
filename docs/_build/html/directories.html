@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SCOPE_v1.73" href="directories/scope.html" />
+    <link rel="next" title="src" href="directories/src.html" />
     <link rel="prev" title="Options" href="options.html" /> 
 </head>
 
@@ -86,8 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Directories</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="directories/scope.html">SCOPE_v1.73</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directories/data.html">data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directories/src.html">src</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directories/input.html">input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directories/output.html">Output</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="outfiles.html">Output files</a></li>
@@ -171,35 +172,28 @@
 <h1>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="directories/scope.html">SCOPE_v1.73</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="directories/scope.html#files">Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="directories/scope.html#input-data-xlsx"><code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="directories/src.html">src</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directories/input.html">input</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="directories/input.html#input-data-files">Input data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directories/input.html#directories">Directories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#dataset-dat">dataset dat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#dataset-for-verification">dataset for_verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#dataset-mscope-ts">dataset mSCOPE_ts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="directories/input.html#meteo-ec-csv">meteo_ec_csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="directories/input.html#vegetation-retrieved-csv">vegetation_retrieved_csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="directories/input.html#mscope-csv">mSCOPE_csv</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="directories/scope.html#directories">Directories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="directories/scope.html#output">output</a></li>
-<li class="toctree-l3"><a class="reference internal" href="directories/scope.html#src">src</a></li>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#directional">directional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#fluspect-parameters">fluspect_parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#leafangles">leafangles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#radiationdata">radiationdata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="directories/input.html#soil-spectra">soil_spectra</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="directories/data.html">data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="directories/data.html#input">input</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="directories/data.html#dataset-for-verification">dataset for_verification</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="directories/data.html#meteo-ec-csv">meteo_ec_csv</a></li>
-<li class="toctree-l4"><a class="reference internal" href="directories/data.html#vegetation-retrieved-csv">vegetation_retrieved_csv</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="directories/data.html#directional">directional</a></li>
-<li class="toctree-l3"><a class="reference internal" href="directories/data.html#fluspect-parameters">fluspect_parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="directories/data.html#leafangles">leafangles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="directories/data.html#radiationdata">radiationdata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="directories/data.html#soil-spectrum">soil_spectrum</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="directories/data.html#measured">measured</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="directories/output.html">Output</a></li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -207,36 +201,36 @@
 <p>Do not change directory names or file names inside them!</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SCOPE-master.zip
-├── SCOPE_v1.73
-│   ├── output
-│   │   ├── example_directional_run
-│   │   │    ├── Directional
-│   │   │    └── Parameters
-│   │   └── verificationdata
-│   │        └── Parameters
-│   └── src
-│       ├── +equations
-│       ├── +helpers
-│       ├── +io
-│       ├── +plot
-│       └── not_used
-├── data
-│   ├── input
-│   │   ├── dataset for_verification
-│   │   ├── directional
-│   │   ├── fluspect_parameters
-│   │   ├── leafangles
-│   │   ├── PFT
-│   │   ├── radiationdata
-│   │   └── soil_spectrum
-│   └── measured
-│       ├── dataset Duke
-│       ├── dataset for_verification
-│       ├── dataset Merzenhausen
-│       ├── dataset reading 1
-│       ├── dataset reading 2
-│       └── dataset yarnton 2013
-└──  docs
+│
+├── SCOPE.m
+├── set_parameter_filenames.csv
+│
+├── src
+│   ├── +lut
+│   ├── fluxes
+│   ├── IO
+│   ├── RTMs
+│   └── supporting
+│
+├── input
+│   ├── dataset dat
+│   ├── dataset for_verification
+│   ├── dataset mSCOPE_ts
+│   ├── directional
+│   ├── fluspect_parameters
+│   ├── leafangles
+│   ├── radiationdata
+│   ├── soil_spectra
+│   │
+│   ├── filenames.csv
+│   ├── input_data_default.csv
+│   ├── mSCOPE.csv
+│   └── setoptions.csv
+│
+├── output
+│   └── verificationdata
+│
+└── docs
 </pre></div>
 </div>
 </div>
@@ -249,7 +243,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="directories/scope.html" class="btn btn-neutral float-right" title="SCOPE_v1.73" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="directories/src.html" class="btn btn-neutral float-right" title="src" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="options.html" class="btn btn-neutral float-left" title="Options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

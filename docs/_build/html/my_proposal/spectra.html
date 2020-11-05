@@ -94,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="energy_balance.html">Energy balance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vertical_profiles.html">Vertical profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="brdf.html">BRDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html">Time series</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
@@ -196,7 +197,7 @@
 </div>
 <div class="section" id="scope-soil">
 <h2>SCOPE soil<a class="headerlink" href="#scope-soil" title="Permalink to this headline">¶</a></h2>
-<p>SCOPE simulates soil reflectance (optical domain) with <a class="reference internal" href="../api/core.html#src.BSM" title="src.BSM"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code></a> (if <code class="docutils literal notranslate"><span class="pre">options.soilspectrum</span></code>). Alternatively, a file with soil reflectance spectrum might be provided (several options are in ./data/input/soil_spectrum/soilnew.txt*).</p>
+<p>SCOPE simulates soil reflectance (optical domain) with <a class="reference internal" href="../api/RTMs.html#src.RTMs.BSM" title="src.RTMs.BSM"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code></a> (if <code class="docutils literal notranslate"><span class="pre">options.soilspectrum</span></code>). Alternatively, a file with soil reflectance spectrum might be provided (several options are in ./data/input/soil_spectrum/soilnew.txt*).</p>
 <p>On the graph you can see the difference.</p>
 <div class="figure align-default">
 <img alt="../_images/soil_reflectance.png" src="../_images/soil_reflectance.png" />
@@ -204,7 +205,7 @@
 </div>
 <div class="section" id="scope-leaf">
 <h2>SCOPE leaf<a class="headerlink" href="#scope-leaf" title="Permalink to this headline">¶</a></h2>
-<p>SCOPE model (in particular <a class="reference internal" href="../api/core.html#src.fluspect_B_CX_PSI_PSII_combined" title="src.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a>) works similar to PROSPECT model and simulated leaf reflectance, transmittance and absorption (the rest). Bonus part is fluorescence.</p>
+<p>SCOPE model (in particular <a class="reference internal" href="../api/RTMs.html#src.RTMs.fluspect_B_CX_PSI_PSII_combined" title="src.RTMs.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a>) works similar to PROSPECT model and simulated leaf reflectance, transmittance and absorption (the rest). Bonus part is fluorescence.</p>
 <div class="figure align-default">
 <img alt="../_images/leaf_spectra.png" src="../_images/leaf_spectra.png" />
 </div>
@@ -219,13 +220,13 @@ Have a suggestion - write to us <a class="reference internal" href="../support.h
 <h2>SCOPE canopy<a class="headerlink" href="#scope-canopy" title="Permalink to this headline">¶</a></h2>
 <p>SCOPE represents canopy as 60 elementary layers of leaves of two types: sunlit (then we account for leaf inclinations) and shaded.</p>
 <p>Leaf and soil optical properties are taken into account here.</p>
-<p>Optical properties are calculated by <a class="reference internal" href="../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> and thermal properties by either <a class="reference internal" href="../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a> then the output is radiance (as on the graph) or <a class="reference internal" href="../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a> - only integrated fluxes.</p>
+<p>Optical properties are calculated by <a class="reference internal" href="../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> and thermal properties by either <a class="reference internal" href="../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a> then the output is radiance (as on the graph) or <a class="reference internal" href="../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a> - only integrated fluxes.</p>
 <div class="figure align-default">
 <img alt="../_images/canopy.png" src="../_images/canopy.png" />
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>default configuration uses Stefan-Boltzmann’s law (<a class="reference internal" href="../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a>) that will output <strong>spectrally integrated</strong> thermal fluxes instead of per wavelength, in this case:</p>
+<p>default configuration uses Stefan-Boltzmann’s law (<a class="reference internal" href="../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a>) that will output <strong>spectrally integrated</strong> thermal fluxes instead of per wavelength, in this case:</p>
 <ul class="simple">
 <li><p>integral of hemispherical thermal radiance is 432.5 W m-2</p></li>
 <li><p>integral of direct radiance 140.4 W m-2</p></li>

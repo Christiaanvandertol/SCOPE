@@ -18,7 +18,7 @@ Influence on the output files is highlighted in the corresponding section :ref:`
 Initialized
 """"""""""""
 
-``SCOPE.m``: read from ``input_data.xlsx`` or ``setoptions.m``
+``SCOPE.m``: read from ``setoptions.csv``
 
 
 Rules of input reading
@@ -35,14 +35,14 @@ Switch in ``SCOPE.m`` (multiple)
     **individual run(s)**: specify one value for fixed input parameters, and an equal number (> 1) of values for all parameters that vary between the runs.
 
 **1**
-    **time series** (uses text files with meteo input as time series from *"../data/input/dataset X"* with files similar to ../data/input/:ref:`directories/data:dataset for_verification` specified on the ``filenames`` sheet of ``input_data.xslx``
+    **time series** (uses text files with meteo input as time series from *"./input/dataset X"* with files similar to ./input/:ref:`directories/input:dataset for_verification` specified in the ``filenames.csv``
 
 **2**
     **Lookup-Table**: specify a number of values in the row of input parameters. All possible combinations of inputs will be used.
 
 Let us illustrate what the difference is in details.
 
-It is possible to specify several values in a row on ``inputdata`` sheet of ``input_data.xslx``. Suppose we have an the following combination of input parameters. Notice, we provide two values for Cab and Cca parameters.
+It is possible to specify several values in a row on ``input_data.csv``. Suppose we have an the following combination of input parameters. Notice, we provide two values for Cab and Cca parameters.
 
 .. figure:: ./images/simulation.bmp
 
@@ -64,46 +64,10 @@ If  **Lookup-Table** (``options.simulation == 2``) was chosen the given combinat
 Variations in input
 """""""""""""""""""""
 
-``rt_thermal``
------------------------
-
-Leaf and soil emissivity in thermal range
-
-Switch in ``SCOPE.m``
-
-**0**
-
-    provide emissivity values as input :ref:`structs/input/leafbio:leafbio` (rho_thermal, tau_thermal), :ref:`structs/input/soil:soil`.rs_thermal
-
-**1**
-    use values from fluspect and soil at 2400 nm for the TIR range
-
-
---------------------------------
-
-
-``calc_zo``
------------------------
-
-roughness length for momentum of the canopy (zo) and displacement height (d)
-
-Switch in :func:`.select_input` :func:`.load_timeseries`
-
-**0**
-
-     zo and d values provided in the inputdata :ref:`structs/input/canopy:canopy`
-
-**1**
-    calculate zo and d from the LAI, canopy height, CD1, CR, CSSOIL (recommended if LAI changes in time series) :func:`zo_and_d`
-
-
---------------------------------
-
-
 ``soilspectrum``
 -----------------------
 
-Calculate soil reflectance or use from a file in ../data/input/:ref:`directories/data:soil_spectrum`
+Calculate soil reflectance or use from a file in ./input/:ref:`directories/input:soil_spectra`
 
 Switch in ``SCOPE.m``
 
@@ -166,7 +130,18 @@ Switch in :func:`.select_input`
 Variations in output
 """""""""""""""""""""
 
-:func:`.RTMo` (SAIL) is executed in any valid run. Other functions may be included with these options.
+``lite``
+-----------------------
+
+Switch in :func:`.RTMo`
+
+**0**
+
+    Normal SCOPE execution
+
+**1**
+
+    Truncated to 1 canopy layer
 
 --------------------------------
 
@@ -213,7 +188,7 @@ Switch in ``SCOPE.m``, :func:`.calc_brdf`
 ``calc_directional``
 -----------------------
 
-Calculate BRDF and directional temperature for many angles specified in the file: :ref:`directories/data:directional`.
+Calculate BRDF and directional temperature for many angles specified in the file: :ref:`directories/input:directional`.
 
 .. Warning::
     - only effective with ``calc_ebal == 1``
@@ -226,7 +201,7 @@ Switch in ``SCOPE.m``, :func:`.calc_brdf`
     -
 
 **1**
-    | struct :ref:`structs/output/directional:directional` is loaded from the file :ref:`directories/data:directional`
+    | struct :ref:`structs/output/directional:directional` is loaded from the file :ref:`directories/input:directional`
     | :func:`.calc_brdf` is launched in ``SCOPE.m``
 
 
@@ -293,28 +268,6 @@ Switch in ``SCOPE.m``, :func:`.calc_brdf`
 
 --------------------------------
 
-``calc_PSI``
------------------------
-
-Separate fluorescence of photosystems I and II (PSI, PSII) or not
-
-Switch in ``SCOPE.m``, :func:`.select_input`
-
-**0**
-
-    | **recommended**
-    | treat the whole fluorescence spectrum as one spectrum (new calibrated optipar)
-    | fluspect version :func:`.fluspect_B_CX_PSI_PSII_combined`
-
-**1**
-    | differentiate PSI and PSII with Franck et al. spectra (of SCOPE 1.62 and older)
-    | fluspect version :func:`.fluspect_B_CX`
-    | fluorescence quantum efficiency of PSI is set to 0.2 of PSII in :func:`.select_input`
-
-
---------------------------------
-
-
 ``Fluorescence_model``
 -----------------------
 
@@ -334,8 +287,6 @@ Switch in :func:`.ebal`
 
 
 --------------------------------
-
-
 
 ``apply_T_corr``
 -----------------------
@@ -376,35 +327,20 @@ Switch in ``SCOPE.m``
 --------------------------------
 
 
-``save_headers``
+``saveCSV``
 -----------------------
 
-write header lines in output files
-
-Switch in :func:`.create_output_files`
+Switch in ``SCOPE.m``, :func:`bin_to_csv`
 
 **0**
-    -
+    leave .bin files in output folder
 
 **1**
-    runs additional section in :func:`.create_output_files` which writes two lines (names, units) in output files
+    convert .bin files to .csv with :func:`bin_to_csv`, delete .bin files
 
 
 --------------------------------
 
-
-``makeplots``
------------------------
-
-plot the results
-
-Switch in ``SCOPE.m``
-
-**0**
-    -
-
-**1**
-    launches :func:`.plots` for the results of the last run
 
 .. [#] extra output variables that are not saved to files (see :ref:`structs:Structs`) are available in the workspace after the model run.
 .. [#] model can be varied by user, please, consult :ref:`api:API` to learn signatures of functions

@@ -192,15 +192,15 @@
   <div class="section" id="fluxes">
 <h1>fluxes<a class="headerlink" href="#fluxes" title="Permalink to this headline">¶</a></h1>
 <p>Fluxes calculated by the model (turbulent heat exchange, radiation, CO2)</p>
-<p>Fields are initialized by <a class="reference internal" href="../../api/io.html#src.+io.initialize_output_structures" title="src.+io.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
+<p>Fields are initialized by <a class="reference internal" href="../../api/IO.html#src.IO.initialize_output_structures" title="src.IO.initialize_output_structures"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">initialize_output_structures()</span></code></a></p>
 <div class="section" id="calculated">
 <h2>Calculated<a class="headerlink" href="#calculated" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<p><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 </div>
 <div class="section" id="output-file">
 <h2>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../outfiles/each.html#fluxes-dat"><span class="std std-ref">fluxes.dat</span></a></p></li>
+<li><p><a class="reference internal" href="../../outfiles/each.html#fluxes-csv"><span class="std std-ref">fluxes.csv</span></a></p></li>
 </ul>
 <p>if <code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code> soil fluxes will also be recorded, because soil is the 61st layer.</p>
 <ul class="simple">
@@ -213,7 +213,7 @@
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
-<p>Various absorbed photosynthetically active radiations (aPAR) can be calculated by <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>
+<p>Various absorbed photosynthetically active radiations (aPAR) can be calculated by <a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>
 (if <code class="docutils literal notranslate"><span class="pre">options.clc_ebal</span></code>) or by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 </div>
 <div class="section" id="used">
@@ -231,14 +231,14 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">SCOPE</span></code> (if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code>)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aPAR_Wm2</span></code> -&gt; fPAR</p></td>
-<td><p><a class="reference internal" href="../../api/io.html#src.+io.output_data" title="src.+io.output_data"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></a></p></td>
+<td><p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">output_data()</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields calculated in <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<p>Fields calculated in <a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -329,7 +329,7 @@
 </tr>
 </tbody>
 </table>
-<p>Fields added by <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>  (if <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code>) or by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
+<p>Fields added by <a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a>  (if <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span> <span class="pre">==</span> <span class="pre">1</span></code>) or by <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 10%" />

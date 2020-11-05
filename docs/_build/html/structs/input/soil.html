@@ -195,14 +195,14 @@
 <p>Soil properties (such as soil moisture, emissivity and the reflectance spectrum)</p>
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+<p><a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
 <p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#soil-tsold">soil.Tsold</a> may be changed by <a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> (default case)</p>
-<p><a class="reference internal" href="#soil-rss">soil.rss</a>, <a class="reference internal" href="#soil-rbs">soil.rbs</a> may be calculated by <a class="reference internal" href="../../api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_rss_rbs</span></code> is selected</p>
-<p><a class="reference internal" href="#soil-gam">soil.GAM</a> produced by <a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> or <a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span></code></p>
+<p><a class="reference internal" href="#soil-tsold">soil.Tsold</a> may be changed by <a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> (default case)</p>
+<p><a class="reference internal" href="#soil-rss">soil.rss</a>, <a class="reference internal" href="#soil-rbs">soil.rbs</a> may be calculated by <a class="reference internal" href="../../api/supporting.html#src.supporting.calc_rssrbs" title="src.supporting.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_rss_rbs</span></code> is selected</p>
+<p><a class="reference internal" href="#soil-gam">soil.GAM</a> produced by <a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a> or <a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia1" title="src.supporting.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.soil_heat_method</span></code></p>
 </div>
 <div class="section" id="used">
 <h2>Used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h2>
@@ -219,26 +219,26 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cs,</span> <span class="pre">rhos,</span> <span class="pre">lambdas</span></code></p></td>
-<td><p><a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SMC</span></code></p></td>
 <td><div class="line-block">
-<div class="line"><a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia1" title="src.+equations.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.BSM" title="src.BSM"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/equations.html#src.+equations.calc_rssrbs" title="src.+equations.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia1" title="src.supporting.Soil_Inertia1"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia1()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.BSM" title="src.RTMs.BSM"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BSM()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/supporting.html#src.supporting.calc_rssrbs" title="src.supporting.calc_rssrbs"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">calc_rssrbs()</span></code></a></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CSSOIL</span></code></p></td>
-<td><p><a class="reference internal" href="../../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.zo_and_d" title="src.supporting.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">refl</span></code></p></td>
 <td><div class="line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMz" title="src.RTMs.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
 </div>
 </td>
 </tr>
@@ -247,14 +247,14 @@
 <div class="line"><code class="docutils literal notranslate"><span class="pre">rbs,</span> <span class="pre">rss</span></code> -&gt; <a class="reference internal" href="../internal/resist_in.html#resist-in"><span class="std std-ref">Resist_in</span></a></div>
 </div>
 </td>
-<td><p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<p>Fields initialized in <a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -366,7 +366,7 @@
 </td>
 <td><p>?</p></td>
 <td><p>double</p></td>
-<td><p>~1814.4 <a class="reference internal" href="../../api/equations.html#src.+equations.Soil_Inertia0" title="src.+equations.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></p></td>
+<td><p>~1814.4 <a class="reference internal" href="../../api/supporting.html#src.supporting.Soil_Inertia0" title="src.supporting.Soil_Inertia0"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Soil_Inertia0()</span></code></a></p></td>
 <td><p>soil thermal inertia</p></td>
 </tr>
 </tbody>

@@ -24,12 +24,16 @@ Calculated
 Output file
 """"""""""""
 
-- :ref:`outfiles/each:radiation.dat`
-- :ref:`outfiles/each:spectrum_obsdir_optical.dat`
-- :ref:`outfiles/each:spectrum_hemis_optical.dat`
-- :ref:`outfiles/each:irradiance_spectra.dat`
-- :ref:`outfiles/each:reflectance.dat`
-- :ref:`outfiles/each:BOC_irradiance.dat`
+- :ref:`outfiles/each:radiation.csv`
+- :ref:`outfiles/each:Eout_spectrum.csv`
+- :ref:`outfiles/each:Lo_spectrum.csv`
+- :ref:`outfiles/each:Esun.csv`
+- :ref:`outfiles/each:Esky.csv`
+- :ref:`outfiles/each:reflectance.csv`
+- :ref:`outfiles/each:rsd.csv`
+- :ref:`outfiles/each:rdd.csv`
+- :ref:`outfiles/each:rso.csv`
+- :ref:`outfiles/each:rdo.csv`
 
 if ``options.calc_ebal``
 
@@ -37,20 +41,18 @@ if ``options.calc_ebal``
 
 if ``options.calc_planck``
 
-- :ref:`outfiles/planck:spectrum_hemis_thermal.dat`
-- :ref:`outfiles/planck:spectrum_obsdir_thermal.dat`
+Changes will be seen in
+
+- :ref:`outfiles/each:Eout_spectrum.csv`
+- :ref:`outfiles/each:Lo_spectrum.csv`
 
 if ``options.calc_fluor``
 
-- :ref:`outfiles/fluorescence:fluorescence.dat`
-- :ref:`outfiles/fluorescence:fluorescencePSI.dat`
-- :ref:`outfiles/fluorescence:fluorescencePSII.dat`
-- :ref:`outfiles/fluorescence:fluorescence_hemis.dat`
-- :ref:`outfiles/fluorescence:fluorescence_emitted_by_all_leaves.dat`
-- :ref:`outfiles/fluorescence:fluorescence_emitted_by_all_photosystems.dat`
-- :ref:`outfiles/fluorescence:fluorescence_sunlit.dat`
-- :ref:`outfiles/fluorescence:fluorescence_shaded.dat`
-- :ref:`outfiles/fluorescence:fluorescence_scattered.dat`
+- :ref:`outfiles/fluorescence:fluorescence_scalars.csv`
+- :ref:`outfiles/fluorescence:fluorescence.csv`
+- :ref:`outfiles/fluorescence:sigmaF.csv`
+- :ref:`outfiles/fluorescence:fluorescence_hemis.csv`
+- :ref:`outfiles/fluorescence:Lo_spectrum_inclF.csv`
 
 Variations
 """"""""""""

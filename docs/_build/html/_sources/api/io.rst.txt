@@ -1,29 +1,37 @@
-+io (input output)
+IO (input output)
 ====================
 
-This is a Matlab module => the folder starts with the '+' sign and it should not be changed.
+
+.. module:: src.IO
 
 
-.. module:: src.+io
+Data reading and writing (input-output)
 
-
-.. autofunction:: define_constants
-
-.. autofunction:: readStructFromExcel
 
 .. autofunction:: assignvarnames
 
+.. autofunction:: bin_to_csv
+
+.. autofunction:: create_output_files_binary
+
 .. autofunction:: define_bands
 
-.. autofunction:: select_input
-
-.. autofunction:: load_timeseries
+.. autofunction:: define_constants
 
 .. autofunction:: initialize_output_structures
 
-.. autofunction:: create_output_files
+.. autofunction:: input_mSCOPE
 
-.. autofunction:: output_data
+.. autofunction:: load_atmo
 
-.. autofunction:: output_verification
+.. autofunction:: load_mSCOPE_ts
 
+.. autofunction:: load_timeseries
+
+.. autofunction:: output_data_binary
+
+.. autofunction:: output_verification_csv
+
+.. autofunction:: select_input
+
+.. autofunction:: timestamp2datetime

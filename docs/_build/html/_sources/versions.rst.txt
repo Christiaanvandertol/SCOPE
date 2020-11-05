@@ -3,6 +3,29 @@ Version history
 
 .. contents::
 
+2.00
+''''''
+
+2020
+
+detailed description can be found at https://gmd.copernicus.org/preprints/gmd-2020-251/
+
+* Major improvements:
+    - much faster computational time (even faster with :ref:`options:``lite```)
+    - in-built mSCOPE implementation
+    - intuitive code and data organization: :ref:`directories:Directories`
+    - .csv input files instead of .xlsx: :ref:`directories/input:input`
+    - .csv output files
+    - emulator guideline for per-pixel applications (inspired by ARTMO) :ref:`api/lut:+lut`
+
+* minor changes:
+    - options:
+        - removed: makeplots, rt_thermal, calc_zo (now does it by default), save_headers
+        - added: lite, mSCOPE, saveCSV
+    - calculation of LST added
+    - output files changed
+
+
 1.74
 ''''''
 

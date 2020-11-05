@@ -196,20 +196,20 @@
 <div class="section" id="initialized">
 <h2>Initialized<a class="headerlink" href="#initialized" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
-<p><a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
+<p><a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a></p>
 </div>
 <div class="section" id="variations">
 <h2>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#canopy-lidf">canopy.lidf</a> can be read from <code class="docutils literal notranslate"><span class="pre">LIDF_file</span></code> if its name is provided in the <code class="docutils literal notranslate"><span class="pre">filenames</span></code> sheet of <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code></p>
+<p><a class="reference internal" href="#canopy-lidf">canopy.lidf</a> can be read from <code class="docutils literal notranslate"><span class="pre">LIDF_file</span></code> if its name is provided in the <code class="docutils literal notranslate"><span class="pre">filenames.csv</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">LIDF_file</span></code> must be located in <code class="docutils literal notranslate"><span class="pre">/data/input/leafangles</span></code> (<a class="reference internal" href="../../directories/data.html#leafangles"><span class="std std-ref">leafangles</span></a>) and have <strong>3 header lines</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">LIDF_file</span></code> must be located in <code class="docutils literal notranslate"><span class="pre">./input/leafangles</span></code> (<a class="reference internal" href="../../directories/input.html#leafangles"><span class="std std-ref">leafangles</span></a>) and have <strong>3 header lines</strong>.</p>
 </div>
-<p><a class="reference internal" href="#canopy-zo">canopy.zo</a>, <a class="reference internal" href="#canopy-d">canopy.d</a> may be calculated by <a class="reference internal" href="../../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_zo</span></code> is selected</p>
-<p><a class="reference internal" href="#canopy-hc">canopy.hc</a> may be set in <a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
+<p><a class="reference internal" href="#canopy-zo">canopy.zo</a>, <a class="reference internal" href="#canopy-d">canopy.d</a> may be calculated by <a class="reference internal" href="../../api/supporting.html#src.supporting.zo_and_d" title="src.supporting.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_zo</span></code> is selected</p>
+<p><a class="reference internal" href="#canopy-hc">canopy.hc</a> may be set in <a class="reference internal" href="../../api/IO.html#src.IO.load_timeseries" title="src.IO.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>never change the angles in <a class="reference internal" href="#canopy-litab">canopy.litab</a> unless <a class="reference internal" href="../../api/equations.html#src.+equations.leafangles" title="src.+equations.leafangles"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">leafangles()</span></code></a> (‘ladgen’) is also adapted</p>
+<p>never change the angles in <a class="reference internal" href="#canopy-litab">canopy.litab</a> unless <a class="reference internal" href="../../api/supporting.html#src.supporting.leafangles" title="src.supporting.leafangles"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">leafangles()</span></code></a> (‘ladgen’) is also adapted</p>
 </div>
 </div>
 <div class="section" id="used">
@@ -224,36 +224,36 @@
 <td><p>user</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nlayers,</span> <span class="pre">nlincl,</span> <span class="pre">nlazi,</span> <span class="pre">lidf</span></code></p></td>
-<td><p><a class="reference internal" href="../../api/equations.html#src.+equations.meanleaf" title="src.+equations.meanleaf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">meanleaf()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.meanleaf" title="src.supporting.meanleaf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">meanleaf()</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CR,</span> <span class="pre">CD1,</span> <span class="pre">Psicor,</span> <span class="pre">LAI,</span> <span class="pre">hc</span></code></p></td>
-<td><p><a class="reference internal" href="../../api/equations.html#src.+equations.zo_and_d" title="src.+equations.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.zo_and_d" title="src.supporting.zo_and_d"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">zo_and_d()</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAI,</span> <span class="pre">hc,</span> <span class="pre">zo,</span> <span class="pre">d</span></code></p></td>
-<td><p><a class="reference internal" href="../../api/io.html#src.+io.load_timeseries" title="src.+io.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/IO.html#src.IO.load_timeseries" title="src.IO.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LIDFa,</span> <span class="pre">LIDFb</span></code></p></td>
-<td><p><a class="reference internal" href="../../api/equations.html#src.+equations.leafangles" title="src.+equations.leafangles"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">leafangles()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.leafangles" title="src.supporting.leafangles"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">leafangles()</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">nlayers,</span> <span class="pre">kV,</span> <span class="pre">xl,</span> <span class="pre">LAI</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">LAI,</span> <span class="pre">rwc,</span> <span class="pre">zo,</span> <span class="pre">d,</span> <span class="pre">hc,</span> <span class="pre">leafwidth,</span> <span class="pre">Cd</span></code> -&gt; <a class="reference internal" href="../internal/resist_in.html#resist-in"><span class="std std-ref">Resist_in</span></a></div>
 </div>
 </td>
-<td><p><a class="reference internal" href="../../api/core.html#src.ebal" title="src.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nlayers,</span> <span class="pre">lidf,</span> <span class="pre">litab,</span> <span class="pre">lazitab,</span> <span class="pre">LAI</span></code></p></td>
 <td><div class="line-block">
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMf" title="src.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_planck" title="src.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMt_sb" title="src.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
-<div class="line"><a class="reference internal" href="../../api/core.html#src.RTMz" title="src.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_planck" title="src.RTMs.RTMt_planck"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_planck()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMt_sb" title="src.RTMs.RTMt_sb"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMt_sb()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMz" title="src.RTMs.RTMz"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMz()</span></code></a></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nlincl,</span> <span class="pre">nlazi,</span> <span class="pre">x,</span> <span class="pre">hot</span></code></p></td>
-<td><p><a class="reference internal" href="../../api/core.html#src.RTMo" title="src.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">nlayers,</span> <span class="pre">LAI</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p></td>
@@ -262,7 +262,7 @@
 </table>
 <p>The meaning of LIDFa and LIDFb in relation to the leaf angle distribution (LAD) is presented in</p>
 <div class="figure align-center">
-<img alt="../../_images/LAD.png" src="../../_images/LAD.png" />
+<img alt="../../_images/LAD1.png" src="../../_images/LAD1.png" />
 </div>
 </div>
 <div class="section" id="fields">
@@ -357,12 +357,12 @@
 </td>
 <td><p>?</p></td>
 <td><p>[13 x 1] double</p></td>
-<td><p><a class="reference internal" href="../../api/equations.html#src.+equations.leafangles" title="src.+equations.leafangles"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">leafangles()</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../api/supporting.html#src.supporting.leafangles" title="src.supporting.leafangles"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">leafangles()</span></code></a></p></td>
 <td><p>leaf inclination distribution function</p></td>
 </tr>
 </tbody>
 </table>
-<p>Fields initialized in <a class="reference internal" href="../../api/io.html#src.+io.select_input" title="src.+io.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
+<p>Fields initialized in <a class="reference internal" href="../../api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a> (read from <code class="docutils literal notranslate"><span class="pre">input_data.xlsx</span></code>)</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 10%" />
