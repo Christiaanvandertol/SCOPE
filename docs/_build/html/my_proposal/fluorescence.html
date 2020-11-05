@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fluorescence &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Energy balance" href="energy_balance.html" />
+    <link rel="prev" title="Spectra" href="spectra.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="spectra.html">Spectra</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fluorescence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definition">Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope">SCOPE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="energy_balance.html">Energy balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vertical_profiles.html">Vertical profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brdf.html">BRDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html">Time series</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval.html">Retrieval (Model inversion)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../model_capabilities.html">Model capabilities</a> &raquo;</li>
+        
+      <li>Fluorescence</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/my_proposal/fluorescence.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fluorescence">
+<h1>Fluorescence<a class="headerlink" href="#fluorescence" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+<div class="section" id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<p>Light reaching a leaf (pretty much any object) can be reflected, transmitted or absorbed. In plants absorbed light can be spent on three different processes:</p>
+<ol class="arabic simple">
+<li><p>photochemistry (assimilation CO2)</p></li>
+<li><p>non-photochemical quenching (NPQ): heat dissipation</p></li>
+<li><p>chlorophyll fluorescence excitation</p></li>
+</ol>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/aPAR_destiny.png"><img alt="../_images/aPAR_destiny.png" src="../_images/aPAR_destiny.png" style="width: 454.0px; height: 353.0px;" /></a>
+<p class="caption"><span class="caption-text">Source: <a class="reference external" href="http://spie.org/newsroom/4725-remote-sensing-of-terrestrial-chlorophyll-fluorescence-from-space?SSO=1">http://spie.org/newsroom/4725-remote-sensing-of-terrestrial-chlorophyll-fluorescence-from-space?SSO=1</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Fluorescence</span> <span class="ow">is</span> <span class="n">light</span> <span class="n">emitted</span> <span class="n">by</span> <span class="n">chlorophyll</span> <span class="n">molecules</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span> <span class="mi">640</span><span class="o">-</span><span class="mi">800</span> <span class="n">nm</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scope">
+<h2>SCOPE<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h2>
+<p>Fluorescence light (pretty much as any light) can be absorbed and scattered on its way to a sensor.</p>
+<p>SCOPE model simulates 3 hemispherical fluorescence quantiles:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>fluorescence emitted by all photosystems without any scattering / re-absorption neither within leaf, nor withing canopy</p></li>
+<li><p>fluorescence emitted by all leaves without any scattering / re-absorption within canopy or from soil</p></li>
+<li><p>fluorescence emitted by canopy (all leaf layers) accounting for all scattering / re-absorption events</p></li>
+</ol>
+</div></blockquote>
+<div class="figure align-default">
+<img alt="../_images/fluorescence.png" src="../_images/fluorescence.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice the difference in ranges and units between directional and hemispherical fluorescence.</p>
+</div>
+<p>SCOPE model simulates directional fluorescence (the one that actually reaches a sensor) and its components coming from:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>sunlit leaves</p></li>
+<li><p>shaded leaves</p></li>
+<li><p>scattered by leaves and soil</p></li>
+</ol>
+</div></blockquote>
+<p>It is also possible to partition directional fruorescence between photosystem I and II (PSI, PSII) with <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code>, not recommended though.</p>
+<div class="figure align-default">
+<img alt="../_images/fluorescence_contributors.png" src="../_images/fluorescence_contributors.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are much more outputs of <a class="reference internal" href="../api/fluxes.html#src.fluxes.biochemical" title="src.fluxes.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> related to Pulse-Amplitude-Modulation (PAM) Fluorometry quantiles that are stored in internal structure <code class="docutils literal notranslate"><span class="pre">biochem_out</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="energy_balance.html" class="btn btn-neutral float-right" title="Energy balance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spectra.html" class="btn btn-neutral float-left" title="Spectra" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

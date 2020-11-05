@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>options.calc_vert_profiles &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval.html">Retrieval (Model inversion)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/outfiles/profiles.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="options-calc-vert-profiles">
+<h1><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code><a class="headerlink" href="#options-calc-vert-profiles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gap-dat">
+<h2>gap.dat<a class="headerlink" href="#gap-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - [Ps Po Pso] =&gt; 61 * 3 columns</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ps</strong></p></td>
+<td><p>-</p></td>
+<td><p>fraction of sunlit leaves per layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Po</strong></p></td>
+<td><p>-</p></td>
+<td><p>fraction of observed leaves per layer</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Pso</strong></p></td>
+<td><p>-</p></td>
+<td><p>fraction of sunlit and (at the same time) observed per layer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-a-dat">
+<h2>layer_a.dat<a class="headerlink" href="#layer-a-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - photosynthesis per layer, total soil respiration (60 + 1)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>A1d</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>mean photosynthesis leaves, per layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Resp</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>soil respiration rate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-apar-dat">
+<h2>layer_aPAR.dat<a class="headerlink" href="#layer-apar-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - absorbed photosynthetically active radiation (aPAR)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Pn1d</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>aPAR per leaf layer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-apar-cab-dat">
+<h2>layer_aPAR_Cab.dat<a class="headerlink" href="#layer-apar-cab-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - absorbed photosynthetically active radiation (aPAR) by chlorophylls (Cab) per leaf layer</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Pn1d_Cab</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>aPAR by Cab per leaf layer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-fluorescence-dat">
+<h2>layer_fluorescence.dat<a class="headerlink" href="#layer-fluorescence-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - upward fluorescence per layer</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>fluorescence</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>upward fluorescence per layer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-h-dat">
+<h2>layer_h.dat<a class="headerlink" href="#layer-h-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - sensible heat flux per layer, total sensible heat of soil (60 + 1)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Hc1d</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>mean sensible heat leaves, per layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hstot</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>sensible heat of soil</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-le-dat">
+<h2>layer_le.dat<a class="headerlink" href="#layer-le-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - latent heat flux per layer, total latent heat of soil (60 + 1)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>lEc1d</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>mean latent heat leaves, per layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>lEstot</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>latent heat of soil</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-npq-dat">
+<h2>layer_NPQ.dat<a class="headerlink" href="#layer-npq-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - average NPQ = 1-(fm-fo)/(fm0-fo0), per layer (60)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>qE</strong></p></td>
+<td></td>
+<td><p>average NPQ = 1-(fm-fo)/(fm0-fo0), per layer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-rn-dat">
+<h2>layer_rn.dat<a class="headerlink" href="#layer-rn-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - net radiation per leaf layer, total net radiation of soil (60 + 1)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Rn1d</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>net radiation per leaf layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rnstot</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>net radiation of soil</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="leaftemp-dat">
+<h2>leaftemp.dat<a class="headerlink" href="#leaftemp-dat" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_vert_profiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - leaf temperatures per layer (60 * 3) leaf temperature of sunlit leaves, shaded leaves, and weighted average leaf temperature per layer</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tcu1d</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>leaf temperature of sunlit leaves, per layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tch</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>leaf temperature of shaded leaves, per layer</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tc1d</strong></p></td>
+<td><p>ºC</p></td>
+<td><p>weighted average leaf temperature, per layer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
