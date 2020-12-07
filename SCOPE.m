@@ -107,7 +107,7 @@ clear('X')
 while ~feof(fid)
     line    = fgetl(fid);
     y       = textscan(line,'%s', 'Delimiter', ',', 'TreatAsEmpty',  ' ');
-    varnames(k)  = string(y{1}{1}); %#ok<SAGROW>
+    varnames(k)  = y{1}(1); %#ok<SAGROW>
     X(k).Val   = str2double(y{:});
     k       = k+1;
 end
