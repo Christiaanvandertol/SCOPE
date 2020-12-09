@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IO (input output) &mdash; SCOPE 1.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RTMs" href="RTMs.html" />
+    <link rel="prev" title="API" href="../api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCOPE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../directories.html">Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outfiles.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">Brief history of the model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retrieval.html">Retrieval (Model inversion)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IO (input output)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTMs.html">RTMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluxes.html">fluxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lut.html">+lut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supporting.html">supporting</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCOPE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">API</a> &raquo;</li>
+        
+      <li>IO (input output)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/IO.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-src.IO">
+<span id="io-input-output"></span><h1>IO (input output)<a class="headerlink" href="#module-src.IO" title="Permalink to this headline">¶</a></h1>
+<p>Data reading and writing (input-output)</p>
+<dl class="function">
+<dt id="src.IO.assignvarnames">
+<code class="sig-name descname">assignvarnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.assignvarnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="src.IO.bin_to_csv">
+<code class="sig-name descname">bin_to_csv</code><span class="sig-paren">(</span><em class="sig-param">fnames</em>, <em class="sig-param">V</em>, <em class="sig-param">vmax</em>, <em class="sig-param">n_col</em>, <em class="sig-param">ns</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.bin_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>pars</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.create_output_files_binary">
+<code class="sig-name descname">create_output_files_binary</code><span class="sig-paren">(</span><em class="sig-param">parameter_file</em>, <em class="sig-param">F</em>, <em class="sig-param">path_of_code</em>, <em class="sig-param">input_path</em>, <em class="sig-param">spectral</em>, <em class="sig-param">options</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.create_output_files_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Output dir</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.define_bands">
+<code class="sig-name descname">define_bands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.define_bands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define spectral regions for SCOPE v_1.40
+All spectral regions are defined here as row vectors
+WV Jan. 2013</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.define_constants">
+<code class="sig-name descname">define_constants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.define_constants" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="src.IO.initialize_output_structures">
+<code class="sig-name descname">initialize_output_structures</code><span class="sig-paren">(</span><em class="sig-param">spectral</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.initialize_output_structures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="src.IO.input_mSCOPE">
+<code class="sig-name descname">input_mSCOPE</code><span class="sig-paren">(</span><em class="sig-param">parameter_file</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.input_mSCOPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="src.IO.load_atmo">
+<code class="sig-name descname">load_atmo</code><span class="sig-paren">(</span><em class="sig-param">atmfile</em>, <em class="sig-param">SCOPEspec</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_atmo" title="Permalink to this definition">¶</a></dt>
+<dd><p>default error is not clear enough</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.load_mSCOPE_ts">
+<code class="sig-name descname">load_mSCOPE_ts</code><span class="sig-paren">(</span><em class="sig-param">mSCOPE_ts_path</em>, <em class="sig-param">nly</em>, <em class="sig-param">t_column</em>, <em class="sig-param">t_</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_mSCOPE_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>mly_df = readtable(“D:PyCharm_projectsSCOPE2.0inputdataset LatinHypercubeinput_mSCOPE_timeseries.csv”);</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.load_timeseries">
+<code class="sig-name descname">load_timeseries</code><span class="sig-paren">(</span><em class="sig-param">V</em>, <em class="sig-param">F</em>, <em class="sig-param">xyt</em>, <em class="sig-param">path_input</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_timeseries" title="Permalink to this definition">¶</a></dt>
+<dd><p>filenames</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.output_data_binary">
+<code class="sig-name descname">output_data_binary</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">k</em>, <em class="sig-param">xyt</em>, <em class="sig-param">rad</em>, <em class="sig-param">canopy</em>, <em class="sig-param">V</em>, <em class="sig-param">vi</em>, <em class="sig-param">vmax</em>, <em class="sig-param">options</em>, <em class="sig-param">fluxes</em>, <em class="sig-param">meteo</em>, <em class="sig-param">iter</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.output_data_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>OUTPUT DATA
+author C. Van der Tol
+date:      30 Nov 2019</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.output_verification_csv">
+<code class="sig-name descname">output_verification_csv</code><span class="sig-paren">(</span><em class="sig-param">Output_dir</em>, <em class="sig-param">verification_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.output_verification_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Date: 07 August 2012
+Author: Christiaan van der Tol (<a class="reference external" href="mailto:tol&#37;&#52;&#48;itc&#46;nl">tol<span>&#64;</span>itc<span>&#46;</span>nl</a>)
+output_verification.m (script) checks if the output of the latest run
+with SCOPE_v1.51 matches with a ‘standard’ output located in a directory
+called ‘verificationdata’. If it does not, warnings will appear in the
+Matlab command window.
+The following is tested:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>does the number of output files match?</p></li>
+<li><p>does the size of the files match (number of bytes)?</p></li>
+<li><p>are all files that are in the verification dataset present with the</p></li>
+</ul>
+<p>same file names?
+- is the content of the files exactly the same?</p>
+</div></blockquote>
+<p>If the output is different, for example because different parameter
+values have been used in the simulations, then the variables that are
+different will be plotted: the verification data in blue, and the latest
+run in red. In this way the differences can be visually inspected.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.IO.select_input">
+<code class="sig-name descname">select_input</code><span class="sig-paren">(</span><em class="sig-param">V</em>, <em class="sig-param">vi</em>, <em class="sig-param">canopy</em>, <em class="sig-param">options</em>, <em class="sig-param">constants</em>, <em class="sig-param">xyt</em>, <em class="sig-param">soil</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.select_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="src.IO.timestamp2datetime">
+<code class="sig-name descname">timestamp2datetime</code><span class="sig-paren">(</span><em class="sig-param">ts</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.timestamp2datetime" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>ts<span class="classifier">char or char array like [‘20190101’; ‘20190102’]</span></dt><dd><p>int or int array [20190101; 20190102]</p>
+</dd>
+</dl>
+<p>dt : datetime or datetime array</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="RTMs.html" class="btn btn-neutral float-right" title="RTMs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Egor Prikaziuk
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

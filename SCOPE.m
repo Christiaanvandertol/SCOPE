@@ -185,6 +185,12 @@ end
 %% 11. load time series data
 if options.simulation == 1
     vi = ones(length(V),1);
+    for k = 1:length(V)
+        if ~strcmp(V(k).Name, 'Tparam') && length(V(k).Val) > 1
+            disp(V(k).Name)
+            V(k).Val = V(k).Val(1);
+        end
+    end
     [soil,leafbio,canopy,meteo,angles,xyt]  = select_input(V,vi,canopy,options,constants);
     [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input);
 else
