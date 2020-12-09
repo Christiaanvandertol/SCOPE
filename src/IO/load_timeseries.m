@@ -104,7 +104,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         end
         DOY_  = floor(t_);
         time_ = 24*(t_-DOY_);
-        if all(time_) == 0
+        if all(time_ == 0)
             error(sprintf(['tts (SZA) at midnight all simulations long? Possible solutions:\n'...
                 'provide timestamp (t_column) with time / check timezone\n'...
                 'provide a column with tts values']))
