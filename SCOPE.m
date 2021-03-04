@@ -63,7 +63,8 @@ options.simulation          = N(11);    % 0: individual runs (specify all input 
 options.calc_directional     = N(12);    % 0: calculate full BRDF (many angles)
 options.calc_vert_profiles   = N(13);
 options.soil_heat_method     = N(14);  % 0 - GAM=Soil_Inertia0(lambdas), 1 - GAM=Soil_Inertia1(SMC), 2 - G=0.35*Rn (always in no TS)
-options.calc_rss_rbs          = N(15);  % 0 - fixed, 1 calc
+options.calc_rss_rbs         = N(15);  % 0 - fixed, 1 calc
+options.save_spectra         = 1;      % 0 - do not save reflectance, 1 - save
 
 if options.simulation>2 || options.simulation<0, fprintf('\n simulation option should be between 0 and 2 \r'); return, end
 
@@ -241,7 +242,7 @@ atmo = load_atmo(atmfile, spectral.SCOPEspec);
 fprintf('\n The calculations start now \r')
 calculate = 1;
 tic
-        
+
 for k = 1:telmax
     if options.simulation == 1, vi(vmax>1) = k; end
     if options.simulation == 0, vi(vmax==telmax) = k; end

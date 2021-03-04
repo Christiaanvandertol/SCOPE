@@ -43,35 +43,36 @@ if isfield(fnames, 'fluor_file')
         fnames.Lo2_file, n_col.Lo2, ns, true) 
 end
 
-%% reflectance
-write_output({'reflectance'}, {'pi*upwelling radiance/irradiance'}, ...
-    fnames.r_file, n_col.r, ns, true) 
+if isfield(fnames, 'r_file')
+    %% reflectance
+    write_output({'reflectance'}, {'pi*upwelling radiance/irradiance'}, ...
+        fnames.r_file, n_col.r, ns, true) 
 
-write_output({'rsd'}, {'directional-hemispherical reflectance factor'}, ...
-    fnames.rsd_file, n_col.rsd, ns, true) 
+    write_output({'rsd'}, {'directional-hemispherical reflectance factor'}, ...
+        fnames.rsd_file, n_col.rsd, ns, true) 
 
-write_output({'rdd'}, {'bi-hemispherical reflectance factor'}, ...
-    fnames.rdd_file, n_col.rdd, ns, true) 
+    write_output({'rdd'}, {'bi-hemispherical reflectance factor'}, ...
+        fnames.rdd_file, n_col.rdd, ns, true) 
 
-write_output({'rso'}, {'bi-directional reflectance factor'}, ...
-    fnames.rso_file, n_col.rso, ns, true) 
+    write_output({'rso'}, {'bi-directional reflectance factor'}, ...
+        fnames.rso_file, n_col.rso, ns, true) 
 
-write_output({'rdo'}, {'hemispherical-directional reflectance factor'}, ...
-    fnames.rdo_file, n_col.rdo, ns, true) 
+    write_output({'rdo'}, {'hemispherical-directional reflectance factor'}, ...
+        fnames.rdo_file, n_col.rdo, ns, true) 
 
-%% radiance
-write_output({'hemispherically integrated upwelling radiance'}, {'W m-2 um-1'}, ...
-    fnames.Eout_file, n_col.Eout, ns, true) 
+    %% radiance
+    write_output({'hemispherically integrated upwelling radiance'}, {'W m-2 um-1'}, ...
+        fnames.Eout_file, n_col.Eout, ns, true) 
 
-write_output({'upwelling radiance excluding fluorescence'}, {'W m-2 um-1 sr-1'}, ...
-    fnames.Lo_file, n_col.Lo, ns, true) 
+    write_output({'upwelling radiance excluding fluorescence'}, {'W m-2 um-1 sr-1'}, ...
+        fnames.Lo_file, n_col.Lo, ns, true) 
 
-write_output({'direct solar irradiance'}, {'W m-2 um-1 sr-1'}, ...
-    fnames.Esun_file, n_col.Esun, ns, true) 
+    write_output({'direct solar irradiance'}, {'W m-2 um-1 sr-1'}, ...
+        fnames.Esun_file, n_col.Esun, ns, true) 
 
-write_output({'diffuse solar irradiance'}, {'W m-2 um-1 sr-1'}, ...
-    fnames.Esky_file, n_col.Esky, ns, true) 
-
+    write_output({'diffuse solar irradiance'}, {'W m-2 um-1 sr-1'}, ...
+        fnames.Esky_file, n_col.Esky, ns, true) 
+end
 fclose('all');
 
 %% deleting .bin
@@ -82,6 +83,12 @@ function write_output(header, units, bin_path, f_n_col, ns, not_header)
     if nargin == 5
         not_header = false;
     end
+    s = dir(bin_path);
+    if s.bytes == 0
+        warning('%s output is empty', bin_path)
+        return
+    end
+    
     n_csv = strrep(bin_path, '.bin', '.csv');
     
     f_csv = fopen(n_csv, 'w');

@@ -32,15 +32,17 @@ if options.calc_fluor
     fnames.fhemis_file             = fullfile(Output_dir,'fluorescence_hemis.bin');
     fnames.Lo2_file                = fullfile(Output_dir,'Lo_spectrum_inclF.bin');
 end
-fnames.r_file                  = fullfile(Output_dir,'reflectance.bin');
-fnames.rsd_file                = fullfile(Output_dir,'rsd.bin');
-fnames.rdd_file                = fullfile(Output_dir,'rdd.bin');
-fnames.rso_file                = fullfile(Output_dir,'rso.bin');
-fnames.rdo_file                = fullfile(Output_dir,'rdo.bin');
-fnames.Eout_file               = fullfile(Output_dir,'Eout_spectrum.bin');
-fnames.Lo_file                 = fullfile(Output_dir,'Lo_spectrum.bin');
-fnames.Esun_file               = fullfile(Output_dir,'Esun.bin');
-fnames.Esky_file               = fullfile(Output_dir,'Esky.bin');
+if options.save_spectra
+    fnames.r_file                  = fullfile(Output_dir,'reflectance.bin');
+    fnames.rsd_file                = fullfile(Output_dir,'rsd.bin');
+    fnames.rdd_file                = fullfile(Output_dir,'rdd.bin');
+    fnames.rso_file                = fullfile(Output_dir,'rso.bin');
+    fnames.rdo_file                = fullfile(Output_dir,'rdo.bin');
+    fnames.Eout_file               = fullfile(Output_dir,'Eout_spectrum.bin');
+    fnames.Lo_file                 = fullfile(Output_dir,'Lo_spectrum.bin');
+    fnames.Esun_file               = fullfile(Output_dir,'Esun.bin');
+    fnames.Esky_file               = fullfile(Output_dir,'Esky.bin');
+end
 
 %% Open files for writing
 f = structfun(@(x) fopen(x, 'w'), fnames, 'UniformOutput',false);

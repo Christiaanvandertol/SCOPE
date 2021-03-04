@@ -1,9 +1,10 @@
 ﻿variable,lower,upper,units,include
 Cab,0,100,ug cm-2,1
-LAI,0,7,m2 m-2,1
-Rin,0,1500,W m-2,1
-Ta,-5,40,C,1
-Rli,200,500,W m-2,1
-p,900,1100,hPa,1
-ea,0,60,hPa,1
-u,0.5,10,m s-1,1
+LAI,0,2.5,m2 m-2,1
+Rin,310,450,W m-2,1
+Rli,80,335,C,1
+p,950,970,W m-2,1
+Ta,20,35,hPa,1
+ea,18,30,hPa,0
+u,1,5,m s-1,1
+RH,0.15,1,%,1

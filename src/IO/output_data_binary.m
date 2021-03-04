@@ -49,34 +49,36 @@ if options.calc_fluor
     fwrite(f.Lo2_file, rad.Lototf_,'double');
 end
 
-%% reflectance
-n_col.r = length(canopy.reflectance);
-fwrite(f.r_file,canopy.reflectance,'double');
+if options.save_spectra 
+    %% reflectance
+    n_col.r = length(canopy.reflectance);
+    fwrite(f.r_file,canopy.reflectance,'double');
 
-n_col.rsd = length(rad.rsd);
-fwrite(f.rsd_file,rad.rsd,'double');
+    n_col.rsd = length(rad.rsd);
+    fwrite(f.rsd_file,rad.rsd,'double');
 
-n_col.rdd = length(rad.rdd);
-fwrite(f.rdd_file,rad.rdd,'double');
+    n_col.rdd = length(rad.rdd);
+    fwrite(f.rdd_file,rad.rdd,'double');
 
-n_col.rso = length(rad.rso);
-fwrite(f.rso_file,rad.rso,'double');
+    n_col.rso = length(rad.rso);
+    fwrite(f.rso_file,rad.rso,'double');
 
-n_col.rdo = length(rad.rdo);
-fwrite(f.rdo_file,rad.rdo,'double');
+    n_col.rdo = length(rad.rdo);
+    fwrite(f.rdo_file,rad.rdo,'double');
 
-%% Radiance
-n_col.Eout = length(rad.Eout_);
-fwrite(f.Eout_file,rad.Eout_,'double');
+    %% Radiance
+    n_col.Eout = length(rad.Eout_);
+    fwrite(f.Eout_file,rad.Eout_,'double');
 
-n_col.Lo = length(rad.Lotot_);
-fwrite(f.Lo_file, rad.Lotot_, 'double');
+    n_col.Lo = length(rad.Lotot_);
+    fwrite(f.Lo_file, rad.Lotot_, 'double');
 
-n_col.Esun = length(rad.Esun_);
-fwrite(f.Esun_file, rad.Esun_, 'double');
+    n_col.Esun = length(rad.Esun_);
+    fwrite(f.Esun_file, rad.Esun_, 'double');
 
-n_col.Esky = length(rad.Esky_);
-fwrite(f.Esky_file, rad.Esky_, 'double');
+    n_col.Esky = length(rad.Esky_);
+    fwrite(f.Esky_file, rad.Esky_, 'double');
+end
 
 %% pars
 k2 = find(vmax>1);  % really needed for the first one, later vi > 1
