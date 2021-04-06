@@ -233,6 +233,8 @@ if tempcor
         
         Ke          = 1; % dummy value (only needed for C4)
     end
+else
+    Ke          = 1; % dummy value (only needed for C4)
 end
 
 if strcmp('C3', Type)
