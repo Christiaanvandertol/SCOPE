@@ -69,33 +69,35 @@ if options.calc_fluor
 end
 
 %% reflectance
-n_col.r = length(rad.refl);
-fwrite(f.r_file,rad.refl,'double');
+if isfield(f, 'r_file')
+    n_col.r = length(rad.refl);
+    fwrite(f.r_file,rad.refl,'double');
 
-n_col.rsd = length(rad.rsd);
-fwrite(f.rsd_file,rad.rsd,'double');
+    n_col.rsd = length(rad.rsd);
+    fwrite(f.rsd_file,rad.rsd,'double');
 
-n_col.rdd = length(rad.rdd);
-fwrite(f.rdd_file,rad.rdd,'double');
+    n_col.rdd = length(rad.rdd);
+    fwrite(f.rdd_file,rad.rdd,'double');
 
-n_col.rso = length(rad.rso);
-fwrite(f.rso_file,rad.rso,'double');
+    n_col.rso = length(rad.rso);
+    fwrite(f.rso_file,rad.rso,'double');
 
-n_col.rdo = length(rad.rdo);
-fwrite(f.rdo_file,rad.rdo,'double');
+    n_col.rdo = length(rad.rdo);
+    fwrite(f.rdo_file,rad.rdo,'double');
 
-%% Radiance
-n_col.Eout = length(rad.Eout_);
-fwrite(f.Eout_file,rad.Eout_,'double');
+    %% Radiance
+    n_col.Eout = length(rad.Eout_);
+    fwrite(f.Eout_file,rad.Eout_,'double');
 
-n_col.Lo = length(rad.Lotot_);
-fwrite(f.Lo_file, rad.Lotot_, 'double');
+    n_col.Lo = length(rad.Lotot_);
+    fwrite(f.Lo_file, rad.Lotot_, 'double');
 
-n_col.Esun = length(rad.Esun_);
-fwrite(f.Esun_file, rad.Esun_, 'double');
+    n_col.Esun = length(rad.Esun_);
+    fwrite(f.Esun_file, rad.Esun_, 'double');
 
-n_col.Esky = length(rad.Esky_);
-fwrite(f.Esky_file, rad.Esky_, 'double');
+    n_col.Esky = length(rad.Esky_);
+    fwrite(f.Esky_file, rad.Esky_, 'double');
+end
 
 %% Resistances
 resist_out = [resistance.raa, resistance.raws, resistance.rss, resistance.ustar];  
