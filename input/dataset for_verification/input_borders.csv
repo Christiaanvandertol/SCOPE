@@ -13,14 +13,14 @@ B,0,0.9,-,0,0.5,soil brightness
 BSMlat,20,40,-,0,25,BSM model parameter lat
 BSMlon,40,60,-,0,45,BSM model parameter lon
 SMC,5,55,%,0,25,volumetric soil moisture content
-Vcmo,1,200,umol m-2 s-1,1,70,maximum carboxylation capacity (at optimum temperature)
-m,5,20,-,1,12,Ball-Berry stomatal conductance parameter
+Vcmax25,1,200,umol m-2 s-1,1,70,maximum carboxylation capacity (at optimum temperature)
+BallBerrySlope,5,20,-,1,12,Ball-Berry stomatal conductance parameter
 Rin,5,800,W m-2,1,600,broadband incoming shortwave radiation (0.4-2.5 um)
 Rli,200,500,W m-2,0,300,broadband incoming longwave radiation (2.5-50 um)
 Ta,5,35,C,1,20,air temperature
 p,900,1100,hPa,0,970,air pressure
-ea,0,60,hPa,1,15,atmospheric vapour pressure
-RH,0,1,-,0,0.64,relative humidity (proxy of ea)
+ea,0,60,hPa,0,15,atmospheric vapour pressure
+RH,0,1,-,1,0.64,relative humidity (proxy of ea)
 u,0.5,10,m s-1,0,2,wind speed at height z
 tts,0,60,deg,1,30,solar zenith angle
 tto,0,60,deg,1,0,observation zenith angle

@@ -84,7 +84,7 @@ cols = {'t', 'year', 'Rin','Rli', 'p','Ta','ea','u','RH', 'VPD', 'tts','tto', 'p
     'SMC','BSMBrightness', 'BSMlat', 'BSMlon',...  % soil
     'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
     'z','Ca', ...  % meteo
-    'Vcmo', 'm',...  % biochemistry;
+    'Vcmax25', 'BallBerrySlope',...  % biochemistry;
     'atmos_names' 
     };
 
@@ -195,7 +195,7 @@ if options.simulation == 1
     vi = ones(length(V),1);
     for k = 1:length(V)
         if ~strcmp(V(k).Name, 'Tparam') && length(V(k).Val) > 1
-            disp(V(k).Name)
+            warning('%s value from the first column of input_data will be used, time series mode', V(k).Name) 
             V(k).Val = V(k).Val(1);
         end
     end
@@ -262,7 +262,7 @@ for k = 1:telmax
 	x        = (-1/nl : -1/nl : -1)';         % a column vector
     canopy.xl       = [0; x];                 % add top level
   % canopy.xl(1:end-1) = canopy.xl(1:end-1)+canopy.xl(1:end-1)-1/(2*nl); % middle of the thin layer
-    
+
     if options.simulation ~=1
         fprintf('simulation %i ', k );
         fprintf('of %i \n', telmax);
@@ -278,7 +278,7 @@ for k = 1:telmax
         if isempty(LIDF_file)
             canopy.lidf     = leafangles(canopy.LIDFa,canopy.LIDFb);    % This is 'ladgen' in the original SAIL model,
         end
-        
+
         %% leaf radiative transfer model FLUSPECT
         leafbio.emis        = 1-leafbio.rho_thermal-leafbio.tau_thermal;
         leafbio.V2Z         = 0;
@@ -421,6 +421,8 @@ for k = 1:telmax
             sigmaF          = pi*rad.LoF_./rad.EoutFrc_;
             rad.sigmaF      = interp1(spectral.wlF(1:4:end),sigmaF(1:4:end),spectral.wlF);
             canopy.fqe      = rad.PoutFrc./canopy.Pntot_Cab;
+        else
+            canopy.fqe = nan;
         end
         
         rad.Lotot_      = rad.Lo_+rad.Lot_;
