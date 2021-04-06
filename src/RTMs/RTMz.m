@@ -32,7 +32,7 @@ wlZ         = spectral.wlZ';       % Excitation wavelengths
 [dummy,iwlfi]    = intersect(wlS,wlZ); %#ok<ASGLU>
 nwlZ        = length(spectral.wlZ);
 nl          = canopy.nlayers;
-LAI         = gap.LAI_Cv;
+LAI         = canopy.LAI;
 iLAI        = LAI/nl;                       % LAI of a layer        [1]
 litab       = canopy.litab;
 lazitab     = canopy.lazitab;
@@ -194,8 +194,10 @@ Fhem_     = sum(Fplu_(1,:,:),3)';
 rad.Lo_(iwlfi)          = rad.Lo_(iwlfi) + sum(LoF_,2);
 rad.rso(iwlfi)          = rad.rso(iwlfi) + LoF_(:,1)./(rad.Esun_(iwlfi));
 rad.rdo(iwlfi)          = rad.rdo(iwlfi) + LoF_(:,2)./(rad.Esky_(iwlfi));
+rad.refl(iwlfi)         = pi*rad.Lo_(iwlfi)./(rad.Esky_(iwlfi)+rad.Esun_(iwlfi));     % [nwl] 
 rad.Eout_(iwlfi)        = rad.Eout_(iwlfi) + Fhem_;
 
 function Cx = Kn2Cx(Kn)
-Cx = 0.70*Kn;  % empirical fit by N Vilfan
+%Cx = 0.70*Kn;  % empirical fit by N Vilfan
+Cx = 0.3187*Kn;  % empirical fit by N Vilfan (Vilfan et al, 2018, 2019)
 return

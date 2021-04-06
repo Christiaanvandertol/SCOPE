@@ -1,6 +1,6 @@
 function output_verification_csv(Output_dir, verification_dir)
 % Date: 07 August 2012
-% Author: Christiaan van der Tol (tol@itc.nl)
+% Author: Christiaan van der Tol (c.vandertol@utwente.nl)
 % output_verification.m (script) checks if the output of the latest run
 % with SCOPE_v1.51 matches with a 'standard' output located in a directory
 % called 'verificationdata'. If it does not, warnings will appear in the
@@ -17,11 +17,11 @@ function output_verification_csv(Output_dir, verification_dir)
 % run in red. In this way the differences can be visually inspected.
 
 % clc, close all
-% 
+%
 % directories         =   dir(['..' filesep 'output' filesep '*']);
 % [time_value_s,I]    =   sort([directories(3:end).datenum]);
 % Directory           =   directories(2+I(end)).name;
-% 
+%
 % Directory = Output_dir
 
 %% load verification data
@@ -54,22 +54,22 @@ for i = 1:L
             fprintf(['\n Warning: the file size of ' info0(i).name ' is different from the verification output \r'])
             fprintf(['(' num2str(s1) ' instead of ' num2str(s0) ' bytes) \r'])
             differentsize = 1;
+        end
+        if (~strcmp(info0(i).name,'pars_and_input.csv') && ~strcmp(info0(i).name,'pars_and_input_short.csv'))
+            D0 = dlmread([path0_ info0(i).name],',',2,0);
+            D1 = dlmread([path1_ info1(j).name],',',2,0);
+        elseif strcmp(info0(i).name,'pars_and_input_short.csv')
+            continue
         else
-            if (~strcmp(info0(i).name,'pars_and_input.csv') && ~strcmp(info0(i).name,'pars_and_input_short.csv'))
-                D0 = dlmread([path0_ info0(i).name],',',2,0);
-                D1 = dlmread([path1_ info1(j).name],',',2,0);
-            elseif strcmp(info0(i).name,'pars_and_input_short.csv')
-                    continue
-            else
-                D0 = dlmread([path0_ info0(i).name],',',1,0);
-                D1 = dlmread([path1_ info1(j).name],',',1,0);
-            end
-            if length(D0) ~= length(D1), keyboard, end
-            if (sum(sum(D0-D1).^2))>1E-9
+            D0 = dlmread([path0_ info0(i).name],',',1,0);
+            D1 = dlmread([path1_ info1(j).name],',',1,0);
+        end
+        if size(D0) == size(D1)
+            if (nansum(nansum(D0-D1).^2))>1E-9
                 fprintf(['\nWarning: data in the output file ' info0(i).name ' are different from the verification output \r '])
                 h0 = textread([path0_ info0(i).name],'%s','bufsize', 1E9); %#ok<DTXTRD>
-                spn = ceil(sqrt(size(D0,2)));              
-                figure(i)         
+                spn = ceil(sqrt(size(D0,2)));
+                figure(i)
                 if spn>7
                     nr = min(size(D1, 1), size(D0, 1));
                     for z = 1:nr
@@ -86,17 +86,24 @@ for i = 1:L
                 end
                 differentcontent = 1;
             end
+           % differentcontent = 1;
         end
+        %end
     else
         fprintf(['\nWarning: the file ' info0(i).name ' was not found in the output\r'])
     end
 end
+
 if differentsize
     fprintf('\nWarning The size of some of the output files is different from the verification data \r')
-    fprintf('Check if the startdate and enddate in the spreadsheet\r')
-    fprintf('and the verification data in  are specified in "Dataset_Dir" in the Filenames tab of the input data spreadsheet \r')
+    if differentcontent
+        fprintf('Check if the startdate and enddate in the spreadsheet\r')
+        fprintf('and the verification data in  are specified in "Dataset_Dir" in the Filenames tab of the input data spreadsheet \r')
+    else
+        fprintf('but the numerical values are the same. Possible cause: Different Matlab version\r')
+    end
 end
 if ~(differentsize || differentcontent || differentnumberoffiles)
-    fprintf('All right, the output is the same as in the verification data set \r')
+    fprintf('The output is the same as in the verification data set \r')
 end
-end
+return

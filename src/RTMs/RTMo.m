@@ -113,18 +113,15 @@ nl      = canopy.nlayers;       % number of canopy layers (nl)
 litab   = canopy.litab;         % SAIL leaf inclibation angles % leaf inclination angles PY
 lazitab = canopy.lazitab;       % leaf azimuth angles relative to the sun
 nlazi   = canopy.nlazi;         % number of azimuth angles (36)
-LAIeff  = canopy.LAI;           % leaf area index
+LAI     = canopy.LAI;           % leaf area index
 lidf    = canopy.lidf;          % leaf inclination distribution function
 xl      = canopy.xl;            % all levels except for the top
-Cv      = canopy.Cv;
-crownd  = canopy.crowndiameter;
-theta   = crownd / (canopy.hc/2);   % crown shape factor
 dx      = 1/nl;
-LAI     = LAIeff/Cv;
 
 rho = leafopt.refl;
 tau = leafopt.tran;
 kChlrel = leafopt.kChlrel;
+kCarrel = leafopt.kCarrel;
 rs      =   soil.refl;          % [nwl,nsoils] soil reflectance spectra
 epsc    =   1-rho-tau;          % [nl,nwl]        emissivity of leaves
 epss    =   1-rs;              % [nwl]        emissivity of soil
@@ -132,10 +129,11 @@ iLAI    =   LAI/nl;             % [1]          LAI of elementary layer
 
 % initializations
 Rndif                       = zeros(nl,1);                 % [nl+1]         abs. diffuse rad soil+veg
-[Pdif,Pndif,Pndif_Cab,Rndif_Cab,Rndif_PAR]      = deal(zeros(nl,1));           % [nl]           incident and net PAR veg
+[Pdif,Pndif,Pndif_Cab,Rndif_Cab,Pndif_Car,Rndif_Car,Rndif_PAR]      = deal(zeros(nl,1));           % [nl]           incident and net PAR veg
 %[Es_,Emin_,Eplu_]           = deal(zeros(nl+1,nwl));       % [nl+1,nwl]     direct, up and down diff. rad.
 [Rndif_]                    = zeros(nl,nwl);               % [nl,nwl]       abs diff and PAR veg.
-[Pndif_,Pndif_Cab_,Rndif_PAR_,Rndif_Cab_]         = deal(zeros(nl,length(Ipar)));
+[Pndif_,Rndif_PAR_]         = deal(zeros(nl,length(wlPAR)));
+[Pndif_Cab_,Rndif_Cab_,Pndif_Car_,Rndif_Car_]         = deal(zeros(nl,length(spectral.IwlP)));
 %[Puc,Rnuc,Pnuc,Pnuc_Cab,Rnuc_PAR]    = deal(zeros(nli,nlazi,nl));   %
 
 %% 1. Geometric quantities
@@ -198,10 +196,6 @@ vf          = dof*rho + dob*tau;            % [nl,nwl]     vf,     p305{1} direc
 w           = sob*rho + sof*tau;            % [nl,nwl]     w,      p309{1} bidirectional scattering coefficent (directional-directional)
 a           = 1-sigf;                       % [nl,nwl]     attenuation
 
-% crown area projections
-Cs          = 1-(1-Cv).^(1./cos_tts);       %           crown cover fraction projected in the direction of the sun
-Co          = 1-(1-Cv).^(1./cos_tto);       %           crown cover fraction projected in the direction of viewing
-
 %% 3. Flux calculation
 
 % diffuse fluxes within the vegetation covered part
@@ -212,8 +206,8 @@ tau_sd = sf.*iLAI;
 rho_sd = sb.*iLAI;
 rho_dd = sigb.*iLAI;
 [R_sd,R_dd,Xss,Xsd,Xdd] = calc_reflectances(tau_ss,tau_sd,tau_dd,rho_dd,rho_sd,rs,nl,nwl);
-rdd     = R_dd(1,:)'* Cv + (1-Cv)*rs;
-rsd     = R_sd(1,:)'* Cs + (1-Cs)*rs;
+rdd     = R_dd(1,:)';
+rsd     = R_sd(1,:)';
 [Esun_,Esky_] = calcTOCirr(atmo,meteo,rdd,rsd,wl,nwl);
 
 [Emins_,Eplus_] = calc_fluxprofile(Esun_,0*Esky_,rs,Xss,Xsd,Xdd,R_sd,R_dd,nl,nwl);
@@ -222,40 +216,10 @@ Emin_ = Emins_+Emind_;
 Eplu_ = Eplus_+Eplud_;
 %%
 % 1.5 probabilities Ps, Po, Pso
-d_h         = crownd / canopy.hc;
-Ps0          =   exp(k*xl*LAI) ;                                              % [nl+1]  p154{1} probability of viewing a leaf in solar dir
-Po0          =   exp(K*xl*LAI) ;
-Ps0(1:nl)    =   Ps0(1:nl) *(1-exp(-k*LAI*dx))/(k*LAI*dx);                                      % Correct Ps/Po for finite dx
-Po0(1:nl)    =   Po0(1:nl) *(1-exp(-K*LAI*dx))/(K*LAI*dx);  % Correct Ps/Po for finite dx
-
-xls         =   min(1,d_h*(1-Cv)/Cv / tan_tts);% theta is the ratio of d/h
-xlo         =   min(1,d_h*(1-Cv)/Cv / tan_tto);
-
-C1s         = exp(-k*iLAI); % extinction
-C1o         = exp(-K*iLAI);
-C2s         = tan_tts/theta/nl * exp(-k*iLAI/4); % extra term
-C2o         = tan_tto/theta/nl * exp(-K*iLAI/4);
-% coefficients in the extra term: 2 because it is a triangle
-% 4 (need to check carefully) because we account for the extinction within the thin layer. The
-% average path out is integral of all positions in the triangle to the exit
-% on the left side.
-%
-
-[Ps1,Po1]     = deal(ones(nl+1,1));
-Ps1(1)      = C2s;
-Po1(1)      = C2o;
-for j = 2:nl+1
-    Ps1(j)   = C1s*Ps1(j-1)+C2s *double(((j-1)/nl)<=xls);
-    Po1(j)   = C1o*Po1(j-1)+C2o *double(((j-1)/nl)<=xlo);
-    
-end
-
-
-Ps          = Ps0 + Ps1; % for sure Ps0 has to be multiplied by a weight!
-Po          = Po0 + Po1;
-% [nl+1]  p154{1} probability of viewing a leaf in observation dir
-
-
+Ps          =   exp(k*xl*LAI) ;                                              % [nl+1]  p154{1} probability of viewing a leaf in solar dir
+Po          =   exp(K*xl*LAI) ;
+Ps(1:nl)    =   Ps(1:nl) *(1-exp(-k*LAI*dx))/(k*LAI*dx);                                      % Correct Ps/Po for finite dx
+Po(1:nl)    =   Po(1:nl) *(1-exp(-K*LAI*dx))/(K*LAI*dx);  % Correct Ps/Po for finite dx
 q           =   canopy.hot;
 Pso         =   zeros(size(Po));
 for j=1:length(xl)
@@ -293,12 +257,17 @@ piLo_       = piLoc_ + piLos_;          % [nwl] piRad in obsdir
 Lo_         = piLo_/pi;                 % [nwl] Rad in obsdir
 rso         = piLou_./Esun_;            % [nwl] obsdir reflectance of solar beam
 rdo         = piLod_./Esky_;            % [nlw] obsir reflectance of sky irradiance
-Refl        = piLo_./(Esky_+Esun_);     % [nwl] rso and rdo are not computed 
+Refl        = piLo_./(Esky_+Esun_);     % [nwl] 
+Refl(Esky_<1E-4) = rso(Esky_<1E-4);     % prevents numerical instability in absorption windows
+I            = find(Esky_<2E-4*max(Esky_));
+Refl(I)      = rso(I);                  % prevents numerical instability in absorption windows
 
 %% 4. net fluxes, spectral and total, and incoming fluxes
 %4.1 incident PAR at the top of canopy, spectral and spectrally integrated
 P_          = e2phot(wl(Ipar)*1E-9,(Esun_(Ipar)+Esky_(Ipar)),constants);      %
-P           = .001 * Sint(P_,wlPAR);                                % mol m-2s-1
+P           = 0.001 * Sint(P_,wlPAR);                                % mol m-2s-1
+EPAR_       = Esun_(Ipar)+Esky_(Ipar);
+EPAR        = 0.001 * Sint(EPAR_,wlPAR);
 %Psun        = 0.001 * Sint(e2phot(wlPAR*1E-9,Esun_(Ipar),constants),wlPAR);   % Incident solar PAR in PAR units
 % Incident and absorbed solar radiation
 
@@ -308,13 +277,16 @@ P           = .001 * Sint(P_,wlPAR);                                % mol m-2s-1
 %    absorbed PAR in Wm-2               (Rnsun_PAR)
 %    absorbed PAR by Chl in mol m-2s-1  (Pnsun_Cab)
 
-[Asun,Pnsun,Rnsun_PAR,Pnsun_Cab,Rnsun_Cab]= deal(zeros(nl,1));
+[Asun,Pnsun,Rnsun_PAR,Pnsun_Cab,Rnsun_Cab,Pnsun_Car,Rnsun_Car]= deal(zeros(nl,1));
 for j=1:nl
     Asun(j)        = 0.001 * Sint(Esun_.*epsc(j,:)',wl);                                 % Total absorbed solar radiation
     Pnsun(j)       = 0.001 * Sint(e2phot(wlPAR*1E-9,Esun_(Ipar).*epsc(j,Ipar)',constants),wlPAR);  % Absorbed solar radiation in PAR range in moles m-2 s-1
-    Rnsun_Cab(j)   = 0.001 * Sint(Esun_(Ipar)'.*epsc(j,Ipar).*kChlrel(j,Ipar),wlPAR);
+    Rnsun_Cab(j)   = 0.001 * Sint(Esun_(spectral.IwlP)'.*epsc(j,spectral.IwlP).*kChlrel(j,:),spectral.wlP);
+    Rnsun_Car(j)   = 0.001 * Sint(Esun_(spectral.IwlP)'.*epsc(j,spectral.IwlP).*kCarrel(j,:),spectral.wlP);
     Rnsun_PAR(j)   = 0.001 * Sint(Esun_(Ipar)'.*epsc(j,Ipar),wlPAR);
-    Pnsun_Cab(j)   = 0.001 * Sint(e2phot(wlPAR*1E-9,kChlrel(j,Ipar)'.*Esun_(Ipar).*epsc(j,Ipar)',constants),wlPAR);
+    Pnsun_Cab(j)   = 0.001 * Sint(e2phot(spectral.wlP*1E-9,kChlrel(j,:)'.*Esun_(spectral.IwlP).*epsc(j,spectral.IwlP)',constants),spectral.wlP);
+    Pnsun_Car(j)   = 0.001 * Sint(e2phot(spectral.wlP*1E-9,kCarrel(j,:)'.*Esun_(spectral.IwlP).*epsc(j,spectral.IwlP)',constants),spectral.wlP);
+
 end
 
 %4.3 total direct radiation (incident and net) per leaf area (W m-2 leaf)
@@ -327,14 +299,18 @@ if options.lite
     Pndir       = fs * Pnsun(j);                       % [13 x 36 x nl]   net PAR
     Pndir_Cab   = fs * Pnsun_Cab(j);                   % [13 x 36 x nl]   net PAR Cab
     Rndir_Cab   = fs * Rnsun_Cab(j);                   %   net PAR energy units
+    Pndir_Car   = fs * Pnsun_Car(j);                   % [13 x 36 x nl]   net PAR Cab
+    Rndir_Car   = fs * Rnsun_Car(j);                   %   net PAR energy units
     Rndir_PAR   = fs * Rnsun_PAR(j);                   % [13 x 36 x nl]
 else
-    [Rndir,Pndir,Pndir_Cab,Rndir_Cab,Rndir_PAR]= deal(zeros(13,36,nl));
+    [Rndir,Pndir,Pndir_Cab,Rndir_Cab,Rndir_PAR,Pndir_Car,Rndir_Car]= deal(zeros(13,36,nl));
     for j=1:nl
         Rndir(:,:,j)       = fs * Asun(j);                        % [13 x 36 x nl]   net
         Pndir(:,:,j)       = fs * Pnsun(j);                       % [13 x 36 x nl]   net PAR
         Pndir_Cab(:,:,j)   = fs * Pnsun_Cab(j);                   % [13 x 36 x nl]   net PAR Cab
         Rndir_Cab(:,:,j)   = fs * Rnsun_Cab(j);                   %   net PAR energy units
+        Pndir_Car(:,:,j)   = fs * Pnsun_Car(j);                   % [13 x 36 x nl]   net PAR Cab
+        Rndir_Car(:,:,j)   = fs * Rnsun_Car(j);                   %   net PAR energy units
         Rndir_PAR(:,:,j)   = fs * Rnsun_PAR(j);                   % [13 x 36 x nl]   net PAR energy units
     end
 end
@@ -350,15 +326,21 @@ for j = 1:nl     % 1 top nl is bottom
     % net radiation (mW m-2 um-1) and net PAR (moles m-2 s-1 um-1), per wavelength
     Rndif_(j,:)         = E_.*epsc(j,:);                                                    % [nl,nwl]  Net (absorbed) radiation by leaves
     Pndif_(j,:)         = .001 *(e2phot(wlPAR*1E-9, Rndif_(j,Ipar)',constants))';                     % [nl,nwl]  Net (absorbed) as PAR photons
-    Rndif_Cab_(j,:)     = .001 *(kChlrel(j,Ipar).*Rndif_(j,Ipar))';    % [nl,nwl]  Net (absorbed) as PAR photons by Cab
-    Pndif_Cab_(j,:)     = .001 *(e2phot(wlPAR*1E-9, (kChlrel(j,Ipar).*Rndif_(j,Ipar))',constants))';    % [nl,nwl]  Net (absorbed) as PAR photons by Cab
+    Rndif_Cab_(j,:)     = (kChlrel(j,:).*Rndif_(j,spectral.IwlP));    % [nl,nwl]  Net (absorbed) as PAR photons by Cab
+    Pndif_Cab_(j,:)     = .001 *(e2phot(spectral.wlP*1E-9, (kChlrel(j,:).*Rndif_(j,spectral.IwlP))',constants))';    % [nl,nwl]  Net (absorbed) as PAR photons by Cab
+    Rndif_Car_(j,:)     = (kCarrel(j,:).*Rndif_(j,spectral.IwlP));    % [nl,nwl]  Net (absorbed) as PAR photons by Car
+    Pndif_Car_(j,:)     = .001 *(e2phot(spectral.wlP*1E-9, (kCarrel(j,:).*Rndif_(j,spectral.IwlP))',constants))';    % [nl,nwl]  Net (absorbed) as PAR photons by Car
+
+    
     Rndif_PAR_(j,:)     = Rndif_(j,Ipar);                                                   % [nl,nwlPAR]  Net (absorbed) as PAR energy 
    
     % net radiation (W m-2) and net PAR (moles m-2 s-1), integrated over all wavelengths
     Rndif(j)            = .001 * Sint(Rndif_(j,:),wl);              % [nl]  Full spectrum net diffuse flux
     Pndif(j)            =        Sint(Pndif_(j,Ipar),wlPAR);        % [nl]  Absorbed PAR
-    Pndif_Cab(j)        =        Sint(Pndif_Cab_(j,Ipar),wlPAR);    % [nl]  Absorbed PAR by Cab integrated
-    Rndif_Cab(j)        = .001 * Sint(Rndif_Cab_(j,Ipar),wlPAR);      % [nl]  Absorbed PAR by Cab integrated
+    Pndif_Cab(j)        =        Sint(Pndif_Cab_(j,:),spectral.wlP);    % [nl]  Absorbed PAR by Cab integrated
+    Rndif_Cab(j)        = .001 * Sint(Rndif_Cab_(j,:),spectral.wlP);      % [nl]  Absorbed PAR by Cab integrated
+    Pndif_Car(j)        =        Sint(Pndif_Car_(j,:),spectral.wlP);    % [nl]  Absorbed PAR by Car integrated
+    Rndif_Car(j)        = .001 * Sint(Rndif_Car_(j,:),spectral.wlP);      % [nl]  Absorbed PAR by Car integrated
     Rndif_PAR(j)        = .001 * Sint(Rndif_PAR_(j,Ipar),wlPAR);    % [nl]  Absorbed PAR by Cab integrated
 end
 
@@ -372,25 +354,31 @@ Rnhc        = Rndif;            % [nl] shaded leaves or needles
 Pnhc        = Pndif;            % [nl] shaded leaves or needles
 Pnhc_Cab    = Pndif_Cab;        % [nl] shaded leaves or needles
 Rnhc_Cab    = Rndif_Cab;        % [nl] shaded leaves or needles
+Pnhc_Car    = Pndif_Car;        % [nl] shaded leaves or needles
+Rnhc_Car    = Rndif_Car;        % [nl] shaded leaves or needles
 Rnhc_PAR    = Rndif_PAR;        % [nl] shaded leaves or needles
 
 if ~options.lite
-    [Rnuc,Pnuc,Pnuc_Cab,Rnuc_PAR,Rnuc_Cab] = deal(0*Rndir);
+    [Rnuc,Pnuc,Pnuc_Cab,Rnuc_PAR,Rnuc_Cab,Rnuc_Car,Pnuc_Car] = deal(0*Rndir);
     for j = 1:nl
         %Puc(:,:,j)  = Pdir(:,:,j)      + Pdif(j);      % [13,36,nl] Total fluxes on sunlit leaves or needles
         Rnuc(:,:,j) = Rndir(:,:,j)     + Rndif(j);     % [13,36,nl] Total fluxes on sunlit leaves or needles
         Pnuc(:,:,j)  = Pndir(:,:,j)     + Pndif(j);     % [13,36,nl] Total fluxes on sunlit leaves or needles
         Pnuc_Cab(:,:,j)  = Pndir_Cab(:,:,j)  + Pndif_Cab(j);% [13,36,nl] Total fluxes on sunlit leaves or needles
+        Pnuc_Car(:,:,j)  = Pndir_Car(:,:,j)  + Pndif_Car(j);% [13,36,nl] Total fluxes on sunlit leaves or needles
         Rnuc_PAR(:,:,j)  = Rndir_PAR(:,:,j)  + Rndif_PAR(j);% [13,36,nl] Total fluxes on sunlit leaves or needles
         Rnuc_Cab(:,:,j)  = Rndir_Cab(:,:,j)  + Rndif_Cab(j);% [13,36,nl] Total fluxes on sunlit leaves or needles   
+        Rnuc_Car(:,:,j)  = Rndir_Car(:,:,j)  + Rndif_Car(j);% [13,36,nl] Total fluxes on sunlit leaves or needles
     end
 else   
     %    Puc(:,:,j)  = Pdir      + Pdif(j);      % [13,36,nl] Total fluxes on sunlit leaves or needles
-    Rnuc = Rndir     + Rndif;     % [13,36,nl] Total fluxes on sunlit leaves or needles
-    Pnuc  = Pndir     + Pndif;     % [13,36,nl] Total fluxes on sunlit leaves or needles
-    Pnuc_Cab  = Pndir_Cab  + Pndif_Cab;% [13,36,nl] Total fluxes on sunlit leaves or needles
-    Rnuc_Cab  = Rndir_Cab  + Rndif_Cab;% [13,36,nl] Total fluxes on sunlit leaves or needles
-    Rnuc_PAR  = Rndir_PAR  + Rndif_PAR;% [13,36,nl] Total fluxes on sunlit leaves or needles       
+    Rnuc = Rndir     + Rndif;           % [nl] Total fluxes on sunlit leaves or needles
+    Pnuc  = Pndir     + Pndif;          % [nl] Total fluxes on sunlit leaves or needles
+    Pnuc_Cab  = Pndir_Cab  + Pndif_Cab; % [nl] Total fluxes on sunlit leaves or needles
+    Rnuc_Cab  = Rndir_Cab  + Rndif_Cab; % [nl] Total fluxes on sunlit leaves or needles
+    Pnuc_Car  = Pndir_Car  + Pndif_Car; % [nl] Total fluxes on sunlit leaves or needles
+    Rnuc_Car  = Rndir_Car  + Rndif_Car; % [nl] Total fluxes on sunlit leaves or needles
+    Rnuc_PAR  = Rndir_PAR  + Rndif_PAR; % [nl] Total fluxes on sunlit leaves or needles       
 end
 Rnus        = Rndifsoil + Rndirsoil; % [1] sunlit soil 
 Rnhs        = Rndifsoil;  % [1] shaded soil
@@ -398,16 +386,17 @@ Rnhs        = Rndifsoil;  % [1] shaded soil
 if options.calc_vert_profiles   
     [Pnu1d  ]           = meanleaf(canopy,Pnuc,         'angles');   % [nli,nlo,nl]      mean net radiation sunlit leaves
     [Pnu1d_Cab  ]       = meanleaf(canopy,Pnuc_Cab,     'angles');   % [nli,nlo,nl]      mean net radiation sunlit leaves
-    
+    [Pnu1d_Car  ]       = meanleaf(canopy,Pnuc_Car,     'angles');   % [nli,nlo,nl]      mean net radiation sunlit leaves
     profiles.Pn1d       = ((1-Ps(1:nl)).*Pnhc     + Ps(1:nl).*(Pnu1d));        %[nl]           mean photos leaves, per layer
     profiles.Pn1d_Cab   = ((1-Ps(1:nl)).*Pnhc_Cab + Ps(1:nl).*(Pnu1d_Cab));        %[nl]           mean photos leaves, per layer
+    profiles.Pn1d_Car   = ((1-Ps(1:nl)).*Pnhc_Car + Ps(1:nl).*(Pnu1d_Car));        %[nl]           mean photos leaves, per layer
 else
     profiles = struct;
 end
 
 %% 5 Model output
 % up and down and hemispherical out, cumulative over wavelenght
-Eout_       = Eplu_(1,:)'*Cs + (1-Cs)*rs.*(Esun_+Esky_);
+Eout_       = Eplu_(1,:)';
 Eouto       = 0.001 * Sint(Eout_(spectral.IwlP),spectral.wlP);  %     [1] hemispherical out, in optical range (W m-2)
 Eoutt       = 0.001 * Sint(Eout_(spectral.IwlT),spectral.wlT);  %     [1] hemispherical out, in thermal range (W m-2)
 Lot         = 0.001 * Sint(Lo_(spectral.IwlT),spectral.wlT);    %     [1] hemispherical out, in thermal range (W m-2)
@@ -435,7 +424,8 @@ rad.sigf    = sigf;     % forward scatter coefficient for specular flux
 rad.sigb    = sigb;     % backscatter coefficient for specular flux
 rad.Esun_   = Esun_;    % [nwlx1 double]   incident solar spectrum (mW m-2 um-1)
 rad.Esky_   = Esky_;    % [nwlx1 double]   incident sky spectrum (mW m-2 um-1)
-rad.PAR     = P;        % [1 double]        incident spectrally integrated PAR (moles m-2 s-1)
+rad.PAR     = P*1E6;    % [1 double]       incident spectrally integrated PAR (micromoles m-2 s-1)
+rad.EPAR    = EPAR;     % [1 double]       incident PAR in energy units (W m-2)
 rad.Eplu_   = Eplu_;    % [nlxnwl double]  upward diffuse radiation in the canopy (mW m-2 um-1)
 rad.Emin_   = Emin_;    % [nlxnwl double]  downward diffuse radiation in the canopy (mW m-2 um-1)
 rad.Emins_  = Emins_;   % [nlxnwl double]  downward diffuse radiation in the canopy due to direct solar rad (mW m-2 um-1)
@@ -457,13 +447,15 @@ rad.Pnh_Cab = 1E6*Pnhc_Cab;% [60x1 double]      net PAR absorbed by Cab (moles m
 rad.Pnu_Cab = 1E6*Pnuc_Cab; % [13x36x60 double] net PAR absorbed by Cab (moles m-2 s-1) of sunlit leaves
 rad.Rnh_Cab = Rnhc_Cab; % [60x1 double]    net PAR absorbed by Cab (W m-2) of shaded leaves
 rad.Rnu_Cab = Rnuc_Cab; % [13x36x60 double] net PAR absorbed by Cab (W m-2) of sunlit leaves
+rad.Pnh_Car = 1E6*Pnhc_Car;% [60x1 double]      net PAR absorbed by Cab (moles m-2 s-1) of shaded leaves
+rad.Pnu_Car = 1E6*Pnuc_Car; % [13x36x60 double] net PAR absorbed by Cab (moles m-2 s-1) of sunlit leaves
+rad.Rnh_Car = Rnhc_Car; % [60x1 double]    net PAR absorbed by Cab (W m-2) of shaded leaves
+rad.Rnu_Car = Rnuc_Car; % [13x36x60 double] net PAR absorbed by Cab (W m-2) of sunlit leaves
 rad.Rnh_PAR = Rnhc_PAR;     % [60x1 double]     net PAR absorbed by Cab (W m-2) of shaded leaves
 rad.Rnu_PAR = Rnuc_PAR;     % [13x36x60 double] net PAR absorbed (W m-2) of sunlit
 rad.Xdd     =   Xdd;
 rad.Xsd     = Xsd;
 rad.Xss     = Xss;
-
-gap.LAI_Cv = LAI;
 
 % Rn = canopy.LAI*(meanleaf(canopy,rad.Rnhc,'layers',(1-Ps(1:nl)))+meanleaf(canopy,rad.Rnuc,'angles_and_layers',Ps(1:nl)))
 % %y1 = canopy.Cv*(rad.Eplu_(end,:)-rad.Eplu_(1,:) + rad.Emin_(1,:) - rad.Emin_(end,:));

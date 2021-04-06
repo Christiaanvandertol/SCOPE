@@ -14,31 +14,25 @@ function [leafopt]=fluspect_mSCOPE(mly,spectral,leafbio,optipar, nl)
             leafopt.tran(i,:)       = leafopt_ml.tran;
             leafopt.Mb(:,:,i)       = leafopt_ml.Mb;
             leafopt.Mf(:,:,i)       = leafopt_ml.Mf;
-%             leafopt.MbI(:,:,i)      = leafopt_ml.MbI;
-%             leafopt.MbII(:,:,i)     = leafopt_ml.MbII;
-%             leafopt.MfI(:,:,i)      = leafopt_ml.MfI;
-%             leafopt.MfII(:,:,i)     = leafopt_ml.MfII;
+
             leafopt.kChlrel(i,:)    = leafopt_ml.kChlrel;
-            
+            leafopt.kCarrel(i,:)    = leafopt_ml.kCarrel;
+
             in1= indStar(i);
             in2= indStar(i+1);    
             rho_temp(in1:in2,:)    = repmat(leafopt.refl(i,:),in2-in1+1,1);        % [60,nwl]        leaf/needle reflection
             tau_temp(in1:in2,:)    = repmat(leafopt.tran(i,:),in2-in1+1,1);        % [60,nwl]        leaf/needle transmission
             Mb(:,:,in1:in2)        = repmat(leafopt.Mb(:,:,i),[1,1,in2-in1+1]);
             Mf(:,:,in1:in2)        = repmat(leafopt.Mf(:,:,i),[1,1,in2-in1+1]);
-%             MbI(:,:,in1:in2)       = repmat(leafopt.MbI(:,:,i),[1,1,in2-in1+1]);
-%             MbII(:,:,in1:in2)      = repmat(leafopt.MbII(:,:,i),[1,1,in2-in1+1]);
-%             MfI(:,:,in1:in2)       = repmat(leafopt.MfI(:,:,i),[1,1,in2-in1+1]);
-%             MfII(:,:,in1:in2)      = repmat(leafopt.MfII(:,:,i),[1,1,in2-in1+1]);
+
             kChlrel_temp(in1:in2,:)= repmat(leafopt.kChlrel(i,:),in2-in1+1,1);
+            kCarrel_temp(in1:in2,:)= repmat(leafopt.kCarrel(i,:),in2-in1+1,1);
         end
         leafopt.refl=rho_temp;
         leafopt.tran=tau_temp;
         leafopt.kChlrel = kChlrel_temp;
+        leafopt.kCarrel = kCarrel_temp;
         leafopt.Mb     = Mb;
         leafopt.Mf     = Mf;
-%         leafopt.MbI=MbI;
-%         leafopt.MbII=MbII;
-%         leafopt.MfI=MfI;
-%         leafopt.MfII=MfII;
+
 end

@@ -1,7 +1,8 @@
-function n_col = output_data_binary(f, k, xyt, rad,  canopy, V, vi, vmax, options, fluxes, meteo, iter)
+function n_col = output_data_binary(f, k, xyt, rad,  canopy, V, vi, vmax, options, fluxes, meteo, iter,resistance)
 %% OUTPUT DATA
 % author C. Van der Tol
 % date:      30 Nov 2019 
+% update:    22 Jan 2021 (additional output variables)
 
 %%
 if isdatetime(xyt.t)
@@ -12,7 +13,17 @@ if isdatetime(xyt.t)
 end
 
 %% Vegetation products
-veg_out = [k xyt.year(k) xyt.t(k) canopy.Pntot canopy.Pntot_Cab canopy.Rntot_Cab canopy.A canopy.Ja canopy.ENPQ  canopy.LST];
+apar_out= [k xyt.year(k) xyt.t(k)  rad.PAR rad.EPAR canopy.LAIsunlit  canopy.LAIshaded...
+    canopy.Pntot     canopy.Pnsun     canopy.Pnsha ...
+    canopy.Pntot_Cab canopy.Pnsun_Cab canopy.Pnsha_Cab ...
+    canopy.Pntot_Car canopy.Pnsun_Car canopy.Pnsha_Car ...
+    canopy.Rntot_PAR canopy.Rnsun_PAR canopy.Rnsha_PAR ...
+    canopy.Rntot_Cab canopy.Rnsun_Cab canopy.Rnsha_Cab ...
+    canopy.Rntot_Car canopy.Rnsun_Car canopy.Rnsha_Car];
+n_col.apar = length(apar_out);
+fwrite(f.apar_file,apar_out,'double');
+
+veg_out = [k xyt.year(k) xyt.t(k) canopy.A canopy.Ja canopy.ENPQ  canopy.PNPQ canopy.fqe canopy.LST canopy.emis];
 n_col.veg = length(veg_out);
 fwrite(f.veg_file,veg_out,'double');
 
@@ -29,7 +40,7 @@ fwrite(f.rad_file,rad_out,'double');
 
 %% Fluorescence scalar outputs
 if options.calc_fluor
-    fluor_out = [rad.F685  rad.wl685 rad.F740 rad.wl740 rad.F687 rad.F760 ...
+    fluor_out = [rad.F685  rad.wl685 rad.F740 rad.wl740 rad.F684 rad.F761 ...
         rad.LoutF rad.EoutF rad.EoutFrc];
     n_col.fluor = length(fluor_out);
     fwrite(f.fluor_file,fluor_out,'double');
@@ -42,41 +53,56 @@ if options.calc_fluor
     n_col.sigmaF = length(rad.sigmaF);
     fwrite(f.sigmaF_file, rad.sigmaF, 'double');
     
+    n_col.fRC = length(rad.EoutFrc_);
+    fwrite(f.fRC_file, rad.EoutFrc_, 'double');
+    
     n_col.fhemis = length(rad.EoutF_);
     fwrite(f.fhemis_file,rad.EoutF_, 'double');
     
     n_col.Lo2 = length(rad.Lototf_);
     fwrite(f.Lo2_file, rad.Lototf_,'double');
+    
+    n_col.rapp = length(rad.reflapp);
+    fwrite(f.rapp_file, rad.reflapp,'double');
+    
+    
 end
 
 %% reflectance
-n_col.r = length(canopy.reflectance);
-fwrite(f.r_file,canopy.reflectance,'double');
+if isfield(f, 'r_file')
+    n_col.r = length(rad.refl);
+    fwrite(f.r_file,rad.refl,'double');
 
-n_col.rsd = length(rad.rsd);
-fwrite(f.rsd_file,rad.rsd,'double');
+    n_col.rsd = length(rad.rsd);
+    fwrite(f.rsd_file,rad.rsd,'double');
 
-n_col.rdd = length(rad.rdd);
-fwrite(f.rdd_file,rad.rdd,'double');
+    n_col.rdd = length(rad.rdd);
+    fwrite(f.rdd_file,rad.rdd,'double');
 
-n_col.rso = length(rad.rso);
-fwrite(f.rso_file,rad.rso,'double');
+    n_col.rso = length(rad.rso);
+    fwrite(f.rso_file,rad.rso,'double');
 
-n_col.rdo = length(rad.rdo);
-fwrite(f.rdo_file,rad.rdo,'double');
+    n_col.rdo = length(rad.rdo);
+    fwrite(f.rdo_file,rad.rdo,'double');
 
-%% Radiance
-n_col.Eout = length(rad.Eout_);
-fwrite(f.Eout_file,rad.Eout_,'double');
+    %% Radiance
+    n_col.Eout = length(rad.Eout_);
+    fwrite(f.Eout_file,rad.Eout_,'double');
 
-n_col.Lo = length(rad.Lotot_);
-fwrite(f.Lo_file, rad.Lotot_, 'double');
+    n_col.Lo = length(rad.Lotot_);
+    fwrite(f.Lo_file, rad.Lotot_, 'double');
 
-n_col.Esun = length(rad.Esun_);
-fwrite(f.Esun_file, rad.Esun_, 'double');
+    n_col.Esun = length(rad.Esun_);
+    fwrite(f.Esun_file, rad.Esun_, 'double');
 
-n_col.Esky = length(rad.Esky_);
-fwrite(f.Esky_file, rad.Esky_, 'double');
+    n_col.Esky = length(rad.Esky_);
+    fwrite(f.Esky_file, rad.Esky_, 'double');
+end
+
+%% Resistances
+resist_out = [resistance.raa, resistance.raws, resistance.rss, resistance.ustar];  
+n_col.resist = length(resist_out);
+fwrite(f.resist_file, resist_out, 'double');
 
 %% pars
 k2 = find(vmax>1);  % really needed for the first one, later vi > 1

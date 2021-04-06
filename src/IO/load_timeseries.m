@@ -59,7 +59,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
     mly_ts = struct();
     if ~isempty(mSCOPE_csv)
         mSCOPE_ts_path = fullfile(path_input, Dataset_dir, mSCOPE_csv);
-        nly = str2num(F(11).FileName);
+        nly = str2double(F(11).FileName);
         mly_ts = load_mSCOPE_ts(mSCOPE_ts_path, nly, t_column, t_);
         mly_ts.nly = nly;
     end
@@ -105,9 +105,8 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         DOY_  = floor(t_);
         time_ = 24*(t_-DOY_);
         if all(time_ == 0)
-            error(sprintf(['tts (SZA) at midnight all simulations long? Possible solutions:\n'...
-                'provide timestamp (t_column) with time / check timezone\n'...
-                'provide a column with tts values']))
+            time_ = 12;
+			      warning('taking midday time to calculate tts')
         end
         ttsR  = calczenithangle(DOY_,time_ - xyt.timezn ,0,0,xyt.LON,xyt.LAT);     %sun zenith angle in rad
         V(vi_tts).Val = min(85, ttsR / pi * 180);     
