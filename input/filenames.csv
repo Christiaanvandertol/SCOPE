@@ -1,7 +1,7 @@
 Do_not_enter_additional_colums_of_text_in_this_sheet,
 ,
 The_following_three_are_always_required,
-Simulation_Name,OHP
+Simulation_Name,verification_run
 optipar_file,Optipar2021_ProspectPRO_CX.mat
 atmos_file,FLEX-S3_std.atm
 soil_file,soilnew.txt
