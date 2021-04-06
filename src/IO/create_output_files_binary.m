@@ -22,6 +22,7 @@ fprintf(fidpath,'%s', path_of_code);
 %% Filenames, will become .csv if options is on
 
 fnames.pars_file               = fullfile(Output_dir,'pars_and_input_short.bin');
+fnames.apar_file               = fullfile(Output_dir,'aPAR.bin');
 fnames.veg_file                = fullfile(Output_dir,'vegetation.bin');
 fnames.flu_file                = fullfile(Output_dir,'fluxes.bin');
 fnames.rad_file                = fullfile(Output_dir,'radiation.bin');
@@ -30,19 +31,20 @@ if options.calc_fluor
     fnames.fluor_spectrum_file     = fullfile(Output_dir,'fluorescence.bin');
     fnames.sigmaF_file             = fullfile(Output_dir,'sigmaF.bin');
     fnames.fhemis_file             = fullfile(Output_dir,'fluorescence_hemis.bin');
+    fnames.fRC_file                = fullfile(Output_dir,'fluorescence_ReabsCorr.bin');
     fnames.Lo2_file                = fullfile(Output_dir,'Lo_spectrum_inclF.bin');
+    fnames.rapp_file               = fullfile(Output_dir,'apparent_reflectance.bin');
 end
-if options.save_spectra
-    fnames.r_file                  = fullfile(Output_dir,'reflectance.bin');
-    fnames.rsd_file                = fullfile(Output_dir,'rsd.bin');
-    fnames.rdd_file                = fullfile(Output_dir,'rdd.bin');
-    fnames.rso_file                = fullfile(Output_dir,'rso.bin');
-    fnames.rdo_file                = fullfile(Output_dir,'rdo.bin');
-    fnames.Eout_file               = fullfile(Output_dir,'Eout_spectrum.bin');
-    fnames.Lo_file                 = fullfile(Output_dir,'Lo_spectrum.bin');
-    fnames.Esun_file               = fullfile(Output_dir,'Esun.bin');
-    fnames.Esky_file               = fullfile(Output_dir,'Esky.bin');
-end
+fnames.r_file                  = fullfile(Output_dir,'reflectance.bin');
+fnames.rsd_file                = fullfile(Output_dir,'rsd.bin');
+fnames.rdd_file                = fullfile(Output_dir,'rdd.bin');
+fnames.rso_file                = fullfile(Output_dir,'rso.bin');
+fnames.rdo_file                = fullfile(Output_dir,'rdo.bin');
+fnames.Eout_file               = fullfile(Output_dir,'Eout_spectrum.bin');
+fnames.Lo_file                 = fullfile(Output_dir,'Lo_spectrum.bin');
+fnames.Esun_file               = fullfile(Output_dir,'Esun.bin');
+fnames.Esky_file               = fullfile(Output_dir,'Esky.bin');
+fnames.resist_file             = fullfile(Output_dir,'resistances.bin');
 
 %% Open files for writing
 f = structfun(@(x) fopen(x, 'w'), fnames, 'UniformOutput',false);

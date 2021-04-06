@@ -64,7 +64,7 @@ wlE          =   (400:5:750)'; %spectral.wlE';    % Excitation wavelengths
 [dummy,iwlfo]    = intersect(wlS,wlF); %#ok<ASGLU>
 nf           = length(iwlfo);
 nl           = canopy.nlayers;
-LAI          = gap.LAI_Cv;
+LAI          = canopy.LAI;
 litab        = canopy.litab;
 lazitab      = canopy.lazitab;
 lidf         = canopy.lidf;
@@ -151,14 +151,14 @@ Mplu = 0.5*(Mb+Mf);    % [nwlfo,nwlfi]
 Mmin = 0.5*(Mb-Mf);    % [nwlfo,nwlfi]
 
 % in-products: we convert incoming radiation to a fluorescence spectrum using the matrices.
-
-for j = 1:nl
-    MpluEmin(:,j)   = Mplu(:,:,j)* Eminf_(:,j);          % [nwlfo,nl+1]
-    MpluEplu(:,j)   = Mplu(:,:,j)* Epluf_(:,j);          % [nwlfo,nl+1]
-    MminEmin(:,j)   = Mmin(:,:,j)* Eminf_(:,j);          % [nwlfo,nl+1]
-    MminEplu(:,j)   = Mmin(:,:,j)* Epluf_(:,j);          % [nwlfo,nl+1]
-    MpluEsun(:,j)   = Mplu(:,:,j)* Esunf_;               % integration by inproduct
-    MminEsun(:,j)   = Mmin(:,:,j)* Esunf_;               % integration by inproduct
+for j = 1:nl  
+    ep = constants.A*ephoton(wlF*1E-9,constants);
+    MpluEmin(:,j)   = ep.*(Mplu(:,:,j)* e2phot(wlE*1E-9,Eminf_(:,j),constants));          % [nwlfo,nl+1]
+    MpluEplu(:,j)   = ep.*(Mplu(:,:,j)* e2phot(wlE*1E-9,Epluf_(:,j),constants));          % [nwlfo,nl+1]
+    MminEmin(:,j)   = ep.*(Mmin(:,:,j)* e2phot(wlE*1E-9,Eminf_(:,j),constants));          % [nwlfo,nl+1]
+    MminEplu(:,j)   = ep.*(Mmin(:,:,j)* e2phot(wlE*1E-9,Epluf_(:,j),constants));          % [nwlfo,nl+1]
+    MpluEsun(:,j)   = ep.*(Mplu(:,:,j)* e2phot(wlE*1E-9,Esunf_,constants));               % integration by inproduct
+    MminEsun(:,j)   = ep.*(Mmin(:,:,j)* e2phot(wlE*1E-9,Esunf_,constants));               % integration by inproduct
 end
 
 laz= 1/36;
@@ -230,20 +230,13 @@ piLtot      = piLo1 + piLo2 + piLo3 + piLo4;
 LoF_        = piLtot/pi;
 Fhem_       = Fplu_(1,:)';
 
+rad.LoF_    = interp1(wlF,LoF_,spectral.wlF','spline');
+rad.EoutF_   = interp1(wlF,Fhem_,spectral.wlF','spline');
 
-method = 'spline';  % M2020a name
-if verLessThan('matlab', '9.8')
-    method = 'splines';
-end
-
-rad.LoF_    = interp1(wlF,LoF_,spectral.wlF',method);
-rad.EoutF_   = interp1(wlF,Fhem_,spectral.wlF',method);
-
-rad.LoF_sunlit      = interp1(wlF,piLo1/pi,spectral.wlF',method);
-rad.LoF_shaded      = interp1(wlF,piLo2/pi,spectral.wlF',method);
-rad.LoF_scattered   = interp1(wlF,piLo3/pi,spectral.wlF',method);
-rad.LoF_soil        = interp1(wlF,piLo4/pi,spectral.wlF',method);
-
+rad.LoF_sunlit      = interp1(wlF,piLo1/pi,spectral.wlF','spline');
+rad.LoF_shaded      = interp1(wlF,piLo2/pi,spectral.wlF','spline');
+rad.LoF_scattered   = interp1(wlF,piLo3/pi,spectral.wlF','spline');
+rad.LoF_soil        = interp1(wlF,piLo4/pi,spectral.wlF','spline');
 
 rad.EoutF   = 0.001 * Sint(Fhem_,wlF);
 rad.LoutF   = 0.001 * Sint(LoF_,wlF);
@@ -253,5 +246,7 @@ rad.wl685 = spectral.wlF(iwl685);
 if iwl685 == 55; [rad.F685,rad.wl685] = deal(NaN); end
 [rad.F740,iwl740]  = max(rad.LoF_(70:end));
 rad.wl740 = spectral.wlF(iwl740+69);
-rad.F687  = rad.LoF_(688-spectral.wlF(1));
-rad.F760  = rad.LoF_(761-spectral.wlF(1));
+rad.F684  = rad.LoF_(685-spectral.wlF(1));
+rad.F761  = rad.LoF_(762-spectral.wlF(1));
+return
+

@@ -78,15 +78,12 @@ rwc     =  canopy.rwc;
 z0m     =  canopy.zo;
 d       =  canopy.d;
 h       =  canopy.hc;
-w       =  canopy.leafwidth;
+%w       =  canopy.leafwidth;
 z       =  meteo.z;
 u       =  max(0.3,meteo.u);
 L       =  meteo.L;
 rbs     =  soil.rbs;
 %rss       =  resist_in.rss;
-
-
-
 
 % derived parameters
 %zr: top of roughness sublayer, bottom of intertial sublayer
@@ -95,26 +92,29 @@ zr			= 2.5*h;                   %                            [m]
 n			= Cd*LAI/(2*kappa^2);      %                            [] 
 
 %% stability correction for non-neutral conditions
-%neu		= find(L >= -.001 & L <= .001);
-%unst        = find(L <  -4);
-%st          = find(L >  4E3);
-unst        = find(L <  0 & L>-500);
-st          = find(L >  0 & L<500);
+unst        = (L <  0 & L>-500);
+st          = (L >  0 & L<500);  
+x       	= (1-16*z./L).^(1/4); % only used for unstable
 
 % stability correction functions, friction velocity and Kh=Km=Kv
-pm_z    	= psim(z -d,L,unst,st);
-ph_z    	= psih(z -d,L,unst,st);
-pm_h        = psim(h -d,L,unst,st);
+pm_z    	= psim(z -d,L,unst,st,x);
+ph_z    	= psih(z -d,L,unst,st,x);
+pm_h        = psim(h -d,L,unst,st,x);
 %ph_h       = psih(h -d,L,unst,st);
-ph_zr       = psih(zr-d,L,unst,st).*(z>=zr) + ph_z.*(z<zr);
-phs_zr      = phstar(zr,zr,d,L,st,unst);
-phs_h		= phstar(h ,zr,d,L,st,unst);
+ph_zr       = psih(zr-d,L,unst,st,x).*(z>=zr) + ph_z.*(z<zr);
+phs_zr      = phstar(zr,zr,d,L,st,unst,x);
+phs_h		= phstar(h ,zr,d,L,st,unst,x);
 
 ustar   	= max(.001,kappa*u./(log((z-d)/z0m) - pm_z));%          W&V Eq 30
+Kh          = kappa*ustar*(zr-d);                  %                W&V Eq 35
 
-Kh                  = kappa*ustar*(zr-d);                  %                W&V Eq 35
-resist_out.Kh(unst)	= kappa*ustar(unst)*(zr-d).*(1-16*(h-d)./L(unst)).^.5;% W&V Eq 35
-resist_out.Kh(st)   = kappa*ustar(st)  *(zr-d).*(1+ 5*(h-d)./L(st)  ).^-1;% W&V Eq 35
+if unst
+    resist_out.Kh	= Kh*(1-16*(h-d)./L).^.5;% W&V Eq 35
+elseif st
+    resist_out.Kh   = Kh*(1+ 5*(h-d)./L  ).^-1;% W&V Eq 35
+else
+    resist_out.Kh = Kh;
+end
 
 %% wind speed at height h and z0m
 uh			= max(ustar/kappa .* (log((h-d)/z0m) - pm_h     ),.01);
@@ -128,49 +128,51 @@ rai = (z>zr).*(1./(kappa*ustar).*(log((z-d) /(zr-d))  - ph_z   + ph_zr));% W&V E
 rar = 1./(kappa*ustar).*((zr-h)/(zr-d)) 	 - phs_zr + phs_h;% W&V Eq 39
 rac = h*sinh(n)./(n*Kh)*(log((exp(n)-1)/(exp(n)+1)) - log((exp(n*(z0m+ d )/h)-1)/(exp(n*(z0m +d )/h)+1))); % W&V Eq 42
 rws = h*sinh(n)./(n*Kh)*(log((exp(n*(z0m+d)/h)-1)/(exp(n*(z0m+d)/h)+1)) - log((exp(n*(.01    )/h)-1)/(exp(n*(.01    )/h)+1))); % W&V Eq 43
-rbc = 70/LAI * sqrt(w./uz0);						%		W&V Eq 31, but slightly different
+%rbc = 70/LAI * sqrt(w./uz0);						%		W&V Eq 31, but slightly different
 
 resist_out.rai = rai;
 resist_out.rar = rar;
 resist_out.rac = rac;
 resist_out.rws = rws;
-resist_out.rbc = rbc;
+%resist_out.rbc = rbc;
 
 raa  = rai + rar + rac;
-rawc = rwc + rbc;
+rawc = rwc;% + rbc;
 raws = rws + rbs;
 
 resist_out.raa  = raa;          % aerodynamic resistance above the canopy           W&V Figure 8.6
 resist_out.rawc	= rawc;			% aerodynamic resistance within the canopy (canopy)
 resist_out.raws	= raws;			% aerodynamic resistance within the canopy (soil)
 
-resist_out.raa  = min(4E2,raa);         % to prevent unrealistically high resistances
-resist_out.rawc = min(4E2,rawc);        % to prevent unrealistically high resistances
-resist_out.raws = min(4E2,raws);        % to prevent unrealistically high resistances
-
 return
 
 
 %% subfunction pm for stability correction (eg. Paulson, 1970)
-function pm = psim(z,L,unst,st)
-x       	= (1-16*z./L(unst)).^(1/4);
-pm      	= zeros(size(L));
-pm(unst)	= 2*log((1+x)/2)+log((1+x.^2)/2) -2*atan(x)+pi/2;   %   unstable
-pm(st)      = -5*z./L(st);                                      %   stable
+function pm = psim(z,L,unst,st,x)
+pm      	= 0;
+if unst
+    pm          = 2*log((1+x)/2)+log((1+x.^2)/2) -2*atan(x)+pi/2;   %   unstable
+elseif st
+    pm          = -5*z./L;                                      %   stable
+end
 return
 
 %% subfunction ph for stability correction (eg. Paulson, 1970)
-function ph = psih(z,L,unst,st)
-x       	= (1-16*z./L(unst)).^(1/4);
-ph      	= zeros(size(L));
-ph(unst)	= 2*log((1+x.^2)/2);                                %   unstable
-ph(st)      = -5*z./L(st);                                      %   stable
+function ph = psih(z,L,unst,st,x)
+ph        = 0;
+if unst
+    ph      = 2*log((1+x.^2)/2);                                %   unstable
+elseif st
+    ph      = -5*z./L;                                      %   stable
+end
 return
 
 %% subfunction ph for stability correction (eg. Paulson, 1970)
-function phs = phstar(z,zR,d,L,st,unst)
-x			= (1-16*z./L(unst)).^0.25;
-phs 		= zeros(size(L));
-phs(unst)   = (z-d)/(zR-d)*(x.^2-1)./(x.^2+1);
-phs(st)     = -5*z./L(st);
+function phs = phstar(z,zR,d,L,st,unst,x)
+phs         = 0;
+if unst
+    phs     = (z-d)/(zR-d)*(x.^2-1)./(x.^2+1);
+elseif st
+    phs     = -5*z./L;
+end
 return

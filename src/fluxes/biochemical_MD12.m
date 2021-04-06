@@ -52,7 +52,7 @@ function biochem_out = biochemical_MD12(leafbio,meteo,~,constants,fV,Q)
 %% Start
 
 p       = meteo.p.*1e2;
-BallBerrySlope       = leafbio.m;
+BallBerrySlope       = leafbio.BallBerrySlope;
 BallBerry0          = leafbio.BallBerry0;
 O       = meteo.Oa;
 Type    = leafbio.Type;
@@ -67,8 +67,8 @@ if nargin<6
 end
 T       = meteo.T;
 eb      = meteo.eb;
-Vcmo    = fV.*leafbio.Vcmo;
-Rdparam = leafbio.Rdparam;
+Vcmax25    = fV.*leafbio.Vcmax25;
+Rdparam = leafbio.RdPerVcmax25;
 Q(Q==0) = 1E-9;
 
 %% Global and site-specific constants
@@ -77,22 +77,22 @@ R             =  constants.R;                         % [J/K/mol]     universal 
 %---------------------------------------------------------------------------------------------------------
 %% Unit conversion and computation of environmental variables
 T       = T+273.15*(T<100);                           % [K]           convert temperatures to K if not already
-RH      = min(1,eb./equations.satvap(T-273.15));                       % []            relative humidity (decimal)
+RH      = min(1,eb./satvap(T-273.15));                       % []            relative humidity (decimal)
 Cs      = Cs .* p .*1E-11;                            % [bar]         1E-6 to convert from ppm to fraction, 1E-5 to convert from Pa to bar
 O       = O  .* p .*1E-08;                            % [bar]         1E-3 to convert from mmol/mol to fraction, 1E-5 to convert from Pa to bar
 
 %---------------------------------------------------------------------------------------------------------
 %% Define photosynthetic parameters (at reference temperature)
 SCOOP     = 2862.;                                    % [mol/mol]     Relative Rubisco specificity for CO2 vs O2 at ref temp (Cousins et al. 2010)
-Rdopt     = Rdparam * Vcmo;                           % [umol/m2/s]   dark respiration at ref temperature from correlation with Vcmo
+Rdopt     = Rdparam * Vcmax25;                           % [umol/m2/s]   dark respiration at ref temperature from correlation with Vcmax25
 switch Type
     case 'C3'                                           % C3 species
-        Jmo   =  Vcmo * 2.68;                            % [umol/m2/s]   potential e-transport at ref temp from correlation with Vcmo (Leuning 1997)
+        Jmo   =  Vcmax25 * 2.68;                            % [umol/m2/s]   potential e-transport at ref temp from correlation with Vcmax25 (Leuning 1997)
     otherwise                                           % C4 species
-        Jmo   =  Vcmo * 40/6;                           % [umole-/m2/s] maximum electron transport rate (ratio as in von Caemmerer 2000)
-        Vpmo  =  Vcmo * 2.33;                             % [umol/m2/s]   maximum PEP carboxylase activity (Yin et al. 2011)
+        Jmo   =  Vcmax25 * 40/6;                           % [umole-/m2/s] maximum electron transport rate (ratio as in von Caemmerer 2000)
+        Vpmo  =  Vcmax25 * 2.33;                             % [umol/m2/s]   maximum PEP carboxylase activity (Yin et al. 2011)
         Vpr   =  80;                                     % [umol/m2/s]   PEP regeneration rate, constant (von Caemmerer 2000)
-        gbs   =  (0.0207*Vcmo+0.4806)*1000.;           % [umol/m2/s]   bundle sheath conductance to CO2 (Yin et al. 2011)
+        gbs   =  (0.0207*Vcmax25+0.4806)*1000.;           % [umol/m2/s]   bundle sheath conductance to CO2 (Yin et al. 2011)
         x     =  0.4;                                     % []            partitioning of electron transport to mesophyll (von Caemmerer 2013)
         alpha =  0;                                      % []            bundle sheath PSII activity (=0 in maize/sorghum; >=0.5 in other cases; von Caemmerer 2000)
 end
@@ -160,7 +160,7 @@ Jmax   = Jmo .* exp(HAJ.*(T-TREF)./(TREF*dum1));
 Jmax   = Jmax.*(1.+exp((TREF*DELTASJ-HDJ)./dum2));
 Jmax   = Jmax./(1.+exp((T.*DELTASJ-HDJ)./dum1));     % [umol e-/m2/s] max electron transport rate at leaf temperature (Kattge and Knorr 2007; Massad et al. 2007)
 
-Vcmax  = Vcmo .* exp(HAVCM.*(T-TREF)./(TREF*dum1));
+Vcmax  = Vcmax25 .* exp(HAVCM.*(T-TREF)./(TREF*dum1));
 Vcmax  = Vcmax.*(1+exp((TREF*DELTASVC-HDVC)/dum2));
 Vcmax  = Vcmax./(1+exp((T.*DELTASVC-HDVC)./dum1));    % [umol/m2/s]    max carboxylation rate at leaf temperature (Kattge and Knorr 2007; Massad et al. 2007)
 
@@ -216,36 +216,12 @@ switch Type
         minCi = 0.1;
 end
 
-
-% fcount = 0; % the number of times we called computeA()  # persistent?
-%computeA()  % clears persistent fcount
-%computeA_fun = @(x) computeA(x, Type, g_m, Vs_C3, MM_consts, Rd, Vcmax, Gamma_star, Je, effcon, atheta, kpepcase);
-
-%if all(BallBerry0 == 0)
-    % b = 0: no need to iterate:
-    Ci = BallBerry(Cs, RH, [], BallBerrySlope, BallBerry0, minCi);
-%     A =  computeA_fun(Ci);
-    
-%else
-    % compute Ci using iteration (JAK)
-    % it would be nice to use a built-in root-seeking function but fzero requires scalar inputs and outputs,
-    % Here I use a fully vectorized method based on Brent's method (like fzero) with some optimizations.
- %   tol = 1e-7;  % 0.1 ppm more-or-less
-    % Setting the "corner" argument to Gamma may be useful for low Ci cases, but not very useful for atmospheric CO2, so it's ignored.
-    %                     (fn,                           x0, corner, tolerance)
-  %  [Ci] = equations.fixedp_brent_ari(@(x) Ci_next(x, Cs, RH, minCi, BallBerrySlope, BallBerry0, computeA_fun, ppm2bar), Cs, [], tol); % [] in place of Gamma: it didn't make much difference
-    %NOTE: A is computed in Ci_next on the final returned Ci. fixedp_brent_ari() guarantees that it was done on the returned values.
-%     A =  computeA_fun(Ci);
-%end
-
+Ci = BallBerry(Cs, RH, [], BallBerrySlope, BallBerry0, minCi);
 
 switch Type
     case 'C3'                                           % C3 species, based on Farquhar model (Farquhar et al. 1980)
         GSTAR = 0.5*O./SCO;                             % [bar]             CO2 compensation point in the absence of mitochondrial respiration
         
-        %Ci = BallBerry(Cs, RH, [], BallBerrySlope, 0, minCi);
-        %Ci    = max(GSTAR,Cs.*(1-1.6./(m.*RH*stress)));
-        % [bar]             intercellular CO2 concentration from Ball-Berry model (Ball et al. 1987)
         Cc  = Ci;                                        % [bar]             CO2 concentration at carboxylation sites (neglecting mesophyll resistance)
         
         Wc  = Vcmax .* Cc ./ (Cc + Kc .* (1+O./Ko));     % [umol/m2/s]       RuBP-limited carboxylation
@@ -295,8 +271,7 @@ switch Type
         A     =  min(Ac,Aj);                             % [umol/m2/s]       net photosynthesis
         
         Ja    =  J;                                      % [umole-/m2/s]     actual electron transport rate, CO2-limited
-        
-        
+               
         if any(A==Ac) %IPL 03/09/2013
             
             ind=A==Ac;
@@ -306,8 +281,6 @@ switch Type
             Ja(ind)  =  (-b(ind) + sqrt(b(ind).^2-4.*a(ind).*c(ind)))./(2.*a(ind));            % [umole-/m2/s]     actual electron transport rate, CO2-limited
             
         end
-
-
 end
 
 %---------------------------------------------------------------------------------------------------------

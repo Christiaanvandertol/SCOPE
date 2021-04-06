@@ -70,7 +70,7 @@ tau         = leafbio.tau_thermal;    % [1]               Leaf/needle transmissi
 rs          = soil.rs_thermal;        % [1]               Soil reflectance
 epsc        = 1-rho-tau;              % [nwl]               Emissivity vegetation
 epss        = 1-rs;                   % [nwl]               Emissivity soil
-LAI         = gap.LAI_Cv;
+LAI         = canopy.LAI;
 dx          = 1/nl;
 iLAI        = LAI*dx;
 

@@ -21,7 +21,7 @@
 %                      and s; a test on a = Inf was included
 %   01 Apr 2014 (WV)   Add carotenoid concentration (Cca and Kca)
 %   19 Jan 2015 (WV)   First beta version for simulation of PRI effect
-%
+%   20 Jan 2021 (CvdT) Include PROSPECT-PRO coefficients
 % usage:
 % [leafopt] = fluspect_b(spectral,leafbio,optipar)
 % 
@@ -44,6 +44,8 @@
 % KcaZ        = optipar.KcaZ;
 % Kw          = optipar.Kw;
 % Ks          = optipar.Ks;
+% Kp          = optipar.Kp;
+% Kcbc        = optipar.Kcbc;
 % phi         = optipar.phi;
 % outputs:
 % refl          reflectance
@@ -64,6 +66,8 @@ Cw          = leafbio.Cw;
 Cdm         = leafbio.Cdm;
 Cs          = leafbio.Cs;
 Cant 	    = leafbio.Cant;
+Cbc         = leafbio.Cbc;
+Cp          = leafbio.Cp;
 N           = leafbio.N;
 fqe         = leafbio.fqe;
 
@@ -82,18 +86,30 @@ end
 Kw          = optipar.Kw;
 Ks          = optipar.Ks;
 Kant        = optipar.Kant;
+if isfield(optipar, 'Kp')
+    Kp        = optipar.Kp;
+else
+    Kp = 0*Kab;
+end
+if isfield(optipar, 'Kcbc')
+    Kcbc        = optipar.Kcbc;
+else
+    Kcbc = 0*Kab;
+end
+
 phi         = optipar.phi;
 
 %% PROSPECT calculations
-Kall        = (Cab*Kab + Cca*Kca + Cdm*Kdm + Cw*Kw  + Cs*Ks + Cant*Kant)/N;   % Compact leaf layer
+Kall        = (Cab*Kab + Cca*Kca + Cdm*Kdm + Cw*Kw  + Cs*Ks + Cant*Kant + Cp*Kp + Cbc*Kcbc)/N;   % Compact leaf layer
 
 j           = find(Kall>0);               % Non-conservative scattering (normal case)
 t1          = (1-Kall).*exp(-Kall);
 t2          = Kall.^2.*expint(Kall);
 tau         = ones(size(t1));
 tau(j)      = t1(j)+t2(j);
-kChlrel     = zeros(size(t1));
+[kChlrel, kCarrel]     = deal(zeros(size(t1)));
 kChlrel(j)  = Cab*Kab(j)./(Kall(j)*N);
+kCarrel(j)  = Cca*Kca(j)./(Kall(j)*N);
 
 talf        = calctav(59,nr);
 ralf        = 1-talf;
@@ -140,7 +156,7 @@ refl        = Ra+Ta.*Rsub.*t./denom;
 leafopt.refl = refl;
 leafopt.tran = tran;
 leafopt.kChlrel = kChlrel;
-
+leafopt.kCarrel = kCarrel;
 % From here a new path is taken: The doubling method used to calculate
 % fluoresence is now only applied to the part of the leaf where absorption
 % takes place, that is, the part exclusive of the leaf-air interfaces. The
@@ -192,15 +208,6 @@ if fqe > 0
     wlf         = (640:4:850)';%spectral.wlF';    % fluorescence wavelengths, transpose to column
     wlp         = spectral.wlP;     % PROSPECT wavelengths, kept as a row vector
 
-%    minwle      = min(wle);
-%    maxwle      = max(wle);
- %   minwlf      = min(wlf);
- %   maxwlf      = max(wlf);
-
-    % indices of wle and wlf within wlp
-
-%    Iwle        = find(wlp>=minwle & wlp<=maxwle);
-    %Iwlf        = find(wlp>=minwlf & wlp<=maxwlf);
     [~,Iwlf]        = intersect(wlp,wlf);
     eps         = 2^(-ndub);
 

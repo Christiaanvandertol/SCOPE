@@ -18,13 +18,6 @@ function train_gpr(lut_in_path, lut_out_path, var_name)
     flu = readtable(lut_out_path, opt);
     lut_in.(var_name) = flu.(var_name);
     
-    % ebal errors
-    err_t = (flu.Rntot - flu.Htot - flu.lEtot - flu.Gtot) > 3;
-    err_c = (flu.Rnctot - flu.Hctot - flu.lEctot) > 3;
-    err_s = (flu.Rnstot - flu.Hstot - flu.lEstot - flu.Gtot) > 3;
-    err = err_t | err_c | err_s;
-    lut_in = lut_in(~err, :);
-    
     % Cross varidation (train: 70%, test: 30%)
     cv = cvpartition(size(lut_in,1),'HoldOut',0.3);
     idx = cv.test;
@@ -34,12 +27,9 @@ function train_gpr(lut_in_path, lut_out_path, var_name)
     
     fprintf('Started training gaussian process regression.\nUsually takes 1 minute.\n')
     gprMdl = fitrgp(lut_train, var_name, 'Standardize', 1);
-%     gprMdl = fitrgp(lut_train, var_name, 'Standardize', 1, 'NumActiveSetRepeats', 5);
     % we can overfit but not predict on new data with cvGPR (kfoldGPR)
 %     gprMdl = fitrgp(lut_train, var_name, 'Standardize', 1, 'CrossVal', 'on', 'Verbose', 1);
-%     res = kfoldPredict(gprMdl); 'accurate'
-%     gprMdl = fitrgp(lut_train, var_name, 'Standardize', 1, 'OptimizeHyperparameters', 'auto');
-    gprMdl = fitrgp(lut_train, var_name, 'Standardize', 1, 'OptimizeHyperparameters', 'all');
+%     res = kfoldPredict(gprMdl);
     save(mat_out, 'gprMdl')
     fprintf('GPR is saved in `%s`\n', mat_out)
     

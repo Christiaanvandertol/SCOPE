@@ -3,9 +3,9 @@ function generate_lut_input(tab, n_spectra, outdir)
     if nargin == 0
         tab = readtable('+lut/input_borders.csv');
         n_spectra = 1000;
-        outdir = '..';
+        outdir = '../exercise';
     end
-    out_file = fullfile(outdir, 'lut_in_b_rh.csv');
+    out_file = fullfile(outdir, 'lut_in.csv');
     assert(exist(out_file, 'file') == 0, '`%s` file already exists, delete it first', out_file)
     
     include = logical(tab.include);
@@ -30,8 +30,6 @@ function generate_lut_input(tab, n_spectra, outdir)
 
     t = array2table(params);
     t.Properties.VariableNames = varnames;
-    t.t = repelem({'20201010'}, size(t, 1))';
-    t.tts = repelem(24.4, size(t, 1))';
     writetable(t, out_file)
     
     if verLessThan('matlab', '9.1')  % < 2016b
