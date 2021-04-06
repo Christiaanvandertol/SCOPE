@@ -107,7 +107,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         if all(time_ == 0)
             time_ = 12;
 			warning('taking midday time to calculate tts')
-		end
+        end
         ttsR  = calczenithangle(DOY_,time_ - xyt.timezn ,0,0,xyt.LON,xyt.LAT);     %sun zenith angle in rad
         V(vi_tts).Val = min(85, ttsR / pi * 180);     
     end
