@@ -1,4 +1,4 @@
-﻿variable,lower,upper,units,include,default,meaning
+variable,lower,upper,units,include,default,meaning
 Cab,0,100,ug cm-2,1,80,leaf chlorophyll content
 Cca,0,25,ug cm-2,1,20,leaf carotenoid content
 Cant,0,5,ug cm-2,1,0,leaf anthocyanin content
@@ -25,3 +25,4 @@ u,0.5,10,m s-1,0,2,wind speed at height z
 tts,0,60,deg,1,30,solar zenith angle
 tto,0,60,deg,1,0,observation zenith angle
 psi,0,180,deg,1,90,azimuthal difference between solar and observation angle
+
