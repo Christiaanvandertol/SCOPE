@@ -14,7 +14,7 @@ tau_thermal,0.01
 Leaf_Biochemical,
 Vcmax25,60
 BallBerrySlope,8
-BallBerry0,0.1
+BallBerry0,0.01
 Type,0
 kV,0.64
 Rdparam,0.015
@@ -45,7 +45,7 @@ BSMlat,25
 BSMlon,45
 ,
 Canopy,
-LAI,1E-4
+LAI,3
 hc,2
 LIDFa,-0.35
 LIDFb,-0.15
