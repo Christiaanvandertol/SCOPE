@@ -289,7 +289,7 @@ Ag                  = biochem_out.Ag;
 CO2_per_electron    = biochem_out.CO2_per_electron;
 
 %% Compute A, electron transport rate, and stomatal resistance
-gs                  = 1.6 * A .* ppm2bar ./ (Cs-Ci);     % stomatal conductance
+gs                  = max(0, 1.6 * A .* ppm2bar ./ (Cs-Ci));     % stomatal conductance
 Ja                  = Ag ./ CO2_per_electron;   % actual electron transport rate
 rcw                 = (rhoa./(Mair*1E-3))./gs;    % stomatal resistance
 
