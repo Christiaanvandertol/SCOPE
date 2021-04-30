@@ -177,7 +177,7 @@
 <p>Soil and canopy carbon, water and energy fluxes</p>
 <dl class="function">
 <dt id="src.fluxes.biochemical">
-<code class="sig-name descname">biochemical</code><span class="sig-paren">(</span><em class="sig-param">leafbio</em>, <em class="sig-param">meteo</em>, <em class="sig-param">options</em>, <em class="sig-param">~</em>, <em class="sig-param">fV</em>, <em class="sig-param">Q</em><span class="sig-paren">)</span><a class="headerlink" href="#src.fluxes.biochemical" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">biochemical</code><span class="sig-paren">(</span><em class="sig-param">leafbio</em>, <em class="sig-param">meteo</em>, <em class="sig-param">options</em>, <em class="sig-param">constants</em>, <em class="sig-param">fV</em><span class="sig-paren">)</span><a class="headerlink" href="#src.fluxes.biochemical" title="Permalink to this definition">¶</a></dt>
 <dd><p>Date:  21 Sep 2012
 Update:   20 Feb 2013
 Update:      Aug 2013: correction of L171: Ci = Ci*1e6 ./ p .* 1E3;
@@ -187,11 +187,27 @@ Update:   2016-10 - (JAK) major rewrite to accomodate an iterative solution to t
 <li><p>also allows for g_m to be specified for C3 plants, but only if Ci_input is provided.</p></li>
 </ul>
 </div></blockquote>
+<dl class="simple">
+<dt>Update:   25 Feb 2021: Temperature reponse functions by Dutta et al.</dt><dd><p>implemented</p>
+</dd>
+</dl>
 <p>Authors:       Joe Berry and Christiaan van der Tol, Ari Kornfeld, contributions of others.
 Sources:</p>
 <blockquote>
-<div><p>Farquhar et al. 1980, Collatz et al (1991, 1992).</p>
+<div><p>Farquhar et al. 1980, Collatz et al (1991, 1992), and:</p>
 </div></blockquote>
+<p>Dutta, D., Schimel, D. S., Sun, Y., Tol, C. V. D., &amp; Frankenberg, C. (2019). 
+Optimal inverse estimation of ecosystem parameters from observations of carbon and energy fluxes. 
+Biogeosciences, 16(1), 77-103.</p>
+<p>Van der Tol, C., Berry, J. A., Campbell, P. K. E., &amp; Rascher, U. (2014). 
+Models of fluorescence and photosynthesis for interpreting measurements 
+of solar?induced chlorophyll fluorescence. 
+Journal of Geophysical Research: Biogeosciences, 119(12), 2312-2327.</p>
+<p>Bonan, G. B., Lawrence, P. J., Oleson, K. W., Levis, S., Jung, M., 
+Reichstein, M., … &amp; Swenson, S. C. (2011). 
+Improving canopy processes in the Community Land Model version 4 (CLM4) 
+using global flux fields empirically inferred from FLUXNET data. 
+Journal of Geophysical Research: Biogeosciences, 116(G2).</p>
 <dl class="simple">
 <dt>This function calculates:</dt><dd><ul class="simple">
 <li><p>stomatal resistance of a leaf or needle (s m-1)</p></li>
@@ -201,11 +217,11 @@ Sources:</p>
 </dd>
 </dl>
 <p>Usage:
-biochem_out = biochemical(biochem_in)
-the function was tested for Matlab R2013b</p>
+biochem_out = biochemical(leafbio,meteo,options,constants,fV)
+the function was tested for Matlab R2017a</p>
 <p>Calculates net assimilation rate A, fluorescence F using biochemical model</p>
 <p>Input (units are important):
-structure ‘biochem_in’ with the following elements:
+structure ‘leafbio’ with the following elements:
 Knparams   % [], [], []           parameters for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha);</p>
 <blockquote>
 <div><blockquote>
@@ -241,15 +257,8 @@ BallBerry0 % []              (OPTIONAL) Ball-Berry intercept term ‘b’ (if pr
 </dd>
 <dt>tempcor   % [0, 1]               boolean (0 or 1) whether or not</dt><dd><p>…temperature correction to Vcmax has to be applied.</p>
 </dd>
-<dt>Tparams  % [],[],[K],[K],[K]     vector of 5 temperature correction parameters, look in spreadsheet of PFTs.</dt><dd><p>Only if tempcor=1, otherwise use dummy values</p>
-</dd>
 </dl>
-<p>…Or replace w/ individual values:
-slti        []              slope of cold temperature decline (C4 only)
-shti        []              slope of high temperature decline in photosynthesis
-Thl         [K]             T below which C4 photosynthesis is &lt;= half that predicted by Q10
-Thh         [K]             T above which photosynthesis is &lt;= half that predicted by Q10
-Trdm        [K]             T at which respiration is &lt;= half that predicted by Q10</p>
+<p>effcon    [mol CO2/mol e-]  number of CO2 per electrons - typically 1/5 for C3 and 1/6 for C4</p>
 </dd></dl>
 
 <dl class="function">
@@ -303,7 +312,7 @@ fixed electron transport partitioning is assumed for light-limited conditions</p
 
 <dl class="function">
 <dt id="src.fluxes.ebal">
-<code class="sig-name descname">ebal</code><span class="sig-paren">(</span><em class="sig-param">constants</em>, <em class="sig-param">options</em>, <em class="sig-param">rad</em>, <em class="sig-param">gap</em>, <em class="sig-param">meteo</em>, <em class="sig-param">soil</em>, <em class="sig-param">canopy</em>, <em class="sig-param">leafbio</em>, <em class="sig-param">k</em>, <em class="sig-param">xyt</em><span class="sig-paren">)</span><a class="headerlink" href="#src.fluxes.ebal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ebal</code><span class="sig-paren">(</span><em class="sig-param">constants</em>, <em class="sig-param">options</em>, <em class="sig-param">rad</em>, <em class="sig-param">gap</em>, <em class="sig-param">meteo</em>, <em class="sig-param">soil</em>, <em class="sig-param">canopy</em>, <em class="sig-param">leafbio</em>, <em class="sig-param">k</em>, <em class="sig-param">xyt</em>, <em class="sig-param">integr</em><span class="sig-paren">)</span><a class="headerlink" href="#src.fluxes.ebal" title="Permalink to this definition">¶</a></dt>
 <dd><p>function ebal.m calculates the energy balance of a vegetated surface</p>
 <blockquote>
 <div><dl class="simple">

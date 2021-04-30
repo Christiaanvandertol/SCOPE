@@ -101,8 +101,30 @@ columns - wl 640:1:850 nm
       - TOC hemispherically integrated fluorescence
 
 
+fluorescence_ReabsCorr.csv
+-----------------------------
+
+.. Note:: ``options.calc_fluor``
+
+rows - time (simulation number)
+
+columns - wl 640:1:850 nm
+
+.. list-table::
+    :widths: 20 20 60
+
+    * - variable
+      - units
+      - description
+    * - **EoutFrc_**
+      - W m-2 um-1
+      - fluorescence_spectrum 640:1:850 nm reabsorption corrected
+
+
 Lo_spectrum_inclF.csv
 -----------------------------
+
+.. Note:: ``options.calc_fluor``
 
 rows - time (simulation number)
 
@@ -117,3 +139,24 @@ columns - wl number (2162)
     * - **Lototf_**
       - W m-2 um-1 sr-1
       - upwelling radiance in observation direction including fluorescence
+
+
+
+apparent_reflectance.csv
+---------------------------
+
+.. Note:: ``options.calc_fluor``
+
+rows - time (simulation number)
+
+columns - wl
+
+.. list-table::
+    :widths: 20 20 60
+
+    * - variable
+      - units
+      - description
+    * - **(\Lo_ + \LoF_) * pi  / (\Esun_ + \Esky_)**
+      - \-
+      - fraction of radiation in observation direction + emitted fluorescence \* pi / irradiance

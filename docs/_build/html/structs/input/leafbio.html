@@ -215,17 +215,17 @@
 <tr class="row-odd"><td><p>variable</p></td>
 <td><p>user</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Cab,</span> <span class="pre">Cca,</span> <span class="pre">V2Z,</span> <span class="pre">Cw,</span> <span class="pre">Cdm,</span> <span class="pre">Cs,</span> <span class="pre">Cant,</span> <span class="pre">N,</span> <span class="pre">fqe</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Cab,</span> <span class="pre">Cca,</span> <span class="pre">V2Z,</span> <span class="pre">Cw,</span> <span class="pre">Cdm,</span> <span class="pre">Cs,</span> <span class="pre">Cant,</span> <span class="pre">Cp,</span> <span class="pre">Cbc,</span> <span class="pre">N,</span> <span class="pre">fqe</span></code></p></td>
 <td><div class="line-block">
 <div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.fluspect_B_CX" title="src.RTMs.fluspect_B_CX"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_PSI</span></code></div>
 <div class="line"><a class="reference internal" href="../../api/RTMs.html#src.RTMs.fluspect_B_CX_PSI_PSII_combined" title="src.RTMs.fluspect_B_CX_PSI_PSII_combined"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">fluspect_B_CX_PSI_PSII_combined()</span></code></a></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Type,</span> <span class="pre">m,</span> <span class="pre">Rdparam,</span> <span class="pre">Tyear,</span> <span class="pre">beta,</span> <span class="pre">qLs,</span> <span class="pre">kNPQs,</span> <span class="pre">stressfactor,</span> <span class="pre">Tparam,</span> <span class="pre">Vcmo</span></code> -&gt; <a class="reference internal" href="../internal/biochem_in.html#biochem-in"><span class="std std-ref">biochem_in</span></a></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Type,</span> <span class="pre">BallBerrySlope,</span> <span class="pre">Rdparam,</span> <span class="pre">Tyear,</span> <span class="pre">Kn0,</span> <span class="pre">Knalpha,</span> <span class="pre">Knbeta,</span> <span class="pre">beta,</span> <span class="pre">qLs,</span> <span class="pre">kNPQs,</span> <span class="pre">stressfactor,</span> <span class="pre">Tparam,</span> <span class="pre">Vcmax25</span></code> -&gt; <a class="reference internal" href="../internal/biochem_in.html#biochem-in"><span class="std std-ref">biochem_in</span></a></p></td>
 <td><p><a class="reference internal" href="../../api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Vcmo,</span> <span class="pre">Cab</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Vcmax25,</span> <span class="pre">Cab</span></code></p></td>
 <td><p><a class="reference internal" href="../../api/IO.html#src.IO.load_timeseries" title="src.IO.load_timeseries"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">load_timeseries()</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rho_thermal,</span> <span class="pre">tau_thermal,</span> <span class="pre">fqe</span></code></p></td>
@@ -289,23 +289,74 @@
 <td><p>0.0</p></td>
 <td><p>Anthocyanins</p></td>
 </tr>
+<tr class="row-even"><td><p><strong>Cp</strong></p></td>
+<td><p>ug cm-2</p></td>
+<td><p>double</p></td>
+<td><p>0.0</p></td>
+<td><p>protein</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cbc</strong></p></td>
+<td><p>ug cm-2</p></td>
+<td><p>double</p></td>
+<td><p>0.0</p></td>
+<td><p>?</p></td>
+</tr>
 <tr class="row-even"><td><p><strong>N</strong></p></td>
 <td><p>-</p></td>
 <td><p>double</p></td>
 <td><p>1.4</p></td>
 <td><p>leaf thickness parameters</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Vcmo</strong></p></td>
+<tr class="row-odd"><td><p><strong>Vcmax25</strong></p></td>
 <td><p>umol m-2 s-1</p></td>
 <td><p>double</p></td>
 <td><p>60.0</p></td>
-<td><p>maximum carboxylation capacity (at optimum temperature)</p></td>
+<td><p>maximum carboxylation capacity (at optimum temperature of 25C, former Vcmo)</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>m</strong></p></td>
-<td><p>?</p></td>
+<tr class="row-even"><td><p><strong>BallBerrySlope</strong></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
 <td><p>double</p></td>
 <td><p>8.0</p></td>
-<td><p>Ball-Berry stomatal conductance parameter</p></td>
+<td><p>slope of Ball-Berry stomatal conductance model (former m)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BallBerry0</strong></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>double</p></td>
+<td><p>0.01</p></td>
+<td><p>intercept of Ball-Berry stomatal conductance model</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Kn0</strong></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>double</p></td>
+<td><p>2.48</p></td>
+<td><p>Kn0: parameter for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha);</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Knalpha</strong></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>double</p></td>
+<td><p>2.83</p></td>
+<td><p>alpha parameter for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Knbeta</strong></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>double</p></td>
+<td><p>0.114</p></td>
+<td><p>beta parameter for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Type</strong></p></td>
 <td><p>-</p></td>

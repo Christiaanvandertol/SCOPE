@@ -94,23 +94,25 @@
 <li class="toctree-l3"><a class="reference internal" href="#soilspectrum"><code class="docutils literal notranslate"><span class="pre">soilspectrum</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#soil-heat-method"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-rss-rbs"><code class="docutils literal notranslate"><span class="pre">calc_rss_rbs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mscope"><code class="docutils literal notranslate"><span class="pre">mSCOPE</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#variations-in-output">Variations in output</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lite"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#calc-ebal"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-planck"><code class="docutils literal notranslate"><span class="pre">calc_planck</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-directional"><code class="docutils literal notranslate"><span class="pre">calc_directional</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-xanthophyllabs"><code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-vert-profiles"><code class="docutils literal notranslate"><span class="pre">calc_vert_profiles</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc-fluor"><code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fluorescence-model"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#apply-t-corr"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#appltcorr"><code class="docutils literal notranslate"><span class="pre">applTcorr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moninobukhov"><code class="docutils literal notranslate"><span class="pre">MoninObukhov</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#for-users-comfort">For users’ comfort</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#verify"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#savecsv"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-spectral"><code class="docutils literal notranslate"><span class="pre">save_spectral</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -209,25 +211,27 @@
 <li><p><a class="reference internal" href="#soilspectrum" id="id9"><code class="docutils literal notranslate"><span class="pre">soilspectrum</span></code></a></p></li>
 <li><p><a class="reference internal" href="#soil-heat-method" id="id10"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a></p></li>
 <li><p><a class="reference internal" href="#calc-rss-rbs" id="id11"><code class="docutils literal notranslate"><span class="pre">calc_rss_rbs</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mscope" id="id12"><code class="docutils literal notranslate"><span class="pre">mSCOPE</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#variations-in-output" id="id12">Variations in output</a></p>
+<li><p><a class="reference internal" href="#variations-in-output" id="id13">Variations in output</a></p>
 <ul>
-<li><p><a class="reference internal" href="#lite" id="id13"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a></p></li>
-<li><p><a class="reference internal" href="#calc-ebal" id="id14"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a></p></li>
+<li><p><a class="reference internal" href="#lite" id="id14"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a></p></li>
 <li><p><a class="reference internal" href="#calc-planck" id="id15"><code class="docutils literal notranslate"><span class="pre">calc_planck</span></code></a></p></li>
 <li><p><a class="reference internal" href="#calc-directional" id="id16"><code class="docutils literal notranslate"><span class="pre">calc_directional</span></code></a></p></li>
 <li><p><a class="reference internal" href="#calc-xanthophyllabs" id="id17"><code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></a></p></li>
 <li><p><a class="reference internal" href="#calc-vert-profiles" id="id18"><code class="docutils literal notranslate"><span class="pre">calc_vert_profiles</span></code></a></p></li>
 <li><p><a class="reference internal" href="#calc-fluor" id="id19"><code class="docutils literal notranslate"><span class="pre">calc_fluor</span></code></a></p></li>
 <li><p><a class="reference internal" href="#fluorescence-model" id="id20"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a></p></li>
-<li><p><a class="reference internal" href="#apply-t-corr" id="id21"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a></p></li>
+<li><p><a class="reference internal" href="#appltcorr" id="id21"><code class="docutils literal notranslate"><span class="pre">applTcorr</span></code></a></p></li>
+<li><p><a class="reference internal" href="#moninobukhov" id="id22"><code class="docutils literal notranslate"><span class="pre">MoninObukhov</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#for-users-comfort" id="id22">For users’ comfort</a></p>
+<li><p><a class="reference internal" href="#for-users-comfort" id="id23">For users’ comfort</a></p>
 <ul>
-<li><p><a class="reference internal" href="#verify" id="id23"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a></p></li>
-<li><p><a class="reference internal" href="#savecsv" id="id24"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a></p></li>
+<li><p><a class="reference internal" href="#verify" id="id24"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a></p></li>
+<li><p><a class="reference internal" href="#savecsv" id="id25"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a></p></li>
+<li><p><a class="reference internal" href="#save-spectral" id="id26"><code class="docutils literal notranslate"><span class="pre">save_spectral</span></code></a></p></li>
 </ul>
 </li>
 </ul>
@@ -299,7 +303,7 @@
 <hr class="docutils" />
 <div class="section" id="soil-heat-method">
 <h3><a class="toc-backref" href="#id10"><code class="docutils literal notranslate"><span class="pre">soil_heat_method</span></code></a><a class="headerlink" href="#soil-heat-method" title="Permalink to this headline">¶</a></h3>
-<p>Method of ground heat flux (G) calculation</p>
+<p>Method of ground heat flux (G) calculation. In soil_heat_method 0 and 1 soil thermal inertia (GAM) is calculated from inputs.</p>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/IO.html#src.IO.select_input" title="src.IO.select_input"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">select_input()</span></code></a>, <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 <p><strong>0</strong></p>
 <blockquote>
@@ -334,37 +338,33 @@
 </dd>
 </dl>
 </div>
-</div>
 <hr class="docutils" />
-<div class="section" id="variations-in-output">
-<h2><a class="toc-backref" href="#id12">Variations in output</a><a class="headerlink" href="#variations-in-output" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="lite">
-<h3><a class="toc-backref" href="#id13"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a><a class="headerlink" href="#lite" title="Permalink to this headline">¶</a></h3>
-<p>Switch in <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
-<p><strong>0</strong></p>
-<blockquote>
-<div><p>Normal SCOPE execution</p>
-</div></blockquote>
-<p><strong>1</strong></p>
-<blockquote>
-<div><p>Truncated to 1 canopy layer</p>
-</div></blockquote>
-</div>
-<hr class="docutils" />
-<div class="section" id="calc-ebal">
-<h3><a class="toc-backref" href="#id14"><code class="docutils literal notranslate"><span class="pre">calc_ebal</span></code></a><a class="headerlink" href="#calc-ebal" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mscope">
+<h3><a class="toc-backref" href="#id12"><code class="docutils literal notranslate"><span class="pre">mSCOPE</span></code></a><a class="headerlink" href="#mscope" title="Permalink to this headline">¶</a></h3>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 <p><strong>0</strong></p>
 <blockquote>
-<div><p>Only <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a> is run (with <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMf" title="src.RTMs.RTMf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMf()</span></code></a> if <code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code>)</p>
+<div><p>traditional single layer SCOPE</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>1</strong></dt><dd><p>multilayer <a class="reference internal" href="mSCOPE.html#mscope"><span class="std std-ref">mSCOPE</span></a></p>
+</dd>
+</dl>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="variations-in-output">
+<h2><a class="toc-backref" href="#id13">Variations in output</a><a class="headerlink" href="#variations-in-output" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lite">
+<h3><a class="toc-backref" href="#id14"><code class="docutils literal notranslate"><span class="pre">lite</span></code></a><a class="headerlink" href="#lite" title="Permalink to this headline">¶</a></h3>
+<p>Switch in <a class="reference internal" href="api/RTMs.html#src.RTMs.RTMo" title="src.RTMs.RTMo"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RTMo()</span></code></a></p>
+<p><strong>0</strong></p>
+<blockquote>
+<div><p>Normal SCOPE execution with [13 x 36 x nlayers] sunlit leaves</p>
 </div></blockquote>
 <p><strong>1</strong></p>
 <blockquote>
-<div><p>Calculate the complete energy balance.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>required for <code class="docutils literal notranslate"><span class="pre">calc_planck</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_directional</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_xanthophyllabs</span></code></p>
-</div>
+<div><p>Lite SCOPE execution with [nlayers x 1] sunlit leaves, sunlit leaf inclinations are not accounted for</p>
 </div></blockquote>
 </div>
 <hr class="docutils" />
@@ -477,24 +477,20 @@
 <h3><a class="toc-backref" href="#id20"><code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span></code></a><a class="headerlink" href="#fluorescence-model" title="Permalink to this headline">¶</a></h3>
 <p>Fluorescence model</p>
 <p>Switch in <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
-<p><strong>0</strong></p>
-<blockquote>
-<div><p>empirical, with sustained NPQ (fit to Flexas’ data)</p>
-</div></blockquote>
 <dl class="simple">
-<dt><strong>1</strong></dt><dd><p>empirical, with sigmoid for Kn: <a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical" title="src.fluxes.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> (Berry-Van der Tol)</p>
+<dt><strong>0</strong></dt><dd><p>empirical, with sigmoid for Kn: <a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical" title="src.fluxes.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a> (Berry-Van der Tol)</p>
 </dd>
-<dt><strong>2</strong></dt><dd><p><a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical_MD12" title="src.fluxes.biochemical_MD12"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical_MD12()</span></code></a> (von Caemmerer-Magnani)</p>
+<dt><strong>1</strong></dt><dd><p><a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical_MD12" title="src.fluxes.biochemical_MD12"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical_MD12()</span></code></a> (von Caemmerer-Magnani)</p>
 </dd>
 </dl>
 </div>
 <hr class="docutils" />
-<div class="section" id="apply-t-corr">
-<h3><a class="toc-backref" href="#id21"><code class="docutils literal notranslate"><span class="pre">apply_T_corr</span></code></a><a class="headerlink" href="#apply-t-corr" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="appltcorr">
+<h3><a class="toc-backref" href="#id21"><code class="docutils literal notranslate"><span class="pre">applTcorr</span></code></a><a class="headerlink" href="#appltcorr" title="Permalink to this headline">¶</a></h3>
 <p>correct Vcmax and rate constants for temperature</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>only effective with <code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span> <span class="pre">!=</span> <span class="pre">2</span></code> i.e. for <a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical" title="src.fluxes.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a></p>
+<p>only effective with <code class="docutils literal notranslate"><span class="pre">Fluorescence_model</span> <span class="pre">==</span> <span class="pre">0</span></code> i.e. for <a class="reference internal" href="api/fluxes.html#src.fluxes.biochemical" title="src.fluxes.biochemical"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">biochemical()</span></code></a></p>
 </div>
 <p>Switch in <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
 <dl class="simple">
@@ -506,12 +502,23 @@
 </dd>
 </dl>
 </div>
+<hr class="docutils" />
+<div class="section" id="moninobukhov">
+<h3><a class="toc-backref" href="#id22"><code class="docutils literal notranslate"><span class="pre">MoninObukhov</span></code></a><a class="headerlink" href="#moninobukhov" title="Permalink to this headline">¶</a></h3>
+<p>Switch in <a class="reference internal" href="api/fluxes.html#src.fluxes.ebal" title="src.fluxes.ebal"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ebal()</span></code></a></p>
+<dl class="simple">
+<dt><strong>0</strong></dt><dd><p>do not apply Monin-Obukhov atmospheric stability correction</p>
+</dd>
+<dt><strong>1</strong></dt><dd><p>apply Monin-Obukhov atmospheric stability correction</p>
+</dd>
+</dl>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="for-users-comfort">
-<h2><a class="toc-backref" href="#id22">For users’ comfort</a><a class="headerlink" href="#for-users-comfort" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">For users’ comfort</a><a class="headerlink" href="#for-users-comfort" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="verify">
-<h3><a class="toc-backref" href="#id23"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a><a class="headerlink" href="#verify" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24"><code class="docutils literal notranslate"><span class="pre">verify</span></code></a><a class="headerlink" href="#verify" title="Permalink to this headline">¶</a></h3>
 <p>verify the results (compare to saved ‘standard’ output) to test the code for the first time</p>
 <p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code></p>
 <dl class="simple">
@@ -525,12 +532,24 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="savecsv">
-<h3><a class="toc-backref" href="#id24"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a><a class="headerlink" href="#savecsv" title="Permalink to this headline">¶</a></h3>
-<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">bin_to_csv()</span></code></p>
+<h3><a class="toc-backref" href="#id25"><code class="docutils literal notranslate"><span class="pre">saveCSV</span></code></a><a class="headerlink" href="#savecsv" title="Permalink to this headline">¶</a></h3>
+<p>Switch in <code class="docutils literal notranslate"><span class="pre">SCOPE.m</span></code>, <a class="reference internal" href="api/IO.html#src.IO.bin_to_csv" title="src.IO.bin_to_csv"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">bin_to_csv()</span></code></a></p>
 <dl class="simple">
 <dt><strong>0</strong></dt><dd><p>leave .bin files in output folder</p>
 </dd>
-<dt><strong>1</strong></dt><dd><p>convert .bin files to .csv with <code class="xref mat mat-func docutils literal notranslate"><span class="pre">bin_to_csv()</span></code>, delete .bin files</p>
+<dt><strong>1</strong></dt><dd><p>convert .bin files to .csv with <a class="reference internal" href="api/IO.html#src.IO.bin_to_csv" title="src.IO.bin_to_csv"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">bin_to_csv()</span></code></a>, delete .bin files</p>
+</dd>
+</dl>
+</div>
+<hr class="docutils" />
+<div class="section" id="save-spectral">
+<h3><a class="toc-backref" href="#id26"><code class="docutils literal notranslate"><span class="pre">save_spectral</span></code></a><a class="headerlink" href="#save-spectral" title="Permalink to this headline">¶</a></h3>
+<p>Save files with full spectrum. May reach huge sizes in long time-series.</p>
+<p>Switch in <a class="reference internal" href="api/IO.html#src.IO.create_output_files_binary" title="src.IO.create_output_files_binary"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">create_output_files_binary()</span></code></a></p>
+<dl class="simple">
+<dt><strong>0</strong></dt><dd><p>do not save</p>
+</dd>
+<dt><strong>1</strong></dt><dd><p>save</p>
 </dd>
 </dl>
 <hr class="docutils" />

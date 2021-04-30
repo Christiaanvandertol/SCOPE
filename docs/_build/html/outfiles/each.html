@@ -90,7 +90,9 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">In each simulation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pars-and-input-short-csv">pars_and_input_short.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#vegetation-csv">vegetation.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apar-csv">aPAR.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fluxes-csv">fluxes.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resistances-csv">resistances.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiation-csv">radiation.csv</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#reflectance-and-its-quantiles">Reflectance and its quantiles</a></li>
 </ul>
@@ -200,25 +202,27 @@
 <ul>
 <li><p><a class="reference internal" href="#pars-and-input-short-csv" id="id2">pars_and_input_short.csv</a></p></li>
 <li><p><a class="reference internal" href="#vegetation-csv" id="id3">vegetation.csv</a></p></li>
-<li><p><a class="reference internal" href="#fluxes-csv" id="id4">fluxes.csv</a></p></li>
-<li><p><a class="reference internal" href="#radiation-csv" id="id5">radiation.csv</a></p>
+<li><p><a class="reference internal" href="#apar-csv" id="id4">aPAR.csv</a></p></li>
+<li><p><a class="reference internal" href="#fluxes-csv" id="id5">fluxes.csv</a></p></li>
+<li><p><a class="reference internal" href="#resistances-csv" id="id6">resistances.csv</a></p></li>
+<li><p><a class="reference internal" href="#radiation-csv" id="id7">radiation.csv</a></p>
 <ul>
-<li><p><a class="reference internal" href="#reflectance-and-its-quantiles" id="id6">Reflectance and its quantiles</a></p></li>
+<li><p><a class="reference internal" href="#reflectance-and-its-quantiles" id="id8">Reflectance and its quantiles</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#reflectance-csv" id="id7">reflectance.csv</a></p></li>
-<li><p><a class="reference internal" href="#rsd-csv" id="id8">rsd.csv</a></p></li>
-<li><p><a class="reference internal" href="#rdd-csv" id="id9">rdd.csv</a></p></li>
-<li><p><a class="reference internal" href="#rso-csv" id="id10">rso.csv</a></p></li>
-<li><p><a class="reference internal" href="#rdo-csv" id="id11">rdo.csv</a></p>
+<li><p><a class="reference internal" href="#reflectance-csv" id="id9">reflectance.csv</a></p></li>
+<li><p><a class="reference internal" href="#rsd-csv" id="id10">rsd.csv</a></p></li>
+<li><p><a class="reference internal" href="#rdd-csv" id="id11">rdd.csv</a></p></li>
+<li><p><a class="reference internal" href="#rso-csv" id="id12">rso.csv</a></p></li>
+<li><p><a class="reference internal" href="#rdo-csv" id="id13">rdo.csv</a></p>
 <ul>
-<li><p><a class="reference internal" href="#radiation-per-wavelength" id="id12">Radiation per wavelength</a></p></li>
+<li><p><a class="reference internal" href="#radiation-per-wavelength" id="id14">Radiation per wavelength</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#eout-spectrum-csv" id="id13">Eout_spectrum.csv</a></p></li>
-<li><p><a class="reference internal" href="#lo-spectrum-csv" id="id14">Lo_spectrum.csv</a></p></li>
-<li><p><a class="reference internal" href="#esun-csv" id="id15">Esun.csv</a></p></li>
-<li><p><a class="reference internal" href="#esky-csv" id="id16">Esky.csv</a></p></li>
+<li><p><a class="reference internal" href="#eout-spectrum-csv" id="id15">Eout_spectrum.csv</a></p></li>
+<li><p><a class="reference internal" href="#lo-spectrum-csv" id="id16">Lo_spectrum.csv</a></p></li>
+<li><p><a class="reference internal" href="#esun-csv" id="id17">Esun.csv</a></p></li>
+<li><p><a class="reference internal" href="#esky-csv" id="id18">Esky.csv</a></p></li>
 </ul>
 </li>
 </ul>
@@ -255,39 +259,157 @@
 <td><p>-</p></td>
 <td><p>decimal day of year (DOY)</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>aPAR</strong></p></td>
-<td><p>umol m-2 s-1</p></td>
-<td><p>absorbed PAR by leaves</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>aPARbyCab</strong></p></td>
-<td><p>umol m-2 s-1</p></td>
-<td><p>absorbed PAR by chlorophylls a, b</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>aPARbyCab(energyunits)</strong></p></td>
-<td><p>W m-2</p></td>
-<td><p>absorbed PAR</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Photosynthesis</strong></p></td>
+<tr class="row-odd"><td><p><strong>Photosynthesis</strong></p></td>
 <td><p>umol m-2 s-1</p></td>
 <td><p>net photosynthesis of canopy (Actot)</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Electron_transport</strong></p></td>
+<tr class="row-even"><td><p><strong>Electron_transport</strong></p></td>
 <td><p>umol m-2 s-1</p></td>
 <td><p>electron transport rate (Ja)</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>NPQ_energy</strong></p></td>
+<tr class="row-odd"><td><p><strong>NPQ_energy</strong></p></td>
 <td><p>W m-2</p></td>
-<td><p>non-photochemical quenching (energy)</p></td>
+<td><p>non-photochemical quenching [energy units]</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>LST</strong></p></td>
+<tr class="row-even"><td><p><strong>NPQ_photon</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>non-photochemical quenching</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>canopy_level_FQE</strong></p></td>
+<td><p>umol photons (umol photons)-1</p></td>
+<td><p>fluorescence quantum yield at canopy level</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LST</strong></p></td>
 <td><p>K</p></td>
 <td><p>land surface temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>emis</strong></p></td>
+<td><p>-</p></td>
+<td><p>thermal energy emissivity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="apar-csv">
+<h2><a class="toc-backref" href="#id4">aPAR.csv</a><a class="headerlink" href="#apar-csv" title="Permalink to this headline">¶</a></h2>
+<p>rows - time (simulation number)</p>
+<p>columns - variables</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>simulation_number</strong></p></td>
+<td><p>-</p></td>
+<td><p>time step counter</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>year</strong></p></td>
+<td><p>-</p></td>
+<td><p>year</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DoY</strong></p></td>
+<td><p>-</p></td>
+<td><p>decimal day of year (DOY)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>iPAR</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>intercepted PAR</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>iPARE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>intercepted PAR [energy units]</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LAIsunlit</strong></p></td>
+<td><p>m2 m-2</p></td>
+<td><p>leaf area index of sunlit leaves</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LAIshaded</strong></p></td>
+<td><p>m2 m-2</p></td>
+<td><p>leaf area index of shaded leaves</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARtot</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by all leaves</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARsun</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by sunlit leaves</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARsha</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by shaded leaves</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARCabtot</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by chlorophylls a,b of all leaves</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARCabsun</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by chlorophylls a,b of sunlit leaves</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARCabsha</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by chlorophylls a,b of shaded leaves</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARCartot</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by carotenoinds of all leaves</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARCarsun</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by carotenoinds of sunlit leaves</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARCarsha</strong></p></td>
+<td><p>umol m-2 s-1</p></td>
+<td><p>absorbed PAR by carotenoinds of shaded leaves</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARtotE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by all leaves [energy units]</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARsunE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by sunlit leaves [energy units]</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARshaE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by shaded leaves [energy units]</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARCabtotE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by chlorophylls a,b of all leaves [energy units]</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARCabsunE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by chlorophylls a,b of sunlit leaves [energy units]</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARCabshaE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by chlorophylls a,b of shaded leaves [energy units]</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARCartotE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by carotenoinds of all leaves [energy units]</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>aPARCarsunE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by carotenoinds of sunlit leaves [energy units]</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aPARCarshaE</strong></p></td>
+<td><p>W m-2</p></td>
+<td><p>absorbed PAR by carotenoinds of shaded leaves [energy units]</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="fluxes-csv">
-<h2><a class="toc-backref" href="#id4">fluxes.csv</a><a class="headerlink" href="#fluxes-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">fluxes.csv</a><a class="headerlink" href="#fluxes-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - variables</p>
 <table class="colwidths-given docutils align-default">
@@ -369,15 +491,45 @@
 <td><p>W m-2</p></td>
 <td><p>total sensible heat</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rss</strong></p></td>
+</tbody>
+</table>
+</div>
+<div class="section" id="resistances-csv">
+<h2><a class="toc-backref" href="#id6">resistances.csv</a><a class="headerlink" href="#resistances-csv" title="Permalink to this headline">¶</a></h2>
+<p>rows - time (simulation number)</p>
+<p>columns - variables</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>raa</strong></p></td>
+<td><p>s m-1</p></td>
+<td><p>aerodynamic resistance above the canopy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>raws</strong></p></td>
+<td><p>s m-1</p></td>
+<td><p>aerodynamic resistance within the soi</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>rss</strong></p></td>
 <td><p>s m-1</p></td>
 <td><p>soil resistance to evaporation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ustar</strong></p></td>
+<td><p>m s-1</p></td>
+<td><p>friction velocity u*</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="radiation-csv">
-<h2><a class="toc-backref" href="#id5">radiation.csv</a><a class="headerlink" href="#radiation-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">radiation.csv</a><a class="headerlink" href="#radiation-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - variables</p>
 <table class="colwidths-given docutils align-default">
@@ -430,12 +582,12 @@
 </tbody>
 </table>
 <div class="section" id="reflectance-and-its-quantiles">
-<h3><a class="toc-backref" href="#id6">Reflectance and its quantiles</a><a class="headerlink" href="#reflectance-and-its-quantiles" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Reflectance and its quantiles</a><a class="headerlink" href="#reflectance-and-its-quantiles" title="Permalink to this headline">¶</a></h3>
 <p>For the meaning of reflectance factors, please, refer to <a class="reference internal" href="../my_proposal/brdf.html#definition"><span class="std std-ref">Definition</span></a></p>
 </div>
 </div>
 <div class="section" id="reflectance-csv">
-<h2><a class="toc-backref" href="#id7">reflectance.csv</a><a class="headerlink" href="#reflectance-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">reflectance.csv</a><a class="headerlink" href="#reflectance-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl</p>
 <table class="colwidths-given docutils align-default">
@@ -457,7 +609,7 @@
 </table>
 </div>
 <div class="section" id="rsd-csv">
-<h2><a class="toc-backref" href="#id8">rsd.csv</a><a class="headerlink" href="#rsd-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">rsd.csv</a><a class="headerlink" href="#rsd-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl</p>
 <table class="colwidths-given docutils align-default">
@@ -479,7 +631,7 @@
 </table>
 </div>
 <div class="section" id="rdd-csv">
-<h2><a class="toc-backref" href="#id9">rdd.csv</a><a class="headerlink" href="#rdd-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">rdd.csv</a><a class="headerlink" href="#rdd-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl</p>
 <table class="colwidths-given docutils align-default">
@@ -501,7 +653,7 @@
 </table>
 </div>
 <div class="section" id="rso-csv">
-<h2><a class="toc-backref" href="#id10">rso.csv</a><a class="headerlink" href="#rso-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">rso.csv</a><a class="headerlink" href="#rso-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl</p>
 <table class="colwidths-given docutils align-default">
@@ -523,7 +675,7 @@
 </table>
 </div>
 <div class="section" id="rdo-csv">
-<h2><a class="toc-backref" href="#id11">rdo.csv</a><a class="headerlink" href="#rdo-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">rdo.csv</a><a class="headerlink" href="#rdo-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl</p>
 <table class="colwidths-given docutils align-default">
@@ -544,11 +696,11 @@
 </tbody>
 </table>
 <div class="section" id="radiation-per-wavelength">
-<h3><a class="toc-backref" href="#id12">Radiation per wavelength</a><a class="headerlink" href="#radiation-per-wavelength" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Radiation per wavelength</a><a class="headerlink" href="#radiation-per-wavelength" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="eout-spectrum-csv">
-<h2><a class="toc-backref" href="#id13">Eout_spectrum.csv</a><a class="headerlink" href="#eout-spectrum-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Eout_spectrum.csv</a><a class="headerlink" href="#eout-spectrum-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl number (2162)</p>
 <table class="colwidths-given docutils align-default">
@@ -570,7 +722,7 @@
 </table>
 </div>
 <div class="section" id="lo-spectrum-csv">
-<h2><a class="toc-backref" href="#id14">Lo_spectrum.csv</a><a class="headerlink" href="#lo-spectrum-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Lo_spectrum.csv</a><a class="headerlink" href="#lo-spectrum-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl number (2162)</p>
 <table class="colwidths-given docutils align-default">
@@ -592,7 +744,7 @@
 </table>
 </div>
 <div class="section" id="esun-csv">
-<h2><a class="toc-backref" href="#id15">Esun.csv</a><a class="headerlink" href="#esun-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Esun.csv</a><a class="headerlink" href="#esun-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl number (2162)</p>
 <table class="colwidths-given docutils align-default">
@@ -607,14 +759,14 @@
 <td><p>description</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Esun_</strong></p></td>
-<td><p>W m-2 um-1 sr-1</p></td>
-<td><p>direct top of canopy irradiance irradiance</p></td>
+<td><p>W m-2 um-1</p></td>
+<td><p>direct top of canopy irradiance</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="esky-csv">
-<h2><a class="toc-backref" href="#id16">Esky.csv</a><a class="headerlink" href="#esky-csv" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Esky.csv</a><a class="headerlink" href="#esky-csv" title="Permalink to this headline">¶</a></h2>
 <p>rows - time (simulation number)</p>
 <p>columns - wl number (2162)</p>
 <table class="colwidths-given docutils align-default">
@@ -629,8 +781,8 @@
 <td><p>description</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Esky_</strong></p></td>
-<td><p>W m-2 um-1 sr-1</p></td>
-<td><p>diffuse top of canopy irradiance irradiance</p></td>
+<td><p>W m-2 um-1</p></td>
+<td><p>diffuse top of canopy irradiance</p></td>
 </tr>
 </tbody>
 </table>

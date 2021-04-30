@@ -223,9 +223,11 @@ while CONT                          % while energy balance does not close
     % ground heat flux
     if SoilHeatMethod == 2
         G = 0.35*Rns;
+        dG = 4*(1-soil.rs_thermal)*sigmaSB*(Ts+273.15).^3 * 0.35;
     else
         G = GAM/sqrt(pi) * 2* sum(([Ts'; Tsold(1:end-1,:)] - Tsold)/Deltat .* (sqrt(x) - sqrt(x-Deltat)));
         G = G';
+        dG = GAM/sqrt(pi) * 2* ((sqrt(x(1)) - sqrt(x(1)-Deltat)))/Deltat * ones(2,1);
     end
     
     % energy balance errors, continue criterion and iteration counter
@@ -255,7 +257,7 @@ while CONT                          % while energy balance does not close
     % 2.7. New estimates of soil (s) and leaf (c) temperatures, shaded (h) and sunlit (1)
     Tch         = Tch + Wc*EBerch./((rhoa*cp)./rac + rhoa*lambdah*e_to_q.*sh./(rac+bch.rcw)+ 4*leafbio.emis*sigmaSB*(Tch+273.15).^3);
     Tcu         = Tcu + Wc*EBercu./((rhoa*cp)./rac + rhoa*lambdau*e_to_q.*su./(rac+bcu.rcw)+ 4*leafbio.emis*sigmaSB*(Tcu+273.15).^3);
-    Ts          = Ts + Wc*EBers./(rhoa*cp./ras + rhoa*lambdas*e_to_q.*ss/(ras+rss)+ 4*(1-soil.rs_thermal)*sigmaSB*(Ts+273.15).^3);
+    Ts          = Ts + Wc*EBers./(rhoa*cp./ras + rhoa*lambdas*e_to_q.*ss/(ras+rss)+ 4*(1-soil.rs_thermal)*sigmaSB*(Ts+273.15).^3 + dG);
     Tch(abs(Tch)>100) = Ta;
     Tcu(abs(Tcu)>100) = Ta;
 end
