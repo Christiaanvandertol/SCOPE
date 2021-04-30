@@ -211,7 +211,8 @@ Update from PROSPECT to FLUSPECT: January 2011 (CvdT)</p>
 </dd>
 </dl>
 <p>01 Apr 2014 (WV)   Add carotenoid concentration (Cca and Kca)
-19 Jan 2015 (WV)   First beta version for simulation of PRI effect</p>
+19 Jan 2015 (WV)   First beta version for simulation of PRI effect
+20 Jan 2021 (CvdT) Include PROSPECT-PRO coefficients</p>
 </div></blockquote>
 <p>usage:
 [leafopt] = fluspect_b(spectral,leafbio,optipar)</p>
@@ -235,6 +236,8 @@ KcaV        = optipar.KcaV;
 KcaZ        = optipar.KcaZ;
 Kw          = optipar.Kw;
 Ks          = optipar.Ks;
+Kp          = optipar.Kp;
+Kcbc        = optipar.Kcbc;
 phi         = optipar.phi;
 outputs:
 refl          reflectance

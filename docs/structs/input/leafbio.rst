@@ -23,12 +23,12 @@ Used
 
     * - variable
       - user
-    * - ``Cab, Cca, V2Z, Cw, Cdm, Cs, Cant, N, fqe``
+    * - ``Cab, Cca, V2Z, Cw, Cdm, Cs, Cant, Cp, Cbc, N, fqe``
       - | :func:`.fluspect_B_CX` if ``options.calc_PSI``
         | :func:`.fluspect_B_CX_PSI_PSII_combined`
-    * - ``Type, m, Rdparam, Tyear, beta, qLs, kNPQs, stressfactor, Tparam, Vcmo`` -> :ref:`structs/internal/biochem_in:Biochem_in`
+    * - ``Type, BallBerrySlope, Rdparam, Tyear, Kn0, Knalpha, Knbeta, beta, qLs, kNPQs, stressfactor, Tparam, Vcmax25`` -> :ref:`structs/internal/biochem_in:Biochem_in`
       - :func:`.ebal`
-    * - ``Vcmo, Cab``
+    * - ``Vcmax25, Cab``
       - :func:`.load_timeseries`
     * - ``rho_thermal, tau_thermal, fqe``
       - ``SCOPE.m``
@@ -78,21 +78,51 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
       - double
       - 0.0
       - Anthocyanins
+    * - **Cp**
+      - ug cm-2
+      - double
+      - 0.0
+      - protein
+    * - **Cbc**
+      - ug cm-2
+      - double
+      - 0.0
+      - ?
     * - **N**
       - \-
       - double
       - 1.4
       - leaf thickness parameters
-    * - **Vcmo**
+    * - **Vcmax25**
       - umol m-2 s-1
       - double
       - 60.0
-      - maximum carboxylation capacity (at optimum temperature)
-    * - **m**
-      - ?
+      - maximum carboxylation capacity (at optimum temperature of 25C, former Vcmo)
+    * - **BallBerrySlope**
+      - -
       - double
       - 8.0
-      - Ball-Berry stomatal conductance parameter
+      - slope of Ball-Berry stomatal conductance model (former m)
+    * - **BallBerry0**
+      - -
+      - double
+      - 0.01
+      - intercept of Ball-Berry stomatal conductance model
+    * - **Kn0**
+      - -
+      - double
+      - 2.48
+      - Kn0: parameter for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha);
+    * - **Knalpha**
+      - -
+      - double
+      - 2.83
+      - alpha parameter for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha)
+    * - **Knbeta**
+      - -
+      - double
+      - 0.114
+      - beta parameter for empirical Kn (NPQ) model: Kn = Kno * (1+beta).*x.^alpha./(beta + x.^alpha)
     * - **Type**
       - \-
       - int => char
