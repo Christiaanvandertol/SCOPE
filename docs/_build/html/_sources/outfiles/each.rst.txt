@@ -34,15 +34,6 @@ columns - variables
     * - **DoY**
       - \-
       - decimal day of year (DOY)
-    * - **aPAR**
-      - umol m-2 s-1
-      - absorbed PAR by leaves
-    * - **aPARbyCab**
-      - umol m-2 s-1
-      - absorbed PAR by chlorophylls a, b
-    * - **aPARbyCab(energyunits)**
-      - W m-2
-      - absorbed PAR
     * - **Photosynthesis**
       - umol m-2 s-1
       - net photosynthesis of canopy (Actot)
@@ -51,10 +42,109 @@ columns - variables
       - electron transport rate (Ja)
     * - **NPQ_energy**
       - W m-2
-      - non-photochemical quenching (energy)
+      - non-photochemical quenching [energy units]
+    * - **NPQ_photon**
+      - umol m-2 s-1
+      - non-photochemical quenching
+    * - **canopy_level_FQE**
+      - umol photons (umol photons)-1
+      - fluorescence quantum yield at canopy level
     * - **LST**
       - K
       - land surface temperature
+    * - **emis**
+      - \-
+      - thermal energy emissivity
+
+aPAR.csv
+----------------
+
+rows - time (simulation number)
+
+columns - variables
+
+.. list-table::
+    :widths: 20 20 60
+
+    * - variable
+      - units
+      - description
+    * - **simulation_number**
+      - \-
+      - time step counter
+    * - **year**
+      - \-
+      - year
+    * - **DoY**
+      - \-
+      - decimal day of year (DOY)
+    * - **iPAR**
+      - umol m-2 s-1
+      - intercepted PAR
+    * - **iPARE**
+      - W m-2
+      - intercepted PAR [energy units]
+    * - **LAIsunlit**
+      - m2 m-2
+      - leaf area index of sunlit leaves
+    * - **LAIshaded**
+      - m2 m-2
+      - leaf area index of shaded leaves
+    * - **aPARtot**
+      - umol m-2 s-1
+      - absorbed PAR by all leaves
+    * - **aPARsun**
+      - umol m-2 s-1
+      - absorbed PAR by sunlit leaves
+    * - **aPARsha**
+      - umol m-2 s-1
+      - absorbed PAR by shaded leaves
+    * - **aPARCabtot**
+      - umol m-2 s-1
+      - absorbed PAR by chlorophylls a,b of all leaves
+    * - **aPARCabsun**
+      - umol m-2 s-1
+      - absorbed PAR by chlorophylls a,b of sunlit leaves
+    * - **aPARCabsha**
+      - umol m-2 s-1
+      - absorbed PAR by chlorophylls a,b of shaded leaves
+    * - **aPARCartot**
+      - umol m-2 s-1
+      - absorbed PAR by carotenoinds of all leaves
+    * - **aPARCarsun**
+      - umol m-2 s-1
+      - absorbed PAR by carotenoinds of sunlit leaves
+    * - **aPARCarsha**
+      - umol m-2 s-1
+      - absorbed PAR by carotenoinds of shaded leaves
+    * - **aPARtotE**
+      - W m-2
+      - absorbed PAR by all leaves [energy units]
+    * - **aPARsunE**
+      - W m-2
+      - absorbed PAR by sunlit leaves [energy units]
+    * - **aPARshaE**
+      - W m-2
+      - absorbed PAR by shaded leaves [energy units]
+    * - **aPARCabtotE**
+      - W m-2
+      - absorbed PAR by chlorophylls a,b of all leaves [energy units]
+    * - **aPARCabsunE**
+      - W m-2
+      - absorbed PAR by chlorophylls a,b of sunlit leaves [energy units]
+    * - **aPARCabshaE**
+      - W m-2
+      - absorbed PAR by chlorophylls a,b of shaded leaves [energy units]
+    * - **aPARCartotE**
+      - W m-2
+      - absorbed PAR by carotenoinds of all leaves [energy units]
+    * - **aPARCarsunE**
+      - W m-2
+      - absorbed PAR by carotenoinds of sunlit leaves [energy units]
+    * - **aPARCarshaE**
+      - W m-2
+      - absorbed PAR by carotenoinds of shaded leaves [energy units]
+
 
 fluxes.csv
 ------------
@@ -120,9 +210,34 @@ columns - variables
     * - **Htot**
       - W m-2
       - total sensible heat
+
+
+resistances.csv
+-----------------
+
+rows - time (simulation number)
+
+columns - variables
+
+.. list-table::
+    :widths: 20 20 60
+
+    * - variable
+      - units
+      - description
+    * - **raa**
+      - s m-1
+      - aerodynamic resistance above the canopy
+    * - **raws**
+      - s m-1
+      - aerodynamic resistance within the soi
     * - **rss**
       - s m-1
       - soil resistance to evaporation
+    * - **ustar**
+      - m s-1
+      - friction velocity u*
+
 
 radiation.csv
 ---------------
@@ -306,8 +421,8 @@ columns - wl number (2162)
       - units
       - description
     * - **Esun_**
-      - W m-2 um-1 sr-1
-      - direct top of canopy irradiance irradiance
+      - W m-2 um-1
+      - direct top of canopy irradiance
 
 Esky.csv
 ------------------------------
@@ -323,5 +438,5 @@ columns - wl number (2162)
       - units
       - description
     * - **Esky_**
-      - W m-2 um-1 sr-1
-      - diffuse top of canopy irradiance irradiance
+      - W m-2 um-1
+      - diffuse top of canopy irradiance

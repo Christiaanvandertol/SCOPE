@@ -93,7 +93,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#fluorescence-csv">fluorescence.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sigmaf-csv">sigmaF.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fluorescence-hemis-csv">fluorescence_hemis.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fluorescence-reabscorr-csv">fluorescence_ReabsCorr.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lo-spectrum-inclf-csv">Lo_spectrum_inclF.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apparent-reflectance-csv">apparent_reflectance.csv</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="directional.html"><code class="docutils literal notranslate"><span class="pre">options.calc_directional</span></code> &amp;&amp; <code class="docutils literal notranslate"><span class="pre">options.calc_ebal</span></code></a></li>
@@ -311,8 +313,38 @@
 </tbody>
 </table>
 </div>
+<div class="section" id="fluorescence-reabscorr-csv">
+<h2>fluorescence_ReabsCorr.csv<a class="headerlink" href="#fluorescence-reabscorr-csv" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - wl 640:1:850 nm</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>EoutFrc_</strong></p></td>
+<td><p>W m-2 um-1</p></td>
+<td><p>fluorescence_spectrum 640:1:850 nm reabsorption corrected</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="lo-spectrum-inclf-csv">
 <h2>Lo_spectrum_inclF.csv<a class="headerlink" href="#lo-spectrum-inclf-csv" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+</div>
 <p>rows - time (simulation number)</p>
 <p>columns - wl number (2162)</p>
 <table class="colwidths-given docutils align-default">
@@ -329,6 +361,32 @@
 <tr class="row-even"><td><p><strong>Lototf_</strong></p></td>
 <td><p>W m-2 um-1 sr-1</p></td>
 <td><p>upwelling radiance in observation direction including fluorescence</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="apparent-reflectance-csv">
+<h2>apparent_reflectance.csv<a class="headerlink" href="#apparent-reflectance-csv" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">options.calc_fluor</span></code></p>
+</div>
+<p>rows - time (simulation number)</p>
+<p>columns - wl</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>units</p></td>
+<td><p>description</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>(Lo_ + LoF_) * pi  / (Esun_ + Esky_)</strong></p></td>
+<td><p>-</p></td>
+<td><p>fraction of radiation in observation direction + emitted fluorescence * pi / irradiance</p></td>
 </tr>
 </tbody>
 </table>

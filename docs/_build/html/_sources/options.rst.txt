@@ -88,7 +88,7 @@ Switch in ``SCOPE.m``
 ``soil_heat_method``
 -----------------------
 
-Method of ground heat flux (G) calculation
+Method of ground heat flux (G) calculation. In soil_heat_method 0 and 1 soil thermal inertia (GAM) is calculated from inputs.
 
 Switch in ``SCOPE.m``, :func:`.select_input`, :func:`.ebal`
 
@@ -127,6 +127,21 @@ Switch in :func:`.select_input`
 --------------------------------
 
 
+``mSCOPE``
+-------------
+
+Switch in ``SCOPE.m``
+
+**0**
+
+    traditional single layer SCOPE
+
+**1**
+    multilayer :ref:`mSCOPE:mSCOPE`
+
+--------------------------------
+
+
 Variations in output
 """""""""""""""""""""
 
@@ -137,32 +152,13 @@ Switch in :func:`.RTMo`
 
 **0**
 
-    Normal SCOPE execution
+    Normal SCOPE execution with [13 x 36 x nlayers] sunlit leaves
 
 **1**
 
-    Truncated to 1 canopy layer
+    Lite SCOPE execution with [nlayers x 1] sunlit leaves, sunlit leaf inclinations are not accounted for
 
 --------------------------------
-
-``calc_ebal``
---------------
-
-Switch in ``SCOPE.m``
-
-**0**
-
-
-    Only :func:`.RTMo` is run (with :func:`.RTMf` if ``options.calc_fluor``)
-
-**1**
-
-    Calculate the complete energy balance.
-
-    .. Warning:: required for ``calc_planck``, ``calc_directional``, ``calc_xanthophyllabs``
-
---------------------------------
-
 
 ``calc_planck``
 -----------------------
@@ -276,25 +272,21 @@ Fluorescence model
 Switch in :func:`.ebal`
 
 **0**
-
-    empirical, with sustained NPQ (fit to Flexas' data)
-
-**1**
     empirical, with sigmoid for Kn: :func:`.biochemical` (Berry-Van der Tol)
 
-**2**
+**1**
     :func:`.biochemical_MD12` (von Caemmerer-Magnani)
 
 
 --------------------------------
 
-``apply_T_corr``
+``applTcorr``
 -----------------------
 
 correct Vcmax and rate constants for temperature
 
 .. Warning::
-    only effective with ``Fluorescence_model != 2`` i.e. for :func:`.biochemical`
+    only effective with ``Fluorescence_model == 0`` i.e. for :func:`.biochemical`
 
 Switch in :func:`.ebal`
 
@@ -304,6 +296,19 @@ Switch in :func:`.ebal`
 **1**
     correction in accordance to Q10 rule
 
+
+--------------------------------
+
+``MoninObukhov``
+-----------------------
+
+Switch in :func:`.ebal`
+
+**0**
+    do not apply Monin-Obukhov atmospheric stability correction
+
+**1**
+    apply Monin-Obukhov atmospheric stability correction
 
 --------------------------------
 
@@ -330,17 +335,31 @@ Switch in ``SCOPE.m``
 ``saveCSV``
 -----------------------
 
-Switch in ``SCOPE.m``, :func:`bin_to_csv`
+Switch in ``SCOPE.m``, :func:`.bin_to_csv`
 
 **0**
     leave .bin files in output folder
 
 **1**
-    convert .bin files to .csv with :func:`bin_to_csv`, delete .bin files
+    convert .bin files to .csv with :func:`.bin_to_csv`, delete .bin files
 
 
 --------------------------------
 
+``save_spectral``
+-----------------------
+
+Save files with full spectrum. May reach huge sizes in long time-series.
+
+Switch in :func:`.create_output_files_binary`
+
+**0**
+    do not save
+
+**1**
+    save
+
+--------------------------------
 
 .. [#] extra output variables that are not saved to files (see :ref:`structs:Structs`) are available in the workspace after the model run.
 .. [#] model can be varied by user, please, consult :ref:`api:API` to learn signatures of functions
