@@ -44,6 +44,8 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.autosectionlabel',
               'sphinxcontrib.bibtex']
 
+bibtex_bibfiles = ['SCOPE_docs.bib']
+
 primary_domain = 'mat'
 
 autosectionlabel_prefix_document = True  # ref:`fluxes:usage` instead of ref:`usage`
