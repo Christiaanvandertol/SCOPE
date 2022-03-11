@@ -3,6 +3,33 @@ Version history
 
 .. contents::
 
+2.1
+''''''
+
+2022
+
+Variable name changes:
+    * Vcmo -> Vcmax25
+    * m -> BallBerrySlope
+
+Default value change:
+    * BallBerry0 (intercept) 0.01 [used to be 0.1]
+
+Extra options:
+    * write or omit writing spectral output options.save_spectral
+    * apply or omit Monin-Obukhov atmospheric stability correction options.MoninObukhov
+
+Performance improvements:
+    * soil heat flux (G) derivative is added to soil temperature update loop in ebal.m
+    * stomata conductance minimum is 0 umol m-2 s-1 [when Rin=0 & Rdparam=0] ``gs = max(0, 1.6 * A .* ppm2bar ./ (Cs-Ci))``
+    * time series run on daily data (without specified time) calculates solar zenith angle (tts) at 12 o'clock
+    * more canopy layers at low light ``canopy.nlayers  = ceil(10*canopy.LAI) + ((meteo.Rin < 200) & options.MoninObukhov)*60``
+
+References added to readme
+
+Minor bugfixes
+
+
 2.00
 ''''''
 
