@@ -15,26 +15,27 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         'TreatAsEmpty', {'.','NA','N/A'});
 %     df = standardizeMissing(df, -9999); > 2013a
     t_ = df.(t_column);
-    t_(t_ == -9999) = nan;
+%    t_(t_ == -9999) = nan;
     
-    if all(t_ <= 367)  % doy is provided
-        %assert(~isempty(year_column), 'Please, provide year in your .csv')
-        if(isempty(year_column)) 
-            year_n = 2020; 
-        else
-            year_n = df.(year_column);
-        end
-        % then we calculate ts for you
-        t_ = datestr(datenum(year_n, 0, t_), 'yyyymmddHHMMSS.FFF');
+%     if all(t_ <= 367)  % doy is provided
+%         %assert(~isempty(year_column), 'Please, provide year in your .csv')
+%         if(isempty(year_column)) 
+%             year_n = 2020; 
+%         else
+%             year_n = df.(year_column);
+%         end
+%         % then we calculate ts for you
+%         t_ = datestr(datenum(year_n, 0, t_), 'yyyymmddHHMMSS.FFF');
+%     end
+    if size(t_, 2)>1    
+        t_ = timestamp2datetime(t_);
     end
-    
-    t_ = timestamp2datetime(t_);
     xyt.startDOY = timestamp2datetime(xyt.startDOY);
     xyt.endDOY = timestamp2datetime(xyt.endDOY);
     year_n = year(t_);
     
     %% filtering
-    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY);   
+    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY); 
     df_sub = df(time_i, :);
 
     %% time 
