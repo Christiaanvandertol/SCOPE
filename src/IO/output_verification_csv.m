@@ -65,7 +65,7 @@ for i = 1:L
             D1 = dlmread([path1_ info1(j).name],',',1,0);
         end
         if size(D0) == size(D1)
-            if (nansum(nansum(D0-D1).^2))>1E-9
+            if (sum(sum(D0-D1).^2))>1E-9
                 fprintf(['\nWarning: data in the output file ' info0(i).name ' are different from the verification output \r '])
                 h0 = textread([path0_ info0(i).name],'%s','bufsize', 1E9); %#ok<DTXTRD>
                 spn = ceil(sqrt(size(D0,2)));
