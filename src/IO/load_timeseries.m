@@ -38,7 +38,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
     year_n = year(t_);
     
     %% filtering
-    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY);   
+    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY); 
     df_sub = df(time_i, :);
 
     %% time 
