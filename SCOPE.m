@@ -1,5 +1,8 @@
 %% SCOPE.m (script)
-
+% try
+% clc
+% %clear all
+% disp('SCOPE forward simulation started')
 %     SCOPE is a coupled radiative transfer and energy balance model.
 %     Option 'lite' runs a computationally lighter variation of the model,
 %     with the net radiation and leaf temperatures of leaf
@@ -23,6 +26,7 @@
 %     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 clear all %#ok<CLALL>
+% for compiler comment paths
 restoredefaultpath
 addpath src/RTMs
 addpath src/supporting
@@ -457,3 +461,7 @@ if options.verify
     output_verification_csv(Output_dir, F(9).FileName)
 end
 
+% catch ME
+%     ME.getReport
+% end
+% result = input('Press Enter key to exit');
