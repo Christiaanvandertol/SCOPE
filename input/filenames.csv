@@ -13,7 +13,7 @@ atmos_names,
 ,
 The_following_are_only_for_the_time_series_option!,
 Dataset_dir,for_verification
-meteo_ec_csv,input_data_latin_hypercube_ts100.csv
+meteo_ec_csv,input_data_latin_hypercube_ts.csv
 t_file,
 year_file,
 Rin_file,

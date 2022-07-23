@@ -15,11 +15,15 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         'TreatAsEmpty', {'.','NA','N/A'});
 %     df = standardizeMissing(df, -9999); > 2013a
     t_ = df.(t_column);
+    if iscell(t_)
+        t_ = cellfun(@str2num, t_);
+    end
     t_(t_ == -9999) = nan;
     
     if all(t_ <= 367)  % doy is provided
         %assert(~isempty(year_column), 'Please, provide year in your .csv')
         if(isempty(year_column)) 
+            warning('t is DOY, converting to date with year = 2020, as `year` in .csv was empty')
             year_n = 2020; 
         else
             year_n = df.(year_column);
