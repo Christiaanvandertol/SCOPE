@@ -15,24 +15,13 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         'TreatAsEmpty', {'.','NA','N/A'});
 %     df = standardizeMissing(df, -9999); > 2013a
     t_ = df.(t_column);
-    if iscell(t_)
-        t_ = cellfun(@str2num, t_);
-    end
-    t_(t_ == -9999) = nan;
     
-    if all(t_ <= 367)  % doy is provided
-        %assert(~isempty(year_column), 'Please, provide year in your .csv')
-        if(isempty(year_column)) 
-            warning('t is DOY, converting to date with year = 2020, as `year` in .csv was empty')
-            year_n = 2020; 
-        else
-            year_n = df.(year_column);
-        end
-        % then we calculate ts for you
-        t_ = datestr(datenum(year_n, 0, t_), 'yyyymmddHHMMSS.FFF');
+    year_n = 2020;
+    if ~isempty(year_column)
+        year_n = df.(year_column);
     end
     
-    t_ = timestamp2datetime(t_);
+    t_ = timestamp2datetime(t_, year_n);
     xyt.startDOY = timestamp2datetime(xyt.startDOY);
     xyt.endDOY = timestamp2datetime(xyt.endDOY);
     year_n = year(t_);
@@ -52,9 +41,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         df_int = readtable(fullfile(path_input, Dataset_dir, vegetation_retrieved_csv), ...
             'TreatAsEmpty', {'.','NA','N/A'});
         t_int = df_int.(t_column);
-        if any(t_int > 367)
-            t_int = timestamp2datetime(t_int);
-        end
+        t_int = timestamp2datetime(t_int, year_n);
         assert(min(t_int) <= min(t_) & max(t_int) >= max(t_), '`interpolation_csv` timestamp is outside `ec_file_berkeley` timestamp')
         interpolatable_cols = df_int.Properties.VariableNames;
     end
