@@ -78,7 +78,7 @@ columns - wl 640:1:850 nm
       - units
       - description
     * - **sigmaF**
-      - sr-1
+      - \-
       - escape probability
 
 fluorescence_hemis.csv
