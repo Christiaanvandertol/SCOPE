@@ -30,6 +30,7 @@ function generate_lut_input(tab, n_spectra, outdir)
 
     t = array2table(params);
     t.Properties.VariableNames = varnames;
+    t.t = datestr(datetime(2022, 7, 1, 0, 12, 1:n_spectra), 'yyyymmddHHMMSS.FFF');
     writetable(t, out_file)
     
     if verLessThan('matlab', '9.1')  % < 2016b
