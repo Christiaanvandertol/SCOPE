@@ -2,7 +2,7 @@
 Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at al., 2009, Yang et al., 2020) radiative transfer model.
 
 
-The manual is available at ReadTheDocs https://scope-model.readthedocs.io/en/latest/ 
+The manual is available at ReadTheDocs https://scope-model.readthedocs.io/en/master/ 
 
 If you are offline just open **./docs/_build/html/index.html** in your browser.
 
