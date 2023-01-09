@@ -15,6 +15,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         'TreatAsEmpty', {'.','NA','N/A'});
 %     df = standardizeMissing(df, -9999); > 2013a
     t_ = df.(t_column);
+
     if iscell(t_)
         t_ = cellfun(@str2num, t_);
     end
@@ -33,6 +34,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
     end
     
     t_ = timestamp2datetime(t_);
+
     xyt.startDOY = timestamp2datetime(xyt.startDOY);
     xyt.endDOY = timestamp2datetime(xyt.endDOY);
     year_n = year(t_);
@@ -52,9 +54,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         df_int = readtable(fullfile(path_input, Dataset_dir, vegetation_retrieved_csv), ...
             'TreatAsEmpty', {'.','NA','N/A'});
         t_int = df_int.(t_column);
-        if any(t_int > 367)
-            t_int = timestamp2datetime(t_int);
-        end
+        t_int = timestamp2datetime(t_int, year_n);
         assert(min(t_int) <= min(t_) & max(t_int) >= max(t_), '`interpolation_csv` timestamp is outside `ec_file_berkeley` timestamp')
         interpolatable_cols = df_int.Properties.VariableNames;
     end

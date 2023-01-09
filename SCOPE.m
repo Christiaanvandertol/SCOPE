@@ -88,7 +88,7 @@ cols = {'t', 'year', 'Rin','Rli', 'p','Ta','ea','u','RH', 'VPD', 'tts','tto', 'p
     'SMC','BSMBrightness', 'BSMlat', 'BSMlon',...  % soil
     'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
     'z','Ca', ...  % meteo
-    'Vcmax25', 'BallBerrySlope',...  % biochemistry;
+    'Vcmax25', 'BallBerrySlope', 'fqe', ...  % biochemistry;
     'atmos_names' 
     };
 
