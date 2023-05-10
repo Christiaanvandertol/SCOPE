@@ -1,7 +1,7 @@
 function n_col = output_data_binary(f, k, xyt, rad,  canopy, V, vi, vmax, options, fluxes, meteo, iter,resistance)
 %% OUTPUT DATA
 % author C. Van der Tol
-% date:      30 Nov 2019 
+% date:      30 Nov 2019
 % update:    22 Jan 2021 (additional output variables)
 
 %%
@@ -44,28 +44,31 @@ if options.calc_fluor
         rad.LoutF rad.EoutF rad.EoutFrc];
     n_col.fluor = length(fluor_out);
     fwrite(f.fluor_file,fluor_out,'double');
-    
+
     %% Fluorescence spectral outputs
     % fluorescence radiance (L) in observation direction [mW m-2 nm-1 sr-1]
     n_col.fluor_spectrum = length(rad.LoF_);
     fwrite(f.fluor_spectrum_file, rad.LoF_, 'double');
-    
+
     n_col.sigmaF = length(rad.sigmaF);
     fwrite(f.sigmaF_file, rad.sigmaF, 'double');
-    
+
     n_col.fRC = length(rad.EoutFrc_);
     fwrite(f.fRC_file, rad.EoutFrc_, 'double');
-    
+
+    n_col.fRCL = length(rad.Femliave_);
+    fwrite(f.fRCL_file, rad.Femliave_, 'double');
+
     n_col.fhemis = length(rad.EoutF_);
     fwrite(f.fhemis_file,rad.EoutF_, 'double');
-    
+
     n_col.Lo2 = length(rad.Lototf_);
     fwrite(f.Lo2_file, rad.Lototf_,'double');
-    
+
     n_col.rapp = length(rad.reflapp);
     fwrite(f.rapp_file, rad.reflapp,'double');
-    
-    
+
+
 end
 
 %% reflectance
@@ -100,7 +103,7 @@ if isfield(f, 'r_file')
 end
 
 %% Resistances
-resist_out = [resistance.raa, resistance.raws, resistance.rss, resistance.ustar];  
+resist_out = [resistance.raa, resistance.raws, resistance.rss, resistance.ustar];
 n_col.resist = length(resist_out);
 fwrite(f.resist_file, resist_out, 'double');
 

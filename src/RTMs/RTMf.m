@@ -151,7 +151,7 @@ Mplu = 0.5*(Mb+Mf);    % [nwlfo,nwlfi]
 Mmin = 0.5*(Mb-Mf);    % [nwlfo,nwlfi]
 
 % in-products: we convert incoming radiation to a fluorescence spectrum using the matrices.
-for j = 1:nl  
+for j = 1:nl
     ep = constants.A*ephoton(wlF*1E-9,constants);
     MpluEmin(:,j)   = ep.*(Mplu(:,:,j)* e2phot(wlE*1E-9,Eminf_(:,j),constants));          % [nwlfo,nl+1]
     MpluEplu(:,j)   = ep.*(Mplu(:,:,j)* e2phot(wlE*1E-9,Epluf_(:,j),constants));          % [nwlfo,nl+1]
@@ -231,9 +231,9 @@ LoF_        = piLtot/pi;
 Fhem_       = Fplu_(1,:)';
 
 method = 'spline';  % M2020a name
-if verLessThan('matlab', '9.8')
-    method = 'splines';
-end
+%if verLessThan('matlab', '9.8')
+%    method = 'splines';
+%end
 
 rad.LoF_    = interp1(wlF,LoF_,spectral.wlF',method);
 rad.EoutF_   = interp1(wlF,Fhem_,spectral.wlF',method);
@@ -245,6 +245,8 @@ rad.LoF_soil        = interp1(wlF,piLo4/pi,spectral.wlF',method);
 
 rad.EoutF   = 0.001 * Sint(Fhem_,wlF);
 rad.LoutF   = 0.001 * Sint(LoF_,wlF);
+
+rad.Femliave_ = interp1(wlF,sum(Femmin+Femplu,2),spectral.wlF',method);
 
 [rad.F685,iwl685]  = max(rad.LoF_(1:55));
 rad.wl685 = spectral.wlF(iwl685);

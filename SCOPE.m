@@ -4,7 +4,7 @@
 % %clear all
 % disp('SCOPE forward simulation started')
 %     SCOPE is a coupled radiative transfer and energy balance model.
-%     Option 'lite' runs a computationally lighter variation of the model,
+%     Option 'lite' runs a computationally lighter variation ofhel the model,
 %     with the net radiation and leaf temperatures of leaf
 %     inclination classes are averaged. SCOPE_lite is developed by C. van
 %     der Tol of the Ts_sunlitUniversity of Twente, under subcontract of Magellium,
@@ -31,7 +31,7 @@ restoredefaultpath
 addpath src/RTMs
 addpath src/supporting
 addpath src/fluxes
-addpath src/IO 
+addpath src/IO
 
 %% 1. define constants
 constants = define_constants;
@@ -89,8 +89,7 @@ cols = {'t', 'year', 'Rin','Rli', 'p','Ta','ea','u','RH', 'VPD', 'tts','tto', 'p
     'LAI', 'hc', 'LIDFa', 'LIDFb',...  % canopy
     'z','Ca', ...  % meteo
     'Vcmax25', 'BallBerrySlope', 'fqe', ...  % biochemistry;
-    'atmos_names' 
-    };
+    'atmos_names'    };
 
 fnc = [f_names, cols];
 F = struct('FileID', fnc);
@@ -111,6 +110,7 @@ while ~feof(fid)
     end
 end
 fclose(fid);
+
 
 %% 4. input data
 k = 1;
@@ -199,7 +199,7 @@ if options.simulation == 1
     vi = ones(length(V),1);
     for k = 1:length(V)
         if ~strcmp(V(k).Name, 'Tparam') && length(V(k).Val) > 1
-            warning('%s value from the first column of input_data will be used, time series mode', V(k).Name) 
+            warning('%s value from the first column of input_data will be used, time series mode', V(k).Name)
             V(k).Val = V(k).Val(1);
         end
     end
@@ -252,10 +252,12 @@ atmo = load_atmo(atmfile, spectral.SCOPEspec);
 [Output_dir, f, fnames] = create_output_files_binary(parameter_file, F, path_of_code, path_input, spectral,options);
 
 %% 14. Run the models
+fprintf('\n Do not quench your inspiration and your imagination; do not become the slave of your model (Vincent van Gogh). \r')
+
 fprintf('\n The calculations start now \r')
 calculate = 1;
 tic
-        
+
 for k = 1:telmax
     if options.simulation == 1, vi(vmax>1) = k; end
     if options.simulation == 0, vi(vmax==telmax) = k; end
@@ -277,7 +279,7 @@ for k = 1:telmax
             warning('run is invalid: there is NaN somewhere in meteo input [p, Ta, ea, u, Rin, Rli]')
         end
     end
-    
+
     if calculate
         if isempty(LIDF_file)
             canopy.lidf     = leafangles(canopy.LIDFa,canopy.LIDFb);    % This is 'ladgen' in the original SAIL model,
@@ -286,8 +288,8 @@ for k = 1:telmax
         %% leaf radiative transfer model FLUSPECT
         leafbio.emis        = 1-leafbio.rho_thermal-leafbio.tau_thermal;
         leafbio.V2Z         = 0;
-        
-        if options.simulation == 1 && ~isempty(fieldnames(mly_ts))  % means that options.simulation == 1 
+
+        if options.simulation == 1 && ~isempty(fieldnames(mly_ts))  % means that options.simulation == 1
            mly.nly    = mly_ts.nly;
            mly.pLAI   = mly_ts.pLAI(k, :);
            mly.totLAI = sum(mly.pLAI);
@@ -313,27 +315,27 @@ for k = 1:telmax
            mly.pCs      = leafbio.Cs;
            mly.pN       = leafbio.N;
         end
-        
+
         if options.simulation == 1 && ~isempty(atmo_paths) && k > 1
             atmfile_k = atmo_paths{k};
             if ~strcmp(atmfile_k, atmo_paths{k-1})
                 atmo = load_atmo(atmfile_k, spectral.SCOPEspec);
             end
         end
-        
-        leafopt = fluspect_mSCOPE(mly,spectral,leafbio,optipar, nl); 
-        leafopt.refl(:, spectral.IwlT) = leafbio.rho_thermal;               
+
+        leafopt = fluspect_mSCOPE(mly,spectral,leafbio,optipar, nl);
+        leafopt.refl(:, spectral.IwlT) = leafbio.rho_thermal;
         leafopt.tran(:, spectral.IwlT) = leafbio.tau_thermal;
-        
+
         if options.calc_xanthophyllabs
             leafbio.V2Z     = 1;
-            leafoptZ        = fluspect_mSCOPE(mly,spectral,leafbio,optipar, nl); 
+            leafoptZ        = fluspect_mSCOPE(mly,spectral,leafbio,optipar, nl);
             leafopt.reflZ   = leafopt.refl;
             leafopt.tranZ   = leafopt.tran;
             leafopt.reflZ(:, spectral.IwlP) = leafoptZ.refl(:, spectral.IwlP);
             leafopt.tranZ(:, spectral.IwlP) = leafoptZ.tran(:, spectral.IwlP);
         end
-        
+
         %% soil reflectance model BSM
         if options.soilspectrum == 0
             soil.refl       = rsfile(:,soil.spectrum+1);
@@ -341,40 +343,47 @@ for k = 1:telmax
             soil.refl       = BSM(soil,optipar,soilemp);
         end
         soil.refl(spectral.IwlT) = soil.rs_thermal;
-        
+
         %% four stream canopy radiative transfer model for incident radiation
         [rad,gap,profiles]       = RTMo(spectral,atmo,soil,leafopt,canopy,angles,constants,meteo,options);
-        
+
         %% energy balance
         [iter,rad,thermal,soil,bcu,bch,fluxes,resistance,meteo]             ...
             = ebal(constants,options,rad,gap,  ...
             meteo,soil,canopy,leafbio, k, xyt,integr);
-        
+
         %% fluorescence radiative transfer model
         if options.calc_fluor
             [rad]           = RTMf(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.eta,bch.eta);
         end
-        
+
         %% radiative transfer model for PRI effects
         if options.calc_xanthophyllabs
-            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn,bch.Kn);
+            % comment the following three lines out (CT 20230119)
+            Ps = gap.Ps(1:nl);
+            Ph = (1-Ps);
+            Kn    = (meanleaf(canopy,bch.Kn,'layers',Ph)+meanleaf(canopy,bcu.Kn,integr,Ps)); %
+            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn*0+Kn,bch.Kn*0+Kn);
+                    
+
+%            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn,bch.Kn);
         end
-                       
+
         rad  = RTMt_sb(constants,rad,soil,leafbio,canopy,gap,thermal.Tcu,thermal.Tch,thermal.Tsu,thermal.Tsh,1,spectral);
         if options.calc_planck
             rad = RTMt_planck(spectral,rad,soil,leafopt,canopy,gap,thermal.Tcu,thermal.Tch,thermal.Tsu,thermal.Tsh);
         end
-        
+
         %% computation of data products
         % aPAR, LST, NPQ, ETR, photosynthesis, SIF-reabsorption correction
         % aPAR [umol m-2 s-1, total canopy and total chlorphyll]
- 
+
         Ps = gap.Ps(1:nl);
         Ph = (1-Ps);
-        
+
         canopy.LAIsunlit = canopy.LAI*mean(Ps);
         canopy.LAIshaded = canopy.LAI-canopy.LAIsunlit;
-        
+
         canopy.Pnsun_Cab = canopy.LAI*meanleaf(canopy,rad.Pnu_Cab,integr,Ps); % net PAR Cab sunlit leaves (photons)
         canopy.Pnsha_Cab = canopy.LAI*meanleaf(canopy,rad.Pnh_Cab,'layers',Ph); % net PAR Cab shaded leaves (photons)
         canopy.Pntot_Cab = canopy.Pnsun_Cab+canopy.Pnsha_Cab; % net PAR Cab leaves (photons)
@@ -382,41 +391,43 @@ for k = 1:telmax
         canopy.Pnsun_Car = canopy.LAI*meanleaf(canopy,rad.Pnu_Car,integr,Ps); % net PAR Cab sunlit leaves (photons)
         canopy.Pnsha_Car = canopy.LAI*meanleaf(canopy,rad.Pnh_Car,'layers',Ph); % net PAR Cab shaded leaves (photons)
         canopy.Pntot_Car = canopy.Pnsun_Car+canopy.Pnsha_Car; % net PAR Cab leaves (photons)
-        
+
         canopy.Pnsun = canopy.LAI*meanleaf(canopy,rad.Pnu,integr,Ps); % net PAR sunlit leaves (photons)
         canopy.Pnsha = canopy.LAI*meanleaf(canopy,rad.Pnh,'layers',Ph); % net PAR shaded leaves (photons)
         canopy.Pntot = canopy.Pnsun+canopy.Pnsha; % net PAR leaves (photons)
-        
+
         canopy.Rnsun_Cab = canopy.LAI*meanleaf(canopy,rad.Rnu_Cab,integr,Ps); % net PAR Cab sunlit leaves (radiance)
         canopy.Rnsha_Cab = canopy.LAI*meanleaf(canopy,rad.Rnh_Cab,'layers',Ph); % net PAR Cab sunlit leaves (radiance)
         canopy.Rntot_Cab = canopy.Rnsun_Cab+canopy.Rnsha_Cab; % net PAR Cab leaves (radiance)
-        
+
         canopy.Rnsun_Car = canopy.LAI*meanleaf(canopy,rad.Rnu_Car,integr,Ps); % net PAR Cab sunlit leaves (radiance)
         canopy.Rnsha_Car = canopy.LAI*meanleaf(canopy,rad.Rnh_Car,'layers',Ph); % net PAR Cab sunlit leaves (radiance)
         canopy.Rntot_Car = canopy.Rnsun_Car+canopy.Rnsha_Car; % net PAR Cab leaves (radiance)
-        
+
         canopy.Rnsun_PAR = canopy.LAI*meanleaf(canopy,rad.Rnu_PAR,integr,Ps); % net PAR sunlit leaves (radiance)
         canopy.Rnsha_PAR = canopy.LAI*meanleaf(canopy,rad.Rnh_PAR,'layers',Ph); % net PAR sunlit leaves (radiance)
         canopy.Rntot_PAR = canopy.Rnsun_PAR+canopy.Rnsha_PAR; % net PAR leaves (radiance)
-        
+
         % LST [K] (directional, but assuming black-body surface!)
         canopy.LST      = (pi*(rad.Lot+rad.Lote)./(constants.sigmaSB*rad.canopyemis)).^0.25;
         canopy.emis     = rad.canopyemis;
-        
+
         % photosynthesis [mumol m-2 s-1]
         canopy.A        = canopy.LAI*(meanleaf(canopy,bch.A,'layers',Ph)+meanleaf(canopy,bcu.A,integr,Ps)); % photosynthesis
-        
+
         % electron transport rate [mumol m-2 s-1]
         canopy.Ja       = canopy.LAI*(meanleaf(canopy,bch.Ja,'layers',Ph)+meanleaf(canopy,bcu.Ja,integr,Ps)); % electron transport
-        
+
         % non-photochemical quenching (energy) [W m-2]
         canopy.ENPQ     = canopy.LAI*(meanleaf(canopy,rad.Rnh_Cab.*bch.Phi_N,'layers',Ph)+meanleaf(canopy,rad.Rnu_Cab.*bcu.Phi_N,integr,Ps)); % NPQ energy;
         canopy.PNPQ     = canopy.LAI*(meanleaf(canopy,rad.Pnh_Cab.*bch.Phi_N,'layers',Ph)+meanleaf(canopy,rad.Pnu_Cab.*bcu.Phi_N,integr,Ps)); % NPQ energy;
-        
+
         % computation of re-absorption corrected fluorescence
         % Yang and Van der Tol (2019); Van der Tol et al. (2019)
         %aPAR_Cab_eta    = canopy.LAI*(meanleaf(canopy,bch.eta .* rad.Rnh_Cab,'layers',Ph)+meanleaf(canopy,bcu.eta .* rad.Rnu_Cab,integr,Ps)); %
         aPAR_Cab_eta    = canopy.LAI*(meanleaf(canopy,bch.eta .* rad.Pnh_Cab,'layers',Ph)+meanleaf(canopy,bcu.eta .* rad.Pnu_Cab,integr,Ps)); %
+
+
         if options.calc_fluor
             ep              = constants.A*ephoton(spectral.wlF'*1E-9,constants);
             rad.PoutFrc     = leafbio.fqe*aPAR_Cab_eta;
@@ -428,34 +439,37 @@ for k = 1:telmax
         else
             canopy.fqe = nan;
         end
-        
+
         rad.Lotot_      = rad.Lo_+rad.Lot_;
         rad.Eout_       = rad.Eout_+rad.Eoutte_;
         if options.calc_fluor
             rad.Lototf_     = rad.Lotot_;
-            rad.Lototf_(spectral.IwlF') = rad.Lototf_(spectral.IwlF)+rad.LoF_;            
+            rad.Lototf_(spectral.IwlF') = rad.Lototf_(spectral.IwlF)+rad.LoF_;
             rad.reflapp = rad.refl;
             rad.reflapp(spectral.IwlF) =pi*rad.Lototf_(spectral.IwlF)./(rad.Esun_(spectral.IwlF)+rad.Esky_(spectral.IwlF));
         end
-        
+
         if options.calc_directional
-            directional = calc_brdf(constants,options,directional,spectral,angles,atmo,soil,leafopt,canopy,meteo,thermal,bcu,bch);
+            if ~exist('Kn','var'), Kn=0; end
+            directional = calc_brdf(constants,options,directional,spectral,angles,atmo,soil,leafopt,canopy,meteo,thermal,bcu,bch,Kn);
             savebrdfoutput(options,directional,angles,spectral,Output_dir)
         end
-        
+
         rad.Lo = 0.001 * Sint(rad.Lo_(spectral.IwlP),spectral.wlP);
         %% write output
         n_col = output_data_binary(f, k, xyt, rad, canopy, V, vi, vmax, options, fluxes, meteo, iter,resistance);
-        
+
         %% update input
         if options.simulation==2 && telmax>1, vi  = count_k(nvars,vi,vmax,1); end
     end
+    
 end
 toc
+fclose('all');
 if options.saveCSV
     bin_to_csv(fnames, V, vmax, n_col, telmax)
 end
-fclose('all');
+
 
 if options.verify
     output_verification_csv(Output_dir, F(9).FileName)
