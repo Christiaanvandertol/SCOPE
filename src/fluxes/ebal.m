@@ -224,6 +224,9 @@ while CONT                          % while energy balance does not close
     if SoilHeatMethod == 2
         G = 0.35*Rns;
         dG = 4*(1-soil.rs_thermal)*sigmaSB*(Ts+273.15).^3 * 0.35;
+    elseif SoilHeatMethod == 3  % daily average flux
+        G = 0*Rns;
+        dG = 0*Rns;
     else
         G = GAM/sqrt(pi) * 2* sum(([Ts'; Tsold(1:end-1,:)] - Tsold)/Deltat .* (sqrt(x) - sqrt(x-Deltat)));
         G = G';
