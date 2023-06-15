@@ -32,6 +32,7 @@ if options.calc_fluor
     fnames.sigmaF_file             = fullfile(Output_dir,'sigmaF.bin');
     fnames.fhemis_file             = fullfile(Output_dir,'fluorescence_hemis.bin');
     fnames.fRC_file                = fullfile(Output_dir,'fluorescence_ReabsCorr.bin');
+    fnames.fRCL_file               = fullfile(Output_dir,'fluorescence_AllLeaves.bin'); 
     fnames.Lo2_file                = fullfile(Output_dir,'Lo_spectrum_inclF.bin');
     fnames.rapp_file               = fullfile(Output_dir,'apparent_reflectance.bin');
 end
