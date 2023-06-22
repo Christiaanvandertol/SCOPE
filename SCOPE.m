@@ -360,14 +360,13 @@ for k = 1:telmax
 
         %% radiative transfer model for PRI effects
         if options.calc_xanthophyllabs
-            % comment the following three lines out (CT 20230119)
-            Ps = gap.Ps(1:nl);
-            Ph = (1-Ps);
-            Kn    = (meanleaf(canopy,bch.Kn,'layers',Ph)+meanleaf(canopy,bcu.Kn,integr,Ps)); %
-            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn*0+Kn,bch.Kn*0+Kn);
+            % comment the following four lines out (CT 20230119)
+            % Ps = gap.Ps(1:nl);
+            % Ph = (1-Ps);
+            % Kn    = (meanleaf(canopy,bch.Kn,'layers',Ph)+meanleaf(canopy,bcu.Kn,integr,Ps)); %
+            % [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn*0+Kn,bch.Kn*0+Kn);
                     
-
-%            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn,bch.Kn);
+            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn,bch.Kn);
         end
 
         rad  = RTMt_sb(constants,rad,soil,leafbio,canopy,gap,thermal.Tcu,thermal.Tch,thermal.Tsu,thermal.Tsh,1,spectral);
