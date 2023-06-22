@@ -56,8 +56,8 @@ if options.calc_fluor
     n_col.fRC = length(rad.EoutFrc_);
     fwrite(f.fRC_file, rad.EoutFrc_, 'double');
 
-    n_col.fRCL = length(rad.Femliave_);
-    fwrite(f.fRCL_file, rad.Femliave_, 'double');
+    n_col.fRCL = length(rad.Femleaves_);
+    fwrite(f.fRCL_file, rad.Femleaves_, 'double');
 
     n_col.fhemis = length(rad.EoutF_);
     fwrite(f.fhemis_file,rad.EoutF_, 'double');

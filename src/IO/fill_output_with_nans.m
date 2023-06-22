@@ -48,7 +48,7 @@ function [canopy, fluxes, rad, resistance, iter] = fill_output_with_nans(canopy,
     
     %% sif spectral
     
-    sif_names = {"LoF_", "sigmaF", "EoutFrc_", "Femliave_", "EoutF_"};
+    sif_names = {"LoF_", "sigmaF", "EoutFrc_", "Femleaves_", "EoutF_"};
     
     for i=1:length(sif_names)
         rad.(sif_names{i}) = nan(size(spectral.wlF));
