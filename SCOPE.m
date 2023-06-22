@@ -276,6 +276,7 @@ for k = 1:telmax
         calculate = ~isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli);
         fprintf('time = %s: %i / %i\n', datestr(xyt.t(k)), k, telmax)
         if isnan(meteo.p*meteo.Ta*meteo.ea*meteo.u.*meteo.Rin.*meteo.Rli)
+            [canopy, fluxes, rad, resistance, iter] = fill_output_with_nans(canopy, spectral);
             warning('run is invalid: there is NaN somewhere in meteo input [p, Ta, ea, u, Rin, Rli]')
         end
     end
@@ -359,14 +360,13 @@ for k = 1:telmax
 
         %% radiative transfer model for PRI effects
         if options.calc_xanthophyllabs
-            % comment the following three lines out (CT 20230119)
-            Ps = gap.Ps(1:nl);
-            Ph = (1-Ps);
-            Kn    = (meanleaf(canopy,bch.Kn,'layers',Ph)+meanleaf(canopy,bcu.Kn,integr,Ps)); %
-            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn*0+Kn,bch.Kn*0+Kn);
+            % comment the following four lines out (CT 20230119)
+            % Ps = gap.Ps(1:nl);
+            % Ph = (1-Ps);
+            % Kn    = (meanleaf(canopy,bch.Kn,'layers',Ph)+meanleaf(canopy,bcu.Kn,integr,Ps)); %
+            % [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn*0+Kn,bch.Kn*0+Kn);
                     
-
-%            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn,bch.Kn);
+            [rad] = RTMz(constants,spectral,rad,soil,leafopt,canopy,gap,angles,bcu.Kn,bch.Kn);
         end
 
         rad  = RTMt_sb(constants,rad,soil,leafbio,canopy,gap,thermal.Tcu,thermal.Tch,thermal.Tsu,thermal.Tsh,1,spectral);
@@ -456,13 +456,12 @@ for k = 1:telmax
         end
 
         rad.Lo = 0.001 * Sint(rad.Lo_(spectral.IwlP),spectral.wlP);
-        %% write output
-        n_col = output_data_binary(f, k, xyt, rad, canopy, V, vi, vmax, options, fluxes, meteo, iter,resistance);
-
-        %% update input
-        if options.simulation==2 && telmax>1, vi  = count_k(nvars,vi,vmax,1); end
     end
-    
+    %% write output
+    n_col = output_data_binary(f, k, xyt, rad, canopy, V, vi, vmax, options, fluxes, meteo, iter,resistance);
+
+    %% update input
+    if options.simulation==2 && telmax>1, vi  = count_k(nvars,vi,vmax,1); end    
 end
 toc
 fclose('all');

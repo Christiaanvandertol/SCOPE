@@ -246,7 +246,7 @@ rad.LoF_soil        = interp1(wlF,piLo4/pi,spectral.wlF',method);
 rad.EoutF   = 0.001 * Sint(Fhem_,wlF);
 rad.LoutF   = 0.001 * Sint(LoF_,wlF);
 
-rad.Femliave_ = interp1(wlF,sum(Femmin+Femplu,2),spectral.wlF',method);
+rad.Femleaves_ = interp1(wlF,sum(Femmin+Femplu,2),spectral.wlF',method);
 
 [rad.F685,iwl685]  = max(rad.LoF_(1:55));
 rad.wl685 = spectral.wlF(iwl685);

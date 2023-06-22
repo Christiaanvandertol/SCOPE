@@ -2,13 +2,13 @@ function dt = timestamp2datetime(ts, year_n)
     % ts : char or char array like ['20190101'; '20190102']
     %      int or int array [20190101; 20190102]
     % dt : datetime or datetime array
-    
+
     if iscell(ts)
         ts = cellfun(@str2num, ts);
     end
     ts(ts == -9999) = nan;
     
-    if all(ts <= 367)  % doy is provided
+    if isnumeric(ts) && all(ts <= 367)  % doy is provided
         warning('t is DOY, converting to date with year = %d, as `year` in .csv was empty', year_n(1))
         ts = datestr(datenum(year_n, 0, ts), 'yyyymmddHHMMSS.FFF');
     end
