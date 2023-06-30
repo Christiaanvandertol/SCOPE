@@ -40,7 +40,12 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
     year_n = year(t_);
     
     %% filtering
-    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY); 
+
+    assert(~any(isnat(t_)), 'some t_ in timeseries contain NaN, please, remove or provide. You must know the date')
+    
+    % this filtering also removes NaNs in t_
+    % may be not desirable if df_ts is going to be merged directly => assert
+    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY);
     df_sub = df(time_i, :);
 
     %% time 
