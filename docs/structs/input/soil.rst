@@ -87,7 +87,7 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
       - 1800.0
       - specific mass of the soil
     * - **CSSOIL**
-      - ?
+      - \-
       - double
       - 0.01
       - Drag coefficient for soil Verhoef et al. (1997) *(from Aerodynamic)*
@@ -109,17 +109,17 @@ Fields initialized in :func:`.select_input` (read from ``input_data.xlsx``)
       - 0.25
       - volumetric soil moisture content in the root zone
     * - **BSMBrightness**
-      - ?
+      - \-
       - double
       - 0.5
       - BSM model parameter for soil brightness
     * - **BSMlat**
-      - ?
+      - \-
       - double
       - 25.0
       - BSM model parameter 'lat'
     * - **BSMlon**
-      - ?
+      - \-
       - double
       - 45.0
       - BSM model parameter  'long'
@@ -138,9 +138,9 @@ Derived variables
     * - .. _soil.GAM:
 
         **GAM**
-      - ?
+      - J m-2 s-0.5 K-1
       - double
-      - ~1814.4 :func:`.Soil_Inertia0`
+      - ~1814.4 :func:`.Soil_Inertia0`,:func:`.Soil_Inertia1`
       - soil thermal inertia
 
 Fields initialized in ``SCOPE.m``
