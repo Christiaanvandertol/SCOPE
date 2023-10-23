@@ -8,9 +8,9 @@ If you are offline just open **./docs/_build/html/index.html** in your browser.
 
 <u>References</u>:
 
-Yang, P., E. Prikaziuk, W. Verhoef, and C. van der Tol. 2020. 
-*“SCOPE 2.0: A Model to Simulate Vegetated Land Surface Fluxes and Satellite Signals.”* 
-Geoscientific Model Development Discussions 2020: 1–26. https://doi.org/10.5194/gmd-2020-251.
+Yang, P., Prikaziuk, E., Verhoef, W., and Van der Tol, C. 2021
+*"SCOPE 2.0: a model to simulate vegetated land surface fluxes and satellite signals"*
+Geoscientific Model Development, 14, 4697–4712, https://doi.org/10.5194/gmd-14-4697-2021
 
 Van der Tol, C., W. Verhoef, J Timmermans, A Verhoef, and Z Su. 2009. 
 *“An Integrated Model of Soil-Canopy Spectral Radiances, Photosynthesis, Fluorescence, Temperature and Energy Balance.”*
