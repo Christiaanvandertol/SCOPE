@@ -40,7 +40,12 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
     year_n = year(t_);
     
     %% filtering
-    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY); 
+
+    assert(~any(isnat(t_)), 'some t_ in timeseries contain NaN, please, remove or provide. You must know the date')
+    
+    % this filtering also removes NaNs in t_
+    % may be not desirable if df_ts is going to be merged directly => assert
+    time_i = (t_ >= xyt.startDOY) & (t_ <= xyt.endDOY);
     df_sub = df(time_i, :);
 
     %% time 
@@ -55,7 +60,15 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
             'TreatAsEmpty', {'.','NA','N/A'});
         t_int = df_int.(t_column);
         t_int = timestamp2datetime(t_int, year_n);
-        assert(min(t_int) <= min(t_) & max(t_int) >= max(t_), '`interpolation_csv` timestamp is outside `ec_file_berkeley` timestamp')
+        if (min(t_int) > max(t_)) || (max(t_int) < min(t_))
+            error('Correct the timestamp, please. The timestamp of vegetation_retrieved_csv is outside of the timestamp of meteo_ec_csv, all smulations would be 0 or NaNs')
+        elseif (min(t_int) > min(t_)) && (max(t_int) < max(t_))
+            warning('the timestamp of vegetation_retrieved_csv starts later and ends earlier than the timestamp of meteo_ec_csv, head and tail simulations will be 0 or NaNs')
+        elseif min(t_int) > min(t_)
+            warning('the timestamp of vegetation_retrieved_csv starts later than the timestamp of meteo_ec_csv, head simulations will be 0 or NaNs')
+        elseif max(t_int) < max(t_)
+            warning('the timestamp of vegetation_retrieved_csv ends earlier than the timestamp of meteo_ec_csv, tail simulations will be 0 or NaNs')
+        end
         interpolatable_cols = df_int.Properties.VariableNames;
     end
     
