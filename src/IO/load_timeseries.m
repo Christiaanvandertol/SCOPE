@@ -61,7 +61,7 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         t_int = df_int.(t_column);
         t_int = timestamp2datetime(t_int, year_n);
         if (min(t_int) > max(t_)) || (max(t_int) < min(t_))
-            error('Correct the timestamp, please. The timestamp of vegetation_retrieved_csv is outside of the timestamp of meteo_ec_csv, all smulations would be 0 or NaNs')
+            error('Correct the timestamp, please. The timestamp of vegetation_retrieved_csv is outside of the timestamp of meteo_ec_csv, all simulations would be 0 or NaNs')
         elseif (min(t_int) > min(t_)) && (max(t_int) < max(t_))
             warning('the timestamp of vegetation_retrieved_csv starts later and ends earlier than the timestamp of meteo_ec_csv, head and tail simulations will be 0 or NaNs')
         elseif min(t_int) > min(t_)
