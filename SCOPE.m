@@ -7,7 +7,7 @@
 %     Option 'lite' runs a computationally lighter variation ofhel the model,
 %     with the net radiation and leaf temperatures of leaf
 %     inclination classes are averaged. SCOPE_lite is developed by C. van
-%     der Tol of the Ts_sunlitUniversity of Twente, under subcontract of Magellium,
+%     der Tol of the University of Twente, under subcontract of Magellium,
 %     funded by the Europan Space Agency under contract FLEXL2-PFT-CCN2
 %
 %     Copyright (C) 2021  Christiaan van der Tol
