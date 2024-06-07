@@ -1,4 +1,4 @@
-function [rad,gap,canopy,profiles] = RTMo(spectral,atmo,soil,leafopt,canopy,angles,constants,meteo,options)
+function [rad,gap,profiles] = RTMo(spectral,atmo,soil,leafopt,canopy,angles,constants,meteo,options)
 % calculates the spectra of hemisperical and directional observed visible 
 % and thermal radiation (fluxes E and radiances L), as well as the single 
 % and bi-directional gap probabilities
