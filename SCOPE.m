@@ -451,7 +451,7 @@ for k = 1:telmax
 
         if options.calc_directional
             if ~exist('Kn','var'), Kn=0; end
-            directional = calc_brdf(constants,options,directional,spectral,angles,atmo,soil,leafopt,canopy,meteo,thermal,bcu,bch,Kn);
+            directional = calc_brdf(constants,options,directional,spectral,angles,atmo,soil,leafopt,canopy,meteo,thermal,bcu,bch);
             savebrdfoutput(options,directional,angles,spectral,Output_dir)
         end
 
