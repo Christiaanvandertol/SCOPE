@@ -23,7 +23,7 @@ apar_out= [k xyt.year(k) xyt.t(k)  rad.PAR rad.EPAR canopy.LAIsunlit  canopy.LAI
 n_col.apar = length(apar_out);
 fwrite(f.apar_file,apar_out,'double');
 
-veg_out = [k xyt.year(k) xyt.t(k) canopy.A canopy.Ja canopy.ENPQ  canopy.PNPQ canopy.fqe canopy.LST canopy.emis];
+veg_out = [k xyt.year(k) xyt.t(k) canopy.A canopy.Ja canopy.ENPQ  canopy.PNPQ canopy.fqe canopy.LST canopy.emis canopy.GPP];
 n_col.veg = length(veg_out);
 fwrite(f.veg_file,veg_out,'double');
 

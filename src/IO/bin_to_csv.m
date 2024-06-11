@@ -25,8 +25,8 @@ apar_units = {'', '', '', 'umol m-2 s-1','W m-2', 'm2m-2','m2m-2',...
 write_output(apar_names, apar_units, fnames.apar_file, n_col.apar, ns)
 
 %% veg
-veg_names = {'simulation_number', 'year', 'DoY', 'Photosynthesis', 'Electron_transport', 'NPQ_energy',  'NPQ_photon', 'canopy_level_FQE','LST','emis'};
-veg_units = {'', '', '', 'umol m-2 s-1', 'umol m-2 s-1', 'W m-2', 'umol m-2 s-1', 'umol photons (umol photons)-1', 'K',''};
+veg_names = {'simulation_number', 'year', 'DoY', 'Photosynthesis', 'Electron_transport', 'NPQ_energy',  'NPQ_photon', 'canopy_level_FQE','LST','emis', 'GPP'};
+veg_units = {'', '', '', 'umol CO2 m-2 s-1', 'umol m-2 s-1', 'W m-2', 'umol m-2 s-1', 'umol photons (umol photons)-1', 'K','', 'umol CO2 m-2 s-1'};
 write_output(veg_names, veg_units, fnames.veg_file, n_col.veg, ns)
 
 %% flu

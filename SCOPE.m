@@ -412,8 +412,9 @@ for k = 1:telmax
         canopy.LST      = (pi*(rad.Lot+rad.Lote)./(constants.sigmaSB*rad.canopyemis)).^0.25;
         canopy.emis     = rad.canopyemis;
 
-        % photosynthesis [mumol m-2 s-1]
-        canopy.A        = canopy.LAI*(meanleaf(canopy,bch.A,'layers',Ph)+meanleaf(canopy,bcu.A,integr,Ps)); % photosynthesis
+        % photosynthesis [mumol CO2 m-2 s-1]
+        canopy.A        = canopy.LAI*(meanleaf(canopy,bch.A,'layers',Ph)+meanleaf(canopy,bcu.A,integr,Ps)); % net photosynthesis of leaves
+        canopy.GPP        = canopy.LAI*(meanleaf(canopy,bch.Ag,'layers',Ph)+meanleaf(canopy,bcu.Ag,integr,Ps)); % gross photosynthesis
 
         % electron transport rate [mumol m-2 s-1]
         canopy.Ja       = canopy.LAI*(meanleaf(canopy,bch.Ja,'layers',Ph)+meanleaf(canopy,bcu.Ja,integr,Ps)); % electron transport
