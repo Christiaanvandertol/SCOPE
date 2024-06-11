@@ -384,12 +384,17 @@ Rnus        = Rndifsoil + Rndirsoil; % [1] sunlit soil
 Rnhs        = Rndifsoil;  % [1] shaded soil
 
 if options.calc_vert_profiles   
-    [Pnu1d  ]           = meanleaf(canopy,Pnuc,         'angles');   % [nli,nlo,nl]      mean net radiation sunlit leaves
-    [Pnu1d_Cab  ]       = meanleaf(canopy,Pnuc_Cab,     'angles');   % [nli,nlo,nl]      mean net radiation sunlit leaves
-    [Pnu1d_Car  ]       = meanleaf(canopy,Pnuc_Car,     'angles');   % [nli,nlo,nl]      mean net radiation sunlit leaves
-    profiles.Pn1d       = ((1-Ps(1:nl)).*Pnhc     + Ps(1:nl).*(Pnu1d));        %[nl]           mean photos leaves, per layer
-    profiles.Pn1d_Cab   = ((1-Ps(1:nl)).*Pnhc_Cab + Ps(1:nl).*(Pnu1d_Cab));        %[nl]           mean photos leaves, per layer
-    profiles.Pn1d_Car   = ((1-Ps(1:nl)).*Pnhc_Car + Ps(1:nl).*(Pnu1d_Car));        %[nl]           mean photos leaves, per layer
+    Pnu1d           = Pnuc;      % [nl]      mean net radiation sunlit leaves
+    Pnu1d_Cab       = Pnuc_Cab; 
+    Pnu1d_Car       = Pnuc_Car;
+    if options.lite == 0
+        [Pnu1d  ]           = meanleaf(canopy,Pnuc,         'angles');   % [nli,nlo,nl]      mean net radiation sunlit leaves
+        [Pnu1d_Cab  ]       = meanleaf(canopy,Pnuc_Cab,     'angles'); 
+        [Pnu1d_Car  ]       = meanleaf(canopy,Pnuc_Car,     'angles');  
+    end
+    profiles.Pn1d       = ((1-Ps(1:nl)).*Pnhc     + Ps(1:nl).*(Pnu1d));  
+    profiles.Pn1d_Cab   = ((1-Ps(1:nl)).*Pnhc_Cab + Ps(1:nl).*(Pnu1d_Cab));  
+    profiles.Pn1d_Car   = ((1-Ps(1:nl)).*Pnhc_Car + Ps(1:nl).*(Pnu1d_Car)); 
 else
     profiles = struct;
 end
