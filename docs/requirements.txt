@@ -2,3 +2,4 @@ sphinx<7
 sphinx_rtd_theme
 sphinxcontrib-matlabdomain
 sphinxcontrib-bibtex
+sphinx_new_tab_link 
