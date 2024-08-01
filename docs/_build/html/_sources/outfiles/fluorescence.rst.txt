@@ -78,7 +78,7 @@ columns - wl 640:1:850 nm
       - units
       - description
     * - **sigmaF**
-      - sr-1
+      - \-
       - escape probability
 
 fluorescence_hemis.csv
@@ -119,6 +119,26 @@ columns - wl 640:1:850 nm
     * - **EoutFrc_**
       - W m-2 um-1
       - fluorescence_spectrum 640:1:850 nm reabsorption corrected
+	  
+	  
+fluorescence_AllLeaves.csv
+-----------------------------
+
+.. Note:: ``options.calc_fluor``
+
+rows - time (simulation number)
+
+columns - wl 640:1:850 nm
+
+.. list-table::
+    :widths: 20 20 60
+
+    * - variable
+      - units
+      - description
+    * - **Femleaves_**
+      - W m-2 um-1
+      - fluorescence_spectrum 640:1:850 nm emission by all leaves
 
 
 Lo_spectrum_inclF.csv

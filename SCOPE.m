@@ -7,7 +7,7 @@
 %     Option 'lite' runs a computationally lighter variation ofhel the model,
 %     with the net radiation and leaf temperatures of leaf
 %     inclination classes are averaged. SCOPE_lite is developed by C. van
-%     der Tol of the Ts_sunlitUniversity of Twente, under subcontract of Magellium,
+%     der Tol of the University of Twente, under subcontract of Magellium,
 %     funded by the Europan Space Agency under contract FLEXL2-PFT-CCN2
 %
 %     Copyright (C) 2021  Christiaan van der Tol
@@ -412,8 +412,9 @@ for k = 1:telmax
         canopy.LST      = (pi*(rad.Lot+rad.Lote)./(constants.sigmaSB*rad.canopyemis)).^0.25;
         canopy.emis     = rad.canopyemis;
 
-        % photosynthesis [mumol m-2 s-1]
-        canopy.A        = canopy.LAI*(meanleaf(canopy,bch.A,'layers',Ph)+meanleaf(canopy,bcu.A,integr,Ps)); % photosynthesis
+        % photosynthesis [mumol CO2 m-2 s-1]
+        canopy.A        = canopy.LAI*(meanleaf(canopy,bch.A,'layers',Ph)+meanleaf(canopy,bcu.A,integr,Ps)); % net photosynthesis of leaves
+        canopy.GPP      = canopy.LAI*(meanleaf(canopy,bch.Ag,'layers',Ph)+meanleaf(canopy,bcu.Ag,integr,Ps)); % gross photosynthesis
 
         % electron transport rate [mumol m-2 s-1]
         canopy.Ja       = canopy.LAI*(meanleaf(canopy,bch.Ja,'layers',Ph)+meanleaf(canopy,bcu.Ja,integr,Ps)); % electron transport
@@ -450,8 +451,7 @@ for k = 1:telmax
         end
 
         if options.calc_directional
-            if ~exist('Kn','var'), Kn=0; end
-            directional = calc_brdf(constants,options,directional,spectral,angles,atmo,soil,leafopt,canopy,meteo,thermal,bcu,bch,Kn);
+            directional = calc_brdf(constants,options,directional,spectral,angles,atmo,soil,leafopt,canopy,meteo,thermal,bcu,bch);
             savebrdfoutput(options,directional,angles,spectral,Output_dir)
         end
 

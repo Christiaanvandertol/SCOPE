@@ -1,86 +1,50 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IO (input output) &mdash; SCOPE 1.8 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d13700ae"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="RTMs" href="RTMs.html" />
     <link rel="prev" title="API" href="../api.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> SCOPE
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            SCOPE
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../model_capabilities.html">Model capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
@@ -93,9 +57,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mSCOPE.html">mSCOPE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../retrieval.html">Retrieval (Model inversion)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../youtube.html">YouTube</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Programmer Reference</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../structs.html">Structs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
@@ -108,145 +72,106 @@
 </li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">SCOPE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../api.html">API</a> &raquo;</li>
-        
-      <li>IO (input output)</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+      <li class="breadcrumb-item active">IO (input output)</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api/IO.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-src.IO">
-<span id="io-input-output"></span><h1>IO (input output)<a class="headerlink" href="#module-src.IO" title="Permalink to this headline">¶</a></h1>
-<p>Data reading and writing (input-output)</p>
-<dl class="function">
-<dt id="src.IO.assignvarnames">
-<code class="sig-name descname">assignvarnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.assignvarnames" title="Permalink to this definition">¶</a></dt>
+             
+  <section id="io-input-output">
+<h1>IO (input output)<a class="headerlink" href="#io-input-output" title="Link to this heading"></a></h1>
+<p id="module-src.IO">Data reading and writing (input-output)</p>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.assignvarnames">
+<span class="sig-name descname"><span class="pre">assignvarnames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.assignvarnames" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="function">
-<dt id="src.IO.bin_to_csv">
-<code class="sig-name descname">bin_to_csv</code><span class="sig-paren">(</span><em class="sig-param">fnames</em>, <em class="sig-param">V</em>, <em class="sig-param">vmax</em>, <em class="sig-param">n_col</em>, <em class="sig-param">ns</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.bin_to_csv" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.bin_to_csv">
+<span class="sig-name descname"><span class="pre">bin_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">fnames</span></em>, <em class="sig-param"><span class="pre">V</span></em>, <em class="sig-param"><span class="pre">vmax</span></em>, <em class="sig-param"><span class="pre">n_col</span></em>, <em class="sig-param"><span class="pre">ns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.bin_to_csv" title="Link to this definition"></a></dt>
 <dd><p>pars</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.create_output_files_binary">
-<code class="sig-name descname">create_output_files_binary</code><span class="sig-paren">(</span><em class="sig-param">parameter_file</em>, <em class="sig-param">F</em>, <em class="sig-param">path_of_code</em>, <em class="sig-param">input_path</em>, <em class="sig-param">spectral</em>, <em class="sig-param">options</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.create_output_files_binary" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.create_output_files_binary">
+<span class="sig-name descname"><span class="pre">create_output_files_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">parameter_file</span></em>, <em class="sig-param"><span class="pre">F</span></em>, <em class="sig-param"><span class="pre">path_of_code</span></em>, <em class="sig-param"><span class="pre">input_path</span></em>, <em class="sig-param"><span class="pre">spectral</span></em>, <em class="sig-param"><span class="pre">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.create_output_files_binary" title="Link to this definition"></a></dt>
 <dd><p>Create Output dir</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.define_bands">
-<code class="sig-name descname">define_bands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.define_bands" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.define_bands">
+<span class="sig-name descname"><span class="pre">define_bands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.define_bands" title="Link to this definition"></a></dt>
 <dd><p>Define spectral regions for SCOPE v_1.40
 All spectral regions are defined here as row vectors
 WV Jan. 2013</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.define_constants">
-<code class="sig-name descname">define_constants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.define_constants" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.define_constants">
+<span class="sig-name descname"><span class="pre">define_constants</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.define_constants" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="function">
-<dt id="src.IO.initialize_output_structures">
-<code class="sig-name descname">initialize_output_structures</code><span class="sig-paren">(</span><em class="sig-param">spectral</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.initialize_output_structures" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.initialize_output_structures">
+<span class="sig-name descname"><span class="pre">initialize_output_structures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">spectral</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.initialize_output_structures" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="function">
-<dt id="src.IO.input_mSCOPE">
-<code class="sig-name descname">input_mSCOPE</code><span class="sig-paren">(</span><em class="sig-param">parameter_file</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.input_mSCOPE" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.input_mSCOPE">
+<span class="sig-name descname"><span class="pre">input_mSCOPE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">parameter_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.input_mSCOPE" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="function">
-<dt id="src.IO.load_atmo">
-<code class="sig-name descname">load_atmo</code><span class="sig-paren">(</span><em class="sig-param">atmfile</em>, <em class="sig-param">SCOPEspec</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_atmo" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.load_atmo">
+<span class="sig-name descname"><span class="pre">load_atmo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">atmfile</span></em>, <em class="sig-param"><span class="pre">SCOPEspec</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_atmo" title="Link to this definition"></a></dt>
 <dd><p>default error is not clear enough</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.load_mSCOPE_ts">
-<code class="sig-name descname">load_mSCOPE_ts</code><span class="sig-paren">(</span><em class="sig-param">mSCOPE_ts_path</em>, <em class="sig-param">nly</em>, <em class="sig-param">t_column</em>, <em class="sig-param">t_</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_mSCOPE_ts" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.load_mSCOPE_ts">
+<span class="sig-name descname"><span class="pre">load_mSCOPE_ts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mSCOPE_ts_path</span></em>, <em class="sig-param"><span class="pre">nly</span></em>, <em class="sig-param"><span class="pre">t_column</span></em>, <em class="sig-param"><span class="pre">t_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_mSCOPE_ts" title="Link to this definition"></a></dt>
 <dd><p>mly_df = readtable(“D:PyCharm_projectsSCOPE2.0inputdataset LatinHypercubeinput_mSCOPE_timeseries.csv”);</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.load_timeseries">
-<code class="sig-name descname">load_timeseries</code><span class="sig-paren">(</span><em class="sig-param">V</em>, <em class="sig-param">F</em>, <em class="sig-param">xyt</em>, <em class="sig-param">path_input</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_timeseries" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.load_timeseries">
+<span class="sig-name descname"><span class="pre">load_timeseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">V</span></em>, <em class="sig-param"><span class="pre">F</span></em>, <em class="sig-param"><span class="pre">xyt</span></em>, <em class="sig-param"><span class="pre">path_input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.load_timeseries" title="Link to this definition"></a></dt>
 <dd><p>filenames</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.output_data_binary">
-<code class="sig-name descname">output_data_binary</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">k</em>, <em class="sig-param">xyt</em>, <em class="sig-param">rad</em>, <em class="sig-param">canopy</em>, <em class="sig-param">V</em>, <em class="sig-param">vi</em>, <em class="sig-param">vmax</em>, <em class="sig-param">options</em>, <em class="sig-param">fluxes</em>, <em class="sig-param">meteo</em>, <em class="sig-param">iter</em>, <em class="sig-param">resistance</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.output_data_binary" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.output_data_binary">
+<span class="sig-name descname"><span class="pre">output_data_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">f</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">xyt</span></em>, <em class="sig-param"><span class="pre">rad</span></em>, <em class="sig-param"><span class="pre">canopy</span></em>, <em class="sig-param"><span class="pre">V</span></em>, <em class="sig-param"><span class="pre">vi</span></em>, <em class="sig-param"><span class="pre">vmax</span></em>, <em class="sig-param"><span class="pre">options</span></em>, <em class="sig-param"><span class="pre">fluxes</span></em>, <em class="sig-param"><span class="pre">meteo</span></em>, <em class="sig-param"><span class="pre">iter</span></em>, <em class="sig-param"><span class="pre">resistance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.output_data_binary" title="Link to this definition"></a></dt>
 <dd><p>OUTPUT DATA
 author C. Van der Tol
-date:      30 Nov 2019 
+date:      30 Nov 2019
 update:    22 Jan 2021 (additional output variables)</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.output_verification_csv">
-<code class="sig-name descname">output_verification_csv</code><span class="sig-paren">(</span><em class="sig-param">Output_dir</em>, <em class="sig-param">verification_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.output_verification_csv" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.output_verification_csv">
+<span class="sig-name descname"><span class="pre">output_verification_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Output_dir</span></em>, <em class="sig-param"><span class="pre">verification_dir</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.output_verification_csv" title="Link to this definition"></a></dt>
 <dd><p>Date: 07 August 2012
-Author: Christiaan van der Tol (<a class="reference external" href="mailto:c&#46;vandertol&#37;&#52;&#48;utwente&#46;nl">c<span>&#46;</span>vandertol<span>&#64;</span>utwente<span>&#46;</span>nl</a>)
+Author: Christiaan van der Tol (<a class="reference external" href="mailto:c&#46;vandertol&#37;&#52;&#48;utwente&#46;nl" rel="noopener noreferrer" target="_blank">c<span>&#46;</span>vandertol<span>&#64;</span>utwente<span>&#46;</span>nl</a>)
 output_verification.m (script) checks if the output of the latest run
 with SCOPE_v1.51 matches with a ‘standard’ output located in a directory
 called ‘verificationdata’. If it does not, warnings will appear in the
@@ -267,14 +192,14 @@ different will be plotted: the verification data in blue, and the latest
 run in red. In this way the differences can be visually inspected.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="src.IO.select_input">
-<code class="sig-name descname">select_input</code><span class="sig-paren">(</span><em class="sig-param">V</em>, <em class="sig-param">vi</em>, <em class="sig-param">canopy</em>, <em class="sig-param">options</em>, <em class="sig-param">constants</em>, <em class="sig-param">xyt</em>, <em class="sig-param">soil</em>, <em class="sig-param">leafbio</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.select_input" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.select_input">
+<span class="sig-name descname"><span class="pre">select_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">V</span></em>, <em class="sig-param"><span class="pre">vi</span></em>, <em class="sig-param"><span class="pre">canopy</span></em>, <em class="sig-param"><span class="pre">options</span></em>, <em class="sig-param"><span class="pre">constants</span></em>, <em class="sig-param"><span class="pre">xyt</span></em>, <em class="sig-param"><span class="pre">soil</span></em>, <em class="sig-param"><span class="pre">leafbio</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.select_input" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="function">
-<dt id="src.IO.timestamp2datetime">
-<code class="sig-name descname">timestamp2datetime</code><span class="sig-paren">(</span><em class="sig-param">ts</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.timestamp2datetime" title="Permalink to this definition">¶</a></dt>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.IO.timestamp2datetime">
+<span class="sig-name descname"><span class="pre">timestamp2datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ts</span></em>, <em class="sig-param"><span class="pre">year_n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.IO.timestamp2datetime" title="Link to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>ts<span class="classifier">char or char array like [‘20190101’; ‘20190102’]</span></dt><dd><p>int or int array [20190101; 20190102]</p>
 </dd>
@@ -282,55 +207,37 @@ run in red. In this way the differences can be visually inspected.</p>
 <p>dt : datetime or datetime array</p>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="RTMs.html" class="btn btn-neutral float-right" title="RTMs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../api.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../api.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="RTMs.html" class="btn btn-neutral float-right" title="RTMs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Egor Prikaziuk
-
-    </p>
+    <p>&#169; Copyright 2018, Egor Prikaziuk.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
