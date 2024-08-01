@@ -118,15 +118,15 @@ Fields initialized in :func:`.RTMo`
       - [2162 x 1] double
       - directional forward scattering coefficient for diffuse incidence
     * - **Esun_**
-      - mW m-2 um-1
+      - W m-2 um-1
       - [2162 x 1] double
       - incident solar spectrum
     * - **Esky_**
-      - mW m-2 um-1
+      - W m-2 um-1
       - [2162 x 1] double
       - incident sky spectrum
     * - **PAR**
-      - mol m-2 s-1
+      - umol phot. m-2 s-1
       - double
       - incident spectrally integrated PAR
     * - **fEsuno**
@@ -146,19 +146,19 @@ Fields initialized in :func:`.RTMo`
       - [2162 x 1] double
       - fraction of diffuse light (thermal)
     * - **Eplu_**
-      - mW m-2 um-1
+      - W m-2 um-1
       - [61 x 2162] double
       - upward diffuse radiation in the canopy
     * - **Emin_**
-      - mW m-2 um-1
+      - W m-2 um-1
       - [61 x 2162] double
       - downward diffuse radiation in the canopy
     * - **Lo_**
-      - mW m-2 um-1 sr-1
+      - W m-2 um-1 sr-1
       - [2162 x 1] double
       - top of canopy (TOC) radiance in observation direction
     * - **Eout_**
-      - mW m-2 um-1
+      - W m-2 um-1
       - [2162 x 1] double
       - top of canopy (TOC) upward radiation
     * - **Eouto**
@@ -186,19 +186,19 @@ Fields initialized in :func:`.RTMo`
       - [13 x 36x 60] double
       - net radiation of sunlit leaves
     * - **Pnh**
-      - mol n-2 s-1
+      - umol phot. m-2 s-1
       - [60 x 1] double
       - net PAR of shaded leaves
     * - **Pnu**
-      - mol n-2 s-1
+      - umol phot. m-2 s-1
       - [13 x 36x 60] double
       - net PAR of sunlit leaves
     * - **Pnh_Cab**
-      - mol n-2 s-1
+      - umol phot. m-2 s-1
       - [60 x 1] double
       - net PAR absorbed by Cab of shaded leaves
     * - **Pnu_Cab**
-      - mol n-2 s-1
+      - umol phot. m-2 s-1
       - [13 x 36x 60] double
       - net PAR absorbed by Cab of sunlit leaves
     * - **Pnh_PAR**
