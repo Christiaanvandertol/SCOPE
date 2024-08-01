@@ -1,86 +1,50 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Retrieval (Model inversion) &mdash; SCOPE 1.8 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d13700ae"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Hyperspectral retrieval" href="retrieval/hyperspectral.html" />
     <link rel="prev" title="mSCOPE" href="mSCOPE.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> SCOPE
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            SCOPE
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="model_capabilities.html">Model capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
@@ -104,84 +68,46 @@
 <li class="toctree-l2"><a class="reference internal" href="#acknowledgement">Acknowledgement</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="youtube.html">YouTube</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Programmer Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Programmer Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="structs.html">Structs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">SCOPE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Retrieval (Model inversion)</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Retrieval (Model inversion)</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/retrieval.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="retrieval-model-inversion">
-<h1><a class="toc-backref" href="#id1">Retrieval (Model inversion)</a><a class="headerlink" href="#retrieval-model-inversion" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="retrieval-model-inversion">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Retrieval (Model inversion)</a><a class="headerlink" href="#retrieval-model-inversion" title="Link to this heading"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Github of the project: <a class="reference external" href="https://github.com/Prikaziuk/retrieval_rtmo">https://github.com/Prikaziuk/retrieval_rtmo</a></p>
+<p>Github of the project: <a class="reference external" href="https://github.com/Prikaziuk/retrieval_rtmo" rel="noopener noreferrer" target="_blank">https://github.com/Prikaziuk/retrieval_rtmo</a></p>
 </div>
-<div class="contents topic" id="contents">
-<p class="topic-title first">Contents</p>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#retrieval-model-inversion" id="id1">Retrieval (Model inversion)</a></p>
 <ul>
@@ -192,7 +118,7 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="retrieval/hyperspectral.html">Hyperspectral retrieval</a></li>
@@ -202,8 +128,8 @@
 <li class="toctree-l1"><a class="reference internal" href="retrieval/tricks.html">Tricks</a></li>
 </ul>
 </div>
-<div class="section" id="highlights">
-<h2><a class="toc-backref" href="#id2">Highlights</a><a class="headerlink" href="#highlights" title="Permalink to this headline">¶</a></h2>
+<section id="highlights">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Highlights</a><a class="headerlink" href="#highlights" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt>Numerical optimization of RTMo (optical) module of SCOPE model</dt><dd><ul class="simple">
@@ -251,9 +177,9 @@
 </dl>
 </li>
 </ol>
-</div>
-<div class="section" id="definition">
-<h2><a class="toc-backref" href="#id3">Definition</a><a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="definition">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Definition</a><a class="headerlink" href="#definition" title="Link to this heading"></a></h2>
 <p>Typically you provide vegetation parameters and SCOPE gives you expected reflectance spectra.
 For retrieval you provide the reflectance spectra and SCOPE gives you expected vegetation parameters, resulting in similar spectra.</p>
 <p>That is why it is called model inversion. We somehow want to get the input (parameters) from the output (spectra).</p>
@@ -283,9 +209,9 @@ end up in a look-up table with 1.000.000 simulations</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="directory-structure">
-<h2><a class="toc-backref" href="#id4">Directory structure</a><a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="directory-structure">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Directory structure</a><a class="headerlink" href="#directory-structure" title="Link to this heading"></a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>demonstrator-master.zip
 ├── src
 │   ├── +helpers
@@ -321,63 +247,45 @@ end up in a look-up table with 1.000.000 simulations</p></li>
     └── sample_synthetic
 </pre></div>
 </div>
-</div>
-<div class="section" id="acknowledgement">
-<h2><a class="toc-backref" href="#id5">Acknowledgement</a><a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acknowledgement">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Acknowledgement</a><a class="headerlink" href="#acknowledgement" title="Link to this heading"></a></h2>
 <p>The project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement No 721995.</p>
-<div class="figure align-center">
-<a class="reference external image-reference" href="http://www.trusteenetwork.eu/"><img alt="_images/trustee_logo.png" src="_images/trustee_logo.png" /></a>
-</div>
-</div>
-</div>
+<figure class="align-center">
+<a class="reference external image-reference" href="http://www.trusteenetwork.eu/" rel="noopener noreferrer" target="_blank"><img alt="_images/trustee_logo.png" src="_images/trustee_logo.png" /></a>
+</figure>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="retrieval/hyperspectral.html" class="btn btn-neutral float-right" title="Hyperspectral retrieval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mSCOPE.html" class="btn btn-neutral float-left" title="mSCOPE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mSCOPE.html" class="btn btn-neutral float-left" title="mSCOPE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="retrieval/hyperspectral.html" class="btn btn-neutral float-right" title="Hyperspectral retrieval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Egor Prikaziuk
-
-    </p>
+    <p>&#169; Copyright 2018, Egor Prikaziuk.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

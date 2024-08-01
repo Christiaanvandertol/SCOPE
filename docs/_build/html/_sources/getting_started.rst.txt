@@ -1,6 +1,14 @@
 Getting started
 ====================
 
+Video tutorials are available on |yt|
+
+.. |yt| image:: ./images/yt_logo_rgb_light.png
+   :height: 3ex
+   :class: no-scaled-link
+   :target: https://youtube.com/playlist?list=PLMKVJ8XOixyTEcUkYDw1YTgKHi-FgimF8&si=E-f3O-j3PrMREL97
+   
+
 .. contents::
 
 0. Software requirements

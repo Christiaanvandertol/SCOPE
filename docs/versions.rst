@@ -1,6 +1,9 @@
 Version history
 ================
 
+.. figure:: ./images/scope-verision-fullpage-1.png
+    :align: center
+
 .. contents::
 
 2.1

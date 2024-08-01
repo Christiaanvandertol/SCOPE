@@ -6,7 +6,15 @@
 Welcome to SCOPE's documentation!
 =================================
 
-Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at al. 2009 :cite:`VanderTol2009`) radiative transfer model.
+Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at al. 2009 :cite:`VanderTol2009`, Yang at al. 2021 :cite:`Yang2021SCOPE2`) radiative transfer model.
+
+Video tutorials are available on |yt|
+
+.. |yt| image:: ./images/yt_logo_rgb_light.png
+   :height: 3ex
+   :class: no-scaled-link
+   :target: https://youtube.com/playlist?list=PLMKVJ8XOixyTEcUkYDw1YTgKHi-FgimF8&si=E-f3O-j3PrMREL97
+   
 
 .. toctree::
    :maxdepth: 1
@@ -25,7 +33,9 @@ Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at
    versions
    mSCOPE
    retrieval
-   support
+   
+   youtube
+
 
 .. toctree::
    :caption: Programmer Reference
