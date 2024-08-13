@@ -147,15 +147,15 @@ end
 if size(Hcsu3,2)>1
     Rnuc = 0*Hcsu3;
     for j = 1:nl
-        Rnuc(:,:,j) = (Emin(j) + Eplu(j+1) - 2*Hcsu3(:,:,j));    % sunlit leaf
+        Rnuc(:,:,j) = epsc*(Emin(j) + Eplu(j+1)) - 2*Hcsu3(:,:,j);    % sunlit leaf
     end
 else
-    Rnuc            = (Emin(1:end-1) + Eplu(2:end) - 2*(Hcsu));
+    Rnuc            = epsc*(Emin(1:end-1) + Eplu(2:end)) - 2*(Hcsu);
 end
 
-Rnhc            = (Emin(1:end-1) + Eplu(2:end) - 2*(Hcsh));
-Rnus            = (Emin(nl+1) - Hssu);                       % sunlit soil
-Rnhs            = (Emin(nl+1) - Hssh);                      % shaded soil
+Rnhc            = epsc*(Emin(1:end-1) + Eplu(2:end)) - 2*(Hcsh);
+Rnus            = epss*(Emin(nl+1) - Hssu);                       % sunlit soil
+Rnhs            = epss*(Emin(nl+1) - Hssh);                      % shaded soil
 
 %% 3. Write the output to the rad structure
 rad.Emint   = Emin;
