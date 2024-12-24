@@ -1,6 +1,6 @@
 function train_gpr(lut_in_path, lut_out_path, var_name)
     if nargin == 0
-        in_dir = '../exercise';
+        in_dir = fullfile('..', 'exercise');
         lut_in_path = fullfile(in_dir, 'lut_in.csv');
         lut_out_path = fullfile(in_dir, 'lut_out.csv');
         var_name = 'Actot';
@@ -32,7 +32,6 @@ function train_gpr(lut_in_path, lut_out_path, var_name)
 %     res = kfoldPredict(gprMdl);
     save(mat_out, 'gprMdl')
     fprintf('GPR is saved in `%s`\n', mat_out)
-    
 
     res = predict(gprMdl, lut_test);
     fig_path = fullfile(fileparts(lut_in_path), [var_name '_gpr.png']);

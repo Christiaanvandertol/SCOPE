@@ -1,16 +1,17 @@
-function image2csv(im_path, outdir)
+function image2csv(im_path, out_dir, gpr_name, csv_name)
     
     if nargin == 0
-        im_path = '../exercise/images';
-        outdir = '../exercise';
-        name = 'full_set';
-    else
-        [~, name, ~] = fileparts(im_path);
+        out_dir = fullfile('..', 'exercise');
+        im_path = fullfile(out_dir, 'images');
+        gpr_name = 'gpr_Actot.mat';  % to read variable names
+        csv_name = 'full_set.csv';
     end
-    csv_out = fullfile(outdir, sprintf('%s.csv', name));
-    var_names = {'Cab', 'LAI'};  % or dir(images) if only .tif
-    assert(exist(im_path, 'dir') == 7, '`%s` does not exist. Please, put images (Cab.tif and LAI.tif) into that folder', im_path)
-    fprintf('reading images from `%s`\n', im_path)
+    assert(exist(im_path, 'dir') == 7, '`%s` does not exist. Please, put images (LAI.tif ...) into that folder', im_path)
+
+    gpr_path = fullfile(out_dir, gpr_name);
+    gpr = load(gpr_path);
+    gpr = gpr.gprMdl;
+    var_names = gpr.PredictorNames;
     
     [~, ~, ext] = fileparts(im_path);
     if strcmp(ext, '.nc')
@@ -26,8 +27,14 @@ function image2csv(im_path, outdir)
     vals = nan(r*c, length(var_names));
     for i=1:length(var_names)
         var = var_names{i};
+        fprintf('%s ', var)
         v = get_val(var);
-%         v = v(ir, ic);
+        [r_i, c_i] = size(v);
+        if (r_i ~= 1) & (c_i ~= 1)
+            assert((r_i == r) & (c_i == c), ...
+                'The number of rows (r_i=%i) or columns (c_i=%i) in %s.tif does not match the expected (r=%d, c=%d)', ...
+                r_i, c_i, var, r, c)
+        end
         vals(:, i) = v(:);  % flattening
     end
     
@@ -36,7 +43,7 @@ function image2csv(im_path, outdir)
     df_clean = df(~i_nans, :);
     df_clean.(['ind_' num2str(r), '_', num2str(c)]) = find(~i_nans);  % or fprintf()
     
-    fprintf('found %d not-nan pixels\n', sum(~i_nans))
+    fprintf('\nfound %d not-nan pixels\n', sum(~i_nans))
     
     %% saving
 %     out = struct();
@@ -47,6 +54,7 @@ function image2csv(im_path, outdir)
 % %     reshape(i_nans, r, c);
 %     save(fullfile(outdir, sprintf('%s.mat', name)), 'out')
     
-    writetable(df_clean, csv_out)
-    fprintf('saved to `%s`\n', csv_out)
+    csv_out_path = fullfile(out_dir, csv_name);
+    writetable(df_clean, csv_out_path)
+    fprintf('saved to `%s`\n', csv_out_path)
 end

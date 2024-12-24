@@ -1,12 +1,13 @@
 function generate_lut_input(tab, n_spectra, outdir)
     % params = generate_lut_input(tab, n_spectra, outdir)
     if nargin == 0
-        tab = readtable('+lut/input_borders.csv');
+        tab = readtable(fullfile('+lut', 'input_borders.csv'));
         n_spectra = 1000;
-        outdir = '../exercise';
+        outdir = fullfile('..', 'exercise');
     end
     out_file = fullfile(outdir, 'lut_in.csv');
-    assert(exist(out_file, 'file') == 0, '`%s` file already exists, delete it first', out_file)
+    out_file_for_ts = fullfile(outdir, 'lut_in_for_ts.csv');
+    assert(exist(out_file, 'file') == 0, '`%s` file already exists, delete/rename it first', out_file)
     
     include = logical(tab.include);
     lb = tab.lower(include)';
@@ -30,8 +31,13 @@ function generate_lut_input(tab, n_spectra, outdir)
 
     t = array2table(params);
     t.Properties.VariableNames = varnames;
-    t.t = datestr(datetime(2022, 7, 1, 0, 12, 1:n_spectra), 'yyyymmddHHMMSS.FFF');
     writetable(t, out_file)
+
+    t.t = datestr(datetime(2022, 7, 1, 0, 12, 1:n_spectra), 'yyyymmddHHMMSS.FFF');
+    if ~any(strcmp('tts' , varnames))
+        t.tts = repmat(30, [n_spectra, 1]);  % change here tts
+    end
+    writetable(t, out_file_for_ts)
     
     if verLessThan('matlab', '9.1')  % < 2016b
         varnames_in = '';
