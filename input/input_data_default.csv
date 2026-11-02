@@ -50,7 +50,7 @@ hc,2
 LIDFa,-0.35
 LIDFb,-0.15
 leafwidth,0.1
-Cv,1
+Cv, 0.1
 crowndiameter,1
 ,
 Meteo,
@@ -84,6 +84,6 @@ LON,5.55
 timezn,1
 ,
 Angles,
-tts,30
-tto,0
+tts,50
+tto,20
 psi,0

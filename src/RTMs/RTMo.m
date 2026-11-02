@@ -117,6 +117,7 @@ LAI     = canopy.LAI;           % leaf area index
 lidf    = canopy.lidf;          % leaf inclination distribution function
 xl      = canopy.xl;            % all levels except for the top
 dx      = 1/nl;
+Cv      = canopy.Cv;
 
 rho = leafopt.refl;
 tau = leafopt.tran;
@@ -164,19 +165,26 @@ sofli       = ftau*pi/(cos_tts*cos_tto);    % [13]      pag 309{1}
 bfli        = cos_ttli.^2;                  % [13]
 
 %integration over angles (using a vector inproduct) -> scalars
-k           = ksli'*lidf;                   %           pag 306{1}    extinction coefficient in direction of sun.
-K           = koli'*lidf;                   %           pag 307{1}    extinction coefficient in direction of observer
+ki          = ksli'*lidf;                   %           pag 306{1}    extinction coefficient in direction of sun.
+Ki          = koli'*lidf;                   %           pag 307{1}    extinction coefficient in direction of observer
 bf          = bfli'*lidf;                   %
 sob         = sobli'*lidf;                  %           weight of specular2directional back    scatter coefficient
 sof         = sofli'*lidf;                  %           weight of specular2directional forward scatter coefficient
+
+% clumping
+Cs          = 1-(1-Cv).^(1./cos_tts);       %           crown cover fraction projected in the direction of the sun
+Co          = 1-(1-Cv).^(1./cos_tto);       %           crown cover fraction projected in the direction of viewing
+k           = Cs*ki;
+K           = Co*Ki;
+
 % 1.3 geometric factors to be used later with rho and tau, f1 f2 of pag 304:
 % these variables are scalars
-sdb         = 0.5*(k+bf);                   % fs*f1
-sdf         = 0.5*(k-bf);                   % fs*f2     weight of specular2diffuse     foward  scatter coefficient
+sdb         = 0.5*(ki+bf);                   % fs*f1
+sdf         = 0.5*(ki-bf);                   % fs*f2     weight of specular2diffuse     foward  scatter coefficient
 ddb         = 0.5*(1+bf);                   % f1^2+f2^2 weight of diffuse2diffuse      back    scatter coefficient
 ddf         = 0.5*(1-bf);                   % 2*f1*f2   weight of diffuse2diffuse      forward scatter coefficient
-dob         = 0.5*(K+bf);                   % fo*f1     weight of diffuse2directional  back    scatter coefficient
-dof         = 0.5*(K-bf);                   % fo*f2     weight of diffuse2directional  forward scatter coefficient
+dob         = 0.5*(Ki+bf);                   % fo*f1     weight of diffuse2directional  back    scatter coefficient
+dof         = 0.5*(Ki-bf);                   % fo*f2     weight of diffuse2directional  forward scatter coefficient
 
 % 1.4 solar irradiance factor for all leaf orientations
 Css          = cos_ttli*cos_tts;             % [nli]     pag 305 modified by Joris
@@ -187,13 +195,13 @@ fs          = abs(cos_deltas/cos_tts);         % [nli,nlazi] pag 305
 %% 2. Calculation of reflectance
 % 2.1  reflectance, transmittance factors in a thin layer
 % the following are vectors with lenght [nl,nwl]
-sigb        = ddb*rho + ddf*tau;            % [nl,nwl]     sigmab, p305{1} diffuse     backscatter scattering coefficient for diffuse  incidence
-sigf        = ddf*rho + ddb*tau;            % [nl,nwl]     sigmaf, p305{1} diffuse     forward     scattering coefficient for forward  incidence
-sb          = sdb*rho + sdf*tau;            % [nl,nwl]     sb,     p305{1} diffuse     backscatter scattering coefficient for specular incidence
-sf          = sdf*rho + sdb*tau;            % [nl,nwl]     sf,     p305{1} diffuse     forward     scattering coefficient for specular incidence
-vb          = dob*rho + dof*tau;            % [nl,nwl]     vb,     p305{1} directional backscatter scattering coefficient for diffuse  incidence
-vf          = dof*rho + dob*tau;            % [nl,nwl]     vf,     p305{1} directional forward     scattering coefficient for diffuse  incidence
-w           = sob*rho + sof*tau;            % [nl,nwl]     w,      p309{1} bidirectional scattering coefficent (directional-directional)
+sigb        = Cv*(ddb*rho + ddf*tau);            % [nl,nwl]     sigmab, p305{1} diffuse     backscatter scattering coefficient for diffuse  incidence
+sigf        = (1-Cv) + Cv*(ddf*rho + ddb*tau);            % [nl,nwl]     sigmaf, p305{1} diffuse     forward     scattering coefficient for forward  incidence
+sb          = Cs*(sdb*rho + sdf*tau);            % [nl,nwl]     sb,     p305{1} diffuse     backscatter scattering coefficient for specular incidence
+sf          = Cs*(sdf*rho + sdb*tau);            % [nl,nwl]     sf,     p305{1} diffuse     forward     scattering coefficient for specular incidence
+vb          = Co*(dob*rho + dof*tau);            % [nl,nwl]     vb,     p305{1} directional backscatter scattering coefficient for diffuse  incidence
+vf          = Co*(dof*rho + dob*tau);            % [nl,nwl]     vf,     p305{1} directional forward     scattering coefficient for diffuse  incidence
+w           = Cs*(sob*rho + sof*tau);            % [nl,nwl]     w,      p309{1} bidirectional scattering coefficent (directional-directional)
 a           = 1-sigf;                       % [nl,nwl]     attenuation
 
 %% 3. Flux calculation
@@ -201,13 +209,14 @@ a           = 1-sigf;                       % [nl,nwl]     attenuation
 % diffuse fluxes within the vegetation covered part
 %iLAI    =   LAI/nl; 
 tau_ss = repmat(1-k.*iLAI,nl,1);  %REPLACE when LIDF profile ready.
-tau_dd = (1-a.*iLAI);
+tau_dd = 1-a.*iLAI;
 tau_sd = sf.*iLAI;
 rho_sd = sb.*iLAI;
 rho_dd = sigb.*iLAI;
 [R_sd,R_dd,Xss,Xsd,Xdd] = calc_reflectances(tau_ss,tau_sd,tau_dd,rho_dd,rho_sd,rs,nl,nwl);
 rdd     = R_dd(1,:)';
 rsd     = R_sd(1,:)';
+
 [Esun_,Esky_] = calcTOCirr(atmo,meteo,rdd,rsd,wl,nwl);
 
 [Emins_,Eplus_] = calc_fluxprofile(Esun_,0*Esky_,rs,Xss,Xsd,Xdd,R_sd,R_dd,nl,nwl);
@@ -461,6 +470,7 @@ rad.Rnu_PAR = Rnuc_PAR;     % [13x36x60 double] net PAR absorbed (W m-2) of sunl
 rad.Xdd     =   Xdd;
 rad.Xsd     = Xsd;
 rad.Xss     = Xss;
+keyboard
 
 % Rn = canopy.LAI*(meanleaf(canopy,rad.Rnhc,'layers',(1-Ps(1:nl)))+meanleaf(canopy,rad.Rnuc,'angles_and_layers',Ps(1:nl)))
 % %y1 = canopy.Cv*(rad.Eplu_(end,:)-rad.Eplu_(1,:) + rad.Emin_(1,:) - rad.Emin_(end,:));

@@ -58,8 +58,7 @@ canopy.CR               = V(40).Val(vi(40));
 canopy.CD1              = V(41).Val(vi(41));
 canopy.Psicor           = V(42).Val(vi(42));
 canopy.rwc              = V(45).Val(vi(45));
-
-%canopy.Cv = V(65).Val(vi(65));
+canopy.Cv               = V(69).Val(vi(69));
 %canopy.crowndiameter = V(66).Val(vi(66));
 
 meteo.z             = V(29).Val(vi(29));
